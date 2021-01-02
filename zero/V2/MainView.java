@@ -9,6 +9,7 @@ import javax.swing.*;
 
 public class MainView {
 	MailView mailView = new MailView();
+	Site siteView = new Site();
 
 	JPanel main = new JPanel();
 	JPanel display = new JPanel();
@@ -42,6 +43,7 @@ public class MainView {
 		blank2.setPreferredSize(new Dimension(60,60));
 		blank3.setPreferredSize(new Dimension(60,60));
 		display.add(mailView.mail);
+		display.add(siteView.site);
 		main.add(home);
 		main.add(mail);
 		main.add(close);
@@ -58,5 +60,6 @@ public class MainView {
 
 	public void Home(){
 		mailView.mail.setVisible(false);
+		siteView.site.setVisible(false);
 	}
-}//62
+}//65

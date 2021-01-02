@@ -56,12 +56,20 @@ public class Zero implements ActionListener{
 				}
 			}
 		);
-		
+
+		mainView.home.addActionListener(
+			new ActionListener(){
+				public void actionPerformed(ActionEvent e){
+				    mainView.Home();
+				}
+			}
+		);
+
 		mainView.searchBtn.addActionListener(
 			new ActionListener(){
 				public void actionPerformed(ActionEvent e){
-					System.out.println("Go home");
-				    mainView.Home();
+					mainView.siteView.site.setVisible(true);
+					mainView.mailView.mail.setVisible(false);
 				}
 			}
 		);
@@ -70,6 +78,14 @@ public class Zero implements ActionListener{
 			new ActionListener(){
 				public void actionPerformed(ActionEvent e){
 					exit();
+				}
+			}
+		);
+
+		mainView.mail.addActionListener(
+			new ActionListener(){
+				public void actionPerformed(ActionEvent e){
+					mainView.mailView.mail.setVisible(true);
 				}
 			}
 		);
@@ -101,4 +117,4 @@ public class Zero implements ActionListener{
 		startView.start.setVisible(true);
 	}
 
-}//104
+}//120
