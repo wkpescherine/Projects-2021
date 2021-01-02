@@ -13,4 +13,4 @@ public class AboutView {
         aboutSec.add(aboutBack);
         aboutSec.setVisible(false);    
     }
-}
+}//16

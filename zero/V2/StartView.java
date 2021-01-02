@@ -33,4 +33,4 @@ public class StartView{
 		start.add(startAbout);
 		start.setVisible(true);
     }
-}
+}//36

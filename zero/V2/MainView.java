@@ -8,6 +8,8 @@ import javax.swing.*;
 //import java.io.IOException;
 
 public class MainView {
+	MailView mailView = new MailView();
+
 	JPanel main = new JPanel();
 	JPanel display = new JPanel();
 	JButton close = new JButton("Exit");
@@ -39,6 +41,7 @@ public class MainView {
 		blank1.setPreferredSize(new Dimension(60,60));
 		blank2.setPreferredSize(new Dimension(60,60));
 		blank3.setPreferredSize(new Dimension(60,60));
+		display.add(mailView.mail);
 		main.add(home);
 		main.add(mail);
 		main.add(close);
@@ -54,6 +57,6 @@ public class MainView {
 	};
 
 	public void Home(){
-		System.out.println("Hit this function");
+		mailView.mail.setVisible(false);
 	}
-}//59
+}//62
