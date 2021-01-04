@@ -103,6 +103,24 @@ public class Zero implements ActionListener{
 			}
 		);
 
+		mainView.mailView.inbox.addActionListener(
+			new ActionListener(){
+				public void actionPerformed(ActionEvent e){
+					mainView.mailView.zmail.setVisible(true);
+					mainView.mailView.zcompose.setVisible(false);
+				}
+			}
+		);
+
+		mainView.mailView.compose.addActionListener(
+			new ActionListener(){
+				public void actionPerformed(ActionEvent e){
+					mainView.mailView.zmail.setVisible(false);
+					mainView.mailView.zcompose.setVisible(true);
+				}
+			}
+		);
+
 		window.add(startView.start);
 		window.add(mainView.main);
 		window.add(accountView.create);
@@ -130,4 +148,4 @@ public class Zero implements ActionListener{
 		startView.start.setVisible(true);
 	}
 
-}//120
+}//133
