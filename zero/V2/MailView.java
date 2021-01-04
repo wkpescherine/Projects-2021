@@ -2,14 +2,20 @@ import java.awt.*;
 import javax.swing.*;
 
 public class MailView{
+    String [] values = {"test 1", "user 1", "message 1"};
     JPanel mail = new JPanel();
     JPanel zmail = new JPanel();
     JPanel zcompose = new JPanel();
+    JPanel messageRec1 = new JPanel();
     JButton inbox = new JButton("Inbox");
     JButton compose = new JButton("Compose");
     JButton previous = new JButton("Previous");
     JButton next = new JButton("Next");
     JButton send = new JButton("Send");
+    JLabel fromRec1 = new JLabel("user1");
+    JLabel titleRec1 = new JLabel("title1");
+    JLabel dateSent1 = new JLabel("1/1/21");
+    JLabel dateRec1 = new JLabel("1/1/21");
     JLabel fromText = new JLabel("From:");
     JLabel toText = new JLabel("To:");
     JLabel titleText = new JLabel("Title:");
@@ -21,10 +27,19 @@ public class MailView{
     MailView(){
         mail.setLayout(new FlowLayout());
         mail.setPreferredSize(new Dimension (840,520));
-        zmail.setLayout(new FlowLayout());
+        zmail.setLayout(null);
         zmail.setPreferredSize(new Dimension (820,480));
-        //previous.setBounds(200,300,100,25);
-        //next.setBounds(300,300,100,25);
+        messageRec1.setBounds(50,25,700,25);
+        messageRec1.setLayout(new FlowLayout());
+        messageRec1.setPreferredSize(new Dimension(600,50));
+        messageRec1.add(fromRec1);
+        messageRec1.add(titleRec1);
+        messageRec1.add(dateSent1);
+        messageRec1.add(dateRec1);
+        messageRec1.setBackground(Color.WHITE);
+        previous.setBounds(250,350,100,25);
+        next.setBounds(450,350,100,25);
+        zmail.add(messageRec1);
         zmail.setVisible(false);
         zmail.add(previous);
         zmail.add(next);
@@ -54,4 +69,4 @@ public class MailView{
         mail.add(zcompose);
         mail.setVisible(false);
     }
-}//17
+}//57
