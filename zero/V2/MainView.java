@@ -9,6 +9,7 @@ import javax.swing.*;
 
 public class MainView {
 	MailView mailView = new MailView();
+	ChatView chatView = new ChatView();
 	Site siteView = new Site();
 
 	JPanel main = new JPanel();
@@ -19,7 +20,7 @@ public class MainView {
 	JButton blank  = new JButton("");
 	JButton blank1  = new JButton("");
 	JButton blank2  = new JButton("");
-	JButton blank3  = new JButton("");
+	JButton chat  = new JButton("Chat");
 	JButton about2 = new JButton("About");
 	JButton searchBtn = new JButton("search");
 	JTextField search = new JTextField(50);
@@ -38,20 +39,22 @@ public class MainView {
 		searchBtn.setPreferredSize(new Dimension(90,20));
 		searchBtn.setFont(new Font("Serif", Font.PLAIN, 12));
 		home.setPreferredSize(new Dimension(60,60));
+		chat.setPreferredSize(new Dimension(60,60));
 		blank.setPreferredSize(new Dimension(60,60));
 		blank1.setPreferredSize(new Dimension(60,60));
 		blank2.setPreferredSize(new Dimension(60,60));
-		blank3.setPreferredSize(new Dimension(60,60));
 		display.add(mailView.mail);
 		display.add(siteView.site);
+		display.add(chatView.chat);
+
 		main.add(home);
 		main.add(mail);
-		main.add(close);
+		main.add(chat);
 		main.add(about2);
+		main.add(close);
 		main.add(blank);
 		main.add(blank1);
 		main.add(blank2);
-		main.add(blank3);
 		main.add(search);
 		main.add(searchBtn);
 		main.add(display);
@@ -61,5 +64,6 @@ public class MainView {
 	public void Home(){
 		mailView.mail.setVisible(false);
 		siteView.site.setVisible(false);
+		chatView.chat.setVisible(false);
 	}
 }//65

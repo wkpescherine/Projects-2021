@@ -65,11 +65,22 @@ public class Zero implements ActionListener{
 			}
 		);
 
+		mainView.chat.addActionListener(
+			new ActionListener(){
+				public void actionPerformed(ActionEvent e){
+					mainView.chatView.chat.setVisible(true);
+					mainView.siteView.site.setVisible(false);
+					mainView.mailView.mail.setVisible(false);
+				}
+			}
+		);
+
 		mainView.searchBtn.addActionListener(
 			new ActionListener(){
 				public void actionPerformed(ActionEvent e){
 					mainView.siteView.site.setVisible(true);
 					mainView.mailView.mail.setVisible(false);
+					mainView.chatView.chat.setVisible(false);
 				}
 			}
 		);
@@ -86,6 +97,8 @@ public class Zero implements ActionListener{
 			new ActionListener(){
 				public void actionPerformed(ActionEvent e){
 					mainView.mailView.mail.setVisible(true);
+					mainView.chatView.chat.setVisible(false);
+					mainView.siteView.site.setVisible(false);
 				}
 			}
 		);
