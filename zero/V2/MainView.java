@@ -1,4 +1,5 @@
 import java.awt.*;
+import java.awt.event.*;
 import javax.swing.*;
 //import javax.tools.*;
 //import java.io.File;
@@ -7,7 +8,7 @@ import javax.swing.*;
 //import java.io.PrintWriter;
 //import java.io.IOException;
 
-public class MainView {
+public class MainView implements ActionListener{
 	MailView mailView = new MailView();
 	ChatView chatView = new ChatView();
 	Site siteView = new Site();
@@ -44,7 +45,7 @@ public class MainView {
 		blank1.setPreferredSize(new Dimension(60,60));
 		blank2.setPreferredSize(new Dimension(60,60));
 		display.add(mailView.mail);
-		display.add(siteView.site);
+		//display.add(siteView.site);
 		display.add(chatView.chat);
 
 		main.add(home);
@@ -59,6 +60,8 @@ public class MainView {
 		main.add(searchBtn);
 		main.add(display);
 		main.setVisible(false);
+
+		blank.addActionListener(this);
 	};
 
 	public void Home(){
@@ -66,4 +69,17 @@ public class MainView {
 		siteView.site.setVisible(false);
 		chatView.chat.setVisible(false);
 	}
-}//65
+
+	public void actionPerformed(ActionEvent e){
+		JPanel newPanel = siteView.site;
+		JPanel npan = new JPanel();
+		newPanel.setLayout(new FlowLayout());
+		System.out.println("Clicked on the blank");
+		siteView.changeText("This si a new text to see what happens");
+		npan.setPreferredSize(new Dimension(80,60));
+		npan.setBackground(Color.WHITE);
+		newPanel.add(npan);
+		display.add(newPanel);
+		display.revalidate();
+	}
+}//69

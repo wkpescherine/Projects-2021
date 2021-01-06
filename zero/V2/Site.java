@@ -1,5 +1,6 @@
 import java.awt.*;
 import javax.swing.*;
+import java.lang.String;
 
 public class Site{
     JPanel site = new JPanel();
@@ -8,7 +9,12 @@ public class Site{
     Site(){
         site.setLayout(new FlowLayout());
         site.setPreferredSize(new Dimension (860,540));
-        site.setVisible(false);
+        site.setVisible(true);
         site.add(siteText);
     }
+    
+    public void changeText(String words){
+            siteText.setText(words);
+        }
+    
 }//14
