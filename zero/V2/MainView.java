@@ -12,6 +12,7 @@ public class MainView implements ActionListener{
 	MailView mailView = new MailView();
 	ChatView chatView = new ChatView();
 	Site siteView = new Site();
+	String itemsArray [] ={"item1","310","240", "item2","310","240","item3","630","200"};
 
 	JPanel main = new JPanel();
 	JPanel display = new JPanel();
@@ -62,6 +63,15 @@ public class MainView implements ActionListener{
 		main.setVisible(false);
 
 		blank.addActionListener(this);
+
+		blank2.addActionListener(
+			new ActionListener(){
+				public void actionPerformed(ActionEvent e){
+					display.setLayout(new FlowLayout());
+					panelBuilder(itemsArray);
+				}
+			}
+		);
 	};
 
 	public void Home(){
@@ -82,4 +92,26 @@ public class MainView implements ActionListener{
 		display.add(newPanel);
 		display.revalidate();
 	}
-}//69
+
+	public void panelBuilder(String [] array){
+		display.removeAll();
+		//int num = x;
+		int start = array.length;
+		JPanel jpanel[] = new JPanel[start];
+
+		for(int i = 0; i <array.length; ){
+			jpanel[i] = new JPanel();
+			//int sizeVar = (i+1)*50;
+			JPanel test = jpanel[i];
+			int val1 = Integer.parseInt(array[i+1]);
+			int val2 = Integer.parseInt(array[i+2]);
+			test.setPreferredSize(new Dimension (val1,val2));
+			test.setBackground(Color.WHITE);
+			System.out.println("Clicked on the blank2");
+			display.add(test);
+			i += 3;
+		}
+		display.validate();
+		display.repaint();
+	}
+}//117
