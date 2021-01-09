@@ -46,8 +46,10 @@ public class MainView implements ActionListener{
 		blank1.setPreferredSize(new Dimension(60,60));
 		blank2.setPreferredSize(new Dimension(60,60));
 		display.add(mailView.mail);
-		//display.add(siteView.site);
+		display.add(siteView.site);
 		display.add(chatView.chat);
+
+		blank.addActionListener(this);
 
 		main.add(home);
 		main.add(mail);
@@ -61,57 +63,18 @@ public class MainView implements ActionListener{
 		main.add(searchBtn);
 		main.add(display);
 		main.setVisible(false);
-
-		blank.addActionListener(this);
-
-		blank2.addActionListener(
-			new ActionListener(){
-				public void actionPerformed(ActionEvent e){
-					display.setLayout(new FlowLayout());
-					panelBuilder(itemsArray);
-				}
-			}
-		);
-	};
+	}
 
 	public void Home(){
 		mailView.mail.setVisible(false);
-		siteView.site.setVisible(false);
+		siteView.site.setVisible(true);
 		chatView.chat.setVisible(false);
 	}
 
 	public void actionPerformed(ActionEvent e){
-		JPanel newPanel = siteView.site;
-		JPanel npan = new JPanel();
-		newPanel.setLayout(new FlowLayout());
-		System.out.println("Clicked on the blank");
-		siteView.changeText("This si a new text to see what happens");
-		npan.setPreferredSize(new Dimension(80,60));
-		npan.setBackground(Color.WHITE);
-		newPanel.add(npan);
-		display.add(newPanel);
-		display.revalidate();
+		mailView.mail.setVisible(false);
+		siteView.site.setVisible(true);
+		chatView.chat.setVisible(false);
+		siteView.panelBuilder(itemsArray);
 	}
-
-	public void panelBuilder(String [] array){
-		display.removeAll();
-		//int num = x;
-		int start = array.length;
-		JPanel jpanel[] = new JPanel[start];
-
-		for(int i = 0; i <array.length; ){
-			jpanel[i] = new JPanel();
-			//int sizeVar = (i+1)*50;
-			JPanel test = jpanel[i];
-			int val1 = Integer.parseInt(array[i+1]);
-			int val2 = Integer.parseInt(array[i+2]);
-			test.setPreferredSize(new Dimension (val1,val2));
-			test.setBackground(Color.WHITE);
-			System.out.println("Clicked on the blank2");
-			display.add(test);
-			i += 3;
-		}
-		display.validate();
-		display.repaint();
-	}
-}//117
+}//85
