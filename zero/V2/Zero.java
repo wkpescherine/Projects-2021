@@ -65,16 +65,6 @@ public class Zero implements ActionListener{
 			}
 		);
 
-		mainView.chat.addActionListener(
-			new ActionListener(){
-				public void actionPerformed(ActionEvent e){
-					mainView.chatView.chat.setVisible(true);
-					mainView.siteView.site.setVisible(false);
-					mainView.mailView.mail.setVisible(false);
-				}
-			}
-		);
-
 		mainView.searchBtn.addActionListener(
 			new ActionListener(){
 				public void actionPerformed(ActionEvent e){
@@ -121,6 +111,16 @@ public class Zero implements ActionListener{
 			}
 		);
 
+		mainView.chat.addActionListener(
+			new ActionListener(){
+				public void actionPerformed(ActionEvent e){
+					mainView.chatView.chat.setVisible(true);
+					mainView.siteView.site.setVisible(false);
+					mainView.mailView.mail.setVisible(false);
+				}
+			}
+		);
+
 		window.add(startView.start);
 		window.add(mainView.main);
 		window.add(accountView.create);
@@ -148,4 +148,10 @@ public class Zero implements ActionListener{
 		startView.start.setVisible(true);
 	}
 
-}//133
+	public void update(){
+		System.out.println("This is where we will have system updates");
+		System.out.println("Eventually will add in the logic to update");
+		System.out.println("At moment this is just placeholder");
+	}
+
+}//151
