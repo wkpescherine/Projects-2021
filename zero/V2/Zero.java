@@ -8,6 +8,7 @@ public class Zero implements ActionListener{
 	StartView startView = new StartView();
 	MainView mainView = new MainView();
 	CreateAccountView accountView = new CreateAccountView();
+	Config config = new Config();
 
     JFrame window = new JFrame("Zero v2");
 
@@ -30,6 +31,15 @@ public class Zero implements ActionListener{
 				}
 			}
 		);
+
+		startView.updateSys.addActionListener(
+			new ActionListener(){
+				public void actionPerformed(ActionEvent e){
+					update();
+				}
+			}
+		);
+
 		startView.logIn.addActionListener(this);
 
 		accountView.back.addActionListener(
@@ -154,4 +164,4 @@ public class Zero implements ActionListener{
 		System.out.println("At moment this is just placeholder");
 	}
 
-}//151
+}//167

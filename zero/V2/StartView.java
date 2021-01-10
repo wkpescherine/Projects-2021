@@ -36,4 +36,4 @@ public class StartView{
 		start.add(updateSys);
 		start.setVisible(true);
     }
-}//36
+}//39
