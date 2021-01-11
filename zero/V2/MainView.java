@@ -12,6 +12,8 @@ public class MainView implements ActionListener{
 	MailView mailView = new MailView();
 	ChatView chatView = new ChatView();
 	Site siteView = new Site();
+	Bank bankView = new Bank();
+	Settings settingView = new Settings();
 	String itemsArray [] ={"item1","310","240", "item2","310","240","item3","630","200"};
 
 	JPanel main = new JPanel();
@@ -19,9 +21,9 @@ public class MainView implements ActionListener{
 	JButton close = new JButton("Exit");
 	JButton mail = new JButton("Mail");
 	JButton home  = new JButton("Home");
-	JButton blank  = new JButton("");
-	JButton blank1  = new JButton("");
-	JButton blank2  = new JButton("");
+	JButton bank  = new JButton("Bank");
+	JButton retail  = new JButton("Retail");
+	JButton settings  = new JButton("Settings");
 	JButton chat  = new JButton("Chat");
 	JButton about2 = new JButton("About");
 	JButton searchBtn = new JButton("search");
@@ -42,23 +44,37 @@ public class MainView implements ActionListener{
 		searchBtn.setFont(new Font("Serif", Font.PLAIN, 12));
 		home.setPreferredSize(new Dimension(60,60));
 		chat.setPreferredSize(new Dimension(60,60));
-		blank.setPreferredSize(new Dimension(60,60));
-		blank1.setPreferredSize(new Dimension(60,60));
-		blank2.setPreferredSize(new Dimension(60,60));
+		bank.setPreferredSize(new Dimension(60,60));
+		settings.setPreferredSize(new Dimension(60,60));
+		retail.setPreferredSize(new Dimension(60,60));
 		display.add(mailView.mail);
 		display.add(siteView.site);
 		display.add(chatView.chat);
+		display.add(bankView.bank);
+		display.add(settingView.setting);
 
-		blank.addActionListener(this);
+		bank.addActionListener(this);
+
+		settings.addActionListener(
+			new ActionListener(){
+				public void actionPerformed(ActionEvent e){
+					mailView.mail.setVisible(false);
+					siteView.site.setVisible(false);
+					chatView.chat.setVisible(false);
+					bankView.bank.setVisible(false);
+					settingView.setting.setVisible(true);
+				}
+			}
+		);
 
 		main.add(home);
 		main.add(mail);
 		main.add(chat);
+		main.add(bank);
+		main.add(retail);
 		main.add(about2);
+		main.add(settings);
 		main.add(close);
-		main.add(blank);
-		main.add(blank1);
-		main.add(blank2);
 		main.add(search);
 		main.add(searchBtn);
 		main.add(display);
@@ -73,8 +89,10 @@ public class MainView implements ActionListener{
 
 	public void actionPerformed(ActionEvent e){
 		mailView.mail.setVisible(false);
-		siteView.site.setVisible(true);
+		siteView.site.setVisible(false);
 		chatView.chat.setVisible(false);
-		siteView.panelBuilder(itemsArray);
+		bankView.bank.setVisible(true);
+		settingView.setting.setVisible(false);
+		//siteView.panelBuilder(itemsArray);
 	}
-}//85
+}//80
