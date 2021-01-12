@@ -95,4 +95,4 @@ public class MainView implements ActionListener{
 		settingView.setting.setVisible(false);
 		//siteView.panelBuilder(itemsArray);
 	}
-}//80
+}//98
