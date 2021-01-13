@@ -40,6 +40,7 @@ public class MainView implements ActionListener{
 		mail.setFont(new Font("Serif", Font.PLAIN, 12));
 		about2.setPreferredSize(new Dimension(80,60));
 		about2.setFont(new Font("Serif", Font.PLAIN,12));
+		search.setHorizontalAlignment(SwingConstants.CENTER);
 		searchBtn.setPreferredSize(new Dimension(90,20));
 		searchBtn.setFont(new Font("Serif", Font.PLAIN, 12));
 		home.setPreferredSize(new Dimension(60,60));
@@ -63,6 +64,19 @@ public class MainView implements ActionListener{
 					chatView.chat.setVisible(false);
 					bankView.bank.setVisible(false);
 					settingView.setting.setVisible(true);
+				}
+			}
+		);
+
+		searchBtn.addActionListener(
+			new ActionListener(){
+				public void actionPerformed(ActionEvent e){
+					mailView.mail.setVisible(false);
+					siteView.site.setVisible(true);
+					chatView.chat.setVisible(false);
+					bankView.bank.setVisible(false);
+					settingView.setting.setVisible(false);
+					siteView.panelBuilder(itemsArray);
 				}
 			}
 		);
@@ -93,6 +107,5 @@ public class MainView implements ActionListener{
 		chatView.chat.setVisible(false);
 		bankView.bank.setVisible(true);
 		settingView.setting.setVisible(false);
-		//siteView.panelBuilder(itemsArray);
 	}
-}//98
+}//111

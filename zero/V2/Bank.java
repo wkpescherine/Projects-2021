@@ -11,4 +11,4 @@ public class Bank{
         bank.add(bankText);
         bank.setVisible(false);
     }
-}//0
+}//14
