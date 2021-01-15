@@ -13,6 +13,7 @@ public class MainView implements ActionListener{
 	ChatView chatView = new ChatView();
 	Site siteView = new Site();
 	Bank bankView = new Bank();
+	Retail retailView = new Retail();
 	Settings settingView = new Settings();
 	About2 about2View = new About2();
 
@@ -55,10 +56,25 @@ public class MainView implements ActionListener{
 		display.add(siteView.site);
 		display.add(chatView.chat);
 		display.add(bankView.bank);
+		display.add(retailView.retail);
 		display.add(about2View.about2);
 		display.add(settingView.setting);
 
 		bank.addActionListener(this);
+
+		retail.addActionListener(
+			new ActionListener(){
+				public void actionPerformed(ActionEvent e){
+					mailView.mail.setVisible(false);
+					siteView.site.setVisible(false);
+					chatView.chat.setVisible(false);
+					bankView.bank.setVisible(false);
+					retailView.retail.setVisible(true);
+					about2View.about2.setVisible(false);
+					settingView.setting.setVisible(false);
+				}
+			}
+		);
 
 		settings.addActionListener(
 			new ActionListener(){
@@ -67,6 +83,7 @@ public class MainView implements ActionListener{
 					siteView.site.setVisible(false);
 					chatView.chat.setVisible(false);
 					bankView.bank.setVisible(false);
+					retailView.retail.setVisible(false);
 					about2View.about2.setVisible(false);
 					settingView.setting.setVisible(true);
 				}
@@ -81,6 +98,7 @@ public class MainView implements ActionListener{
 					chatView.chat.setVisible(false);
 					bankView.bank.setVisible(false);
 					about2View.about2.setVisible(true);
+					retailView.retail.setVisible(false);
 					settingView.setting.setVisible(false);
 				}
 			}
@@ -94,6 +112,7 @@ public class MainView implements ActionListener{
 					chatView.chat.setVisible(false);
 					bankView.bank.setVisible(false);
 					about2View.about2.setVisible(false);
+					retailView.retail.setVisible(false);
 					settingView.setting.setVisible(false);
 					String zsite = search.getText();
 					if(zsite.equals("test1.zero")){
@@ -124,6 +143,7 @@ public class MainView implements ActionListener{
 		mailView.mail.setVisible(false);
 		siteView.site.setVisible(false);
 		chatView.chat.setVisible(false);
+		retailView.retail.setVisible(false);
 		about2View.about2.setVisible(false);
 	}
 
@@ -133,6 +153,7 @@ public class MainView implements ActionListener{
 		chatView.chat.setVisible(false);
 		about2View.about2.setVisible(false);
 		bankView.bank.setVisible(true);
+		retailView.retail.setVisible(false);
 		settingView.setting.setVisible(false);
 	}
 }//138
