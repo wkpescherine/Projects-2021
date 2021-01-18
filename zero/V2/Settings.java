@@ -4,11 +4,19 @@ import javax.swing.*;
 public class Settings{
     JPanel setting = new JPanel();
     JLabel settingText = new JLabel("In setting section");
+    JLabel tempIdNum = new JLabel("none1");
+    Config config;
 
     Settings(){
         setting.setLayout(new FlowLayout());
         setting.setPreferredSize(new Dimension (840,520));
         setting.add(settingText);
+        setting.add(tempIdNum);
         setting.setVisible(false);
     }
-}//0
+
+    void passConfig(Config config, int a){
+        this.config = config;
+		System.out.println(config.tempId+" from the settings view " + a);
+    }
+}//14

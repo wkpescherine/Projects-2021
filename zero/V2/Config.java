@@ -28,6 +28,6 @@ public class Config{
             String randomVal = Character.toString(val.charAt(rand.nextInt(num)));
             createId += randomVal;
         }
-        System.out.println(createId);
+        tempId = createId;
     }
 }//33
