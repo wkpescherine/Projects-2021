@@ -1,12 +1,6 @@
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
-//import javax.tools.*;
-//import java.io.File;
-//import java.io.FileWriter;
-//import java.io.BufferedWriter;
-//import java.io.PrintWriter;
-//import java.io.IOException;
 
 public class MainView implements ActionListener{
 	MailView mailView = new MailView();
@@ -166,4 +160,4 @@ public class MainView implements ActionListener{
 		retailView.retail.setVisible(false);
 		settingView.setting.setVisible(false);
 	}
-}//169
+}//163

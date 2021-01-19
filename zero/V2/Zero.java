@@ -9,16 +9,10 @@ public class Zero implements ActionListener{
 	MainView mainView = new MainView();
 	CreateAccountView accountView = new CreateAccountView();
 	Config config = new Config();
-	Settings SettingsViewConfig = new Settings();
 
     JFrame window = new JFrame("Zero v2");
 
     Zero(){
-		//System.out.println(config.tempId);
-		//config.getTempId();
-		//config.tempId ="This string now";
-		SettingsViewConfig.passConfig(config, 1);
-
 		startView.createAcct.addActionListener(
 			new ActionListener(){
 				public void actionPerformed(ActionEvent e){
@@ -169,5 +163,4 @@ public class Zero implements ActionListener{
 		System.out.println("Eventually will add in the logic to update");
 		System.out.println("At moment this is just placeholder");
 	}
-
-}//167
+}//166
