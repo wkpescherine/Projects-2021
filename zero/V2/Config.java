@@ -1,12 +1,12 @@
 import java.util.Date;
 import java.text.SimpleDateFormat;
 import java.util.Random;
-//import javax.tools.*;
-//import java.io.File;
-//import java.io.FileWriter;
-//import java.io.BufferedWriter;
-//import java.io.PrintWriter;
-//import java.io.IOException;
+import javax.tools.*;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.BufferedWriter;
+import java.io.PrintWriter;
+import java.io.IOException;
 
 public class Config{
     ConfigFile configFile = new ConfigFile();
@@ -14,6 +14,16 @@ public class Config{
     String date = "None"; 
     double version = 0.0;
     String tempId = "none";
+
+    String [] assets ={
+        "public class ConfigFile{",
+        "\tString date = ",
+        "\tdouble version = ",
+        "\tString tempId = ",
+		"\tint width = 640",
+		"\tint height = 480", 
+		"}"
+	};
 
     Config(){
         getDate();
@@ -26,6 +36,7 @@ public class Config{
         SimpleDateFormat formatter = new SimpleDateFormat("MM/dd/yyyy");
         Date newDate = new Date();
         date = formatter.format(newDate);
+        assets[1] = assets[1]+ date +"\";";
         System.out.println(date);
     }
 
@@ -38,16 +49,30 @@ public class Config{
             String randomVal = Character.toString(val.charAt(rand.nextInt(num)));
             createId += randomVal;
         }
+        assets[3] = assets[3]+ createId +"\";";
         tempId = createId;
     }
 
     public void updateVersion(){
         if(configFile.version < version){
             version = 2.0;
+            assets[2] = assets[2]+ date +"\";";
         }
     }
 
     public void updateConfigFile(){
-        
+		File f = new File("ConfigFile.java");
+        try{
+            FileWriter myWriter = new FileWriter("ConfigFile.java", false);
+            BufferedWriter bWriter = new BufferedWriter(myWriter);
+            PrintWriter pWriter = new PrintWriter(bWriter);
+            for(int a = 0; a< assets.length; a++){
+                pWriter.write(assets[a]+"\r");    
+            }
+            pWriter.close();
+            System.out.println("File updated");
+        }catch(IOException e){
+            e.printStackTrace();  
+		}
     }
 }//53
