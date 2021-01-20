@@ -12,16 +12,16 @@ public class Config{
     ConfigFile configFile = new ConfigFile();
 
     String date = "None"; 
-    double version = 0.0;
+    String version = "2.0";
     String tempId = "none";
 
     String [] assets ={
         "public class ConfigFile{",
-        "\tString date = ",
-        "\tdouble version = ",
-        "\tString tempId = ",
-		"\tint width = 640",
-		"\tint height = 480", 
+        "\tString date = \"",
+        "\tString version = \"",
+        "\tString tempId = \"",
+		"\tint width = 640;",
+		"\tint height = 480;", 
 		"}"
 	};
 
@@ -54,10 +54,10 @@ public class Config{
     }
 
     public void updateVersion(){
-        if(configFile.version < version){
-            version = 2.0;
-            assets[2] = assets[2]+ date +"\";";
+        if(configFile.version==version){
+            version = "2.0";
         }
+        assets[2] = assets[2]+ version +"\";";
     }
 
     public void updateConfigFile(){
@@ -75,4 +75,4 @@ public class Config{
             e.printStackTrace();  
 		}
     }
-}//53
+}//78
