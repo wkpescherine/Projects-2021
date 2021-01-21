@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Emulator"
+    android:orientation="vertical"
+    android:background="#000">
+
+
+    <TextView
+        android:paddingTop="60dp"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:text="x + y = z"
+        android:textColor="#fff"
+        android:textAlignment="center"
+        />
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="90dp"
+            android:layout_height="wrap_content"
+            android:text="Value of x :"
+            android:id="@+id/valueX"
+            android:textColor="#fff"
+            />
+
+        <TextView
+            android:layout_width="270dp"
+            android:layout_height="wrap_content"
+            android:text="X"
+            android:layout_toRightOf="@id/valueX"
+            android:id="@+id/Xvalue"
+            android:background="#fff"
+            android:onClick="FocusX"
+            />
+
+        <TextView
+            android:layout_width="90dp"
+            android:layout_height="wrap_content"
+            android:text="Value of y :"
+            android:layout_below="@+id/valueX"
+            android:id="@+id/valueY"
+            android:textColor="#fff"
+            />
+
+        <TextView
+            android:layout_width="270dp"
+            android:layout_height="wrap_content"
+            android:text="Y"
+            android:layout_below="@id/Xvalue"
+            android:layout_toRightOf="@id/valueY"
+            android:id="@+id/Yvalue"
+            android:background="#fff"
+            android:onClick="FocusY"
+            />
+
+        <TextView
+            android:layout_width="90dp"
+            android:layout_height="wrap_content"
+            android:text="Value of z :"
+            android:id="@+id/valueZ"
+            android:layout_below="@+id/valueY"
+            android:textColor="#fff"
+            />
+        <TextView
+            android:layout_width="270dp"
+            android:layout_height="wrap_content"
+            android:text="Z"
+            android:layout_below="@id/Yvalue"
+            android:layout_toRightOf="@id/valueZ"
+            android:id="@+id/Zvalue"
+            android:background="#fff"
+            android:onClick="FocusZ"
+            />
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="160dp"
+        android:textColor="#fff"
+        android:text="The answer is : "
+        android:gravity="center"
+        android:id="@+id/Answer"
+        android:textAlignment="center"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_height="72dp"
+            android:layout_width="72dp"
+            android:text="1"
+            android:textColor="#fff"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:id="@+id/Num1"
+            android:onClick="TapNum1"
+            />
+        <TextView
+            android:layout_height="72dp"
+            android:layout_width="72dp"
+            android:text="2"
+            android:textColor="#fff"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:id="@+id/Num2"
+            android:onClick="TapNum2"
+            />
+        <TextView
+            android:layout_height="72dp"
+            android:layout_width="72dp"
+            android:text="3"
+            android:textColor="#fff"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:id="@+id/Num3"
+            android:onClick="TapNum3"
+            />
+        <TextView
+            android:layout_height="72dp"
+            android:layout_width="72dp"
+            android:text="4"
+            android:textColor="#fff"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:id="@+id/Num4"
+            android:onClick="TapNum4"
+            />
+        <TextView
+            android:layout_height="72dp"
+            android:layout_width="72dp"
+            android:text="5"
+            android:textColor="#fff"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:id="@+id/Num5"
+            android:onClick="TapNum5"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_height="72dp"
+            android:layout_width="72dp"
+            android:text="6"
+            android:textColor="#fff"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:id="@+id/Num6"
+            android:onClick="TapNum6"
+            />
+        <TextView
+            android:layout_height="72dp"
+            android:layout_width="72dp"
+            android:text="7"
+            android:textColor="#fff"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:id="@+id/Num7"
+            android:onClick="TapNum7"
+            />
+        <TextView
+            android:layout_height="72dp"
+            android:layout_width="72dp"
+            android:text="8"
+            android:textColor="#fff"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:id="@+id/Num8"
+            android:onClick="TapNum8"
+            />
+        <TextView
+            android:layout_height="72dp"
+            android:layout_width="72dp"
+            android:text="9"
+            android:textColor="#fff"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:id="@+id/Num9"
+            android:onClick="TapNum9"
+            />
+        <TextView
+            android:layout_height="72dp"
+            android:layout_width="72dp"
+            android:text="0"
+            android:textColor="#fff"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:id="@+id/Num0"
+            android:onClick="TapNum0"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_height="36dp"
+            android:layout_width="120dp"
+            android:text="Reset X"
+            android:textColor="#fff"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:id="@+id/ResX"
+            android:onClick="TapResX"
+            />
+        <TextView
+            android:layout_height="36dp"
+            android:layout_width="120dp"
+            android:text="Reset Y"
+            android:textColor="#fff"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:id="@+id/ResY"
+            android:onClick="TapResY"
+            />
+        <TextView
+            android:layout_height="36dp"
+            android:layout_width="120dp"
+            android:text="Reset Z"
+            android:textColor="#fff"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:id="@+id/ResZ"
+            android:onClick="TapResZ"
+            />
+    </LinearLayout>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Solve"
+        android:textAlignment="center"
+        android:onClick="clickToSolve"/>
+
+</LinearLayout>
