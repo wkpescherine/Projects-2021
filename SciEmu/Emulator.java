@@ -15,6 +15,7 @@ public class Emulator extends AppCompatActivity {
     String temopValue = "";
     String xString = "";
     String yString = "";
+    String zString = "";
     int x = 0;
     int y = 0;
     int z = 0;
@@ -32,8 +33,19 @@ public class Emulator extends AppCompatActivity {
     public void num2(View v){ setValues(2); }
     public void num3(View v){ setValues(3); }
     public void num4(View v){ setValues(4); }
+    public void num5(View v){ setValues(5); }
+    public void num6(View v){ setValues(6); }
+    public void num7(View v){ setValues(7); }
+    public void num8(View v){ setValues(8); }
+    public void num9(View v){ setValues(9); }
 
     public void additionText(View v){
+        x = 0;
+        y = 0;
+        z = 0;
+        xString = "";
+        yString = "";
+        zString = "";
         TextView textX = findViewById(R.id.Xvalue);
         TextView textS = findViewById(R.id.sign);
         TextView textY = findViewById(R.id.Yvalue);
@@ -83,4 +95,4 @@ public class Emulator extends AppCompatActivity {
 
     public void clickToSolve(View v){
     }
-}
+}/* 98 */
