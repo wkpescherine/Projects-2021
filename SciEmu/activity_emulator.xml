@@ -66,7 +66,7 @@
             android:layout_height="wrap_content"
             android:text="Basic"
             android:textColor="#fff"
-            android:textSize="32dp"/>
+            android:textSize="24dp"/>
     </LinearLayout>
 
     <LinearLayout
@@ -77,8 +77,15 @@
             android:layout_height="wrap_content"
             android:text="Addition"
             android:textColor="#fff"
-            android:textSize="32dp"
+            android:textSize="24dp"
             android:onClick="additionText"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Subtraction"
+            android:textColor="#fff"
+            android:textSize="24dp"
+            android:onClick="subtractionText"/>
     </LinearLayout>
 
     <LinearLayout
@@ -136,4 +143,4 @@
         android:textAlignment="center"
         android:onClick="clickToSolve"/>
 
-</LinearLayout>
+</LinearLayout><!-- 146 -->

@@ -38,6 +38,7 @@ public class Emulator extends AppCompatActivity {
     public void num7(View v){ setValues(7); }
     public void num8(View v){ setValues(8); }
     public void num9(View v){ setValues(9); }
+    public void num0(View v){ setValues(0); }
 
     public void additionText(View v){
         x = 0;
@@ -53,6 +54,25 @@ public class Emulator extends AppCompatActivity {
         TextView textZ = findViewById(R.id.Zvalue);
         textX.setText("x");
         textS.setText("+");
+        textY.setText("y");
+        textE.setText("=");
+        textZ.setText("z");
+    }
+
+    public void subtractionText(View v){
+        x = 0;
+        y = 0;
+        z = 0;
+        xString = "";
+        yString = "";
+        zString = "";
+        TextView textX = findViewById(R.id.Xvalue);
+        TextView textS = findViewById(R.id.sign);
+        TextView textY = findViewById(R.id.Yvalue);
+        TextView textE = findViewById(R.id.equals);
+        TextView textZ = findViewById(R.id.Zvalue);
+        textX.setText("x");
+        textS.setText("-");
         textY.setText("y");
         textE.setText("=");
         textZ.setText("z");
@@ -95,4 +115,4 @@ public class Emulator extends AppCompatActivity {
 
     public void clickToSolve(View v){
     }
-}/* 98 */
+}/* 118 */
