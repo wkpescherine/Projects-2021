@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.WindowManager;
 import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 
@@ -41,6 +42,13 @@ public class Emulator extends AppCompatActivity {
     public void num9(View v){ setValues(9); }
     public void num0(View v){ setValues(0); }
 
+    public void displayBasic(View v){
+        displaySubs(1);
+    }
+    public void displayAlgebra(View v){
+        displaySubs(2);
+    }
+
     public void additionText(View v){
         x = 0;
         y = 0;
@@ -62,7 +70,6 @@ public class Emulator extends AppCompatActivity {
         textE.setText("=");
         textZ.setText("z");
     }
-
     public void subtractionText(View v){
         x = 0;
         y = 0;
@@ -80,6 +87,69 @@ public class Emulator extends AppCompatActivity {
         textMessageSub.setText("subtraction selected");
         textX.setText("x");
         textS.setText("-");
+        textY.setText("y");
+        textE.setText("=");
+        textZ.setText("z");
+    }
+    public void divideText(View v){
+        x = 0;
+        y = 0;
+        z = 0;
+        xString = "";
+        yString = "";
+        zString = "";
+        subCategory = "division";
+        TextView textX = findViewById(R.id.Xvalue);
+        TextView textS = findViewById(R.id.sign);
+        TextView textY = findViewById(R.id.Yvalue);
+        TextView textE = findViewById(R.id.equals);
+        TextView textZ = findViewById(R.id.Zvalue);
+        TextView textMessageSub = findViewById(R.id.message);
+        textMessageSub.setText("division selected");
+        textX.setText("x");
+        textS.setText("/");
+        textY.setText("y");
+        textE.setText("=");
+        textZ.setText("z");
+    }
+    public void multiplyText(View v){
+        x = 0;
+        y = 0;
+        z = 0;
+        xString = "";
+        yString = "";
+        zString = "";
+        subCategory = "multiplication";
+        TextView textX = findViewById(R.id.Xvalue);
+        TextView textS = findViewById(R.id.sign);
+        TextView textY = findViewById(R.id.Yvalue);
+        TextView textE = findViewById(R.id.equals);
+        TextView textZ = findViewById(R.id.Zvalue);
+        TextView textMessageSub = findViewById(R.id.message);
+        textMessageSub.setText("multiplcation selected");
+        textX.setText("x");
+        textS.setText("*");
+        textY.setText("y");
+        textE.setText("=");
+        textZ.setText("z");
+    }
+    public void Area2D(View v){
+        x = 0;
+        y = 0;
+        z = 0;
+        xString = "";
+        yString = "";
+        zString = "";
+        subCategory = "Area2D";
+        TextView textX = findViewById(R.id.Xvalue);
+        TextView textS = findViewById(R.id.sign);
+        TextView textY = findViewById(R.id.Yvalue);
+        TextView textE = findViewById(R.id.equals);
+        TextView textZ = findViewById(R.id.Zvalue);
+        TextView textMessageSub = findViewById(R.id.message);
+        textMessageSub.setText("2D Area selected");
+        textX.setText("x");
+        textS.setText("*");
         textY.setText("y");
         textE.setText("=");
         textZ.setText("z");
@@ -141,7 +211,40 @@ public class Emulator extends AppCompatActivity {
             TextView valueZ = findViewById(R.id.Zvalue);
             valueZ.setText(zString);
         }
+        if(subCategory.equals("division")){
+            z=x/y;
+            zString = z+"";
+            TextView valueZ = findViewById(R.id.Zvalue);
+            valueZ.setText(zString);
+        }
+        if(subCategory.equals("multiplication")){
+            z=x*y;
+            zString = z+"";
+            TextView valueZ = findViewById(R.id.Zvalue);
+            valueZ.setText(zString);
+        }
+        if(subCategory.equals("Area2D")){
+            z=x*y;
+            zString = z+"";
+            TextView valueZ = findViewById(R.id.Zvalue);
+            valueZ.setText(zString);
+        }
         TextView textMessageSolve = findViewById(R.id.message);
         textMessageSolve.setText("Solved");
     }
-}/* 118 */
+
+    public void displaySubs(int num){
+        LinearLayout layout1 = findViewById(R.id.basicSub);
+        LinearLayout layout2 = findViewById(R.id.algebraSub);
+        layout1.setVisibility(View.GONE);
+        layout2.setVisibility(View.GONE);
+        switch(num){
+            case 1:
+                layout1.setVisibility(View.VISIBLE);
+                break;
+            case 2:
+                layout2.setVisibility(View.VISIBLE);
+                break;
+        };
+    }
+}/* 250 */

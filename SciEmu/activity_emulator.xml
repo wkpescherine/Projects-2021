@@ -72,14 +72,26 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
             android:text="Basic"
             android:textColor="#fff"
-            android:textSize="24dp"/>
+            android:textSize="24dp"
+            android:onClick="displayBasic"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:text="Algebra"
+            android:textColor="#fff"
+            android:textSize="24dp"
+            android:onClick="displayAlgebra"/>
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:id="@+id/basicSub"
+        android:visibility="gone">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -96,6 +108,37 @@
             android:textColor="#fff"
             android:textSize="24dp"
             android:onClick="subtractionText"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:text="Division"
+            android:textColor="#fff"
+            android:textSize="24dp"
+            android:onClick="divideText"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:text="Multiplication"
+            android:textColor="#fff"
+            android:textSize="24dp"
+            android:onClick="multiplyText"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/algebraSub"
+        android:visibility="gone">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:text="2D Area"
+            android:textColor="#fff"
+            android:textSize="24dp"
+            android:onClick="Area2D"/>
     </LinearLayout>
 
     <LinearLayout
@@ -225,4 +268,4 @@
         android:textAlignment="center"
         android:onClick="clickToSolve"/>
 
-</LinearLayout><!-- 218 -->
+</LinearLayout><!-- 271 -->
