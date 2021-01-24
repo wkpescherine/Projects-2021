@@ -9,15 +9,14 @@
     android:orientation="vertical"
     android:background="#000">
 
-    <LinearLayout
-        android:textAlignment="center"
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <TextView
             android:id="@+id/Xvalue"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center"
+            android:layout_toLeftOf="@id/sign"
             android:text=""
             android:textSize="32dp"
             android:textColor="#fff"
@@ -26,7 +25,7 @@
             android:id="@+id/sign"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center"
+            android:layout_toLeftOf="@id/Yvalue"
             android:text=""
             android:textSize="32dp"
             android:textColor="#fff"/>
@@ -34,8 +33,8 @@
             android:id="@+id/Yvalue"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center"
             android:text=""
+            android:layout_centerInParent="true"
             android:textSize="32dp"
             android:textColor="#fff"
             android:onClick="focusY"/>
@@ -43,20 +42,29 @@
             android:id="@+id/equals"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center"
             android:text=""
+            android:layout_toRightOf="@id/Yvalue"
             android:textSize="32dp"
             android:textColor="#fff"/>
         <TextView
             android:id="@+id/Zvalue"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center"
             android:text=""
+            android:layout_toRightOf="@id/equals"
             android:textSize="32dp"
             android:textColor="#fff"
             android:onClick="focusZ"/>
-    </LinearLayout>
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/message"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textSize="10dp"
+        android:textColor="#fff"
+        android:textAlignment="center"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -75,6 +83,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
             android:text="Addition"
             android:textColor="#fff"
             android:textSize="24dp"
@@ -82,6 +91,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
             android:text="Subtraction"
             android:textColor="#fff"
             android:textSize="24dp"

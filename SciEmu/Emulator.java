@@ -12,6 +12,7 @@ public class Emulator extends AppCompatActivity {
     FormulaBasic basicFormula = new FormulaBasic();
 
     String focus = "";
+    String subCategory = "";
     String temopValue = "";
     String xString = "";
     String yString = "";
@@ -47,11 +48,14 @@ public class Emulator extends AppCompatActivity {
         xString = "";
         yString = "";
         zString = "";
+        subCategory = "addition";
         TextView textX = findViewById(R.id.Xvalue);
         TextView textS = findViewById(R.id.sign);
         TextView textY = findViewById(R.id.Yvalue);
         TextView textE = findViewById(R.id.equals);
         TextView textZ = findViewById(R.id.Zvalue);
+        TextView textMessageAdd = findViewById(R.id.message);
+        textMessageAdd.setText("addition selected");
         textX.setText("x");
         textS.setText("+");
         textY.setText("y");
@@ -66,11 +70,14 @@ public class Emulator extends AppCompatActivity {
         xString = "";
         yString = "";
         zString = "";
+        subCategory = "subtraction";
         TextView textX = findViewById(R.id.Xvalue);
         TextView textS = findViewById(R.id.sign);
         TextView textY = findViewById(R.id.Yvalue);
         TextView textE = findViewById(R.id.equals);
         TextView textZ = findViewById(R.id.Zvalue);
+        TextView textMessageSub = findViewById(R.id.message);
+        textMessageSub.setText("subtraction selected");
         textX.setText("x");
         textS.setText("-");
         textY.setText("y");
@@ -78,9 +85,17 @@ public class Emulator extends AppCompatActivity {
         textZ.setText("z");
     }
 
-    public void focusX(View v){focus = "X";}
-    public void focusY(View v){focus = "Y";}
-    public void focusZ(View v){focus = "Z";}
+    public void focusX(View v){
+        focus = "X";
+        TextView textMessageX = findViewById(R.id.message);
+        textMessageX.setText("focus on x selected");
+    }
+    public void focusY(View v){
+        focus = "Y";
+        TextView textMessageY = findViewById(R.id.message);
+        textMessageY.setText("Focus on y selected");
+    }
+    //public void focusZ(View v){focus = "Z";}
 
     public void setValues(int val){
         if(focus.equals("X") && x != 0){
@@ -114,5 +129,19 @@ public class Emulator extends AppCompatActivity {
     }
 
     public void clickToSolve(View v){
+        if(subCategory.equals("addition")){
+            z=x+y;
+            zString = z+"";
+            TextView valueZ = findViewById(R.id.Zvalue);
+            valueZ.setText(zString);
+        }
+        if(subCategory.equals("subtraction")){
+            z=x-y;
+            zString = z+"";
+            TextView valueZ = findViewById(R.id.Zvalue);
+            valueZ.setText(zString);
+        }
+        TextView textMessageSolve = findViewById(R.id.message);
+        textMessageSolve.setText("Solved");
     }
 }/* 118 */
