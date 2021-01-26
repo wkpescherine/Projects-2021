@@ -200,7 +200,7 @@ public class Emulator extends AppCompatActivity {
         TextView textS1 = findViewById(R.id.sign1);
         TextView textB = findViewById(R.id.Bvalue);
         TextView textS2 = findViewById(R.id.sign2);
-        TextView textC = findViewById(R.id.sign2);
+        TextView textC = findViewById(R.id.Cvalue);
         TextView textE1 = findViewById(R.id.equals1);
         TextView texttot = findViewById(R.id.total);
         TextView textMessageSub = findViewById(R.id.message);
@@ -229,17 +229,17 @@ public class Emulator extends AppCompatActivity {
     }
     public void focusA(View v){
         focus = "A";
-        TextView textMessageA = findViewById(R.id.Avalue);
+        TextView textMessageA = findViewById(R.id.message);
         textMessageA.setText("focus on a selected");
     }
     public void focusB(View v){
         focus = "B";
-        TextView textMessageA = findViewById(R.id.Bvalue);
+        TextView textMessageA = findViewById(R.id.message);
         textMessageA.setText("focus on b selected");
     }
     public void focusC(View v){
         focus = "C";
-        TextView textMessageA = findViewById(R.id.Cvalue);
+        TextView textMessageA = findViewById(R.id.message);
         textMessageA.setText("focus on c selected");
     }
 
@@ -316,6 +316,7 @@ public class Emulator extends AppCompatActivity {
     }
 
     public void clickToSolve(View v){
+        TextView textMessageSolve = findViewById(R.id.message);
         if(subCategory.equals("addition")){
             z=x+y;
             zString = z+"";
@@ -346,7 +347,7 @@ public class Emulator extends AppCompatActivity {
             TextView valueZ = findViewById(R.id.Zvalue);
             valueZ.setText(zString);
         }
-        if(subCategory.equals("Area2D")){
+        if(subCategory.equals("Area3D")){
             total=a*b*c;
             totalString = total+"";
             TextView valueTotal = findViewById(R.id.total);
@@ -357,7 +358,6 @@ public class Emulator extends AppCompatActivity {
         //This works for calling the formulas from the formula class/instance
         //z = basicFormula.addition(2,4);
         //Above will be used eventually to replace current  forumlas.
-        textMessageSolve.setText(z+"");
     }
 
     public void displaySubs(int num){
@@ -374,4 +374,4 @@ public class Emulator extends AppCompatActivity {
                 break;
         };
     }
-}/* 291 */
+}/* 377 */
