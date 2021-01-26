@@ -3,9 +3,11 @@ package com.example.sciemu;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.text.Layout;
 import android.view.WindowManager;
 import android.view.View;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 
@@ -50,6 +52,8 @@ public class Emulator extends AppCompatActivity {
     }
 
     public void additionText(View v){
+        RelativeLayout main = findViewById(R.id.main);
+        main.setVisibility(View.VISIBLE);
         x = 0;
         y = 0;
         z = 0;
@@ -71,6 +75,8 @@ public class Emulator extends AppCompatActivity {
         textZ.setText("z");
     }
     public void subtractionText(View v){
+        RelativeLayout main = findViewById(R.id.main);
+        main.setVisibility(View.VISIBLE);
         x = 0;
         y = 0;
         z = 0;
@@ -92,6 +98,8 @@ public class Emulator extends AppCompatActivity {
         textZ.setText("z");
     }
     public void divideText(View v){
+        RelativeLayout main = findViewById(R.id.main);
+        main.setVisibility(View.VISIBLE);
         x = 0;
         y = 0;
         z = 0;
@@ -113,6 +121,8 @@ public class Emulator extends AppCompatActivity {
         textZ.setText("z");
     }
     public void multiplyText(View v){
+        RelativeLayout main = findViewById(R.id.main);
+        main.setVisibility(View.VISIBLE);
         x = 0;
         y = 0;
         z = 0;
@@ -134,6 +144,31 @@ public class Emulator extends AppCompatActivity {
         textZ.setText("z");
     }
     public void Area2D(View v){
+        RelativeLayout main = findViewById(R.id.main);
+        main.setVisibility(View.VISIBLE);
+        x = 0;
+        y = 0;
+        z = 0;
+        xString = "";
+        yString = "";
+        zString = "";
+        subCategory = "Area2D";
+        TextView textX = findViewById(R.id.Xvalue);
+        TextView textS = findViewById(R.id.sign);
+        TextView textY = findViewById(R.id.Yvalue);
+        TextView textE = findViewById(R.id.equals);
+        TextView textZ = findViewById(R.id.Zvalue);
+        TextView textMessageSub = findViewById(R.id.message);
+        textMessageSub.setText("2D Area selected");
+        textX.setText("x");
+        textS.setText("*");
+        textY.setText("y");
+        textE.setText("=");
+        textZ.setText("z");
+    }
+    public void Area3D(View v){
+        RelativeLayout main = findViewById(R.id.main);
+        main.setVisibility(View.VISIBLE);
         x = 0;
         y = 0;
         z = 0;
@@ -165,7 +200,9 @@ public class Emulator extends AppCompatActivity {
         TextView textMessageY = findViewById(R.id.message);
         textMessageY.setText("Focus on y selected");
     }
-    //public void focusZ(View v){focus = "Z";}
+    public void focusZ(View v){
+        focus = "Z";
+    }
 
     public void setValues(int val){
         if(focus.equals("X") && x != 0){
@@ -231,6 +268,10 @@ public class Emulator extends AppCompatActivity {
         }
         TextView textMessageSolve = findViewById(R.id.message);
         textMessageSolve.setText("Solved");
+        //This works for calling the formulas from the formula class/instance
+        //z = basicFormula.addition(2,4);
+        //textMessageSolve.setText(z+"");
+        //Above will be used eventually to replace current  forumlas.
     }
 
     public void displaySubs(int num){
@@ -247,4 +288,4 @@ public class Emulator extends AppCompatActivity {
                 break;
         };
     }
-}/* 250 */
+}/* 291 */

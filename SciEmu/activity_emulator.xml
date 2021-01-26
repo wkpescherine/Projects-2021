@@ -11,7 +11,9 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:id="@+id/main"
+        android:visibility="visible">
         <TextView
             android:id="@+id/Xvalue"
             android:layout_width="wrap_content"
@@ -56,6 +58,72 @@
             android:textColor="#fff"
             android:onClick="focusZ"/>
     </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/unique"
+        android:visibility="gone">
+        <TextView
+            android:id="@+id/Avalue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@id/sign1"
+            android:text=""
+            android:textSize="32dp"
+            android:textColor="#fff"
+            android:onClick="focusX"/>
+        <TextView
+            android:id="@+id/sign1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@id/Bvalue"
+            android:text=""
+            android:textSize="32dp"
+            android:textColor="#fff"/>
+        <TextView
+            android:id="@+id/Bvalue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:layout_toLeftOf="@id/sign2"
+            android:textSize="32dp"
+            android:textColor="#fff"
+            android:onClick="focusY"/>
+        <TextView
+            android:id="@+id/sign2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text=""
+            android:textSize="32dp"
+            android:textColor="#fff"/>
+        <TextView
+            android:id="@+id/Cvalue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:layout_toRightOf="@id/sign2"
+            android:textSize="32dp"
+            android:textColor="#fff"
+            android:onClick="focusY"/>
+        <TextView
+            android:id="@+id/equals1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:layout_toRightOf="@id/Cvalue"
+            android:textSize="32dp"
+            android:textColor="#fff"/>
+        <TextView
+            android:id="@+id/total"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:layout_toRightOf="@id/equals1"
+            android:textSize="32dp"
+            android:textColor="#fff"
+            android:onClick="focusZ"/>
+    </RelativeLayout>
 
     <TextView
         android:id="@+id/message"
@@ -96,33 +164,33 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
-            android:text="Addition"
+            android:text="Add"
             android:textColor="#fff"
-            android:textSize="24dp"
+            android:textSize="16dp"
             android:onClick="additionText"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
-            android:text="Subtraction"
+            android:text="Subtract"
             android:textColor="#fff"
-            android:textSize="24dp"
+            android:textSize="16dp"
             android:onClick="subtractionText"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
-            android:text="Division"
+            android:text="Divide"
             android:textColor="#fff"
-            android:textSize="24dp"
+            android:textSize="16dp"
             android:onClick="divideText"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
-            android:text="Multiplication"
+            android:text="Multiply"
             android:textColor="#fff"
-            android:textSize="24dp"
+            android:textSize="16dp"
             android:onClick="multiplyText"/>
     </LinearLayout>
 
@@ -268,4 +336,4 @@
         android:textAlignment="center"
         android:onClick="clickToSolve"/>
 
-</LinearLayout><!-- 271 -->
+</LinearLayout><!-- 339 -->

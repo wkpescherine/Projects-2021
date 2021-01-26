@@ -1,7 +1,10 @@
 package com.example.sciemu;
 
+import android.widget.TextView;
+
 public class FormulaBasic {
-    public void addition(int x, int y){
-        int z = x+y;
+    static int addition(int x, int y){
+        int Ztotal = x+y;
+        return Ztotal;
     }
-}
+}//10
