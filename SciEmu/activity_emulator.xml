@@ -307,12 +307,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
                 <TextView
-                    android:text=""
+                    android:text="DEL"
                     android:layout_width="90dp"
                     android:layout_height="90dp"
                     android:textColor="#fff"
                     android:gravity="center"
-                    android:textSize="32dp" />
+                    android:textSize="32dp"
+                    android:onClick="del"/>
                 <TextView
                     android:text="9"
                     android:layout_width="90dp"
@@ -347,4 +348,11 @@
         android:textAlignment="center"
         android:onClick="clickToSolve"/>
 
-</LinearLayout><!-- 350 -->
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Practice Questions"
+        android:textAlignment="center"
+        android:onClick="practiceSection"/>
+
+</LinearLayout><!-- 358 -->

@@ -2,6 +2,7 @@ package com.example.sciemu;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Layout;
 import android.view.WindowManager;
@@ -51,6 +52,7 @@ public class Emulator extends AppCompatActivity {
     public void num8(View v){ setValues(8); }
     public void num9(View v){ setValues(9); }
     public void num0(View v){ setValues(0); }
+    public void del(View v){specialFunc("del");}
 
     public void displayBasic(View v){
         displaySubs(1);
@@ -316,7 +318,6 @@ public class Emulator extends AppCompatActivity {
     }
 
     public void clickToSolve(View v){
-        TextView textMessageSolve = findViewById(R.id.message);
         if(subCategory.equals("addition")){
             z=x+y;
             zString = z+"";
@@ -373,5 +374,24 @@ public class Emulator extends AppCompatActivity {
                 layout2.setVisibility(View.VISIBLE);
                 break;
         };
+    }
+
+    public void practiceSection(View v){
+        Intent intent = new Intent(this, PracticeSection.class);
+        startActivity(intent);
+    }
+
+    public void specialFunc(String func){
+        if(func.equals("del")){
+            if(focus.equals("X")){
+                xString = xString.substring(0, (xString.length())-1);
+            }
+            if(focus.equals("Y")){
+                yString = yString.substring(0, (yString.length())-1);
+            }
+            if(focus.equals("Z")){
+                zString = xString.substring(0, (zString.length())-1);
+            }
+        }
     }
 }/* 377 */
