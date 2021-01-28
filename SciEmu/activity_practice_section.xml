@@ -5,6 +5,57 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".PracticeSection">
+    tools:context=".PracticeSection"
+    android:orientation="vertical"
+    android:background="#000">
 
-</LinearLayout><!-- 10 -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="SCORE"
+        android:textColor="#fff"
+        android:textAlignment="center"
+        android:textSize="24dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/score"
+        android:text="0"
+        android:textSize="16dp"
+        android:textColor="#fff"
+        android:textAlignment="center"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:id="@+id/question"
+        android:textColor="#fff"
+        android:text="test"
+        android:gravity="center"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/answer"
+        android:text="Answer"
+        android:background="#fff"
+        android:gravity="center"/>
+
+    <!-- KEYPAD-->
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Solve"
+        android:textAlignment="center"
+        android:onClick="checkAnswer"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="STart"
+        android:textAlignment="center"
+        android:onClick="startTest"/>
+
+</LinearLayout><!-- 60 -->

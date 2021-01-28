@@ -1,9 +1,10 @@
 package com.example.sciemu;
 
 import androidx.appcompat.app.AppCompatActivity;
-
+import android.view.View;
 import android.os.Bundle;
 import android.view.WindowManager;
+import android.widget.TextView;
 
 public class PracticeSection extends AppCompatActivity {
 
@@ -15,4 +16,11 @@ public class PracticeSection extends AppCompatActivity {
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         getSupportActionBar().hide();
     }
-}//18
+
+    public void startTest(View v){
+        TextView question = findViewById(R.id.question);
+        question.setText("Something here");
+    }
+
+    public void checkAnswer(View v){}
+}//26
