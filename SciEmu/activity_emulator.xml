@@ -134,6 +134,7 @@
         android:textColor="#fff"
         android:textAlignment="center"/>
 
+    <!-- LIST OF SUBJECTS-->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -153,6 +154,22 @@
             android:textColor="#fff"
             android:textSize="24dp"
             android:onClick="displayAlgebra"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:text="Calculus"
+            android:textColor="#fff"
+            android:textSize="24dp"
+            android:onClick="displayCalculus"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:text="Physics"
+            android:textColor="#fff"
+            android:textSize="24dp"
+            android:onClick="displayPhysics"/>
     </LinearLayout>
 
     <!-- BASIC SUB SECTION -->
@@ -217,6 +234,54 @@
             android:textColor="#fff"
             android:textSize="24dp"
             android:onClick="Area3D"/>
+    </LinearLayout>
+
+    <!-- CALCULUS SUB SECTION-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/calculusSub"
+        android:visibility="gone">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:text="Pythahorean"
+            android:textColor="#fff"
+            android:textSize="24dp"
+            android:onClick="pathageroen"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:text="Triangle 90"
+            android:textColor="#fff"
+            android:textSize="24dp"
+            android:onClick="triangle90"/>
+    </LinearLayout>
+
+    <!-- Physics SUB SECTION-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/physicsSub"
+        android:visibility="gone">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:text="Linear Motion"
+            android:textColor="#fff"
+            android:textSize="24dp"
+            android:onClick="linearMotion"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:text="Circular Motion"
+            android:textColor="#fff"
+            android:textSize="24dp"
+            android:onClick="circularMotion"/>
     </LinearLayout>
 
     <!-- KEYPAD SECTION -->
@@ -355,4 +420,4 @@
         android:textAlignment="center"
         android:onClick="practiceSection"/>
 
-</LinearLayout><!-- 358 -->
+</LinearLayout><!-- 423 -->

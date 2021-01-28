@@ -60,6 +60,12 @@ public class Emulator extends AppCompatActivity {
     public void displayAlgebra(View v){
         displaySubs(2);
     }
+    public void displayCalculus(View v){
+        displaySubs(3);
+    }
+    public void displayPhysics(View v){
+        displaySubs(4);
+    }
 
     public void additionText(View v){
         RelativeLayout main = findViewById(R.id.main);
@@ -364,14 +370,24 @@ public class Emulator extends AppCompatActivity {
     public void displaySubs(int num){
         LinearLayout layout1 = findViewById(R.id.basicSub);
         LinearLayout layout2 = findViewById(R.id.algebraSub);
+        LinearLayout layout3 = findViewById(R.id.calculusSub);
+        LinearLayout layout4 = findViewById(R.id.physicsSub);
         layout1.setVisibility(View.GONE);
         layout2.setVisibility(View.GONE);
+        layout3.setVisibility(View.GONE);
+        layout4.setVisibility(View.GONE);
         switch(num){
             case 1:
                 layout1.setVisibility(View.VISIBLE);
                 break;
             case 2:
                 layout2.setVisibility(View.VISIBLE);
+                break;
+            case 3:
+                layout3.setVisibility(View.VISIBLE);
+                break;
+            case 4:
+                layout4.setVisibility(View.VISIBLE);
                 break;
         };
     }
@@ -382,16 +398,29 @@ public class Emulator extends AppCompatActivity {
     }
 
     public void specialFunc(String func){
+        TextView xText = findViewById(R.id.Xvalue);
+        TextView yText = findViewById(R.id.Yvalue);
+        TextView zText = findViewById(R.id.Zvalue);
         if(func.equals("del")){
-            if(focus.equals("X")){
+            if(focus.equals("X") && (xString.length() >0)){
                 xString = xString.substring(0, (xString.length())-1);
+                xText.setText(xString);
             }
-            if(focus.equals("Y")){
+            if(xString.length() == 0){
+                xText.setText("x");
+            }
+            if(focus.equals("Y") && (yString.length() > 0)){
                 yString = yString.substring(0, (yString.length())-1);
             }
-            if(focus.equals("Z")){
+            if(yString.length() == 0){
+                yText.setText("y");
+            }
+            if(focus.equals("Z") && (zString.length() > 0 )){
                 zString = xString.substring(0, (zString.length())-1);
+            }
+            if(zString.length() == 0){
+                zText.setText("z");
             }
         }
     }
-}/* 377 */
+}/* 426 */
