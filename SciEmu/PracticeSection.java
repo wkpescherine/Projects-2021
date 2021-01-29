@@ -8,6 +8,7 @@ import android.widget.TextView;
 
 public class PracticeSection extends AppCompatActivity {
 
+    String equation = "None";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -19,8 +20,15 @@ public class PracticeSection extends AppCompatActivity {
 
     public void startTest(View v){
         TextView question = findViewById(R.id.question);
-        question.setText("Something here");
+        buildEquation();
+        question.setText(equation);
+    }
+
+    public static void buildEquation(){
+        int x = 0;
+        int y = 0;
+        String  [] equationBasic = {"+","-","*","/"};
     }
 
     public void checkAnswer(View v){}
-}//26
+}//34
