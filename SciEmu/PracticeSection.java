@@ -5,10 +5,11 @@ import android.view.View;
 import android.os.Bundle;
 import android.view.WindowManager;
 import android.widget.TextView;
+import java.util.Random;
 
 public class PracticeSection extends AppCompatActivity {
+    int level = 0;
 
-    String equation = "None";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -16,18 +17,26 @@ public class PracticeSection extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         getSupportActionBar().hide();
+
+        buildEquation();
     }
 
     public void startTest(View v){
-        TextView question = findViewById(R.id.question);
         buildEquation();
-        question.setText(equation);
     }
 
-    public static void buildEquation(){
+    public void buildEquation(String q){
         int x = 0;
         int y = 0;
+        int upperBound = 10;
+        String operation = "";
+        Random rand = new Random();
         String  [] equationBasic = {"+","-","*","/"};
+        x = rand.nextInt(upperBound)+1;
+        y = rand.nextInt(upperBound)+1;
+        operation = equationBasic[rand.nextInt(4)];
+        TextView questionText = findViewById(R.id.question);
+        questionText.setText(x + operation +y);
     }
 
     public void checkAnswer(View v){}
