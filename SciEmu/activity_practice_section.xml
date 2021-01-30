@@ -175,8 +175,9 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:id="@+id/startButton"
         android:text="STart"
         android:textAlignment="center"
         android:onClick="startTest"/>
 
-</LinearLayout><!-- 182 -->
+</LinearLayout><!-- 183 -->

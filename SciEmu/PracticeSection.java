@@ -5,6 +5,7 @@ import android.view.View;
 import android.os.Bundle;
 import android.view.WindowManager;
 import android.widget.TextView;
+import android.widget.Button;
 import java.util.Random;
 
 public class PracticeSection extends AppCompatActivity {
@@ -17,15 +18,15 @@ public class PracticeSection extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         getSupportActionBar().hide();
-
-        buildEquation();
     }
 
     public void startTest(View v){
         buildEquation();
+        Button startButt = findViewById(R.id.startButton);
+        startButt.setVisibility(View.GONE);
     }
 
-    public void buildEquation(String q){
+    public void buildEquation(){
         int x = 0;
         int y = 0;
         int upperBound = 10;
@@ -34,10 +35,22 @@ public class PracticeSection extends AppCompatActivity {
         String  [] equationBasic = {"+","-","*","/"};
         x = rand.nextInt(upperBound)+1;
         y = rand.nextInt(upperBound)+1;
-        operation = equationBasic[rand.nextInt(4)];
+        operation = equationBasic[rand.nextInt(3)];
         TextView questionText = findViewById(R.id.question);
-        questionText.setText(x + operation +y);
+        questionText.setText(x +" " + operation+" " +y);
+
     }
 
-    public void checkAnswer(View v){}
-}//34
+    public void checkAnswer(View v){
+        TextView question2solve = findViewById(R.id.question);
+        String qString = question2solve.getText().toString();
+        String [] splitQ = qString.split(" ");
+        int xSub = Integer.parseInt(splitQ[0]);
+        int ySub = Integer.parseInt(splitQ[2]);
+        int totalSub = 0;
+        if(splitQ[1].equals("+")){totalSub = xSub+ySub};
+        if(splitQ[1].equals("-")){totalSub = xSub-ySub};
+        if(splitQ[1].equals("*")){totalSub = xSub*ySub};
+        if(splitQ[1].equals("/")){totalSub = xSub/ySub};
+    }
+}//56
