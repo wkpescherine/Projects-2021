@@ -362,22 +362,67 @@ public class Emulator extends AppCompatActivity {
             }
         }
         if(subCategory.equals("subtraction")){
-            z=x-y;
-            zString = z+"";
-            TextView valueZ = findViewById(R.id.Zvalue);
-            valueZ.setText(zString);
+            if(zString.length() == 0 && yString.length() > 0 && xString.length() >0){
+                z=x-y;
+                zString = z+"";
+                TextView valueZ = findViewById(R.id.Zvalue);
+                valueZ.setText(zString);
+            }else if(zString.length() > 0 && yString.length() == 0 && xString.length() >0){
+                y=z-x;
+                yString = Math.abs(y)+"";
+                TextView valueY = findViewById(R.id.Yvalue);
+                valueY.setText(yString);
+            }else if(zString.length() > 0 && yString.length() > 0 && xString.length() ==0){
+                x=z+y;
+                xString = Math.abs(x)+"";
+                TextView valueX = findViewById(R.id.Xvalue);
+                valueX.setText(xString);
+            }else{
+                TextView errorMessage = findViewById(R.id.message);
+                errorMessage.setText("Check your forumla as there sames to be an error");
+            }
         }
         if(subCategory.equals("division")){
-            z=x/y;
-            zString = z+"";
-            TextView valueZ = findViewById(R.id.Zvalue);
-            valueZ.setText(zString);
+                if(zString.length() == 0 && yString.length() > 0 && xString.length() >0){
+                    z=x/y;
+                    zString = z+"";
+                    TextView valueZ = findViewById(R.id.Zvalue);
+                    valueZ.setText(zString);
+                }else if(zString.length() > 0 && yString.length() == 0 && xString.length() >0){
+                    y=x/z;
+                    yString = Math.abs(y)+"";
+                    TextView valueY = findViewById(R.id.Yvalue);
+                    valueY.setText(yString);
+                }else if(zString.length() > 0 && yString.length() > 0 && xString.length() ==0){
+                    x=z*y;
+                    xString = Math.abs(x)+"";
+                    TextView valueX = findViewById(R.id.Xvalue);
+                    valueX.setText(xString);
+                }else{
+                    TextView errorMessage = findViewById(R.id.message);
+                    errorMessage.setText("Check your forumla as there sames to be an error");
+                }
         }
         if(subCategory.equals("multiplication")){
-            z=x*y;
-            zString = z+"";
-            TextView valueZ = findViewById(R.id.Zvalue);
-            valueZ.setText(zString);
+            if(zString.length() == 0 && yString.length() > 0 && xString.length() >0){
+                z=x*y;
+                zString = z+"";
+                TextView valueZ = findViewById(R.id.Zvalue);
+                valueZ.setText(zString);
+            }else if(zString.length() > 0 && yString.length() == 0 && xString.length() >0){
+                y=z/8;
+                yString = Math.abs(y)+"";
+                TextView valueY = findViewById(R.id.Yvalue);
+                valueY.setText(yString);
+            }else if(zString.length() > 0 && yString.length() > 0 && xString.length() ==0){
+                x=z/y;
+                xString = Math.abs(x)+"";
+                TextView valueX = findViewById(R.id.Xvalue);
+                valueX.setText(xString);
+            }else{
+                TextView errorMessage = findViewById(R.id.message);
+                errorMessage.setText("Check your forumla as there sames to be an error");
+            }
         }
         if(subCategory.equals("Area2D")){
             z=x*y;
@@ -482,4 +527,4 @@ public class Emulator extends AppCompatActivity {
             }
         }
     }
-}/* 485 */
+}/* 530 */
