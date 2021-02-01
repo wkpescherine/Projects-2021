@@ -11,7 +11,6 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-
 public class Emulator extends AppCompatActivity {
     FormulaBasic basicFormula = new FormulaBasic();
 
@@ -234,6 +233,8 @@ public class Emulator extends AppCompatActivity {
     }
     public void focusZ(View v){
         focus = "Z";
+        TextView textMessageZ = findViewById(R.id.message);
+        textMessageZ.setText("docus on z selected");
     }
     public void focusA(View v){
         focus = "A";
@@ -280,6 +281,20 @@ public class Emulator extends AppCompatActivity {
             valueY.setText(yString);
         }
 
+        if(focus.equals("Z") && z != 0){
+            TextView valueZ = findViewById(R.id.Zvalue);
+            zString  += val;
+            z = Integer.parseInt(zString);
+            valueZ.setText(zString);
+        }
+
+        if(focus.equals("Z") && z == 0 ){
+            TextView valueZ = findViewById(R.id.Zvalue);
+            zString  = val+"";
+            z = Integer.parseInt(zString);
+            valueZ.setText(zString);
+        }
+
         if(focus.equals("A") && a != 0){
             TextView valueA = findViewById(R.id.Avalue);
             aString  += val;
@@ -324,11 +339,27 @@ public class Emulator extends AppCompatActivity {
     }
 
     public void clickToSolve(View v){
+        TextView textMessageSolve = findViewById(R.id.message);
         if(subCategory.equals("addition")){
-            z=x+y;
-            zString = z+"";
-            TextView valueZ = findViewById(R.id.Zvalue);
-            valueZ.setText(zString);
+            if(zString.length() == 0 && yString.length() > 0 && xString.length() >0){
+                z=x+y;
+                zString = Math.abs(z)+"";
+                TextView valueZ = findViewById(R.id.Zvalue);
+                valueZ.setText(zString);
+            }else if(zString.length() > 0 && yString.length() == 0 && xString.length() >0){
+                y=z-x;
+                yString = Math.abs(y)+"";
+                TextView valueY = findViewById(R.id.Yvalue);
+                valueY.setText(yString);
+            }else if(zString.length() > 0 && yString.length() > 0 && xString.length() ==0){
+                x=z-y;
+                xString = Math.abs(x)+"";
+                TextView valueX = findViewById(R.id.Xvalue);
+                valueX.setText(xString);
+            }else{
+                TextView errorMessage = findViewById(R.id.message);
+                errorMessage.setText("Check your forumla as there sames to be an error");
+            }
         }
         if(subCategory.equals("subtraction")){
             z=x-y;
@@ -360,8 +391,10 @@ public class Emulator extends AppCompatActivity {
             TextView valueTotal = findViewById(R.id.total);
             valueTotal.setText(totalString);
         }
-        TextView textMessageSolve = findViewById(R.id.message);
-        textMessageSolve.setText("Solved");
+        if(textMessageSolve.getText().equals("Check your forumla as there sames to be an error")){}
+        else{
+            textMessageSolve.setText("Solved");
+        }
         //This works for calling the formulas from the formula class/instance
         //z = basicFormula.addition(2,4);
         //Above will be used eventually to replace current  forumlas.
@@ -401,6 +434,9 @@ public class Emulator extends AppCompatActivity {
         TextView xText = findViewById(R.id.Xvalue);
         TextView yText = findViewById(R.id.Yvalue);
         TextView zText = findViewById(R.id.Zvalue);
+        TextView aText = findViewById(R.id.Avalue);
+        TextView bText = findViewById(R.id.Bvalue);
+        TextView cText = findViewById(R.id.Cvalue);
         if(func.equals("del")){
             if(focus.equals("X") && (xString.length() >0)){
                 xString = xString.substring(0, (xString.length())-1);
@@ -411,16 +447,39 @@ public class Emulator extends AppCompatActivity {
             }
             if(focus.equals("Y") && (yString.length() > 0)){
                 yString = yString.substring(0, (yString.length())-1);
+                yText.setText(yString);
             }
             if(yString.length() == 0){
                 yText.setText("y");
             }
             if(focus.equals("Z") && (zString.length() > 0 )){
                 zString = xString.substring(0, (zString.length())-1);
+                zText.setText(zString);
             }
             if(zString.length() == 0){
                 zText.setText("z");
             }
+            if(focus.equals("A") && (aString.length() > 0 )){
+                aString = aString.substring(0, (aString.length())-1);
+                aText.setText(aString);
+            }
+            if(zString.length() == 0){
+                aText.setText("h");
+            }
+            if(focus.equals("B") && (bString.length() > 0 )){
+                bString = bString.substring(0, (bString.length())-1);
+                bText.setText(aString);
+            }
+            if(bString.length() == 0){
+                bText.setText("W");
+            }
+            if(focus.equals("C") && (cString.length() > 0 )){
+                cString = cString.substring(0, (cString.length())-1);
+                cText.setText(cString);
+            }
+            if(cString.length() == 0){
+                cText.setText("D");
+            }
         }
     }
-}/* 426 */
+}/* 485 */
