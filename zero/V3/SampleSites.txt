@@ -1,0 +1,9 @@
+This can be used to hold sample sites that we will try to call
+We will act as if this is like the backend server and will parse
+Through this file to find the correct site and then load it into 
+The view
+*The left side of the following would be the site name entered
+** Right part is the actually design code used or needed parsing/
+--------------------------------------------------------------
+sample1.zero | zero(sample1);p(NULL, 200, 400);p(NULL, 400, 400);
+sample2.zero | zero(sample2);p(NULL, 300, 200);p(NULL, 300, 200);p(NULL, 300, 200);p(NULL, 300, 200);

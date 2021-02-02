@@ -1,0 +1,1 @@
+public class ConfigFile{	String date = "02/01/2021";	String version = "2.0";	String tempId = "dYtahWvEoFSUSKZPcwGIDmrap";	int width = 640;	int height = 480;}
