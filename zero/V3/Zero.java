@@ -49,14 +49,6 @@ public class Zero implements ActionListener{
 				}
 			}
 		);
-		accountView.newAccount.addActionListener(
-			new ActionListener(){
-				public void actionPerformed(ActionEvent e){
-					accountView.create.setVisible(false);
-					mainView.main.setVisible(true);
-				}
-			}
-		);
 
 		aboutView.aboutBack.addActionListener(
 			new ActionListener(){
@@ -174,4 +166,4 @@ public class Zero implements ActionListener{
 		System.out.println("Eventually will add in the logic to update");
 		System.out.println("At moment this is just placeholder");
 	}
-}//177
+}//169
