@@ -10,7 +10,7 @@ public class Zero implements ActionListener{
 	CreateAccountView accountView = new CreateAccountView();
 	Config config = new Config();
 
-    JFrame window = new JFrame("Zero v3");
+    JFrame window = new JFrame("Zero v2");
 
     Zero(){
 		startView.createAcct.addActionListener(
@@ -46,6 +46,14 @@ public class Zero implements ActionListener{
 			new ActionListener(){
 				public void actionPerformed(ActionEvent e){
 					exit();
+				}
+			}
+		);
+		accountView.newAccount.addActionListener(
+			new ActionListener(){
+				public void actionPerformed(ActionEvent e){
+					accountView.create.setVisible(false);
+					mainView.main.setVisible(true);
 				}
 			}
 		);
@@ -140,20 +148,9 @@ public class Zero implements ActionListener{
 	}
 	
 	public void actionPerformed(ActionEvent e){
-		String usernameEntered = startView.startEditUsername.getText();
-		String passwordEntered = startView.startEditPassword.getText();
-		if(passwordEntered.equals("1234") && usernameEntered.equals("testname")){
-			startView.startEditPassword.setText("");
-			startView.startEditUsername.setText("");
-			startView.errorMessage.setText("");
-			startView.start.setVisible(false);
-			accountView.create.setVisible(false);
-			mainView.main.setVisible(true);
-		}else{
-			startView.startEditPassword.setText("");
-			startView.startEditUsername.setText("");
-			startView.errorMessage.setText("You have entered incorrect information");
-		}
+		startView.start.setVisible(false);
+		accountView.create.setVisible(false);
+		mainView.main.setVisible(true);
 	}
 
 	public void exit(){
@@ -166,4 +163,4 @@ public class Zero implements ActionListener{
 		System.out.println("Eventually will add in the logic to update");
 		System.out.println("At moment this is just placeholder");
 	}
-}//169
+}//166
