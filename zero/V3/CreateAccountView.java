@@ -29,9 +29,12 @@ public class CreateAccountView {
 		password.setForeground(Color.WHITE);
 		createResult.setForeground(Color.WHITE);
 		create.setPreferredSize(new Dimension(300,560));
-		back.setPreferredSize(new Dimension(80,60));
+		newAccount.setPreferredSize(new Dimension(150,40));
+		back.setPreferredSize(new Dimension(150,40));
 		username3.setHorizontalAlignment(SwingConstants.CENTER);
-		password3.setHorizontalAlignment(SwingConstants.CENTER);		
+		password3.setHorizontalAlignment(SwingConstants.CENTER);
+		newAccount.setHorizontalAlignment(SwingConstants.CENTER);		
+		back.setHorizontalAlignment(SwingConstants.CENTER);		
         create.add(username);
 		create.add(username3);
 		create.add(password);
@@ -80,4 +83,4 @@ public class CreateAccountView {
 			createResult.setText("Failed to create account");
 		}
 	}
-}//86
+}//83
