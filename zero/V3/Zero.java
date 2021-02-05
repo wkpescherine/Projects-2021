@@ -2,6 +2,10 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 import java.lang.String;
+import java.io.IOException;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
 
 public class Zero implements ActionListener{
 	AboutView aboutView = new AboutView();
@@ -153,17 +157,30 @@ public class Zero implements ActionListener{
 	public void actionPerformed(ActionEvent e){
 		String usernameEntered = startView.startEditUsername.getText();
 		String passwordEntered = startView.startEditPassword.getText();
-		if(passwordEntered.equals("1234") && usernameEntered.equals("testname")){
-			startView.startEditPassword.setText("");
-			startView.startEditUsername.setText("");
-			startView.errorMessage.setText("");
-			startView.start.setVisible(false);
-			accountView.create.setVisible(false);
-			mainView.main.setVisible(true);
-		}else{
-			startView.startEditPassword.setText("");
-			startView.startEditUsername.setText("");
-			startView.errorMessage.setText("You have entered incorrect information");
+		String [] checklogin;
+
+		try{
+            File myFile = new File("accountDB.txt");
+			Scanner myReader = new Scanner(myFile);
+            while(myReader.hasNextLine()){
+				String data = myReader.nextLine();
+				checklogin = data.split(",");
+				if(passwordEntered.equals(checklogin[1]) && usernameEntered.equals(checklogin[0])){
+					startView.startEditPassword.setText("");
+					startView.startEditUsername.setText("");
+					startView.errorMessage.setText("");
+					startView.start.setVisible(false);
+					accountView.create.setVisible(false);
+					mainView.main.setVisible(true);
+				}else{
+					startView.startEditPassword.setText("");
+					startView.startEditUsername.setText("");
+					startView.errorMessage.setText("You have entered incorrect information");
+				} 
+			}
+            myReader.close();
+        } catch (FileNotFoundException ioe){
+            ioe.printStackTrace();
 		}
 	}
 
@@ -177,4 +194,4 @@ public class Zero implements ActionListener{
 		System.out.println("Eventually will add in the logic to update");
 		System.out.println("At moment this is just placeholder");
 	}
-}//177
+}//197
