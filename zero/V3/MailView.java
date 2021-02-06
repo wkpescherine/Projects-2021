@@ -1,6 +1,13 @@
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
+import java.io.PrintWriter;
+import java.io.FileWriter;
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
 
 public class MailView implements ActionListener{
     JPanel mail = new JPanel();
@@ -40,6 +47,24 @@ public class MailView implements ActionListener{
     JTextArea messageArea = new JTextArea();
 
     MailView(){
+        send.addActionListener(this);
+		inbox.addActionListener(
+			new ActionListener(){
+				public void actionPerformed(ActionEvent e){
+					zmail.setVisible(true);
+					zcompose.setVisible(false);
+				}
+			}
+        );
+        compose.addActionListener(
+			new ActionListener(){
+				public void actionPerformed(ActionEvent e){
+					zmail.setVisible(false);
+					zcompose.setVisible(true);
+				}
+			}
+        );
+        
         mail.setLayout(new FlowLayout());
         mail.setPreferredSize(new Dimension (840,520));
         zmail.setLayout(null);
@@ -110,15 +135,24 @@ public class MailView implements ActionListener{
         mail.add(zmail);
         mail.add(zcompose);
         mail.setVisible(false);
-
-        send.addActionListener(this);
-
-    }
-    
+    }    
     public void actionPerformed(ActionEvent e){
+        String sender = fromTextField.getText();
+        String receiver = toTextField.getText();
+        String msgTitle = titleTextField.getText();
+        String msgSent = messageArea.getText();
+        try{
+            FileWriter myWriter = new FileWriter("emailDB.txt", true);
+            BufferedWriter bWriter = new BufferedWriter(myWriter);
+            PrintWriter pWriter = new PrintWriter(bWriter);
+            pWriter.write(sender+","+receiver+","+msgTitle+","+msgSent+"\r");
+            pWriter.close();
+        }catch(IOException ioe){
+            ioe.printStackTrace();
+        }  
         fromTextField.setText("");
         toTextField.setText("");
         titleTextField.setText("");
         messageArea.setText("");
 	}
-}//124
+}//158
