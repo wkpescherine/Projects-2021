@@ -5,10 +5,14 @@ import java.io.PrintWriter;
 import java.io.FileWriter;
 import java.io.BufferedWriter;
 import java.io.IOException;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
 
 public class MailView implements ActionListener{
     ConfigFile mailConfigFile = new ConfigFile();
     String nameOfUser = "none";
+    String [] emails = {};
 
     JPanel mail = new JPanel();
     JPanel zmail = new JPanel();
@@ -52,7 +56,8 @@ public class MailView implements ActionListener{
 			new ActionListener(){
 				public void actionPerformed(ActionEvent e){
 					zmail.setVisible(true);
-					zcompose.setVisible(false);
+                    zcompose.setVisible(false);
+                    populateMail();
 				}
 			}
         );
@@ -74,18 +79,22 @@ public class MailView implements ActionListener{
         messageRec1.setBackground(Color.WHITE);
         messageRec1.setLayout(new FlowLayout());
         messageRec1.setPreferredSize(new Dimension(600,50));
+        messageRec1.setVisible(false);
         messageRec2.setBounds(50,60,700,25);
         messageRec2.setLayout(new FlowLayout());
         messageRec2.setBackground(Color.WHITE);
         messageRec2.setPreferredSize(new Dimension(600,50));
+        messageRec2.setVisible(false);
         messageRec3.setBounds(50,95,700,25);
         messageRec3.setLayout(new FlowLayout());
         messageRec3.setBackground(Color.WHITE);
         messageRec3.setPreferredSize(new Dimension(600,50));
+        messageRec3.setVisible(false);
         messageRec4.setBounds(50,130,700,25);
         messageRec4.setLayout(new FlowLayout());
         messageRec4.setBackground(Color.WHITE);
         messageRec4.setPreferredSize(new Dimension(600,50));
+        messageRec4.setVisible(false);
         messageRec1.add(fromRec1);
         messageRec1.add(titleRec1);
         messageRec1.add(dateSent1);
@@ -156,8 +165,33 @@ public class MailView implements ActionListener{
         titleTextField.setText("");
         messageArea.setText("");
     }
-    
-    public void mailSetConfigFile(String nameUser){
-        nameOfUser = nameUser;
+
+    public void populateMail(){
+		try{
+            int emailNum = 0;
+            File myFile = new File("accountDB.txt");
+			Scanner myReader = new Scanner(myFile);
+            while(myReader.hasNextLine()){
+				String data = myReader.nextLine();
+				String [] message = data.split(","); 
+				if(message[0].equals(nameOfUser)){
+                    emails[emailNum] = (data);
+                    emailNum += 1;
+				}
+			}
+            myReader.close();
+        } catch (FileNotFoundException e){
+            e.printStackTrace();
+        }
+        
+        for(int i = 0; i < emails.length; i++){
+            String subMsg = emails[i];
+            String [] subMsgSplit = subMsg.split(",");
+            if(i == 0){
+                messageRec1.setVisible(true); 
+                fromRec1.setText(subMsgSplit[1]);
+                titleRec1.setText(subMsgSplit[2]);
+            }
+        }
     }
-}//163
+}//197
