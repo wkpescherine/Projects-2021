@@ -11,6 +11,7 @@ public class MainView implements ActionListener{
 	Settings settingView = new Settings();
 	About2 about2View = new About2();
 	Home homeView = new Home();
+    ConfigFile mainConfigFile = new ConfigFile();	
 
 	String itemsArray1 [] ={"item1","310","240", "item2","310","240","item3","630","200"};
 	String itemsArray2 [] ={"item1","200","440", "item2","200","440","item3","200","440"};

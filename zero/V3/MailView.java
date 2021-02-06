@@ -5,11 +5,11 @@ import java.io.PrintWriter;
 import java.io.FileWriter;
 import java.io.BufferedWriter;
 import java.io.IOException;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.util.Scanner;
 
 public class MailView implements ActionListener{
+    ConfigFile mailConfigFile = new ConfigFile();
+    String nameOfUser = "none";
+
     JPanel mail = new JPanel();
     JPanel zmail = new JPanel();
     JPanel zcompose = new JPanel();
@@ -60,7 +60,8 @@ public class MailView implements ActionListener{
 			new ActionListener(){
 				public void actionPerformed(ActionEvent e){
 					zmail.setVisible(false);
-					zcompose.setVisible(true);
+                    zcompose.setVisible(true);
+                    fromTextField.setText(nameOfUser);
 				}
 			}
         );
@@ -150,9 +151,13 @@ public class MailView implements ActionListener{
         }catch(IOException ioe){
             ioe.printStackTrace();
         }  
-        fromTextField.setText("");
+        fromTextField.setText(nameOfUser);
         toTextField.setText("");
         titleTextField.setText("");
         messageArea.setText("");
-	}
-}//158
+    }
+    
+    public void mailSetConfigFile(String nameUser){
+        nameOfUser = nameUser;
+    }
+}//163

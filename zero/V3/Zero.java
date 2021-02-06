@@ -11,6 +11,7 @@ public class Zero implements ActionListener{
 	AboutView aboutView = new AboutView();
 	StartView startView = new StartView();
 	MainView mainView = new MainView();
+	MailView mailView = new MailView();
 	CreateAccountView accountView = new CreateAccountView();
 	Config config = new Config();
 
@@ -110,24 +111,6 @@ public class Zero implements ActionListener{
 			}
 		);
 
-/*		mainView.mailView.inbox.addActionListener(
-			new ActionListener(){
-				public void actionPerformed(ActionEvent e){
-					mainView.mailView.zmail.setVisible(true);
-					mainView.mailView.zcompose.setVisible(false);
-				}
-			}
-		);
-
-		mainView.mailView.compose.addActionListener(
-			new ActionListener(){
-				public void actionPerformed(ActionEvent e){
-					mainView.mailView.zmail.setVisible(false);
-					mainView.mailView.zcompose.setVisible(true);
-				}
-			}
-		);
-*/
 		mainView.chat.addActionListener(
 			new ActionListener(){
 				public void actionPerformed(ActionEvent e){
@@ -158,6 +141,7 @@ public class Zero implements ActionListener{
 		String usernameEntered = startView.startEditUsername.getText();
 		String passwordEntered = startView.startEditPassword.getText();
 		String [] checklogin;
+		//mailView.mailSetConfigFile(usernameEntered);
 
 		try{
             File myFile = new File("accountDB.txt");
@@ -172,6 +156,7 @@ public class Zero implements ActionListener{
 					startView.start.setVisible(false);
 					accountView.create.setVisible(false);
 					mainView.main.setVisible(true);
+					
 				}else{
 					startView.startEditPassword.setText("");
 					startView.startEditUsername.setText("");
@@ -194,4 +179,4 @@ public class Zero implements ActionListener{
 		System.out.println("Eventually will add in the logic to update");
 		System.out.println("At moment this is just placeholder");
 	}
-}//197
+}//179
