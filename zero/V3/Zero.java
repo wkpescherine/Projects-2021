@@ -110,7 +110,7 @@ public class Zero implements ActionListener{
 			}
 		);
 
-		mainView.mailView.inbox.addActionListener(
+/*		mainView.mailView.inbox.addActionListener(
 			new ActionListener(){
 				public void actionPerformed(ActionEvent e){
 					mainView.mailView.zmail.setVisible(true);
@@ -127,7 +127,7 @@ public class Zero implements ActionListener{
 				}
 			}
 		);
-
+*/
 		mainView.chat.addActionListener(
 			new ActionListener(){
 				public void actionPerformed(ActionEvent e){
