@@ -12,7 +12,7 @@ import java.util.Scanner;
 public class MailView implements ActionListener{
     ConfigFile mailConfigFile = new ConfigFile();
     String nameOfUser = "none";
-    String [] emails = {};
+    String [] emails = new String[100];
 
     JPanel mail = new JPanel();
     JPanel zmail = new JPanel();
@@ -169,13 +169,13 @@ public class MailView implements ActionListener{
     public void populateMail(){
 		try{
             int emailNum = 0;
-            File myFile = new File("accountDB.txt");
+            File myFile = new File("emailDB.txt");
 			Scanner myReader = new Scanner(myFile);
             while(myReader.hasNextLine()){
-				String data = myReader.nextLine();
+                String data = myReader.nextLine();
+                emails[emailNum] = (data);
 				String [] message = data.split(","); 
 				if(message[0].equals(nameOfUser)){
-                    emails[emailNum] = (data);
                     emailNum += 1;
 				}
 			}
@@ -184,8 +184,12 @@ public class MailView implements ActionListener{
             e.printStackTrace();
         }
         
+        System.out.println(emails[0]);
+
         for(int i = 0; i < emails.length; i++){
             String subMsg = emails[i];
+            System.out.println(emails[i]+" 1");
+            System.out.println(subMsg+" 2");
             String [] subMsgSplit = subMsg.split(",");
             if(i == 0){
                 messageRec1.setVisible(true); 
