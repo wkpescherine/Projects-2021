@@ -186,16 +186,29 @@ public class MailView implements ActionListener{
         
         System.out.println(emails[0]);
 
-        for(int i = 0; i < emails.length; i++){
+        for(int i = 0; i < emails.length-1; i++){
             String subMsg = emails[i];
-            System.out.println(emails[i]+" 1");
-            System.out.println(subMsg+" 2");
             String [] subMsgSplit = subMsg.split(",");
             if(i == 0){
                 messageRec1.setVisible(true); 
                 fromRec1.setText(subMsgSplit[1]);
                 titleRec1.setText(subMsgSplit[2]);
             }
+            if(i == 1){
+                messageRec2.setVisible(true); 
+                fromRec2.setText(subMsgSplit[1]);
+                titleRec2.setText(subMsgSplit[2]);
+            }
+            if(i == 3){
+                messageRec2.setVisible(true); 
+                fromRec2.setText(subMsgSplit[1]);
+                titleRec2.setText(subMsgSplit[2]);
+            }
+            if(i == 4){
+                messageRec3.setVisible(true); 
+                fromRec3.setText(subMsgSplit[1]);
+                titleRec4.setText(subMsgSplit[2]);
+            }
         }
     }
-}//197
+}//214
