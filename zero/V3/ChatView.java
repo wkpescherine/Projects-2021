@@ -23,12 +23,12 @@ public class ChatView implements ActionListener{
     JLabel messagePerson = new JLabel("Send To :"+personToMessage);
     JTextField messageArea = new JTextField();
     JTextField findPersonArea = new JTextField(10);
-    JButton findPersonBtn = new JButton("Find");
+    JButton invitePersonBtn = new JButton("Invite");
     JButton sendMessage = new JButton("Message");
 
     ChatView(){
         buildFriendsSection();
-        findPersonBtn.addActionListener(this);
+        invitePersonBtn.addActionListener(this);
 
         chat.setLayout(new FlowLayout());
         chat.setPreferredSize(new Dimension (640,440));
@@ -36,7 +36,7 @@ public class ChatView implements ActionListener{
         sideBar.setPreferredSize(new Dimension (200,420));
         sideBar.setBackground(Color.WHITE);
         sideBar.add(findPersonArea);
-        sideBar.add(findPersonBtn);
+        sideBar.add(invitePersonBtn);
         chatPanel.setLayout(new FlowLayout());
         chatPanel.setPreferredSize(new Dimension (400,420));
         chatPanel.setBackground(Color.WHITE);
@@ -85,8 +85,10 @@ public class ChatView implements ActionListener{
         } catch (FileNotFoundException e){
             e.printStackTrace();
         }
+
+        System.out.println(invites[0]);
         
-        for(int i = 0; i < invites.length-1; i++){
+        /*for(int i = 0; i < invites.length-1; i++){
             friendsPanel.removeAll();
             String subInvite = invites[i];
             String [] subInviteSplit = subInvite.split(",");
@@ -109,6 +111,6 @@ public class ChatView implements ActionListener{
                 friendsPanel.validate();
                 friendsPanel.repaint();
             }
-        }
+        }*/
     }
 }//114
