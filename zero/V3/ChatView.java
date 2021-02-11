@@ -20,23 +20,48 @@ public class ChatView implements ActionListener{
     JPanel chatPanel = new JPanel();
     JPanel friendsPanel = new JPanel();
     JPanel messagePanel = new JPanel();
+    JPanel invite1 = new JPanel();
+    JPanel friend1 = new JPanel();
     JLabel messagePerson = new JLabel("Send To :"+personToMessage);
+    JLabel invite1Label = new JLabel("none");
+    JLabel friend1Label = new JLabel("none");
     JTextField messageArea = new JTextField();
     JTextField findPersonArea = new JTextField(10);
     JButton invitePersonBtn = new JButton("Invite");
     JButton sendMessage = new JButton("Message");
+    JButton inviteAccept = new JButton();
+    JButton inviteReject = new JButton();
+    JButton check = new JButton("Check if new Friends");
 
     ChatView(){
-        buildFriendsSection();
         invitePersonBtn.addActionListener(this);
+
+        check.addActionListener(
+            new ActionListener(){
+				public void actionPerformed(ActionEvent e){
+                    buildFriendsSection();
+				}
+			}
+        );
 
         chat.setLayout(new FlowLayout());
         chat.setPreferredSize(new Dimension (640,440));
         sideBar.setLayout(new FlowLayout());
         sideBar.setPreferredSize(new Dimension (200,420));
         sideBar.setBackground(Color.WHITE);
+        friendsPanel.setPreferredSize(new Dimension(180,3800));
+        invite1.setPreferredSize(new Dimension(160,20));
+        invite1.add(invite1Label);
+        invite1.setVisible(false);
+        friend1.setPreferredSize(new Dimension(160,20));
+        friend1.add(friend1Label);
+        friend1.setVisible(false);
+        friendsPanel.add(invite1);
+        friendsPanel.add(friend1);
         sideBar.add(findPersonArea);
         sideBar.add(invitePersonBtn);
+        sideBar.add(check);
+        sideBar.add(friendsPanel);
         chatPanel.setLayout(new FlowLayout());
         chatPanel.setPreferredSize(new Dimension (400,420));
         chatPanel.setBackground(Color.WHITE);
@@ -59,7 +84,7 @@ public class ChatView implements ActionListener{
             FileWriter myWriter = new FileWriter("friendsListDB.txt", true);
             BufferedWriter bWriter = new BufferedWriter(myWriter);
             PrintWriter pWriter = new PrintWriter(bWriter);
-            pWriter.write(chatUserName+"," +invitePerson+"," +"INVITE"+"\r");
+            pWriter.write("\r"+chatUserName+"," +invitePerson+"," +"INVITE");
             pWriter.close();
         }catch(IOException ioe){
             ioe.printStackTrace();
@@ -75,9 +100,9 @@ public class ChatView implements ActionListener{
 			Scanner myReader = new Scanner(myFile);
             while(myReader.hasNextLine()){
                 String data = myReader.nextLine();
-                invites[invitesNum] = (data);
 				String [] invite = data.split(","); 
-				if(invite[1].equals(chatUserName)){
+				if(invite[0].equals(chatUserName)){
+                    invites[invitesNum] = (data);
                     invitesNum += 1;
 				}
 			}
@@ -86,31 +111,15 @@ public class ChatView implements ActionListener{
             e.printStackTrace();
         }
 
-        System.out.println(invites[0]);
-        
-        /*for(int i = 0; i < invites.length-1; i++){
-            friendsPanel.removeAll();
-            String subInvite = invites[i];
+        for(int a = 0; a < invites.length-1; a++){
+            //Might have to add a NPE logic in here
+            System.out.println("In builder 1 " + invites[a]);       
+            String subInvite = invites[a];
+            System.out.println("In builder 2 "+subInvite);
             String [] subInviteSplit = subInvite.split(",");
-            if(subInviteSplit[1].equals(chatUserName)){
-                friendsPanel.removeAll();
-                int start = invites.length;
-                JPanel jpanel[] = new JPanel[start];
-                JLabel jlabel[] = new JLabel[start];
-                for(int x = 0; x <invites.length; ){
-                    jpanel[x] = new JPanel();
-                    jlabel[x] = new JLabel();
-                    JPanel test = jpanel[x];
-                    JLabel testLabel = jlabel[x];
-                    test.setPreferredSize(new Dimension (100,20));
-                    test.setBackground(Color.RED);
-                    test.add(testLabel);
-                    System.out.println("Clicked on the blank2");
-                    friendsPanel.add(test);
-                }
-                friendsPanel.validate();
-                friendsPanel.repaint();
+            if(subInviteSplit[0].equals(chatUserName)){
+                System.out.println("Test");
             }
-        }*/
+        }
     }
-}//114
+}//125
