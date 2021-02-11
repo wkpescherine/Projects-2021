@@ -15,6 +15,8 @@ public class MainView implements ActionListener{
 
 	String itemsArray1 [] ={"item1","310","240", "item2","310","240","item3","630","200"};
 	String itemsArray2 [] ={"item1","200","440", "item2","200","440","item3","200","440"};
+	String testsite1 = "Zero;p(name,100,100, none);name(t(This is a string text))";
+	String nameOfUser = "None";
 
 	JPanel main = new JPanel();
 	JPanel display = new JPanel();
@@ -122,6 +124,9 @@ public class MainView implements ActionListener{
 					if(zsite.equals("test2.zero")){
 						siteView.panelBuilder(itemsArray2);
 					}
+					if(zsite.equals("test3.zero")){
+						siteView.panelBuilder2(testsite1);
+					}
 				}
 			}
 		);
@@ -141,6 +146,7 @@ public class MainView implements ActionListener{
 	}
 
 	public void Home(){
+		System.out.println(nameOfUser+" in Main View");
 		mailView.mail.setVisible(false);
 		siteView.site.setVisible(false);
 		chatView.chat.setVisible(false);
@@ -161,4 +167,8 @@ public class MainView implements ActionListener{
 		retailView.retail.setVisible(false);
 		settingView.setting.setVisible(false);
 	}
-}//163
+
+	public void mainSetUser(String nameUsed){
+		nameOfUser = nameUsed;
+	}
+}//174
