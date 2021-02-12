@@ -48,6 +48,7 @@ public class Site{
 		String [] sections = sampleSite.split(";");
 		int start = sections.length;
 		JPanel jpanel[] = new JPanel[start];
+		JLabel jlabel[] = new JLabel[start];
 
 		for(int i = 0; i <sections.length; i++ ){
 			System.out.println(sections[i]);
@@ -55,18 +56,23 @@ public class Site{
 				String newPanel = sections[i+1];
 				String [] subSections = newPanel.split("\\,|\\(|\\)");
 				for(int a = 0; a < subSections.length; a++){
-					System.out.println(subSections[a]);
+					if(subSections[a].equals("p")){
+						jpanel[i] = new JPanel();
+						JPanel test = jpanel[i];
+						int val1 = Integer.parseInt(subSections[2]);
+						int val2 = Integer.parseInt(subSections[3]);
+						test.setPreferredSize(new Dimension (val1,val2));
+						test.setBackground(Color.WHITE);
+						site.add(test);
+						String newSection = sections[i+2];
+						String [] subNewSections = newSection.split("\\,|\\(|\\)");
+						for(int x = 0; x < 100; x++ ){
+
+						}
+
+					}
 				}
 			}
-		/*	jpanel[i] = new JPanel();
-			JPanel test = jpanel[i];
-			int val1 = Integer.parseInt(array[i+1]);
-			int val2 = Integer.parseInt(array[i+2]);
-			test.setPreferredSize(new Dimension (val1,val2));
-			test.setBackground(Color.WHITE);
-			System.out.println("Clicked on the blank2");
-			site.add(test);
-			i += 3;*/
 		}
 		site.validate();
 		site.repaint();
