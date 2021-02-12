@@ -67,9 +67,17 @@ public class Site{
 						String newSection = sections[i+2];
 						String [] subNewSections = newSection.split("\\,|\\(|\\)");
 						for(int x = 0; x < 100; x++ ){
-
+							if(subNewSections[0].equals(subSections[1])){
+								if(subNewSections[1].equals("t")){
+									jlabel[a] = new JLabel("text");
+									JLabel testLabel = jlabel[a];
+									testLabel.setText(subNewSections[2]);
+									test.add(testLabel);
+									x= 2200;
+									i +=3;
+								}
+							}
 						}
-
 					}
 				}
 			}
@@ -77,4 +85,4 @@ public class Site{
 		site.validate();
 		site.repaint();
 	}   
-}//74
+}//88
