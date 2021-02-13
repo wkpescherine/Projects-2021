@@ -13,7 +13,7 @@ public class Site{
 		site.removeAll();
         site.setLayout(new FlowLayout());
         site.setPreferredSize(new Dimension (860,540));
-		site.setVisible(true);
+		site.setVisible(false);
 		site.add(siteText);
 		site.validate();
 		site.repaint();
