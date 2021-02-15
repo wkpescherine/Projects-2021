@@ -17,31 +17,11 @@ public class MailView implements ActionListener{
     JPanel mail = new JPanel();
     JPanel zmail = new JPanel();
     JPanel zcompose = new JPanel();
-    JPanel messageRec1 = new JPanel();
-    JPanel messageRec2 = new JPanel();
-    JPanel messageRec3 = new JPanel();
-    JPanel messageRec4 = new JPanel();
     JButton inbox = new JButton("Inbox");
     JButton compose = new JButton("Compose");
     JButton previous = new JButton("Previous");
     JButton next = new JButton("Next");
     JButton send = new JButton("Send");
-    JLabel fromRec1 = new JLabel("user1");
-    JLabel titleRec1 = new JLabel("title1");
-    JLabel dateSent1 = new JLabel("1/1/21");
-    JLabel dateRec1 = new JLabel("1/1/21");
-    JLabel fromRec2 = new JLabel("user1");
-    JLabel titleRec2 = new JLabel("title1");
-    JLabel dateSent2 = new JLabel("1/1/21");
-    JLabel dateRec2 = new JLabel("1/1/21");
-    JLabel fromRec3 = new JLabel("user1");
-    JLabel titleRec3 = new JLabel("title1");
-    JLabel dateSent3 = new JLabel("1/1/21");
-    JLabel dateRec3 = new JLabel("1/1/21");
-    JLabel fromRec4 = new JLabel("user1");
-    JLabel titleRec4 = new JLabel("title1");
-    JLabel dateSent4 = new JLabel("1/1/21");
-    JLabel dateRec4 = new JLabel("1/1/21");
     JLabel fromText = new JLabel("From:");
     JLabel toText = new JLabel("To:");
     JLabel titleText = new JLabel("Title:");
@@ -73,53 +53,11 @@ public class MailView implements ActionListener{
         
         mail.setLayout(new FlowLayout());
         mail.setPreferredSize(new Dimension (840,520));
-        zmail.setLayout(null);
-        zmail.setPreferredSize(new Dimension (820,480));
-        messageRec1.setBounds(50,25,700,25);
-        messageRec1.setBackground(Color.WHITE);
-        messageRec1.setLayout(new FlowLayout());
-        messageRec1.setPreferredSize(new Dimension(600,50));
-        messageRec1.setVisible(false);
-        messageRec2.setBounds(50,60,700,25);
-        messageRec2.setLayout(new FlowLayout());
-        messageRec2.setBackground(Color.WHITE);
-        messageRec2.setPreferredSize(new Dimension(600,50));
-        messageRec2.setVisible(false);
-        messageRec3.setBounds(50,95,700,25);
-        messageRec3.setLayout(new FlowLayout());
-        messageRec3.setBackground(Color.WHITE);
-        messageRec3.setPreferredSize(new Dimension(600,50));
-        messageRec3.setVisible(false);
-        messageRec4.setBounds(50,130,700,25);
-        messageRec4.setLayout(new FlowLayout());
-        messageRec4.setBackground(Color.WHITE);
-        messageRec4.setPreferredSize(new Dimension(600,50));
-        messageRec4.setVisible(false);
-        messageRec1.add(fromRec1);
-        messageRec1.add(titleRec1);
-        messageRec1.add(dateSent1);
-        messageRec1.add(dateRec1);
-        messageRec2.add(fromRec2);
-        messageRec2.add(titleRec2);
-        messageRec2.add(dateSent2);
-        messageRec2.add(dateRec2);
-        messageRec3.add(fromRec3);
-        messageRec3.add(titleRec3);
-        messageRec3.add(dateSent3);
-        messageRec3.add(dateRec3);
-        messageRec4.add(fromRec4);
-        messageRec4.add(titleRec4);
-        messageRec4.add(dateSent4);
-        messageRec4.add(dateRec4);
+        zmail.setLayout(new FlowLayout());
+        zmail.setPreferredSize(new Dimension (620,480));
         previous.setBounds(250,350,100,25);
         next.setBounds(450,350,100,25);
-        zmail.add(messageRec1);
-        zmail.add(messageRec2);
-        zmail.add(messageRec3);
-        zmail.add(messageRec4);
         zmail.setVisible(false);
-        zmail.add(previous);
-        zmail.add(next);
         zcompose.setLayout(null);
         zcompose.setPreferredSize(new Dimension (820,480));
         fromText.setBounds(50,25,50,25);
@@ -142,6 +80,8 @@ public class MailView implements ActionListener{
         zcompose.setVisible(false);
         mail.add(inbox);
         mail.add(compose);
+        mail.add(previous);
+        mail.add(next);
         mail.add(zmail);
         mail.add(zcompose);
         mail.setVisible(false);
@@ -184,31 +124,36 @@ public class MailView implements ActionListener{
             e.printStackTrace();
         }
         
-        System.out.println(emails[0]);
-
-        for(int i = 0; i < emails.length-1; i++){
-            String subMsg = emails[i];
+        zmail.removeAll();
+        int start = emails.length;
+        JPanel jpanel[] = new JPanel[start];
+        JButton jbutton[] = new JButton[start];
+        JLabel jlabel[] = new JLabel[start];
+    
+        for(int a = 0; a < emails.length-1; a++){
+            String subMsg = emails[a];
             String [] subMsgSplit = subMsg.split(",");
-            if(i == 0){
-                messageRec1.setVisible(true); 
-                fromRec1.setText(subMsgSplit[1]);
-                titleRec1.setText(subMsgSplit[2]);
-            }
-            if(i == 1){
-                messageRec2.setVisible(true); 
-                fromRec2.setText(subMsgSplit[1]);
-                titleRec2.setText(subMsgSplit[2]);
-            }
-            if(i == 3){
-                messageRec2.setVisible(true); 
-                fromRec2.setText(subMsgSplit[1]);
-                titleRec2.setText(subMsgSplit[2]);
-            }
-            if(i == 4){
-                messageRec3.setVisible(true); 
-                fromRec3.setText(subMsgSplit[1]);
-                titleRec4.setText(subMsgSplit[2]);
-            }
+            jpanel[a] = new JPanel();
+            jbutton[a] = new JButton("View");
+            jlabel[a] = new JLabel();
+            JPanel mailSub = jpanel[a];
+            JButton mailSubButton = jbutton[a];
+            JLabel mailSubLabel = jlabel[a];
+            mailSubButton.addActionListener(
+                new ActionListener(){
+                    public void actionPerformed(ActionEvent e){
+                        System.out.println(subMsgSplit[3]);
+                    }
+                }
+            );
+            mailSubLabel.setText(subMsgSplit[1]+" "+ subMsgSplit[2]);
+            mailSub.setLayout(new FlowLayout());
+            mailSub.setPreferredSize(new Dimension (600,50));
+            mailSub.add(mailSubLabel);
+            mailSub.add(mailSubButton);
+            zmail.add(mailSub);
         }
+        zmail.validate();
+        zmail.repaint();
     }
-}//214
+}//159
