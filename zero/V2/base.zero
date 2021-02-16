@@ -1,7 +1,0 @@
-Zero{
-	Section (100 100){ 
-		Text(none){
-			"Welcome"
-		}
-	}
-}
