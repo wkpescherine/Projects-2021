@@ -13,9 +13,7 @@ public class MainView implements ActionListener{
 	Home homeView = new Home();
     ConfigFile mainConfigFile = new ConfigFile();	
 
-	String itemsArray1 [] ={"item1","310","240", "item2","310","240","item3","630","200"};
-	String itemsArray2 [] ={"item1","200","440", "item2","200","440","item3","200","440"};
-	String testsite1 = "Zero;p(name,100,100, none);name(t(This is a string text))";
+	String testsite2 = "Zero;p(name,100,100, none);t(Welcome to a Zero Site)";
 	String nameOfUser = "None";
 
 	JPanel main = new JPanel();
@@ -33,7 +31,7 @@ public class MainView implements ActionListener{
 	
 	MainView(){
 		main.setLayout(new FlowLayout());
-		main.setBackground(Color.BLACK);
+		main.setBackground(Color.RED);
 		main.setPreferredSize(new Dimension (860,540));
 		display.setPreferredSize(new Dimension (750,520));
 		close.setPreferredSize(new Dimension(60,60));
@@ -118,14 +116,8 @@ public class MainView implements ActionListener{
 					retailView.retail.setVisible(false);
 					settingView.setting.setVisible(false);
 					String zsite = search.getText();
-					if(zsite.equals("test1.zero")){
-						siteView.panelBuilder(itemsArray1);						
-					}
-					if(zsite.equals("test2.zero")){
-						siteView.panelBuilder(itemsArray2);
-					}
-					if(zsite.equals("test3.zero")){
-						siteView.panelBuilder2(testsite1);
+					if(zsite.equals("test4.zero")){
+						siteView.panelBuilder3(testsite2);
 					}
 				}
 			}
@@ -171,4 +163,4 @@ public class MainView implements ActionListener{
 	public void mainSetUser(String nameUsed){
 		nameOfUser = nameUsed;
 	}
-}//174
+}//166
