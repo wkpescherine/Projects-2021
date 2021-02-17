@@ -14,6 +14,7 @@ public class MainView implements ActionListener{
     ConfigFile mainConfigFile = new ConfigFile();	
 
 	String testsite2 = "Zero;p(name,100,100, none);t(Welcome to a Zero Site)";
+	String testsite3 = "Zero;p(name,100,100, none);name(t(This is a string text))";
 	String nameOfUser = "None";
 
 	JPanel main = new JPanel();
@@ -119,6 +120,9 @@ public class MainView implements ActionListener{
 					if(zsite.equals("test4.zero")){
 						siteView.panelBuilder3(testsite2);
 					}
+					if(zsite.equals("test5.zero")){
+						siteView.panelBuilder3(testsite3);
+					}
 				}
 			}
 		);
@@ -163,4 +167,4 @@ public class MainView implements ActionListener{
 	public void mainSetUser(String nameUsed){
 		nameOfUser = nameUsed;
 	}
-}//166
+}//170

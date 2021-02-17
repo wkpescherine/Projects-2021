@@ -5,9 +5,10 @@ import java.lang.String;
 public class Site{
     JPanel site = new JPanel();
 	JLabel siteText = new JLabel("This is a test site");
-	String testsite1 = "Zero;p(name,100,100, none);name(t(This is a string text))";
 	String testsite2 = "Zero;p(name,100,100, none);t(Welcome to a Zero Site)";
-	
+	String testsite3 = "Zero;p(name,100,100, none);name(t(This is a string text))";
+	String [] groupNames = {"group_name0","group_name1","group_name2","group_name3"};
+
     Site(){
 		site.removeAll();
         site.setLayout(new FlowLayout());
@@ -35,6 +36,7 @@ public class Site{
 				site.removeAll();
 			}
 			if(subSections[0].equals("p")){
+				groupNames[i] = subSections[1];
 				jpanel[i] = new JPanel();
 				JPanel test = jpanel[i];
 				int val1 = Integer.parseInt(subSections[2]);
@@ -49,8 +51,19 @@ public class Site{
 				testLabel.setText(subSections[1]);
 				site.add(testLabel);
 			}
+			for(int x = 0; x <4; x ++){
+				if(groupNames[x].equals(subSections[0])){
+					if(subSections[1].equals("t")){
+						jlabel[x] = new JLabel("text");
+						JLabel testLabel = jlabel[x];
+						testLabel.setText(subSections[2]);
+						jpanel[x].add(testLabel);
+					}
+				}
+			}
+			
 		}
 		site.validate();
 		site.repaint();
 	}
-}//56
+}//69
