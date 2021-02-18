@@ -17,14 +17,17 @@ public class MailView implements ActionListener{
     JPanel mail = new JPanel();
     JPanel zmail = new JPanel();
     JPanel zcompose = new JPanel();
+    JPanel messagePanel = new JPanel();
     JButton inbox = new JButton("Inbox");
     JButton compose = new JButton("Compose");
     JButton previous = new JButton("Previous");
     JButton next = new JButton("Next");
     JButton send = new JButton("Send");
+    JButton messageClose = new JButton("Close");
     JLabel fromText = new JLabel("From:");
     JLabel toText = new JLabel("To:");
     JLabel titleText = new JLabel("Title:");
+    JLabel messageLabel = new JLabel("Message in here");
     JTextField fromTextField = new JTextField(25);
     JTextField toTextField = new JTextField(25);
     JTextField titleTextField = new JTextField(25);
@@ -37,6 +40,7 @@ public class MailView implements ActionListener{
 				public void actionPerformed(ActionEvent e){
 					zmail.setVisible(true);
                     zcompose.setVisible(false);
+                    messagePanel.setVisible(false);
                     populateMail();
 				}
 			}
@@ -47,8 +51,18 @@ public class MailView implements ActionListener{
 					zmail.setVisible(false);
                     zcompose.setVisible(true);
                     fromTextField.setText(nameOfUser);
+                    messagePanel.setVisible(false);
 				}
 			}
+        );
+
+        messageClose.addActionListener(
+            new ActionListener(){
+                public void actionPerformed(ActionEvent e){
+                    messagePanel.setVisible(false);
+                    zmail.setVisible(true);
+                }
+            }
         );
         
         mail.setLayout(new FlowLayout());
@@ -69,6 +83,11 @@ public class MailView implements ActionListener{
         messageArea.setBounds(175,100,500,200);
         messageArea.setLineWrap(true);
         send.setBounds(200,300,100,25);
+        messagePanel.setLayout(new FlowLayout());
+        messagePanel.setPreferredSize(new Dimension(600,400));
+        messagePanel.add(messageLabel);
+        messagePanel.add(messageClose);
+        messagePanel.setVisible(false);
         zcompose.add(fromText);
         zcompose.add(fromTextField);
         zcompose.add(toText);
@@ -84,6 +103,7 @@ public class MailView implements ActionListener{
         mail.add(next);
         mail.add(zmail);
         mail.add(zcompose);
+        mail.add(messagePanel);
         mail.setVisible(false);
     }    
     public void actionPerformed(ActionEvent e){
@@ -142,7 +162,9 @@ public class MailView implements ActionListener{
             mailSubButton.addActionListener(
                 new ActionListener(){
                     public void actionPerformed(ActionEvent e){
-                        System.out.println(subMsgSplit[3]);
+                        displayMessage(subMsgSplit[3]);
+                        zmail.setVisible(false);
+                        messagePanel.setVisible(true);
                     }
                 }
             );
@@ -156,4 +178,8 @@ public class MailView implements ActionListener{
         zmail.validate();
         zmail.repaint();
     }
-}//159
+
+    public void displayMessage(String viewMessage){
+        messageLabel.setText(viewMessage);
+    }
+}//185

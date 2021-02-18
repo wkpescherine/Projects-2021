@@ -53,11 +53,23 @@ public class Site{
 			}
 			for(int x = 0; x <4; x ++){
 				if(groupNames[x].equals(subSections[0])){
+					//name(t(This is a test));
 					if(subSections[1].equals("t")){
 						jlabel[x] = new JLabel("text");
 						JLabel testLabel = jlabel[x];
 						testLabel.setText(subSections[2]);
 						jpanel[x].add(testLabel);
+					}
+					//name(p(none,10,10, none))
+					if(subSections[1].equals("p")){
+						groupNames[i] = subSections[2];
+						jpanel[i] = new JPanel();
+						JPanel test2 = jpanel[i];
+						int val1 = Integer.parseInt(subSections[3]);
+						int val2 = Integer.parseInt(subSections[4]);
+						test2.setPreferredSize(new Dimension (val1,val2));
+						test2.setBackground(Color.RED);
+						jpanel[x].add(test2);
 					}
 				}
 			}
@@ -66,4 +78,4 @@ public class Site{
 		site.validate();
 		site.repaint();
 	}
-}//69
+}//81
