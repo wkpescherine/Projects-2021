@@ -148,6 +148,7 @@ public class MailView implements ActionListener{
         int start = emails.length;
         JPanel jpanel[] = new JPanel[start];
         JButton jbutton[] = new JButton[start];
+        JButton jbtnpage[] = new JButton[start];
         JLabel jlabel[] = new JLabel[start];
     
         for(int a = 0; a < emails.length-1; a++){
@@ -175,6 +176,23 @@ public class MailView implements ActionListener{
             mailSub.add(mailSubButton);
             zmail.add(mailSub);
         }
+
+        //The logic here is broken not doing anything at the moment
+        //for(int a = 1; a< emails.length/10; a++){
+        for(int b = 1; b< 10; b++){
+            jbtnpage[b] = new JButton("1");
+            JButton pageSelector = jbtnpage[b];
+            System.out.print(b);
+            pageSelector.addActionListener(
+                new ActionListener(){
+                    public void actionPerformed(ActionEvent e){
+                        populateMail();
+                    }
+                }
+            );
+            zmail.add(pageSelector);
+        }
+
         zmail.validate();
         zmail.repaint();
     }
@@ -182,4 +200,4 @@ public class MailView implements ActionListener{
     public void displayMessage(String viewMessage){
         messageLabel.setText(viewMessage);
     }
-}//185
+}//203
