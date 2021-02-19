@@ -4,21 +4,21 @@ import javax.swing.*;
 public class Settings{
     JPanel setting = new JPanel();
     JLabel settingText = new JLabel("In setting section");
-    JLabel tempIdNum = new JLabel("none1");
-    Config config;
+    JLabel tempId = new JLabel("Temp Id");
+    ConfigFile settingConfigFile = new ConfigFile();
+
+    String settingUserName = "none";
+    String settingsTempId = "none";
 
     Settings(){
-        //System.out.println(config.tempId+" from the settings view 1st");
-
         setting.setLayout(new FlowLayout());
         setting.setPreferredSize(new Dimension (840,520));
+        settingText.setPreferredSize(new Dimension (640,50));
+        settingText.setText(settingUserName);
+        tempId.setPreferredSize(new Dimension (640,50));
+        tempId.setText(settingsTempId);
         setting.add(settingText);
-        setting.add(tempIdNum);
+        setting.add(tempId);
         setting.setVisible(false);
-    }
-
-    void passConfig(Config config, int a){
-        this.config = config;
-		System.out.println(config.tempId+" from the settings view " + a);
     }
 }//14

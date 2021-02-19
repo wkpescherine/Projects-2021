@@ -2,7 +2,7 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 import java.lang.String;
-import java.io.IOException;
+//import java.io.IOException;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
@@ -12,8 +12,11 @@ public class Zero implements ActionListener{
 	StartView startView = new StartView();
 	MainView mainView = new MainView();
 	MailView mailView = new MailView();
+	Settings settings = new Settings();
+	//ChatView chatView = new ChatView();
 	CreateAccountView accountView = new CreateAccountView();
 	Config config = new Config();
+	ConfigFile configFile = new ConfigFile();
 
     JFrame window = new JFrame("Zero v3");
 
@@ -89,6 +92,10 @@ public class Zero implements ActionListener{
 					mainView.siteView.site.setVisible(true);
 					mainView.mailView.mail.setVisible(false);
 					mainView.chatView.chat.setVisible(false);
+					mainView.settingView.setting.setVisible(false);
+					mainView.bankView.bank.setVisible(false);
+					mainView.retailView.retail.setVisible(false);
+					mainView.homeView.home.setVisible(false);
 				}
 			}
 		);
@@ -141,7 +148,11 @@ public class Zero implements ActionListener{
 		String usernameEntered = startView.startEditUsername.getText();
 		String passwordEntered = startView.startEditPassword.getText();
 		String [] checklogin;
-		//mailView.mailSetConfigFile(usernameEntered);
+		mainView.mainSetUser(usernameEntered);
+		mainView.mailView.nameOfUser = usernameEntered;
+		mainView.chatView.chatUserName = usernameEntered;
+		mainView.settingView.settingUserName = usernameEntered;
+		mainView.settingView.settingsTempId = configFile.tempId;
 
 		try{
             File myFile = new File("accountDB.txt");
@@ -156,7 +167,6 @@ public class Zero implements ActionListener{
 					startView.start.setVisible(false);
 					accountView.create.setVisible(false);
 					mainView.main.setVisible(true);
-					
 				}else{
 					startView.startEditPassword.setText("");
 					startView.startEditUsername.setText("");
@@ -179,4 +189,4 @@ public class Zero implements ActionListener{
 		System.out.println("Eventually will add in the logic to update");
 		System.out.println("At moment this is just placeholder");
 	}
-}//179
+}//183
