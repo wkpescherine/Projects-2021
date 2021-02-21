@@ -3,7 +3,12 @@ import javax.swing.*;
 
 public class Bank{
     JPanel bank = new JPanel();
+    JPanel countryToZ = new JPanel();
+    JPanel zToCountry = new JPanel();
     JLabel bankText = new JLabel("In bank section");
+
+    String [] country = {};
+    Float [] conversionRate = {};
 
     Bank(){
         bank.setLayout(new FlowLayout());
@@ -11,4 +16,4 @@ public class Bank{
         bank.add(bankText);
         bank.setVisible(false);
     }
-}//14
+}//19
