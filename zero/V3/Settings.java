@@ -6,11 +6,13 @@ public class Settings implements ActionListener{
     JPanel setting = new JPanel();
     JLabel settingText = new JLabel("");
     JLabel tempId = new JLabel("");
+    JLabel settingDate = new JLabel("");
+    JLabel settingVersion = new JLabel("");
     JButton configure = new JButton("Configure");
     ConfigFile settingConfigFile = new ConfigFile();
 
-    String settingUserName = "none";
-    String settingsTempId = "none";
+    //String settingUserName = "none";
+    //String settingsTempId = "none";
 
     Settings(){
         configure.addActionListener(this);
@@ -18,16 +20,22 @@ public class Settings implements ActionListener{
         setting.setLayout(new FlowLayout());
         setting.setPreferredSize(new Dimension (840,520));
         settingText.setPreferredSize(new Dimension (640,30));
+        settingDate.setPreferredSize(new Dimension (640,30));
+        settingVersion.setPreferredSize(new Dimension (640,30));
         tempId.setPreferredSize(new Dimension (640,30));
         configure.setPreferredSize(new Dimension (640,50));
         setting.add(settingText);
+        setting.add(settingDate);
+        setting.add(settingVersion);
         setting.add(tempId);
         setting.add(configure);
         setting.setVisible(false);
     }
 
     public void actionPerformed(ActionEvent e){
+        settingDate.setText(settingConfigFile.date);
         settingText.setText(settingConfigFile.username);
-        tempId.setText(settingsTempId);
+        tempId.setText(settingConfigFile.tempId);
+        settingVersion.setText(settingConfigFile.version);
     }
-}//33
+}//41
