@@ -57,20 +57,26 @@ public class Bank implements ActionListener{
         JTextField jtextfield[] = new JTextField[start];
         JLabel jlabelrate[] = new JLabel[start];
         JLabel jlabelcountry[] = new JLabel[start];
+
+        for(int a = 0; a < country.length; a++){
+            jpanel[a] = new JPanel();
+            jbutton[a] = new JButton("Purchase");
+            jlabelcountry[a] = new JLabel(country[a]);
+            jlabelrate[a] = new JLabel(country[a]+"");
+            jtextfield[a] = new JTextField(20);
+            JPanel countryList = jpanel[a];
+            JButton purchase = jbutton[a];
+            JLabel countryName = jlabelcountry[a];
+            JLabel countryRate = jlabelrate[a];
+            JTextField  countryValue = jtextfield[a];
+        }
     }
 
     public void convertToZcoin(){}
 
     public void cenvertToCountry(){}
-}//65
+}//78
 
-for(int a = 0; a < emails.length-1; a++){
-jpanel[a] = new JPanel();
-jbutton[a] = new JButton("View");
-jlabel[a] = new JLabel();
-JPanel mailSub = jpanel[a];
-JButton mailSubButton = jbutton[a];
-JLabel mailSubLabel = jlabel[a];
 mailSubButton.addActionListener(
     new ActionListener(){
         public void actionPerformed(ActionEvent e){
