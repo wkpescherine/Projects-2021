@@ -69,26 +69,27 @@ public class Bank implements ActionListener{
             JLabel countryName = jlabelcountry[a];
             JLabel countryRate = jlabelrate[a];
             JTextField  countryValue = jtextfield[a];
+            purchase.addActionListener(
+                new ActionListener(){
+                    public void actionPerformed(ActionEvent e){
+                        System.out.println("Test");
+                    }
+                }
+            );
+            countryList.setPreferredSize(new Dimension(400,30));
+            countryList.setLayout(new FlowLayout());
+            countryList.add(countryName);
+            countryList.add(countryValue);
+            countryList.add(countryRate);
+            countryList.add(purchase);
+            countryToZ.add(countryList);
         }
+
+        countryToZ.validate();
+        countryToZ.repaint();
     }
 
     public void convertToZcoin(){}
 
     public void cenvertToCountry(){}
-}//78
-
-mailSubButton.addActionListener(
-    new ActionListener(){
-        public void actionPerformed(ActionEvent e){
-            displayMessage(subMsgSplit[3]);
-            zmail.setVisible(false);
-            messagePanel.setVisible(true);
-        }
-    }
-);
-mailSubLabel.setText(subMsgSplit[1]+" "+ subMsgSplit[2]);
-mailSub.setLayout(new FlowLayout());
-mailSub.setPreferredSize(new Dimension (600,50));
-mailSub.add(mailSubLabel);
-mailSub.add(mailSubButton);
-zmail.add(mailSub);
+}//92
