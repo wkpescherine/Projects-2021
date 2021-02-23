@@ -26,13 +26,17 @@ public class CreateAccountView {
         create.setLayout(new FlowLayout());
 		create.setBackground(Color.BLACK);
 		username.setForeground(Color.WHITE);
+		username.setPreferredSize(new Dimension(1020,30));
+		username.setHorizontalAlignment(SwingConstants.CENTER);
+		username3.setPreferredSize(new Dimension(1020,30));
 		password.setForeground(Color.WHITE);
+		password.setPreferredSize(new Dimension(1020,30));
+		password.setHorizontalAlignment(SwingConstants.CENTER);
+		password3.setHorizontalAlignment(SwingConstants.CENTER);
 		createResult.setForeground(Color.WHITE);
-		create.setPreferredSize(new Dimension(300,560));
+		create.setPreferredSize(new Dimension(1040,670));
 		newAccount.setPreferredSize(new Dimension(150,40));
 		back.setPreferredSize(new Dimension(150,40));
-		username3.setHorizontalAlignment(SwingConstants.CENTER);
-		password3.setHorizontalAlignment(SwingConstants.CENTER);
 		newAccount.setHorizontalAlignment(SwingConstants.CENTER);		
 		back.setHorizontalAlignment(SwingConstants.CENTER);		
         create.add(username);
@@ -83,4 +87,4 @@ public class CreateAccountView {
 			createResult.setText("Failed to create account");
 		}
 	}
-}//83
+}//90
