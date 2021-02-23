@@ -11,36 +11,44 @@ public class MainView implements ActionListener{
 	Settings settingView = new Settings();
 	About2 about2View = new About2();
 	Home homeView = new Home();
+	History historyView = new History();
     ConfigFile mainConfigFile = new ConfigFile();	
 
 	String testsite2 = "Zero;p(name,100,100, none);t(Welcome to a Zero Site)";
 	String testsite3 = "Zero;p(name,100,100, none);name(t(This is a string text))";
 	String nameOfUser = "None";
+	String [] historyArray = new String[100];
 
 	JPanel main = new JPanel();
+	JPanel sidebar = new JPanel();
 	JPanel display = new JPanel();
 	JButton close = new JButton("Exit");
 	JButton mail = new JButton("Mail");
 	JButton home  = new JButton("Home");
 	JButton bank  = new JButton("Bank");
 	JButton retail  = new JButton("Retail");
-	JButton settings  = new JButton("Settings");
+	JButton settings  = new JButton("Setting");
 	JButton chat  = new JButton("Chat");
 	JButton about2 = new JButton("About");
 	JButton searchBtn = new JButton("search");
-	JTextField search = new JTextField(50);
+	JButton history = new JButton("History");
+	JTextField search = new JTextField(68);
 	
 	MainView(){
 		main.setLayout(new FlowLayout());
 		main.setBackground(Color.RED);
-		//main.setPreferredSize(new Dimension (860,540));
 		main.setPreferredSize(new Dimension(1040,670));
-		display.setPreferredSize(new Dimension (750,520));
+		display.setLayout(new FlowLayout());
+		display.setPreferredSize(new Dimension (930,660));
+		display.setBackground(Color.BLACK);
+		sidebar.setPreferredSize(new Dimension(80,660));
 		close.setPreferredSize(new Dimension(60,60));
 		close.setFont(new Font("Serif", Font.PLAIN,12));
+		history.setPreferredSize(new Dimension(60,60));
+		history.setFont(new Font("Serif", Font.PLAIN,12));
 		mail.setPreferredSize(new Dimension(60,60));
 		mail.setFont(new Font("Serif", Font.PLAIN, 12));
-		about2.setPreferredSize(new Dimension(80,60));
+		about2.setPreferredSize(new Dimension(60,60));
 		about2.setFont(new Font("Serif", Font.PLAIN,12));
 		search.setHorizontalAlignment(SwingConstants.CENTER);
 		searchBtn.setPreferredSize(new Dimension(90,20));
@@ -50,14 +58,6 @@ public class MainView implements ActionListener{
 		bank.setPreferredSize(new Dimension(60,60));
 		settings.setPreferredSize(new Dimension(60,60));
 		retail.setPreferredSize(new Dimension(60,60));
-		display.add(mailView.mail);
-		display.add(siteView.site);
-		display.add(chatView.chat);
-		display.add(bankView.bank);
-		display.add(retailView.retail);
-		display.add(about2View.about2);
-		display.add(settingView.setting);
-		display.add(homeView.home);
 
 		bank.addActionListener(this);
 
@@ -72,6 +72,23 @@ public class MainView implements ActionListener{
 					retailView.retail.setVisible(true);
 					about2View.about2.setVisible(false);
 					settingView.setting.setVisible(false);
+					historyView.history.setVisible(false);
+				}
+			}
+		);
+
+		history.addActionListener(
+			new ActionListener(){
+				public void actionPerformed(ActionEvent e){
+					mailView.mail.setVisible(false);
+					siteView.site.setVisible(false);
+					chatView.chat.setVisible(false);
+					bankView.bank.setVisible(false);
+					homeView.home.setVisible(false);
+					retailView.retail.setVisible(false);
+					about2View.about2.setVisible(false);
+					settingView.setting.setVisible(false);
+					historyView.history.setVisible(true);
 				}
 			}
 		);
@@ -87,6 +104,7 @@ public class MainView implements ActionListener{
 					retailView.retail.setVisible(false);
 					about2View.about2.setVisible(false);
 					settingView.setting.setVisible(true);
+					historyView.history.setVisible(false);
 				}
 			}
 		);
@@ -102,6 +120,7 @@ public class MainView implements ActionListener{
 					about2View.about2.setVisible(true);
 					retailView.retail.setVisible(false);
 					settingView.setting.setVisible(false);
+					historyView.history.setVisible(false);
 				}
 			}
 		);
@@ -117,6 +136,7 @@ public class MainView implements ActionListener{
 					about2View.about2.setVisible(false);
 					retailView.retail.setVisible(false);
 					settingView.setting.setVisible(false);
+					historyView.history.setVisible(false);
 					String zsite = search.getText();
 					if(zsite.equals("test4.zero")){
 						siteView.panelBuilder3(testsite2);
@@ -127,17 +147,26 @@ public class MainView implements ActionListener{
 				}
 			}
 		);
-
-		main.add(home);
-		main.add(mail);
-		main.add(chat);
-		main.add(bank);
-		main.add(retail);
-		main.add(about2);
-		main.add(settings);
-		main.add(close);
-		main.add(search);
-		main.add(searchBtn);
+		sidebar.add(home);
+		sidebar.add(mail);
+		sidebar.add(chat);
+		sidebar.add(bank);
+		sidebar.add(retail);
+		sidebar.add(about2);
+		sidebar.add(settings);
+		sidebar.add(close);
+		sidebar.add(history);
+		display.add(search);
+		display.add(searchBtn);
+		display.add(mailView.mail);
+		display.add(siteView.site);
+		display.add(chatView.chat);
+		display.add(bankView.bank);
+		display.add(retailView.retail);
+		display.add(about2View.about2);
+		display.add(settingView.setting);
+		display.add(homeView.home);
+		main.add(sidebar);
 		main.add(display);
 		main.setVisible(false);
 	}
@@ -152,6 +181,7 @@ public class MainView implements ActionListener{
 		about2View.about2.setVisible(false);
 		retailView.retail.setVisible(false);
 		settingView.setting.setVisible(false);
+		historyView.history.setVisible(false);
 	}
 
 	public void actionPerformed(ActionEvent e){
@@ -163,9 +193,10 @@ public class MainView implements ActionListener{
 		about2View.about2.setVisible(false);
 		retailView.retail.setVisible(false);
 		settingView.setting.setVisible(false);
+		historyView.history.setVisible(false);
 	}
 
 	public void mainSetUser(String nameUsed){
 		nameOfUser = nameUsed;
 	}
-}//171
+}//202
