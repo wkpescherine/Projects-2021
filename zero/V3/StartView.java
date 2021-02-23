@@ -15,15 +15,20 @@ public class StartView{
 
     StartView(){
         start.setLayout(null);
-		start.setPreferredSize(new Dimension(860,560));
-		start.setBackground(Color.BLACK);
+		start.setPreferredSize(new Dimension(1040,670));
+		start.setBackground(Color.BLUE);
 		startUsername.setForeground(Color.WHITE);
+		startUsername.setHorizontalAlignment(SwingConstants.CENTER);
 		startPassword.setForeground(Color.WHITE);
+		startPassword.setHorizontalAlignment(SwingConstants.CENTER);
 		errorMessage.setForeground(Color.WHITE);
+		errorMessage.setHorizontalAlignment(SwingConstants.CENTER);
 		startUsername.setBounds(380, 50, 200, 25);
 		startEditUsername.setBounds(380, 100,200,25);
+		startEditUsername.setHorizontalAlignment(SwingConstants.CENTER);
 		startPassword.setBounds(380, 150, 200, 25);
 		startEditPassword.setBounds(380, 200,200,25);
+		startEditPassword.setHorizontalAlignment(SwingConstants.CENTER);
 		logIn.setBounds(380,250,200,25);
 		createAcct.setBounds(380,300,200,25);
 		updateSys.setBounds(380,350,200,25);
@@ -40,4 +45,4 @@ public class StartView{
 		start.add(errorMessage);
 		start.setVisible(true);
     }
-}//43
+}//48

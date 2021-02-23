@@ -12,7 +12,7 @@ public class Zero implements ActionListener{
 	StartView startView = new StartView();
 	MainView mainView = new MainView();
 	MailView mailView = new MailView();
-	Settings settings = new Settings();
+	//Settings settings = new Settings();
 	//ChatView chatView = new ChatView();
 	CreateAccountView accountView = new CreateAccountView();
 	Config config = new Config();
@@ -133,8 +133,8 @@ public class Zero implements ActionListener{
 		window.add(accountView.create);
 		window.add(aboutView.aboutSec);
 		window.setLayout(new FlowLayout());
-        window.getContentPane().setBackground(Color.BLACK);
-		window.setSize(900,600);
+        //window.getContentPane().setBackground(Color.BLACK);
+		window.setSize(1050,700);// increase 150x100 so can increase thru-out
 		window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		window.setVisible(true);
 		window.setResizable(false);
@@ -148,11 +148,11 @@ public class Zero implements ActionListener{
 		String usernameEntered = startView.startEditUsername.getText();
 		String passwordEntered = startView.startEditPassword.getText();
 		String [] checklogin;
-		mainView.mainSetUser(usernameEntered);
+		//mainView.mainSetUser(usernameEntered);
 		mainView.mailView.nameOfUser = usernameEntered;
 		mainView.chatView.chatUserName = usernameEntered;
-		mainView.settingView.settingUserName = usernameEntered;
-		mainView.settingView.settingsTempId = configFile.tempId;
+		//mainView.settingView.settingConfigFile.username = usernameEntered;
+		//mainView.settingView.settingsTempId = configFile.tempId;
 
 		try{
             File myFile = new File("accountDB.txt");
@@ -189,4 +189,4 @@ public class Zero implements ActionListener{
 		System.out.println("Eventually will add in the logic to update");
 		System.out.println("At moment this is just placeholder");
 	}
-}//183
+}//192

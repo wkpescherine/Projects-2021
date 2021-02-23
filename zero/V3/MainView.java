@@ -33,7 +33,8 @@ public class MainView implements ActionListener{
 	MainView(){
 		main.setLayout(new FlowLayout());
 		main.setBackground(Color.RED);
-		main.setPreferredSize(new Dimension (860,540));
+		//main.setPreferredSize(new Dimension (860,540));
+		main.setPreferredSize(new Dimension(1040,670));
 		display.setPreferredSize(new Dimension (750,520));
 		close.setPreferredSize(new Dimension(60,60));
 		close.setFont(new Font("Serif", Font.PLAIN,12));
@@ -167,4 +168,4 @@ public class MainView implements ActionListener{
 	public void mainSetUser(String nameUsed){
 		nameOfUser = nameUsed;
 	}
-}//170
+}//171
