@@ -140,11 +140,12 @@ public class MainView implements ActionListener{
 					historyView.history.setVisible(false);
 					String zsite = search.getText();
 					if(zsite.equals("test4.zero")){
-						//historyView.historyArray.add(testsite2+"");
+						//historyView.historyArray[historyView.historyArray.length] = testsite2+"";
 						siteView.panelBuilder3(testsite2);
 					}
 					if(zsite.equals("test5.zero")){
 						//historyView.historyArray.add(testsite3+"");
+						//historyView.historyArray[historyView.historyArray.length] = testsite3+"";
 						siteView.panelBuilder3(testsite3);
 					}
 				}
@@ -204,4 +205,4 @@ public class MainView implements ActionListener{
 	public void mainSetUser(String nameUsed){
 		nameOfUser = nameUsed;
 	}
-}//207
+}//208
