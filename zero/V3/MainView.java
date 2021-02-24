@@ -12,12 +12,11 @@ public class MainView implements ActionListener{
 	About2 about2View = new About2();
 	Home homeView = new Home();
 	History historyView = new History();
-    ConfigFile mainConfigFile = new ConfigFile();	
+	ConfigFile mainConfigFile = new ConfigFile();	
 
 	String testsite2 = "Zero;p(name,100,100, none);t(Welcome to a Zero Site)";
 	String testsite3 = "Zero;p(name,100,100, none);name(t(This is a string text))";
 	String nameOfUser = "None";
-	String [] historyArray = new String[100];
 
 	JPanel main = new JPanel();
 	JPanel sidebar = new JPanel();
@@ -32,6 +31,7 @@ public class MainView implements ActionListener{
 	JButton about2 = new JButton("About");
 	JButton searchBtn = new JButton("search");
 	JButton history = new JButton("History");
+	JButton blank = new JButton("");
 	JTextField search = new JTextField(68);
 	
 	MainView(){
@@ -53,6 +53,7 @@ public class MainView implements ActionListener{
 		search.setHorizontalAlignment(SwingConstants.CENTER);
 		searchBtn.setPreferredSize(new Dimension(90,20));
 		searchBtn.setFont(new Font("Serif", Font.PLAIN, 12));
+		blank.setPreferredSize(new Dimension(60,60));
 		home.setPreferredSize(new Dimension(60,60));
 		chat.setPreferredSize(new Dimension(60,60));
 		bank.setPreferredSize(new Dimension(60,60));
@@ -139,9 +140,11 @@ public class MainView implements ActionListener{
 					historyView.history.setVisible(false);
 					String zsite = search.getText();
 					if(zsite.equals("test4.zero")){
+						//historyView.historyArray.add(testsite2+"");
 						siteView.panelBuilder3(testsite2);
 					}
 					if(zsite.equals("test5.zero")){
+						//historyView.historyArray.add(testsite3+"");
 						siteView.panelBuilder3(testsite3);
 					}
 				}
@@ -156,6 +159,7 @@ public class MainView implements ActionListener{
 		sidebar.add(settings);
 		sidebar.add(close);
 		sidebar.add(history);
+		sidebar.add(blank);
 		display.add(search);
 		display.add(searchBtn);
 		display.add(mailView.mail);
@@ -166,6 +170,7 @@ public class MainView implements ActionListener{
 		display.add(about2View.about2);
 		display.add(settingView.setting);
 		display.add(homeView.home);
+		display.add(historyView.history);
 		main.add(sidebar);
 		main.add(display);
 		main.setVisible(false);
@@ -199,4 +204,4 @@ public class MainView implements ActionListener{
 	public void mainSetUser(String nameUsed){
 		nameOfUser = nameUsed;
 	}
-}//202
+}//207
