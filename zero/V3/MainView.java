@@ -129,6 +129,9 @@ public class MainView implements ActionListener{
 		searchBtn.addActionListener(
 			new ActionListener(){
 				public void actionPerformed(ActionEvent e){
+					String siteName = search.getText();
+					historyView.historyArray[historyView.historyCount] = siteName;
+					historyView.historyCount += 1;
 					mailView.mail.setVisible(false);
 					siteView.site.setVisible(true);
 					chatView.chat.setVisible(false);
@@ -140,12 +143,9 @@ public class MainView implements ActionListener{
 					historyView.history.setVisible(false);
 					String zsite = search.getText();
 					if(zsite.equals("test4.zero")){
-						//historyView.historyArray[historyView.historyArray.length] = testsite2+"";
 						siteView.panelBuilder3(testsite2);
 					}
 					if(zsite.equals("test5.zero")){
-						//historyView.historyArray.add(testsite3+"");
-						//historyView.historyArray[historyView.historyArray.length] = testsite3+"";
 						siteView.panelBuilder3(testsite3);
 					}
 				}
