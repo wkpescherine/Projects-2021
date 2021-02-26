@@ -4,6 +4,7 @@ import javax.swing.*;
 
 public class History implements ActionListener{
     JPanel history = new JPanel();
+    JPanel historySubPanel = new JPanel();
     JLabel historyText = new JLabel("In history section");
     JButton historyUpdate = new JButton("Update History");
 
@@ -17,7 +18,9 @@ public class History implements ActionListener{
 
         history.setLayout(new FlowLayout());
         history.setPreferredSize(new Dimension (840,520));
+        historySubPanel.setPreferredSize(new Dimension (820,300));
         history.add(historyText);
+        history.add(historySubPanel);
         history.add(historyUpdate);
         history.setVisible(false);
     }
@@ -26,13 +29,13 @@ public class History implements ActionListener{
     }
 
     public void buildHistory(){
-        history.removeAll();
+        historySubPanel.removeAll();
         System.out.println(historyArray[0]);
         int start = historyArray.length;
         JLabel jlabel[] = new JLabel[start];
 
         //Array is counting it as 5 times....
-        for(int a = 0; a< historyArray.length; a++){
+        for(int a = 0; a< historyCount; a++){
             jlabel[a] = new JLabel(historyArray[a]+"");
             JLabel historyLabel = jlabel[a];
             String siteparam = historyArray[a];
@@ -45,10 +48,10 @@ public class History implements ActionListener{
                     }	
                 }
             );
-            history.add(historyLabel);
+            historySubPanel.add(historyLabel);
         }
 
-        history.validate();
-        history.repaint();
+        historySubPanel.validate();
+        historySubPanel.repaint();
     }
-}//54
+}//57
