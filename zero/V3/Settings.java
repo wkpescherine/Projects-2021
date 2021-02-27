@@ -9,12 +9,16 @@ public class Settings implements ActionListener{
     JLabel settingDate = new JLabel("");
     JLabel settingVersion = new JLabel("");
     JButton configure = new JButton("Configure");
-    ConfigFile settingConfigFile = new ConfigFile();
+    //ConfigFile settingConfigFile = new ConfigFile();
+    //Config settingConfig = new Config();
+
+    private Config config;
 
     //String settingUserName = "none";
     //String settingsTempId = "none";
 
-    Settings(){
+    Settings(Config configSetting){
+        config = configSetting;
         configure.addActionListener(this);
 
         setting.setLayout(new FlowLayout());
@@ -33,9 +37,11 @@ public class Settings implements ActionListener{
     }
 
     public void actionPerformed(ActionEvent e){
-        settingDate.setText(settingConfigFile.date);
-        settingText.setText(settingConfigFile.username);
-        tempId.setText(settingConfigFile.tempId);
-        settingVersion.setText(settingConfigFile.version);
+        System.out.println(config.tempId);
+        //settingDate.setText(settingConfigFile.date);
+        //settingText.setText(settingConfigFile.username);
+        //settingText.setText(config.username);
+        tempId.setText(config.tempId);
+        //settingVersion.setText(settingConfigFile.version);
     }
-}//41
+}//47

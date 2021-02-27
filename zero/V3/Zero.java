@@ -11,12 +11,12 @@ public class Zero implements ActionListener{
 	AboutView aboutView = new AboutView();
 	StartView startView = new StartView();
 	MainView mainView = new MainView();
-	MailView mailView = new MailView();
+	//MailView mailView = new MailView();
 	//Settings settings = new Settings();
 	//ChatView chatView = new ChatView();
 	CreateAccountView accountView = new CreateAccountView();
 	Config config = new Config();
-	ConfigFile configFile = new ConfigFile();
+	//ConfigFile configFile = new ConfigFile();
 
     JFrame window = new JFrame("Zero v3");
 
@@ -89,13 +89,14 @@ public class Zero implements ActionListener{
 		mainView.searchBtn.addActionListener(
 			new ActionListener(){
 				public void actionPerformed(ActionEvent e){
-					mainView.siteView.site.setVisible(true);
-					mainView.mailView.mail.setVisible(false);
+					mainView.mailView.mail.setVisible(true);
 					mainView.chatView.chat.setVisible(false);
+					mainView.siteView.site.setVisible(true);
+					mainView.homeView.home.setVisible(false);
+					mainView.about2View.about2.setVisible(false);
+					mainView.historyView.history.setVisible(false);
 					mainView.settingView.setting.setVisible(false);
 					mainView.bankView.bank.setVisible(false);
-					mainView.retailView.retail.setVisible(false);
-					mainView.homeView.home.setVisible(false);
 				}
 			}
 		);
@@ -114,6 +115,11 @@ public class Zero implements ActionListener{
 					mainView.mailView.mail.setVisible(true);
 					mainView.chatView.chat.setVisible(false);
 					mainView.siteView.site.setVisible(false);
+					mainView.homeView.home.setVisible(false);
+					mainView.about2View.about2.setVisible(false);
+					mainView.historyView.history.setVisible(false);
+					mainView.settingView.setting.setVisible(false);
+					mainView.bankView.bank.setVisible(false);
 				}
 			}
 		);
@@ -121,9 +127,14 @@ public class Zero implements ActionListener{
 		mainView.chat.addActionListener(
 			new ActionListener(){
 				public void actionPerformed(ActionEvent e){
+					mainView.mailView.mail.setVisible(false);
 					mainView.chatView.chat.setVisible(true);
 					mainView.siteView.site.setVisible(false);
-					mainView.mailView.mail.setVisible(false);
+					mainView.homeView.home.setVisible(false);
+					mainView.about2View.about2.setVisible(false);
+					mainView.historyView.history.setVisible(false);
+					mainView.settingView.setting.setVisible(false);
+					mainView.bankView.bank.setVisible(false);
 				}
 			}
 		);
@@ -149,7 +160,7 @@ public class Zero implements ActionListener{
 		String passwordEntered = startView.startEditPassword.getText();
 		String [] checklogin;
 		//mainView.mainSetUser(usernameEntered);
-		mainView.mailView.nameOfUser = usernameEntered;
+		mainView.config.username = usernameEntered;
 		mainView.chatView.chatUserName = usernameEntered;
 		//mainView.settingView.settingConfigFile.username = usernameEntered;
 		//mainView.settingView.settingsTempId = configFile.tempId;
@@ -164,6 +175,9 @@ public class Zero implements ActionListener{
 					startView.startEditPassword.setText("");
 					startView.startEditUsername.setText("");
 					startView.errorMessage.setText("");
+					config.getTempId();
+					config.getDate();
+					config.username = usernameEntered;
 					startView.start.setVisible(false);
 					accountView.create.setVisible(false);
 					mainView.main.setVisible(true);
@@ -189,4 +203,4 @@ public class Zero implements ActionListener{
 		System.out.println("Eventually will add in the logic to update");
 		System.out.println("At moment this is just placeholder");
 	}
-}//192
+}//206

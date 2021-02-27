@@ -1,43 +1,32 @@
 import java.util.Date;
 import java.text.SimpleDateFormat;
 import java.util.Random;
-import javax.tools.*;
-import java.io.File;
+//import javax.tools.*;
+//import java.io.File;
 import java.io.FileWriter;
 import java.io.BufferedWriter;
 import java.io.PrintWriter;
 import java.io.IOException;
 
 public class Config{
-    ConfigFile configFile = new ConfigFile();
-
-    String date = "None"; 
-    String version = "2.0";
-    String tempId = "none";
-
-    String [] assets ={
-        "public class ConfigFile{",
-        "\tString date = \"",
-        "\tString version = \"",
-        "\tString tempId = \"",
-		"\tint width = 640;",
-		"\tint height = 480;", 
-		"}"
-	};
+    String date ;
+	Double version = 3.0;
+	String tempId ;
+	int width = 640;
+	int height = 480;
+	String username ;
 
     Config(){
-        getDate();
+     /*   getDate();
         getTempId();
         updateVersion();
-        updateConfigFile();
+        updateConfigFile();*/
     }
 
     public void getDate(){
         SimpleDateFormat formatter = new SimpleDateFormat("MM/dd/yyyy");
         Date newDate = new Date();
         date = formatter.format(newDate);
-        assets[1] = assets[1]+ date +"\";";
-        System.out.println(date);
     }
 
     public void getTempId(){
@@ -49,25 +38,23 @@ public class Config{
             String randomVal = Character.toString(val.charAt(rand.nextInt(num)));
             createId += randomVal;
         }
-        assets[3] = assets[3]+ createId +"\";";
         tempId = createId;
     }
 
     public void updateVersion(){
-        if(configFile.version==version){
-            version = "2.0";
+        if(version!= 3){
+            version = 3.0;
         }
-        assets[2] = assets[2]+ version +"\";";
     }
 
     public void updateConfigFile(){
-		File f = new File("ConfigFile.java");
+		//File f = new File("ConfigFile.java");
         try{
-            FileWriter myWriter = new FileWriter("ConfigFile.java", false);
+            FileWriter myWriter = new FileWriter("ConfigFile.java", true);
             BufferedWriter bWriter = new BufferedWriter(myWriter);
             PrintWriter pWriter = new PrintWriter(bWriter);
-            for(int a = 0; a< assets.length; a++){
-                pWriter.write(assets[a]+"\r");    
+            for(int a = 0; a< 2; a++){
+                pWriter.write("Delete this \r");    
             }
             pWriter.close();
             System.out.println("File updated");
@@ -75,4 +62,4 @@ public class Config{
             e.printStackTrace();  
 		}
     }
-}//78
+}//65

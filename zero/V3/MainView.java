@@ -3,20 +3,22 @@ import java.awt.event.*;
 import javax.swing.*;
 
 public class MainView implements ActionListener{
+	Config config = new Config();
+
 	MailView mailView = new MailView();
 	ChatView chatView = new ChatView();
 	Site siteView = new Site();
 	Bank bankView = new Bank();
 	Retail retailView = new Retail();
-	Settings settingView = new Settings();
+	Settings settingView = new Settings(config);
 	About2 about2View = new About2();
 	Home homeView = new Home();
 	History historyView = new History();
-	ConfigFile mainConfigFile = new ConfigFile();	
+	ConfigFile mainConfigFile = new ConfigFile();
 
 	String testsite2 = "Zero;p(name,100,100, none);t(Welcome to a Zero Site)";
 	String testsite3 = "Zero;p(name,100,100, none);name(t(This is a string text))";
-	String nameOfUser = "None";
+	//String nameOfUser = "None";
 
 	JPanel main = new JPanel();
 	JPanel sidebar = new JPanel();
@@ -32,7 +34,7 @@ public class MainView implements ActionListener{
 	JButton searchBtn = new JButton("search");
 	JButton history = new JButton("History");
 	JButton blank = new JButton("");
-	JTextField search = new JTextField(68);
+	JTextField search = new JTextField(50);
 	
 	MainView(){
 		main.setLayout(new FlowLayout());
@@ -178,7 +180,6 @@ public class MainView implements ActionListener{
 	}
 
 	public void Home(){
-		System.out.println(nameOfUser+" in Main View");
 		mailView.mail.setVisible(false);
 		siteView.site.setVisible(false);
 		chatView.chat.setVisible(false);
@@ -188,6 +189,7 @@ public class MainView implements ActionListener{
 		retailView.retail.setVisible(false);
 		settingView.setting.setVisible(false);
 		historyView.history.setVisible(false);
+		config.getTempId();
 	}
 
 	public void actionPerformed(ActionEvent e){
@@ -203,6 +205,5 @@ public class MainView implements ActionListener{
 	}
 
 	public void mainSetUser(String nameUsed){
-		nameOfUser = nameUsed;
 	}
-}//208
+}//209
