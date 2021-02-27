@@ -26,15 +26,24 @@ public class ChatView implements ActionListener{
     JLabel invite1Label = new JLabel("none");
     JLabel friend1Label = new JLabel("none");
     JTextField messageArea = new JTextField();
-    JTextField findPersonArea = new JTextField(10);
+    JTextField findPersonArea = new JTextField(13);
     JButton invitePersonBtn = new JButton("Invite");
     JButton sendMessage = new JButton("Message");
     JButton inviteAccept = new JButton();
     JButton inviteReject = new JButton();
     JButton check = new JButton("Check if new Friends");
 
+    JLabel chatToFriend1 = new JLabel("Friend here");
+
     ChatView(){
         invitePersonBtn.addActionListener(this);
+
+        chatToFriend1.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+					System.out.println("Clicked to chat with a friend");
+				}	
+			});
 
         check.addActionListener(
             new ActionListener(){
@@ -45,17 +54,18 @@ public class ChatView implements ActionListener{
         );
 
         chat.setLayout(new FlowLayout());
-        chat.setPreferredSize(new Dimension (640,440));
+        chat.setPreferredSize(new Dimension (920,620));
         sideBar.setLayout(new FlowLayout());
-        sideBar.setPreferredSize(new Dimension (200,420));
+        sideBar.setPreferredSize(new Dimension (200,610));
         sideBar.setBackground(Color.WHITE);
-        friendsPanel.setPreferredSize(new Dimension(180,3800));
+        friendsPanel.setPreferredSize(new Dimension(180,480));
         invite1.setPreferredSize(new Dimension(160,20));
         invite1.add(invite1Label);
         invite1.setVisible(false);
         friend1.setPreferredSize(new Dimension(160,20));
         friend1.add(friend1Label);
         friend1.setVisible(false);
+        friendsPanel.add(chatToFriend1);
         friendsPanel.add(invite1);
         friendsPanel.add(friend1);
         sideBar.add(findPersonArea);
@@ -63,7 +73,7 @@ public class ChatView implements ActionListener{
         sideBar.add(check);
         sideBar.add(friendsPanel);
         chatPanel.setLayout(new FlowLayout());
-        chatPanel.setPreferredSize(new Dimension (400,420));
+        chatPanel.setPreferredSize(new Dimension (700,610));
         chatPanel.setBackground(Color.WHITE);
         messagePanel.setLayout(null);
         messagePanel.setPreferredSize(new Dimension (380,90));
@@ -122,4 +132,4 @@ public class ChatView implements ActionListener{
             }
         }
     }
-}//125
+}//135
