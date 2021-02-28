@@ -12,13 +12,13 @@ public class Settings implements ActionListener{
     //ConfigFile settingConfigFile = new ConfigFile();
     //Config settingConfig = new Config();
 
-    private Config config;
+    private Config configSetting ;
 
     //String settingUserName = "none";
     //String settingsTempId = "none";
 
-    Settings(Config configSetting){
-        config = configSetting;
+    Settings(Config setConfig){
+        configSetting = setConfig;
         configure.addActionListener(this);
 
         setting.setLayout(new FlowLayout());
@@ -37,11 +37,12 @@ public class Settings implements ActionListener{
     }
 
     public void actionPerformed(ActionEvent e){
-        System.out.println(config.tempId);
+        System.out.println(configSetting.username);
+        //System.out.println(config.tempId);
         //settingDate.setText(settingConfigFile.date);
-        //settingText.setText(settingConfigFile.username);
+        settingText.setText(configSetting.username);
         //settingText.setText(config.username);
-        tempId.setText(config.tempId);
+        tempId.setText(configSetting.tempId);
         //settingVersion.setText(settingConfigFile.version);
     }
 }//47

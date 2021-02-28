@@ -8,14 +8,15 @@ import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 public class Zero implements ActionListener{
+	Config config = new Config();
+	
 	AboutView aboutView = new AboutView();
 	StartView startView = new StartView();
-	MainView mainView = new MainView();
+	MainView mainView = new MainView(config);
 	//MailView mailView = new MailView();
 	//Settings settings = new Settings();
 	//ChatView chatView = new ChatView();
 	CreateAccountView accountView = new CreateAccountView();
-	Config config = new Config();
 	//ConfigFile configFile = new ConfigFile();
 
     JFrame window = new JFrame("Zero v3");
@@ -160,8 +161,8 @@ public class Zero implements ActionListener{
 		String passwordEntered = startView.startEditPassword.getText();
 		String [] checklogin;
 		//mainView.mainSetUser(usernameEntered);
-		mainView.config.username = usernameEntered;
-		mainView.chatView.chatUserName = usernameEntered;
+		config.username = usernameEntered;
+		//mainView.chatView.chatUserName = usernameEntered;
 		//mainView.settingView.settingConfigFile.username = usernameEntered;
 		//mainView.settingView.settingsTempId = configFile.tempId;
 
