@@ -17,8 +17,8 @@ public class Settings implements ActionListener{
     //String settingUserName = "none";
     //String settingsTempId = "none";
 
-    Settings(Config setConfig){
-        configSetting = setConfig;
+    Settings(){
+        //configSetting = setConfig;
         configure.addActionListener(this);
 
         setting.setLayout(new FlowLayout());
@@ -36,6 +36,10 @@ public class Settings implements ActionListener{
         setting.setVisible(false);
     }
 
+    public void settingConfigs(Config config){
+        configSetting = config;
+    }
+
     public void actionPerformed(ActionEvent e){
         System.out.println(configSetting.username);
         //System.out.println(config.tempId);
@@ -45,4 +49,4 @@ public class Settings implements ActionListener{
         tempId.setText(configSetting.tempId);
         //settingVersion.setText(settingConfigFile.version);
     }
-}//47
+}//52

@@ -10,7 +10,7 @@ public class MainView implements ActionListener{
 	Site siteView = new Site();
 	Bank bankView = new Bank();
 	Retail retailView = new Retail();
-	Settings settingView = new Settings(configMain);
+	Settings settingView = new Settings();
 	About2 about2View = new About2();
 	Home homeView = new Home();
 	History historyView = new History();
@@ -102,6 +102,7 @@ public class MainView implements ActionListener{
 			new ActionListener(){
 				public void actionPerformed(ActionEvent e){
 					System.out.println(configMain.username);
+					settingView.settingConfigs(configMain);
 					mailView.mail.setVisible(false);
 					siteView.site.setVisible(false);
 					chatView.chat.setVisible(false);
@@ -208,4 +209,4 @@ public class MainView implements ActionListener{
 
 	public void mainSetUser(String nameUsed){
 	}
-}//209
+}//212
