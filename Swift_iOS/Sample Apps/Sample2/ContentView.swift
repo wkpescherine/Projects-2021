@@ -1,14 +1,14 @@
-//
-//  ContentView.swift
-//  Sample2
-//
-//  Created by wkpescherine on 3/2/21.
-//  Copyright © 2021 wkpescherine. All rights reserved.
-//
-
 import SwiftUI
 
 struct ContentView: View {
+    //Need the @State to allow me to change the date
+    //Without the @State I can not modify it
+    @State var possesion = ""
+    @State var teamA = "NEP"
+    @State var teamB = "DB"
+    @State var teamAScore = 0
+    @State var teamBScore = 0
+    
     var body: some View {
         ZStack{
             Image("background")
@@ -22,28 +22,32 @@ struct ContentView: View {
                     .foregroundColor(Color.white)
                 Spacer()
                 HStack{
-                    Image("NEP")
+                    Image(teamA)
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                     Text("vs")
                         .foregroundColor(Color.white)
-                    Image("DB")
+                    Image(teamB)
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                 }
                 Spacer()
                 HStack{
                     Spacer()
-                    Text("0")
+                    //The STring() is used to convert the int
+                    //Into a String for use in the text
+                    //Otherwise we get an error
+                    Text(String(teamAScore))
                         .foregroundColor(Color.white)
                         .font(.system(size:120))
                     Spacer()
-                    Text("0")
+                    Text(String(teamBScore))
                         .foregroundColor(Color.white)
                         .font(.system(size:120))
                     Spacer()
                 }
                 Spacer()
+                //Multiple ways to do a Button
                 //Button("Start", action : {
                 //    print("test")
                 //})
@@ -51,16 +55,28 @@ struct ContentView: View {
                 //Button("Start") {
                 //    print("test")
                 //}
-                Button(action: {
-                    print()
-                }, label: {
-                        //can add custom items in here now
-                        Text("Click here")
-                })
-                Text("Click to start")
-                    .foregroundColor(Color.white)
-                Spacer()
                 
+                VStack{
+                    Spacer()
+                    Button(action: {
+                        var randomScore = Int.random(in: 0...7)
+                        if(self.possesion == self.teamA){
+                            self.teamAScore += randomScore
+                            self.possesion = self.teamB
+                        } else {
+                            self.teamBScore +=  randomScore
+                            self.possesion = self.teamA
+                        }
+                        
+                    }, label: {
+                            //can add custom items in here now
+                            Text("Click here")
+                    })
+                    Spacer()
+                    Text("Click to start")
+                        .foregroundColor(Color.white)
+                    Spacer()
+                }
             }
         }
     }
@@ -70,4 +86,4 @@ struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
     }
-}
+}//73
