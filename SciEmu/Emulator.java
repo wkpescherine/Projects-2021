@@ -384,15 +384,33 @@ public class Emulator extends AppCompatActivity {
         }
         if(subCategory.equals("division")){
                 if(zString.length() == 0 && yString.length() > 0 && xString.length() >0){
-                    z=x/y;
-                    zString = z+"";
-                    TextView valueZ = findViewById(R.id.Zvalue);
-                    valueZ.setText(zString);
+                    if(x%y>0){
+                        double xx = Double.valueOf(x);
+                        double yy = Double.valueOf(y);
+                        double zz = xx/yy;
+                        zString = zz+"";
+                        TextView valueZ = findViewById(R.id.Zvalue);
+                        valueZ.setText(zString);
+                    }else {
+                        z = x / y;
+                        zString = z + "";
+                        TextView valueZ = findViewById(R.id.Zvalue);
+                        valueZ.setText(zString);
+                    }
                 }else if(zString.length() > 0 && yString.length() == 0 && xString.length() >0){
-                    y=x/z;
-                    yString = Math.abs(y)+"";
-                    TextView valueY = findViewById(R.id.Yvalue);
-                    valueY.setText(yString);
+                    if(x%z>0){
+                        double xx = Double.valueOf(x);
+                        double zz = Double.valueOf(y);
+                        double yy = xx/zz;
+                        yString = yy+"";
+                        TextView valueY = findViewById(R.id.Yvalue);
+                        valueY.setText(yString);
+                    }else {
+                        y = x / z;
+                        yString = Math.abs(y) + "";
+                        TextView valueY = findViewById(R.id.Yvalue);
+                        valueY.setText(yString);
+                    }
                 }else if(zString.length() > 0 && yString.length() > 0 && xString.length() ==0){
                     x=z*y;
                     xString = Math.abs(x)+"";
@@ -527,4 +545,4 @@ public class Emulator extends AppCompatActivity {
             }
         }
     }
-}/* 530 */
+}/* 548 */
