@@ -11,6 +11,8 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import java.lang.String;
+
 public class Emulator extends AppCompatActivity {
     FormulaBasic basicFormula = new FormulaBasic();
 
@@ -24,6 +26,7 @@ public class Emulator extends AppCompatActivity {
     String bString = "";
     String cString = "";
     String totalString = "";
+    String isDecimal = "no";
     int x = 0;
     int y = 0;
     int z = 0;
@@ -41,17 +44,23 @@ public class Emulator extends AppCompatActivity {
         getSupportActionBar().hide();
     }
 
-    public void num1(View v){ setValues(1); }
-    public void num2(View v){ setValues(2); }
-    public void num3(View v){ setValues(3); }
-    public void num4(View v){ setValues(4); }
-    public void num5(View v){ setValues(5); }
-    public void num6(View v){ setValues(6); }
-    public void num7(View v){ setValues(7); }
-    public void num8(View v){ setValues(8); }
-    public void num9(View v){ setValues(9); }
-    public void num0(View v){ setValues(0); }
+    public void num1(View v){ setValues("1"); }
+    public void num2(View v){ setValues("2"); }
+    public void num3(View v){ setValues("3"); }
+    public void num4(View v){ setValues("4"); }
+    public void num5(View v){ setValues("5"); }
+    public void num6(View v){ setValues("6"); }
+    public void num7(View v){ setValues("7"); }
+    public void num8(View v){ setValues("8"); }
+    public void num9(View v){ setValues("9"); }
+    public void num0(View v){ setValues("0"); }
     public void del(View v){specialFunc("del");}
+    public void decimal(View v){
+        if(isDecimal.equals("no")){
+            setValues(".");
+            isDecimal = "yes";
+        }
+    }
 
     public void displayBasic(View v){
         displaySubs(1);
@@ -252,94 +261,88 @@ public class Emulator extends AppCompatActivity {
         textMessageA.setText("focus on c selected");
     }
 
-    public void setValues(int val){
+    public void setValues(String val){
         if(focus.equals("X") && x != 0){
             TextView valueX = findViewById(R.id.Xvalue);
             xString  += val;
-            x = Integer.parseInt(xString);
             valueX.setText(xString);
         }
 
         if(focus.equals("X") && x == 0){
             TextView valueX = findViewById(R.id.Xvalue);
             xString  = val+"";
-            x = Integer.parseInt(xString);
             valueX.setText(xString);
         }
 
         if(focus.equals("Y") && y != 0){
             TextView valueY = findViewById(R.id.Yvalue);
             yString  += val;
-            y = Integer.parseInt(yString);
             valueY.setText(yString);
         }
 
         if(focus.equals("Y") && y == 0 ){
             TextView valueY = findViewById(R.id.Yvalue);
             yString  = val+"";
-            y = Integer.parseInt(yString);
             valueY.setText(yString);
         }
 
         if(focus.equals("Z") && z != 0){
             TextView valueZ = findViewById(R.id.Zvalue);
             zString  += val;
-            z = Integer.parseInt(zString);
             valueZ.setText(zString);
         }
 
         if(focus.equals("Z") && z == 0 ){
             TextView valueZ = findViewById(R.id.Zvalue);
             zString  = val+"";
-            z = Integer.parseInt(zString);
             valueZ.setText(zString);
         }
 
         if(focus.equals("A") && a != 0){
             TextView valueA = findViewById(R.id.Avalue);
             aString  += val;
-            a = Integer.parseInt(aString);
             valueA.setText(aString);
         }
 
         if(focus.equals("A") && a == 0 ){
             TextView valueA = findViewById(R.id.Avalue);
             aString  = val+"";
-            a = Integer.parseInt(aString);
             valueA.setText(aString);
         }
 
         if(focus.equals("B") && b != 0){
             TextView valueB = findViewById(R.id.Bvalue);
             bString  += val;
-            b = Integer.parseInt(bString);
             valueB.setText(bString);
         }
 
         if(focus.equals("B") && b == 0 ){
             TextView valueB = findViewById(R.id.Bvalue);
             bString  = val+"";
-            b = Integer.parseInt(bString);
             valueB.setText(bString);
         }
 
         if(focus.equals("C") && c != 0){
             TextView valueC = findViewById(R.id.Cvalue);
             cString  += val;
-            c = Integer.parseInt(cString);
             valueC.setText(cString);
         }
 
         if(focus.equals("C") && c == 0 ){
             TextView valueC = findViewById(R.id.Cvalue);
             cString  = val+"";
-            c = Integer.parseInt(cString);
             valueC.setText(cString);
         }
     }
 
     public void clickToSolve(View v){
         TextView textMessageSolve = findViewById(R.id.message);
+        x = Integer.parseInt(xString);
+        y = Integer.parseInt(yString);
+        z = Integer.parseInt(zString);
+        a = Integer.parseInt(aString);
+        b = Integer.parseInt(bString);
+        c = Integer.parseInt(cString);
         if(subCategory.equals("addition")){
             if(zString.length() == 0 && yString.length() > 0 && xString.length() >0){
                 z=x+y;
@@ -501,6 +504,11 @@ public class Emulator extends AppCompatActivity {
         TextView bText = findViewById(R.id.Bvalue);
         TextView cText = findViewById(R.id.Cvalue);
         if(func.equals("del")){
+            //if(focus.equals("X") && (xString.length() >0) && (xString.charAt(xString.length()-1).equals("."))){
+            //    isDecimal = "no";
+            //    xString = xString.substring(0, (xString.length())-1);
+            //    xText.setText(xString);
+            //}
             if(focus.equals("X") && (xString.length() >0)){
                 xString = xString.substring(0, (xString.length())-1);
                 xText.setText(xString);

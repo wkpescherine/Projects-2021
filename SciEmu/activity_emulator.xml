@@ -396,12 +396,13 @@
                     android:textSize="32dp"
                     android:onClick="num0"/>
                 <TextView
-                    android:text=""
+                    android:text="."
                     android:layout_width="90dp"
                     android:layout_height="90dp"
                     android:textColor="#fff"
                     android:gravity="center"
-                    android:textSize="32dp" />
+                    android:textSize="32dp"
+                    android:onClick="decimal"/>
             </TableRow>
         </TableLayout>
     </LinearLayout>
@@ -420,4 +421,4 @@
         android:textAlignment="center"
         android:onClick="practiceSection"/>
 
-</LinearLayout><!-- 423 -->
+</LinearLayout><!-- 424 -->
