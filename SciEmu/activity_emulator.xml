@@ -9,6 +9,7 @@
     android:orientation="vertical"
     android:background="#000">
 
+    <!-- x?y=z-->
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -58,6 +59,7 @@
             android:textColor="#fff"
             android:onClick="focusZ"/>
     </RelativeLayout>
+    <!-- a?b?c=total-->
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -144,7 +146,7 @@
             android:layout_marginLeft="5dp"
             android:text="Basic"
             android:textColor="#fff"
-            android:textSize="24dp"
+            android:textSize="16dp"
             android:onClick="displayBasic"/>
         <TextView
             android:layout_width="wrap_content"
@@ -152,7 +154,7 @@
             android:layout_marginLeft="5dp"
             android:text="Algebra"
             android:textColor="#fff"
-            android:textSize="24dp"
+            android:textSize="16dp"
             android:onClick="displayAlgebra"/>
         <TextView
             android:layout_width="wrap_content"
@@ -160,7 +162,7 @@
             android:layout_marginLeft="5dp"
             android:text="Calculus"
             android:textColor="#fff"
-            android:textSize="24dp"
+            android:textSize="16dp"
             android:onClick="displayCalculus"/>
         <TextView
             android:layout_width="wrap_content"
@@ -168,7 +170,7 @@
             android:layout_marginLeft="5dp"
             android:text="Physics"
             android:textColor="#fff"
-            android:textSize="24dp"
+            android:textSize="16dp"
             android:onClick="displayPhysics"/>
     </LinearLayout>
 
@@ -224,7 +226,7 @@
             android:layout_marginLeft="5dp"
             android:text="2D Area"
             android:textColor="#fff"
-            android:textSize="24dp"
+            android:textSize="16dp"
             android:onClick="Area2D"/>
         <TextView
             android:layout_width="wrap_content"
@@ -232,7 +234,7 @@
             android:layout_marginLeft="5dp"
             android:text="3D Area"
             android:textColor="#fff"
-            android:textSize="24dp"
+            android:textSize="16dp"
             android:onClick="Area3D"/>
     </LinearLayout>
 
@@ -248,16 +250,16 @@
             android:layout_marginLeft="5dp"
             android:text="Pythahorean"
             android:textColor="#fff"
-            android:textSize="24dp"
-            android:onClick="pathageroen"/>
+            android:textSize="16dp"
+            android:onClick="pythagorean"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
             android:text="Triangle 90"
             android:textColor="#fff"
-            android:textSize="24dp"
-            android:onClick="triangle90"/>
+            android:textSize="16dp"
+            android:onClick="Derivative"/>
     </LinearLayout>
 
     <!-- Physics SUB SECTION-->
@@ -272,7 +274,7 @@
             android:layout_marginLeft="5dp"
             android:text="Linear Motion"
             android:textColor="#fff"
-            android:textSize="24dp"
+            android:textSize="16dp"
             android:onClick="linearMotion"/>
         <TextView
             android:layout_width="wrap_content"
@@ -280,7 +282,7 @@
             android:layout_marginLeft="5dp"
             android:text="Circular Motion"
             android:textColor="#fff"
-            android:textSize="24dp"
+            android:textSize="16dp"
             android:onClick="circularMotion"/>
     </LinearLayout>
 
@@ -421,4 +423,4 @@
         android:textAlignment="center"
         android:onClick="practiceSection"/>
 
-</LinearLayout><!-- 424 -->
+</LinearLayout><!-- 426 -->

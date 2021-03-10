@@ -250,6 +250,8 @@ public class Emulator extends AppCompatActivity {
         textE1.setText("=");
         texttot.setText("total");
     }
+    public void pythagorean(View v){}
+    public void Derivative(View v){}
 
     public void focusX(View v){
         focus = "X";
@@ -366,7 +368,7 @@ public class Emulator extends AppCompatActivity {
         c = Integer.parseInt(cString);
         if(subCategory.equals("addition")){
             if(zString.length() == 0 && yString.length() > 0 && xString.length() >0){
-                if (isDecimal.equals("yes")) {
+                if (isDecimal[0]==1 || isDecimal[1]==1) {
                     double yy = Double.valueOf(y);
                     double xx = Double.valueOf(x);
                     double zz = xx+yy;
@@ -380,13 +382,13 @@ public class Emulator extends AppCompatActivity {
                     valueZ.setText(zString);
                 }
             }else if(zString.length() > 0 && yString.length() == 0 && xString.length() >0){
-                if (isDecimal.equals("yes")) {
+                if (isDecimal[0]==1 || isDecimal[2]==1) {
                     double zz = Double.valueOf(z);
                     double xx = Double.valueOf(x);
                     double yy = zz-xx;
-                    zString = yy+"";
-                    TextView valueZ = findViewById(R.id.Zvalue);
-                    valueZ.setText(zString);
+                    yString = yy+"";
+                    TextView valueY = findViewById(R.id.Yvalue);
+                    valueY.setText(yString);
                 }else {
                     y = z - x;
                     yString = y + "";
@@ -394,16 +396,16 @@ public class Emulator extends AppCompatActivity {
                     valueY.setText(yString);
                 }
             }else if(zString.length() > 0 && yString.length() > 0 && xString.length() ==0){
-                if (isDecimal.equals("yes")) {
+                if (isDecimal[2]==1 || isDecimal[1]==1) {
                     double yy = Double.valueOf(y);
                     double zz = Double.valueOf(z);
                     double xx = zz-yy;
                     zString = xx+"";
-                    TextView valueZ = findViewById(R.id.Zvalue);
-                    valueZ.setText(zString);
+                    TextView valueX = findViewById(R.id.Xvalue);
+                    valueX.setText(xString);
                 }else {
                     x = z - y;
-                    xString = Math.abs(x) + "";
+                    xString = x + "";
                     TextView valueX = findViewById(R.id.Xvalue);
                     valueX.setText(xString);
                 }
@@ -414,20 +416,47 @@ public class Emulator extends AppCompatActivity {
         }
         if(subCategory.equals("subtraction")){
             if(zString.length() == 0 && yString.length() > 0 && xString.length() >0){
-                z=x-y;
-                zString = z+"";
-                TextView valueZ = findViewById(R.id.Zvalue);
-                valueZ.setText(zString);
+                if (isDecimal[0]==1 || isDecimal[1]==1) {
+                    double yy = Double.valueOf(y);
+                    double xx = Double.valueOf(x);
+                    double zz = yy-xx;
+                    zString = zz+"";
+                    TextView valueZ = findViewById(R.id.Zvalue);
+                    valueZ.setText(zString);
+                }else {
+                    z = x - y;
+                    zString = z + "";
+                    TextView valueZ = findViewById(R.id.Zvalue);
+                    valueZ.setText(zString);
+                }
             }else if(zString.length() > 0 && yString.length() == 0 && xString.length() >0){
-                y=z-x;
-                yString = Math.abs(y)+"";
-                TextView valueY = findViewById(R.id.Yvalue);
-                valueY.setText(yString);
+                if (isDecimal[0]==1 || isDecimal[2]==1) {
+                    double zz = Double.valueOf(z);
+                    double xx = Double.valueOf(x);
+                    double yy = zz-xx;
+                    yString = yy+"";
+                    TextView valueY = findViewById(R.id.Yvalue);
+                    valueY.setText(yString);
+                }else {
+                    y = z - x;
+                    yString = y + "";
+                    TextView valueY = findViewById(R.id.Yvalue);
+                    valueY.setText(yString);
+                }
             }else if(zString.length() > 0 && yString.length() > 0 && xString.length() ==0){
-                x=z+y;
-                xString = Math.abs(x)+"";
-                TextView valueX = findViewById(R.id.Xvalue);
-                valueX.setText(xString);
+                if (isDecimal[0]==1 || isDecimal[1]==1) {
+                    double yy = Double.valueOf(y);
+                    double zz = Double.valueOf(z);
+                    double xx = zz+yy;
+                    zString = xx+"";
+                    TextView valueX = findViewById(R.id.Xvalue);
+                    valueX.setText(xString);
+                }else {
+                    x = z + y;
+                    xString = Math.abs(x) + "";
+                    TextView valueX = findViewById(R.id.Xvalue);
+                    valueX.setText(xString);
+                }
             }else{
                 TextView errorMessage = findViewById(R.id.message);
                 errorMessage.setText("Check your forumla as there sames to be an error");
@@ -435,7 +464,7 @@ public class Emulator extends AppCompatActivity {
         }
         if(subCategory.equals("division")) {
             if (zString.length() == 0 && yString.length() > 0 && xString.length() > 0) {
-                if (isDecimal.equals("yes")) {
+                if (isDecimal[0]==1 || isDecimal[1]==1) {
                     double xx = Double.valueOf(x);
                     double yy = Double.valueOf(y);
                     double zz = xx / yy;
@@ -449,7 +478,7 @@ public class Emulator extends AppCompatActivity {
                     valueZ.setText(zString);
                 }
             } else if (zString.length() > 0 && yString.length() == 0 && xString.length() > 0) {
-                if (isDecimal.equals("yes")) {
+                if (isDecimal[0]==1 || isDecimal[2]==1) {
                     double xx = Double.valueOf(x);
                     double zz = Double.valueOf(z);
                     double yy = xx / zz;
@@ -463,9 +492,9 @@ public class Emulator extends AppCompatActivity {
                     valueY.setText(yString);
                 }
             } else if (zString.length() > 0 && yString.length() > 0 && xString.length() == 0) {
-                if (isDecimal.equals("yes")) {
-                    double yy = Double.valueOf(x);
-                    double zz = Double.valueOf(y);
+                if (isDecimal[2]==1 || isDecimal[1]==1) {
+                    double yy = Double.valueOf(y);
+                    double zz = Double.valueOf(z);
                     double xx = zz * yy;
                     xString = xx + "";
                     TextView valueX = findViewById(R.id.Xvalue);
@@ -483,20 +512,47 @@ public class Emulator extends AppCompatActivity {
         }
         if(subCategory.equals("multiplication")){
             if(zString.length() == 0 && yString.length() > 0 && xString.length() >0){
-                z=x*y;
-                zString = z+"";
-                TextView valueZ = findViewById(R.id.Zvalue);
-                valueZ.setText(zString);
+                if (isDecimal[0]==1 || isDecimal[1]==1) {
+                    double yy = Double.valueOf(y);
+                    double xx = Double.valueOf(x);
+                    double zz = xx * yy;
+                    zString = zz+"";
+                    TextView valueZ = findViewById(R.id.Zvalue);
+                    valueZ.setText(zString);
+                }else {
+                    z = x * y;
+                    zString = z + "";
+                    TextView valueZ = findViewById(R.id.Zvalue);
+                    valueZ.setText(zString);
+                }
             }else if(zString.length() > 0 && yString.length() == 0 && xString.length() >0){
-                y=z/8;
-                yString = Math.abs(y)+"";
-                TextView valueY = findViewById(R.id.Yvalue);
-                valueY.setText(yString);
+                if (isDecimal[0]==1 || isDecimal[2]==1) {
+                    double zz = Double.valueOf(z);
+                    double xx = Double.valueOf(x);
+                    double yy = zz/xx;
+                    yString = yy+"";
+                    TextView valueY = findViewById(R.id.Yvalue);
+                    valueY.setText(yString);
+                }else {
+                    y = z / x;
+                    yString = y + "";
+                    TextView valueY = findViewById(R.id.Yvalue);
+                    valueY.setText(yString);
+                }
             }else if(zString.length() > 0 && yString.length() > 0 && xString.length() ==0){
-                x=z/y;
-                xString = Math.abs(x)+"";
-                TextView valueX = findViewById(R.id.Xvalue);
-                valueX.setText(xString);
+                if (isDecimal[0]==1 || isDecimal[1]==1) {
+                    double yy = Double.valueOf(y);
+                    double zz = Double.valueOf(z);
+                    double xx = zz/yy;
+                    xString = xx+"";
+                    TextView valueX = findViewById(R.id.Xvalue);
+                    valueX.setText(xString);
+                }else {
+                    x = z / y;
+                    xString = x + "";
+                    TextView valueX = findViewById(R.id.Xvalue);
+                    valueX.setText(xString);
+                }
             }else{
                 TextView errorMessage = findViewById(R.id.message);
                 errorMessage.setText("Check your forumla as there sames to be an error");
@@ -641,4 +697,4 @@ public class Emulator extends AppCompatActivity {
             }
         }
     }
-}/* 644 */
+}/* 700 */
