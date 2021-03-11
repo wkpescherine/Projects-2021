@@ -285,13 +285,13 @@ public class Emulator extends AppCompatActivity {
     }
 
     public void setValues(String val){
-        if(focus.equals("X") && x != 0){
+        if(focus.equals("X") && xString.length() != 0){
             TextView valueX = findViewById(R.id.Xvalue);
-            xString  += val;
+            xString  += val+"";
             valueX.setText(xString);
         }
 
-        if(focus.equals("X") && x == 0){
+        if(focus.equals("X") && xString.length() == 0){
             TextView valueX = findViewById(R.id.Xvalue);
             xString  = val+"";
             valueX.setText(xString);
