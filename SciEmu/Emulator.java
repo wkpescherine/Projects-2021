@@ -297,25 +297,25 @@ public class Emulator extends AppCompatActivity {
             valueX.setText(xString);
         }
 
-        if(focus.equals("Y") && y != 0){
+        if(focus.equals("Y") && yString.length() != 0){
             TextView valueY = findViewById(R.id.Yvalue);
             yString  += val;
             valueY.setText(yString);
         }
 
-        if(focus.equals("Y") && y == 0 ){
+        if(focus.equals("Y") && yString.length() == 0 ){
             TextView valueY = findViewById(R.id.Yvalue);
             yString  = val+"";
             valueY.setText(yString);
         }
 
-        if(focus.equals("Z") && z != 0){
+        if(focus.equals("Z") && zString.length() != 0){
             TextView valueZ = findViewById(R.id.Zvalue);
             zString  += val;
             valueZ.setText(zString);
         }
 
-        if(focus.equals("Z") && z == 0 ){
+        if(focus.equals("Z") && zString.length() == 0 ){
             TextView valueZ = findViewById(R.id.Zvalue);
             zString  = val+"";
             valueZ.setText(zString);
@@ -366,25 +366,26 @@ public class Emulator extends AppCompatActivity {
         a = Integer.parseInt(aString);
         b = Integer.parseInt(bString);
         c = Integer.parseInt(cString);
+
         if(subCategory.equals("addition")){
             if(zString.length() == 0 && yString.length() > 0 && xString.length() >0){
                 if (isDecimal[0]==1 || isDecimal[1]==1) {
-                    double yy = Double.valueOf(y);
-                    double xx = Double.valueOf(x);
+                    double yy = Double.valueOf(yString);
+                    double xx = Double.valueOf(xString);
                     double zz = xx+yy;
                     zString = zz+"";
                     TextView valueZ = findViewById(R.id.Zvalue);
                     valueZ.setText(zString);
                 }else {
                     z=x+y;
-                    zString = z+"";
+                    zString = x+"";
                     TextView valueZ = findViewById(R.id.Zvalue);
                     valueZ.setText(zString);
                 }
             }else if(zString.length() > 0 && yString.length() == 0 && xString.length() >0){
                 if (isDecimal[0]==1 || isDecimal[2]==1) {
-                    double zz = Double.valueOf(z);
-                    double xx = Double.valueOf(x);
+                    double zz = Double.valueOf(zString);
+                    double xx = Double.valueOf(xString);
                     double yy = zz-xx;
                     yString = yy+"";
                     TextView valueY = findViewById(R.id.Yvalue);
@@ -397,8 +398,8 @@ public class Emulator extends AppCompatActivity {
                 }
             }else if(zString.length() > 0 && yString.length() > 0 && xString.length() ==0){
                 if (isDecimal[2]==1 || isDecimal[1]==1) {
-                    double yy = Double.valueOf(y);
-                    double zz = Double.valueOf(z);
+                    double yy = Double.valueOf(yString);
+                    double zz = Double.valueOf(zString);
                     double xx = zz-yy;
                     zString = xx+"";
                     TextView valueX = findViewById(R.id.Xvalue);
