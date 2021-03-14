@@ -182,4 +182,147 @@
             </TableRow>
         </TableLayout>
     </LinearLayout>
-</LinearLayout><!--  185  -->
+
+    <!-- LIST OF SUBJECTS-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:text="Basic"
+            android:textColor="#fff"
+            android:textSize="16dp"
+            android:onClick="displayBasic"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:text="Algebra"
+            android:textColor="#fff"
+            android:textSize="16dp"
+            android:onClick="displayAlgebra"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:text="Calculus"
+            android:textColor="#fff"
+            android:textSize="16dp"
+            android:onClick="displayCalculus"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:text="Physics"
+            android:textColor="#fff"
+            android:textSize="16dp"
+            android:onClick="displayPhysics"/>
+    </LinearLayout>
+
+    <!-- BASIC SUB SECTION -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/basicSub"
+        android:visibility="gone">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:text="Add"
+            android:textColor="#fff"
+            android:textSize="16dp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:text="Subtract"
+            android:textColor="#fff"
+            android:textSize="16dp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:text="Divide"
+            android:textColor="#fff"
+            android:textSize="16dp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:text="Multiply"
+            android:textColor="#fff"
+            android:textSize="16dp" />
+    </LinearLayout>
+
+    <!-- ALGEBRA SUB SECTION -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/algebraSub"
+        android:visibility="gone">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:text="2D Area"
+            android:textColor="#fff"
+            android:textSize="16dp"
+            android:onClick="Area2D"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:text="3D Area"
+            android:textColor="#fff"
+            android:textSize="16dp"
+            android:onClick="Area3D"/>
+    </LinearLayout>
+
+    <!-- CALCULUS SUB SECTION-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/calculusSub"
+        android:visibility="gone">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:text="Pythahorean"
+            android:textColor="#fff"
+            android:textSize="16dp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:text="Triangle 90"
+            android:textColor="#fff"
+            android:textSize="16dp" />
+    </LinearLayout>
+
+    <!-- Physics SUB SECTION-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/physicsSub"
+        android:visibility="gone">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:text="Linear Motion"
+            android:textColor="#fff"
+            android:textSize="16dp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:text="Circular Motion"
+            android:textColor="#fff"
+            android:textSize="16dp" />
+    </LinearLayout>
+
+</LinearLayout><!--  328  -->

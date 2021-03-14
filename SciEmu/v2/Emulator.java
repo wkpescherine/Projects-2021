@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
+import android.view.WindowManager;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 public class Emulator extends AppCompatActivity {
@@ -22,6 +24,9 @@ public class Emulator extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_emulator);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        getSupportActionBar().hide();
     }
 
     public void num1(View v){ setValues("1"); }
@@ -163,4 +168,34 @@ public class Emulator extends AppCompatActivity {
         }
     }
 
-}//166
+    public void displayBasic(View v){ displaySubs(1); }
+    public void displayAlgebra(View v){ displaySubs(2); }
+    public void displayCalculus(View v){ displaySubs(3); }
+    public void displayPhysics(View v){ displaySubs(4); }
+
+    public void displaySubs(int num){
+        LinearLayout layout1 = findViewById(R.id.basicSub);
+        LinearLayout layout2 = findViewById(R.id.algebraSub);
+        LinearLayout layout3 = findViewById(R.id.calculusSub);
+        LinearLayout layout4 = findViewById(R.id.physicsSub);
+        layout1.setVisibility(View.GONE);
+        layout2.setVisibility(View.GONE);
+        layout3.setVisibility(View.GONE);
+        layout4.setVisibility(View.GONE);
+        switch(num){
+            case 1:
+                layout1.setVisibility(View.VISIBLE);
+                break;
+            case 2:
+                layout2.setVisibility(View.VISIBLE);
+                break;
+            case 3:
+                layout3.setVisibility(View.VISIBLE);
+                break;
+            case 4:
+                layout4.setVisibility(View.VISIBLE);
+                break;
+        };
+    }
+
+}//201
