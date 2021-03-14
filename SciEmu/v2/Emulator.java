@@ -2,10 +2,12 @@ package com.example.sciemu_x2;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 public class Emulator extends AppCompatActivity {
@@ -173,6 +175,23 @@ public class Emulator extends AppCompatActivity {
     public void displayCalculus(View v){ displaySubs(3); }
     public void displayPhysics(View v){ displaySubs(4); }
 
+    public void setAddition(View v){
+        subCategory = "addition";
+        setFormulaText(subCategory);
+    }
+    public void setSubtraction(View v){
+        subCategory = "subtraction";
+        setFormulaText(subCategory);
+    }
+    public void setDivision(View v){
+        subCategory = "divide";
+        setFormulaText(subCategory);
+    }
+    public void setMultiplication(View v){
+        subCategory = "multiply";
+        setFormulaText(subCategory);
+    }
+
     public void displaySubs(int num){
         LinearLayout layout1 = findViewById(R.id.basicSub);
         LinearLayout layout2 = findViewById(R.id.algebraSub);
@@ -198,4 +217,33 @@ public class Emulator extends AppCompatActivity {
         };
     }
 
-}//201
+    public void practiceSection(View v){
+        Intent intent = new Intent(this, PracticeSection.class);
+        startActivity(intent);
+    }
+
+    public void clickToSolve(View v){}
+
+    public void setFormulaText(String sub){
+        RelativeLayout main = findViewById(R.id.main);
+        TextView sign1Text = findViewById(R.id.sign1);
+        main.setVisibility(View.VISIBLE);
+        TextView textMessageSub = findViewById(R.id.message);
+        textMessageSub.setText(subCategory);
+        if(subCategory.equals("addition")){
+            sign1Text.setText("+");
+            textMessageSub.setText("Addition selected");
+        }else if(subCategory.equals("subtraction")){
+            sign1Text.setText("-");
+            textMessageSub.setText("Subtraction selected");
+        }else if(subCategory.equals("division")){
+            sign1Text.setText("/");
+            textMessageSub.setText("Division Selected");
+        }else if(subCategory.equals("multiplication")){
+            sign1Text.setText("*");
+            textMessageSub.setText("Multiplication Selected");
+        }else{
+            textMessageSub.setText("Check your formula");
+        }
+    }
+}//249

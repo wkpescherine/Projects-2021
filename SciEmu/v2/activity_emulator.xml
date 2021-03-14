@@ -14,18 +14,18 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/main"
-        android:visibility="visible">
+        android:visibility="invisible">
         <TextView
             android:id="@+id/Xvalue"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toLeftOf="@id/sign"
-            android:text=""
+            android:layout_toLeftOf="@id/sign1"
+            android:text="x"
             android:textSize="32dp"
             android:textColor="#fff"
             android:onClick="focusX"/>
         <TextView
-            android:id="@+id/sign"
+            android:id="@+id/sign1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_toLeftOf="@id/Yvalue"
@@ -36,7 +36,7 @@
             android:id="@+id/Yvalue"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text=""
+            android:text="y"
             android:layout_centerInParent="true"
             android:textSize="32dp"
             android:textColor="#fff"
@@ -45,7 +45,7 @@
             android:id="@+id/equals"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text=""
+            android:text="="
             android:layout_toRightOf="@id/Yvalue"
             android:textSize="32dp"
             android:textColor="#fff"/>
@@ -53,12 +53,22 @@
             android:id="@+id/Zvalue"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text=""
+            android:text="z"
             android:layout_toRightOf="@id/equals"
             android:textSize="32dp"
             android:textColor="#fff"
             android:onClick="focusZ"/>
     </RelativeLayout>
+
+    <!--  MESSAGE  -->
+    <TextView
+        android:id="@+id/message"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textSize="10dp"
+        android:textColor="#fff"
+        android:textAlignment="center"/>
 
     <!-- KEYPAD SECTION -->
     <LinearLayout
@@ -183,6 +193,20 @@
         </TableLayout>
     </LinearLayout>
 
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Solve"
+        android:textAlignment="center"
+        android:onClick="clickToSolve"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Practice Questions"
+        android:textAlignment="center"
+        android:onClick="practiceSection"/>
+
     <!-- LIST OF SUBJECTS-->
     <LinearLayout
         android:layout_width="match_parent"
@@ -233,28 +257,32 @@
             android:layout_marginLeft="5dp"
             android:text="Add"
             android:textColor="#fff"
-            android:textSize="16dp" />
+            android:textSize="16dp"
+            android:onClick="setAddition"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
             android:text="Subtract"
             android:textColor="#fff"
-            android:textSize="16dp" />
+            android:textSize="16dp"
+            android:onClick="setSubtraction"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
             android:text="Divide"
             android:textColor="#fff"
-            android:textSize="16dp" />
+            android:textSize="16dp"
+            android:onClick="setDivision"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
             android:text="Multiply"
             android:textColor="#fff"
-            android:textSize="16dp" />
+            android:textSize="16dp"
+            android:onClick="setMultiplication"/>
     </LinearLayout>
 
     <!-- ALGEBRA SUB SECTION -->
@@ -325,4 +353,4 @@
             android:textSize="16dp" />
     </LinearLayout>
 
-</LinearLayout><!--  328  -->
+</LinearLayout><!--  356  -->
