@@ -43,29 +43,17 @@ public class Emulator extends AppCompatActivity {
     public void num0(View v){ setValues("0"); }
     public void del(View v){specialFunc("del");}
     public void decimal(View v){
-        if(focus.equals("X")){
+        if(focus.equals("X") && isDecimal[0] != 1){
             setValues(".");
             isDecimal[0] = 1;
         }
-        if(focus.equals("Y")){
+        if(focus.equals("Y") && isDecimal[1] != 1){
             setValues(".");
             isDecimal[1] = 1;
         }
-        if(focus.equals("Z")){
+        if(focus.equals("Z") && isDecimal[2] != 1){
             setValues(".");
             isDecimal[2] = 1;
-        }
-        if(focus.equals("A")){
-            setValues(".");
-            isDecimal[3] = 1;
-        }
-        if(focus.equals("B")){
-            setValues(".");
-            isDecimal[4] = 1;
-        }
-        if(focus.equals("C")){
-            setValues(".");
-            isDecimal[5] = 1;
         }
     }
 
@@ -124,45 +112,50 @@ public class Emulator extends AppCompatActivity {
     }
 
     public void specialFunc(String func){
-        String xLastChar = xString.charAt(xString.length()-1)+"";
-        String yLastChar = yString.charAt(yString.length()-1)+"";
-        String zLastChar = zString.charAt(zString.length()-1)+"";
         TextView xText = findViewById(R.id.Xvalue);
         TextView yText = findViewById(R.id.Yvalue);
         TextView zText = findViewById(R.id.Zvalue);
-        if(func.equals("del")){
-            if(focus.equals("X") && (xString.length() >0) && (xLastChar.equals("."))){
-                isDecimal[0] = 0;
-                xString = xString.substring(0, (xString.length())-1);
-                xText.setText(xString);
-            }
-            if(focus.equals("Y") && (yString.length() >0) && (yLastChar.equals("."))){
-                isDecimal[1] = 0;
-                yString = yString.substring(0, (yString.length())-1);
-                yText.setText(yString);
-            }
-            if(focus.equals("Z") && (zString.length() >0) && (zLastChar.equals("."))){
-                isDecimal[2] = 0;
-                zString = zString.substring(0, (zString.length())-1);
-                zText.setText(zString);
-            }
-            if(focus.equals("X") && (xString.length() >0)){
-                xString = xString.substring(0, (xString.length())-1);
-                xText.setText(xString);
+        if(func.equals("del")) {
+            if (focus.equals("X") && xString.length() > 0) {
+                String xLastChar = xString.charAt(xString.length() - 1) + "";
+                if (xLastChar.equals(".")) {
+                    isDecimal[0] = 0;
+                    xString = xString.substring(0, (xString.length()) - 1);
+                    xText.setText(xString);
+                } else if (focus.equals("X") && (xString.length() > 0)) {
+                    xString = xString.substring(0, (xString.length()) - 1);
+                    xText.setText(xString);
+                }
             }
             if(xString.length() == 0){
                 xText.setText("x");
             }
-            if(focus.equals("Y") && (yString.length() > 0)){
-                yString = yString.substring(0, (yString.length())-1);
-                yText.setText(yString);
+
+            if (focus.equals("Y") && yString.length() > 0) {
+                String yLastChar = yString.charAt(yString.length() - 1) + "";
+                if (yLastChar.equals(".")) {
+                    isDecimal[1] = 0;
+                    yString = yString.substring(0, (yString.length()) - 1);
+                    yText.setText(yString);
+                } else if (focus.equals("Y") && (yString.length() > 0)) {
+                    yString = yString.substring(0, (yString.length()) - 1);
+                    yText.setText(yString);
+                }
             }
             if(yString.length() == 0){
                 yText.setText("y");
             }
-            if(focus.equals("Z") && (zString.length() > 0 )){
-                zString = xString.substring(0, (zString.length())-1);
-                zText.setText(zString);
+
+            if (focus.equals("Z") && zString.length() > 0) {
+                String zLastChar = zString.charAt(zString.length() - 1) + "";
+                if (zLastChar.equals(".")) {
+                    isDecimal[2] = 0;
+                    zString = zString.substring(0, (zString.length()) - 1);
+                    zText.setText(zString);
+                } else if (focus.equals("Z") && (zString.length() > 0)) {
+                    zString = zString.substring(0, (zString.length()) - 1);
+                    zText.setText(zString);
+                }
             }
             if(zString.length() == 0){
                 zText.setText("z");
@@ -222,7 +215,74 @@ public class Emulator extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void clickToSolve(View v){}
+    public void clickToSolve(View v){
+        TextView textMessageSolve = findViewById(R.id.message);
+        if(subCategory.equals("addition")) {
+            if (yString.length() > 0 && xString.length() > 0) {
+                if (isDecimal[0]==1 || isDecimal[1]==1) {
+                    double yy = Double.valueOf(yString);
+                    double xx = Double.valueOf(xString);
+                    double zz = xx+yy;
+                    zString = zz+"";
+                    TextView valueZ = findViewById(R.id.Zvalue);
+                    textMessageSolve.setText("Solved");
+                    valueZ.setText(zString);
+                    zString = "";
+                }else {
+                    x = Integer.parseInt(xString);
+                    y = Integer.parseInt(yString);
+                    z = x + y;
+                    zString = z + "";
+                    TextView valueZ = findViewById(R.id.Zvalue);
+                    textMessageSolve.setText("Solved");
+                    valueZ.setText(zString);
+                    zString = "";
+                }
+            }
+            if (zString.length() > 0 && xString.length() > 0) {
+                if (isDecimal[2]==1 || isDecimal[0]==1) {
+                    double zz = Double.valueOf(zString);
+                    double xx = Double.valueOf(xString);
+                    double yy = zz - xx;
+                    yString = yy+"";
+                    TextView valueY = findViewById(R.id.Yvalue);
+                    textMessageSolve.setText("Solved");
+                    valueY.setText(yString);
+                    yString = "";
+                }else {
+                    x = Integer.parseInt(xString);
+                    z = Integer.parseInt(zString);
+                    y = z-x;
+                    yString = y + "";
+                    TextView valueY = findViewById(R.id.Yvalue);
+                    textMessageSolve.setText("Solved");
+                    valueY.setText(yString);
+                    yString = "";
+                }
+            }
+            if (zString.length() > 0 && yString.length() > 0) {
+                if (isDecimal[2]==1 || isDecimal[1]==1) {
+                    double zz = Double.valueOf(zString);
+                    double yy = Double.valueOf(yString);
+                    double xx = zz - yy;
+                    xString = xx+"";
+                    TextView valueX = findViewById(R.id.Xvalue);
+                    textMessageSolve.setText("Solved");
+                    valueX.setText(xString);
+                    xString = "";
+                }else {
+                    y = Integer.parseInt(yString);
+                    z = Integer.parseInt(zString);
+                    x = z-y;
+                    xString = x + "";
+                    TextView valueX = findViewById(R.id.Xvalue);
+                    textMessageSolve.setText("Solved");
+                    valueX.setText(xString);
+                    xString = "";
+                }
+            }
+        }
+    }
 
     public void setFormulaText(String sub){
         RelativeLayout main = findViewById(R.id.main);
@@ -236,14 +296,14 @@ public class Emulator extends AppCompatActivity {
         }else if(subCategory.equals("subtraction")){
             sign1Text.setText("-");
             textMessageSub.setText("Subtraction selected");
-        }else if(subCategory.equals("division")){
+        }else if(subCategory.equals("divide")){
             sign1Text.setText("/");
             textMessageSub.setText("Division Selected");
-        }else if(subCategory.equals("multiplication")){
+        }else if(subCategory.equals("multiply")){
             sign1Text.setText("*");
             textMessageSub.setText("Multiplication Selected");
         }else{
             textMessageSub.setText("Check your formula");
         }
     }
-}//249
+}//309
