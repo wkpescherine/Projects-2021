@@ -380,55 +380,54 @@ public class Emulator extends AppCompatActivity {
         }
         if(subCategory.equals("divide")) {
             if (zString.length() == 0 && yString.length() > 0 && xString.length() > 0) {
-                if (isDecimal[0]==1 || isDecimal[1]==1) {
-                    double xx = Double.valueOf(x);
-                    double yy = Double.valueOf(y);
+                if (Double.valueOf(xString)%Double.valueOf(yString)!=0) {
+                    double xx = Double.valueOf(xString);
+                    double yy = Double.valueOf(yString);
                     double zz = xx/yy;
                     zString = zz + "";
                     TextView valueZ = findViewById(R.id.Zvalue);
                     valueZ.setText(zString);
+                    zString = "";
+                } else if (isDecimal[0]==1 || isDecimal[1]==1) {
+                    double xx = Double.valueOf(xString);
+                    double yy = Double.valueOf(yString);
+                    double zz = xx/yy;
+                    zString = zz + "";
+                    TextView valueZ = findViewById(R.id.Zvalue);
+                    valueZ.setText(zString);
+                    zString = "";
                 } else {
-                    y = Integer.parseInt(yString);
-                    x = Integer.parseInt(xString);
-                    z = x/y;
+                    z = Integer.parseInt(xString)/Integer.parseInt(yString);
                     zString = z + "";
                     TextView valueZ = findViewById(R.id.Zvalue);
                     valueZ.setText(zString);
                     zString = "";
                 }
-            } else if (zString.length() > 0 && yString.length() == 0 && xString.length() > 0) {
-                if (isDecimal[0]==1 || isDecimal[2]==1) {
-                    double xx = Double.valueOf(x);
-                    double zz = Double.valueOf(z);
-                    double yy = xx/zz ;
-                    yString = yy + "";
-                    TextView valueY = findViewById(R.id.Yvalue);
-                    valueY.setText(yString);
+            }
+            if (zString.length() == 0 && yString.length() > 0 && xString.length() > 0) {
+                if (Double.valueOf(xString)%Double.valueOf(yString)!=0) {
+                    double xx = Double.valueOf(xString);
+                    double yy = Double.valueOf(yString);
+                    double zz = xx/yy;
+                    zString = zz + "";
+                    TextView valueZ = findViewById(R.id.Zvalue);
+                    valueZ.setText(zString);
+                    zString = "";
+                } else if (isDecimal[0]==1 || isDecimal[1]==1) {
+                    double xx = Double.valueOf(xString);
+                    double yy = Double.valueOf(yString);
+                    double zz = xx/yy;
+                    zString = zz + "";
+                    TextView valueZ = findViewById(R.id.Zvalue);
+                    valueZ.setText(zString);
+                    zString = "";
                 } else {
-                    y = x/z;
-                    yString = y + "";
-                    TextView valueY = findViewById(R.id.Yvalue);
-                    valueY.setText(yString);
+                    z = Integer.parseInt(xString)/Integer.parseInt(yString);
+                    zString = z + "";
+                    TextView valueZ = findViewById(R.id.Zvalue);
+                    valueZ.setText(zString);
+                    zString = "";
                 }
-            } else if (zString.length() > 0 && yString.length() > 0 && xString.length() == 0) {
-                if (isDecimal[2]==1 || isDecimal[1]==1) {
-                    double yy = Double.valueOf(y);
-                    double zz = Double.valueOf(z);
-                    double xx = zz*yy;
-                    xString = xx + "";
-                    TextView valueX = findViewById(R.id.Xvalue);
-                    valueX.setText(xString);
-                }else {
-                    y = Integer.parseInt(yString);
-                    z = Integer.parseInt(zString);
-                    x = z*y;
-                    xString = Math.abs(x) + "";
-                    TextView valueX = findViewById(R.id.Xvalue);
-                    valueX.setText(xString);
-                }
-            } else {
-                TextView errorMessage = findViewById(R.id.message);
-                errorMessage.setText("Check your forumla as there sames to be an error");
             }
         }
     }
@@ -489,4 +488,4 @@ public class Emulator extends AppCompatActivity {
             textMessageSub.setText("Check your formula");
         }
     }
-}//492
+}//491
