@@ -14,11 +14,19 @@ public class Emulator extends AppCompatActivity {
     int x = 0;
     int y = 0;
     int z = 0;
-    // Location   is =  x,y,z,a,b,c
-    int [] isDecimal = {0,0,0,0,0,0};
+    int h = 0;
+    int w = 0;
+    int d = 0;
+    int total = 0;
+    // Location   is =  x,y,z,h,w,d,total
+    int [] isDecimal = {0,0,0,0,0,0,0};
     String xString = "";
     String yString = "";
     String zString = "";
+    String hString = "";
+    String wString = "";
+    String dString = "";
+    String totalString = "";
     String focus = "";
     String subCategory = "";
 
@@ -70,7 +78,22 @@ public class Emulator extends AppCompatActivity {
     public void focusZ(View v){
         focus = "Z";
         TextView textMessageZ = findViewById(R.id.message);
-        textMessageZ.setText("docus on z selected");
+        textMessageZ.setText("Focus on z selected");
+    }
+    public void focusH(View v){
+        focus = "H";
+        TextView textMessageH = findViewById(R.id.message);
+        textMessageH.setText("docus on h selected");
+    }
+    public void focusW(View v){
+        focus = "W";
+        TextView textMessageW = findViewById(R.id.message);
+        textMessageW.setText("Focus on w selected");
+    }
+    public void focusTot(View v){
+        focus = "total";
+        TextView textMessageW = findViewById(R.id.message);
+        textMessageW.setText("Focus on Total selected");
     }
 
     public void setValues(String val){
@@ -169,19 +192,27 @@ public class Emulator extends AppCompatActivity {
     public void displayPhysics(View v){ displaySubs(4); }
 
     public void setAddition(View v){
-        subCategory = "addition";
+        resetUI();
+        subCategory = "add";
         setFormulaText(subCategory);
     }
     public void setSubtraction(View v){
-        subCategory = "subtraction";
+        resetUI();
+        subCategory = "subtract";
         setFormulaText(subCategory);
     }
     public void setDivision(View v){
+        resetUI();
         subCategory = "divide";
         setFormulaText(subCategory);
     }
     public void setMultiplication(View v){
+        resetUI();
         subCategory = "multiply";
+        setFormulaText(subCategory);
+    }
+    public void Area2D(View v){
+        subCategory = "Area2D";
         setFormulaText(subCategory);
     }
 
@@ -217,7 +248,7 @@ public class Emulator extends AppCompatActivity {
 
     public void clickToSolve(View v){
         TextView textMessageSolve = findViewById(R.id.message);
-        if(subCategory.equals("addition")) {
+        if(subCategory.equals("add")) {
             if (yString.length() > 0 && xString.length() > 0) {
                 if (isDecimal[0]==1 || isDecimal[1]==1) {
                     double yy = Double.valueOf(yString);
@@ -282,6 +313,139 @@ public class Emulator extends AppCompatActivity {
                 }
             }
         }
+        if(subCategory.equals("subtract")) {
+            if (yString.length() > 0 && xString.length() > 0) {
+                if (isDecimal[0]==1 || isDecimal[1]==1) {
+                    double yy = Double.valueOf(yString);
+                    double xx = Double.valueOf(xString);
+                    double zz = xx-yy;
+                    zString = zz+"";
+                    TextView valueZ = findViewById(R.id.Zvalue);
+                    textMessageSolve.setText("Solved");
+                    valueZ.setText(zString);
+                    zString = "";
+                }else {
+                    x = Integer.parseInt(xString);
+                    y = Integer.parseInt(yString);
+                    z = x - y;
+                    zString = z + "";
+                    TextView valueZ = findViewById(R.id.Zvalue);
+                    textMessageSolve.setText("Solved");
+                    valueZ.setText(zString);
+                    zString = "";
+                }
+            }
+            if (zString.length() > 0 && xString.length() > 0) {
+                if (isDecimal[2]==1 || isDecimal[0]==1) {
+                    double zz = Double.valueOf(zString);
+                    double xx = Double.valueOf(xString);
+                    double yy = xx - zz;
+                    yString = yy+"";
+                    TextView valueY = findViewById(R.id.Yvalue);
+                    textMessageSolve.setText("Solved");
+                    valueY.setText(yString);
+                    yString = "";
+                }else {
+                    x = Integer.parseInt(xString);
+                    z = Integer.parseInt(zString);
+                    y = x - z;
+                    yString = y + "";
+                    TextView valueY = findViewById(R.id.Yvalue);
+                    textMessageSolve.setText("Solved");
+                    valueY.setText(yString);
+                    yString = "";
+                }
+            }
+            if (zString.length() > 0 && yString.length() > 0) {
+                if (isDecimal[2]==1 || isDecimal[1]==1) {
+                    double zz = Double.valueOf(zString);
+                    double yy = Double.valueOf(yString);
+                    double xx = zz + yy;
+                    xString = xx+"";
+                    TextView valueX = findViewById(R.id.Xvalue);
+                    textMessageSolve.setText("Solved");
+                    valueX.setText(xString);
+                    xString = "";
+                }else {
+                    y = Integer.parseInt(yString);
+                    z = Integer.parseInt(zString);
+                    x = z+y;
+                    xString = x + "";
+                    TextView valueX = findViewById(R.id.Xvalue);
+                    textMessageSolve.setText("Solved");
+                    valueX.setText(xString);
+                    xString = "";
+                }
+            }
+        }
+        if(subCategory.equals("divide")) {
+            if (zString.length() == 0 && yString.length() > 0 && xString.length() > 0) {
+                if (isDecimal[0]==1 || isDecimal[1]==1) {
+                    double xx = Double.valueOf(x);
+                    double yy = Double.valueOf(y);
+                    double zz = xx/yy;
+                    zString = zz + "";
+                    TextView valueZ = findViewById(R.id.Zvalue);
+                    valueZ.setText(zString);
+                } else {
+                    y = Integer.parseInt(yString);
+                    x = Integer.parseInt(xString);
+                    z = x/y;
+                    zString = z + "";
+                    TextView valueZ = findViewById(R.id.Zvalue);
+                    valueZ.setText(zString);
+                    zString = "";
+                }
+            } else if (zString.length() > 0 && yString.length() == 0 && xString.length() > 0) {
+                if (isDecimal[0]==1 || isDecimal[2]==1) {
+                    double xx = Double.valueOf(x);
+                    double zz = Double.valueOf(z);
+                    double yy = xx/zz ;
+                    yString = yy + "";
+                    TextView valueY = findViewById(R.id.Yvalue);
+                    valueY.setText(yString);
+                } else {
+                    y = x/z;
+                    yString = y + "";
+                    TextView valueY = findViewById(R.id.Yvalue);
+                    valueY.setText(yString);
+                }
+            } else if (zString.length() > 0 && yString.length() > 0 && xString.length() == 0) {
+                if (isDecimal[2]==1 || isDecimal[1]==1) {
+                    double yy = Double.valueOf(y);
+                    double zz = Double.valueOf(z);
+                    double xx = zz*yy;
+                    xString = xx + "";
+                    TextView valueX = findViewById(R.id.Xvalue);
+                    valueX.setText(xString);
+                }else {
+                    y = Integer.parseInt(yString);
+                    z = Integer.parseInt(zString);
+                    x = z*y;
+                    xString = Math.abs(x) + "";
+                    TextView valueX = findViewById(R.id.Xvalue);
+                    valueX.setText(xString);
+                }
+            } else {
+                TextView errorMessage = findViewById(R.id.message);
+                errorMessage.setText("Check your forumla as there sames to be an error");
+            }
+        }
+    }
+
+    public void resetUI(){
+        TextView xTextString = findViewById(R.id.Xvalue);
+        xTextString.setVisibility(View.VISIBLE);
+        TextView yTextString = findViewById(R.id.Yvalue);
+        yTextString.setVisibility(View.VISIBLE);
+        TextView zTextString = findViewById(R.id.Zvalue);
+        zTextString.setVisibility(View.VISIBLE);
+        TextView hTextString = findViewById(R.id.Hvalue);
+        hTextString.setVisibility(View.INVISIBLE);
+        TextView wTextString = findViewById(R.id.Wvalue);
+        wTextString.setVisibility(View.INVISIBLE);
+        TextView totTextString = findViewById(R.id.Totvalue);
+        totTextString.setVisibility(View.INVISIBLE);
     }
 
     public void setFormulaText(String sub){
@@ -290,20 +454,39 @@ public class Emulator extends AppCompatActivity {
         main.setVisibility(View.VISIBLE);
         TextView textMessageSub = findViewById(R.id.message);
         textMessageSub.setText(subCategory);
-        if(subCategory.equals("addition")){
+        if(subCategory.equals("add")){
+            resetUI();
             sign1Text.setText("+");
             textMessageSub.setText("Addition selected");
-        }else if(subCategory.equals("subtraction")){
+        }else if(subCategory.equals("subtract")){
+            resetUI();
             sign1Text.setText("-");
             textMessageSub.setText("Subtraction selected");
         }else if(subCategory.equals("divide")){
+            resetUI();
             sign1Text.setText("/");
             textMessageSub.setText("Division Selected");
         }else if(subCategory.equals("multiply")){
+            resetUI();
             sign1Text.setText("*");
             textMessageSub.setText("Multiplication Selected");
+        }else if(subCategory.equals("Area2D")){
+            TextView xTextString = findViewById(R.id.Xvalue);
+            xTextString.setVisibility(View.INVISIBLE);
+            TextView yTextString = findViewById(R.id.Yvalue);
+            yTextString.setVisibility(View.INVISIBLE);
+            TextView zTextString = findViewById(R.id.Zvalue);
+            zTextString.setVisibility(View.INVISIBLE);
+            TextView hTextString = findViewById(R.id.Hvalue);
+            hTextString.setVisibility(View.VISIBLE);
+            TextView wTextString = findViewById(R.id.Wvalue);
+            wTextString.setVisibility(View.VISIBLE);
+            sign1Text.setText("*");
+            TextView totTextString = findViewById(R.id.Totvalue);
+            totTextString.setVisibility(View.VISIBLE);
+            textMessageSub.setText("2D Area Selected");
         }else{
             textMessageSub.setText("Check your formula");
         }
     }
-}//309
+}//492
