@@ -12,11 +12,13 @@ import android.widget.TextView;
 
 public class Emulator extends AppCompatActivity {
     DataConfig data = new DataConfig();
+    Formula formula = new Formula();
+
     int x = 0;
     int y = 0;
     int z = 0;
-    int h = 0;
-    int w = 0;
+    int h = 5;
+    int w = 6;
     int d = 0;
     int total = 0;
     // Location   is =  x,y,z,h,w,d,total
@@ -470,7 +472,64 @@ public class Emulator extends AppCompatActivity {
                     valueZ.setText(zString);
                     zString = "";
                 }
+            }else if (zString.length() > 0 && yString.length() == 0 && xString.length() > 0) {
+                if (Double.valueOf(zString) % Double.valueOf(xString) != 0) {
+                    double xx = Double.valueOf(xString);
+                    double zz = Double.valueOf(zString);
+                    double yy = zz / xx;
+                    yString = yy + "";
+                    TextView valueY = findViewById(R.id.Yvalue);
+                    valueY.setText(yString);
+                    yString = "";
+                } else if (isDecimal[0] == 1 || isDecimal[2] == 1) {
+                    double xx = Double.valueOf(xString);
+                    double zz = Double.valueOf(zString);
+                    double yy = zz / xx;
+                    yString = yy + "";
+                    TextView valueY = findViewById(R.id.Yvalue);
+                    valueY.setText(yString);
+                    yString = "";
+                } else {
+                    y = Integer.parseInt(zString) / Integer.parseInt(xString);
+                    yString = y + "";
+                    TextView valueY = findViewById(R.id.Yvalue);
+                    valueY.setText(yString);
+                    yString = "";
+                }
+            }else if (zString.length() > 0 && yString.length() > 0 && xString.length() == 0) {
+                if (Double.valueOf(zString) % Double.valueOf(yString) != 0) {
+                    double yy = Double.valueOf(yString);
+                    double zz = Double.valueOf(zString);
+                    double xx = zz / yy;
+                    yString = xx + "";
+                    TextView valueX = findViewById(R.id.Xvalue);
+                    valueX.setText(xString);
+                    xString = "";
+                } else if (isDecimal[1] == 1 || isDecimal[2] == 1) {
+                    double yy = Double.valueOf(yString);
+                    double zz = Double.valueOf(zString);
+                    double xx = zz / yy;
+                    yString = xx + "";
+                    TextView valueX = findViewById(R.id.Xvalue);
+                    valueX.setText(xString);
+                    xString = "";
+                } else {
+                    x = Integer.parseInt(zString) / Integer.parseInt(yString);
+                    xString = x + "";
+                    TextView valueX = findViewById(R.id.Xvalue);
+                    valueX.setText(xString);
+                    xString = "";
+                }
+            } else {
+                TextView errorMessage = findViewById(R.id.message);
+                errorMessage.setText("Check your forumla as there sames to be an error");
             }
+        }
+        if(subCategory.equals("Area2D")){
+            total = formula.Multiply(5, 6, "");
+            totalString = total+"";
+            TextView valueTotal = findViewById(R.id.Totvalue);
+            valueTotal.setText(totalString);
         }
     }
 
@@ -539,4 +598,4 @@ public class Emulator extends AppCompatActivity {
             textMessageSub.setText("Check your formula");
         }
     }
-}//542
+}//601
