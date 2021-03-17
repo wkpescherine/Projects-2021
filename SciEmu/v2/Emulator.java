@@ -403,26 +403,67 @@ public class Emulator extends AppCompatActivity {
                     valueZ.setText(zString);
                     zString = "";
                 }
+            }else if (zString.length() > 0 && yString.length() == 0 && xString.length() > 0) {
+                if (Double.valueOf(xString)%Double.valueOf(zString)!=0) {
+                    double xx = Double.valueOf(xString);
+                    double zz = Double.valueOf(zString);
+                    double yy = xx/zz;
+                    yString = yy + "";
+                    TextView valueY = findViewById(R.id.Yvalue);
+                    valueY.setText(yString);
+                    yString = "";
+                } else if (isDecimal[0]==1 || isDecimal[2]==1) {
+                    double xx = Double.valueOf(xString);
+                    double zz = Double.valueOf(zString);
+                    double yy = xx/zz;
+                    yString = yy + "";
+                    TextView valueY = findViewById(R.id.Yvalue);
+                    valueY.setText(yString);
+                    yString = "";
+                } else {
+                    y = Integer.parseInt(xString)/Integer.parseInt(zString);
+                    yString = y + "";
+                    TextView valueY = findViewById(R.id.Yvalue);
+                    valueY.setText(yString);
+                    yString = "";
+                }
+            } else if (zString.length() > 0 && yString.length() > 0 && xString.length() == 0) {
+                if (isDecimal[2]==1 || isDecimal[1]==1) {
+                    double yy = Double.valueOf(yString);
+                    double zz = Double.valueOf(zString);
+                    double xx = zz*yy;
+                    xString = xx + "";
+                    TextView valueX = findViewById(R.id.Xvalue);
+                    valueX.setText(xString);
+                    xString="";
+                }else {
+                    y = Integer.parseInt(yString);
+                    z = Integer.parseInt(zString);
+                    x = z*y;
+                    xString = x + "";
+                    TextView valueX = findViewById(R.id.Xvalue);
+                    valueX.setText(xString);
+                    xString="";
+                }
+            } else {
+                TextView errorMessage = findViewById(R.id.message);
+                errorMessage.setText("Check your forumla as there sames to be an error");
             }
+        }
+        if(subCategory.equals("multiply")) {
             if (zString.length() == 0 && yString.length() > 0 && xString.length() > 0) {
-                if (Double.valueOf(xString)%Double.valueOf(yString)!=0) {
-                    double xx = Double.valueOf(xString);
+                if (isDecimal[0] == 1 || isDecimal[1] == 1) {
                     double yy = Double.valueOf(yString);
-                    double zz = xx/yy;
-                    zString = zz + "";
-                    TextView valueZ = findViewById(R.id.Zvalue);
-                    valueZ.setText(zString);
-                    zString = "";
-                } else if (isDecimal[0]==1 || isDecimal[1]==1) {
                     double xx = Double.valueOf(xString);
-                    double yy = Double.valueOf(yString);
-                    double zz = xx/yy;
+                    double zz = xx * yy;
                     zString = zz + "";
                     TextView valueZ = findViewById(R.id.Zvalue);
                     valueZ.setText(zString);
                     zString = "";
                 } else {
-                    z = Integer.parseInt(xString)/Integer.parseInt(yString);
+                    x =Integer.parseInt(xString);
+                    y =Integer.parseInt(yString);
+                    z = x * y;
                     zString = z + "";
                     TextView valueZ = findViewById(R.id.Zvalue);
                     valueZ.setText(zString);
@@ -433,6 +474,9 @@ public class Emulator extends AppCompatActivity {
     }
 
     public void resetUI(){
+        xString = "";
+        yString = "";
+        zString = "";
         TextView xTextString = findViewById(R.id.Xvalue);
         xTextString.setVisibility(View.VISIBLE);
         TextView yTextString = findViewById(R.id.Yvalue);
@@ -488,4 +532,4 @@ public class Emulator extends AppCompatActivity {
             textMessageSub.setText("Check your formula");
         }
     }
-}//491
+}//535
