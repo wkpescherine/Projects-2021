@@ -11,6 +11,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 public class Emulator extends AppCompatActivity {
+    DataConfig data = new DataConfig();
     int x = 0;
     int y = 0;
     int z = 0;
@@ -477,12 +478,18 @@ public class Emulator extends AppCompatActivity {
         xString = "";
         yString = "";
         zString = "";
+        x=0;
+        y=0;
+        z=0;
         TextView xTextString = findViewById(R.id.Xvalue);
+        xTextString.setText("x");
         xTextString.setVisibility(View.VISIBLE);
         TextView yTextString = findViewById(R.id.Yvalue);
         yTextString.setVisibility(View.VISIBLE);
+        yTextString.setText("y");
         TextView zTextString = findViewById(R.id.Zvalue);
         zTextString.setVisibility(View.VISIBLE);
+        zTextString.setText("z");
         TextView hTextString = findViewById(R.id.Hvalue);
         hTextString.setVisibility(View.INVISIBLE);
         TextView wTextString = findViewById(R.id.Wvalue);
@@ -532,4 +539,4 @@ public class Emulator extends AppCompatActivity {
             textMessageSub.setText("Check your formula");
         }
     }
-}//535
+}//542
