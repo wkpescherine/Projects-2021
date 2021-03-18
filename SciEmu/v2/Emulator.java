@@ -17,8 +17,8 @@ public class Emulator extends AppCompatActivity {
     int x = 0;
     int y = 0;
     int z = 0;
-    int h = 5;
-    int w = 6;
+    int h = 0;
+    int w = 0;
     int d = 0;
     int total = 0;
     // Location   is =  x,y,z,h,w,d,total
@@ -172,14 +172,14 @@ public class Emulator extends AppCompatActivity {
             valueW.setText(wString);
         }
         if(focus.equals("D") && dString.length() != 0){
-            //TextView valueD = findViewById(R.id.Dvalue);
+            TextView valueD = findViewById(R.id.Dvalue);
             dString  += val;
-            //valueD.setText(dString);
+            valueD.setText(dString);
         }
         if(focus.equals("D") && dString.length() == 0 ){
-            //TextView valueD = findViewById(R.id.Dvalue);
+            TextView valueD = findViewById(R.id.Dvalue);
             dString  = val+"";
-            //valueD.setText(dString);
+            valueD.setText(dString);
         }
         if(focus.equals("total") && totalString.length() != 0){
             TextView valueTotal = findViewById(R.id.Totvalue);
@@ -200,6 +200,7 @@ public class Emulator extends AppCompatActivity {
         TextView hText = findViewById(R.id.Hvalue);
         TextView wText = findViewById(R.id.Wvalue);
         TextView dText = findViewById(R.id.Dvalue);
+        TextView t1Text = findViewById(R.id.Totvalue);
         if(func.equals("del")) {
             if (focus.equals("X") && xString.length() > 0) {
                 String xLastChar = xString.charAt(xString.length() - 1) + "";
@@ -289,6 +290,21 @@ public class Emulator extends AppCompatActivity {
             }
             if(dString.length() == 0){
                 dText.setText("d");
+            }
+
+            if (focus.equals("total") && totalString.length() > 0) {
+                String totalLastChar = totalString.charAt(totalString.length() - 1) + "";
+                if (totalLastChar.equals(".")) {
+                    isDecimal[6] = 0;
+                    totalString = totalString.substring(0, (totalString.length()) - 1);
+                    t1Text.setText(totalString);
+                } else if (focus.equals("total") && (totalString.length() > 0)) {
+                    totalString = totalString.substring(0, (totalString.length()) - 1);
+                    t1Text.setText(totalString);
+                }
+            }
+            if(totalString.length() == 0){
+                t1Text.setText("total");
             }
         }
     }
@@ -630,10 +646,20 @@ public class Emulator extends AppCompatActivity {
             }
         }
         if(subCategory.equals("Area2D")){
-            total = formula.Multiply(5, 6, "");
-            totalString = total+"";
-            TextView valueTotal = findViewById(R.id.Totvalue);
-            valueTotal.setText(totalString);
+            String result = formula.Multiply(hString, wString, totalString, 0);
+            if(hString.length() > 0 && wString.length() > 0 && totalString.length() == 0){
+                TextView TotalText = findViewById(R.id.Totvalue);
+                TotalText.setText(result);
+                totalString = "";
+            }else if(hString.length() > 0 && wString.length() == 0 && totalString.length() > 0){
+                TextView wText = findViewById(R.id.Wvalue);
+                wText.setText(result);
+                wString = "";
+            }else if(hString.length() == 0 && wString.length() > 0 && totalString.length() > 0){
+                TextView hText = findViewById(R.id.Hvalue);
+                hText.setText(result);
+                hString = "";
+            }
         }
     }
 
@@ -702,4 +728,4 @@ public class Emulator extends AppCompatActivity {
             textMessageSub.setText("Check your formula");
         }
     }
-}//705
+}//731
