@@ -66,12 +66,28 @@ public class Emulator extends AppCompatActivity {
             setValues(".");
             isDecimal[2] = 1;
         }
+        if(focus.equals("H") && isDecimal[3] != 1){
+            setValues(".");
+            isDecimal[3] = 1;
+        }
+        if(focus.equals("W") && isDecimal[4] != 1){
+            setValues(".");
+            isDecimal[4] = 1;
+        }
+        if(focus.equals("D") && isDecimal[5] != 1){
+            setValues(".");
+            isDecimal[5] = 1;
+        }
+        if(focus.equals("total") && isDecimal[6] != 1){
+            setValues(".");
+            isDecimal[6] = 1;
+        }
     }
 
     public void focusX(View v){
         focus = "X";
         TextView textMessageX = findViewById(R.id.message);
-        textMessageX.setText("focus on x selected");
+        textMessageX.setText("Focus on x selected");
     }
     public void focusY(View v){
         focus = "Y";
@@ -86,12 +102,17 @@ public class Emulator extends AppCompatActivity {
     public void focusH(View v){
         focus = "H";
         TextView textMessageH = findViewById(R.id.message);
-        textMessageH.setText("docus on h selected");
+        textMessageH.setText("Focus on h selected");
     }
     public void focusW(View v){
         focus = "W";
         TextView textMessageW = findViewById(R.id.message);
         textMessageW.setText("Focus on w selected");
+    }
+    public void focusD(View v){
+        focus = "D";
+        TextView textMessageW = findViewById(R.id.message);
+        textMessageW.setText("Focus on D selected");
     }
     public void focusTot(View v){
         focus = "total";
@@ -105,35 +126,70 @@ public class Emulator extends AppCompatActivity {
             xString  += val+"";
             valueX.setText(xString);
         }
-
         if(focus.equals("X") && xString.length() == 0){
             TextView valueX = findViewById(R.id.Xvalue);
             xString  = val+"";
             valueX.setText(xString);
         }
-
         if(focus.equals("Y") && yString.length() != 0){
             TextView valueY = findViewById(R.id.Yvalue);
             yString  += val;
             valueY.setText(yString);
         }
-
         if(focus.equals("Y") && yString.length() == 0 ){
             TextView valueY = findViewById(R.id.Yvalue);
             yString  = val+"";
             valueY.setText(yString);
         }
-
         if(focus.equals("Z") && zString.length() != 0){
             TextView valueZ = findViewById(R.id.Zvalue);
             zString  += val;
             valueZ.setText(zString);
         }
-
         if(focus.equals("Z") && zString.length() == 0 ){
             TextView valueZ = findViewById(R.id.Zvalue);
             zString  = val+"";
             valueZ.setText(zString);
+        }
+        if(focus.equals("H") && hString.length() != 0){
+            TextView valueH = findViewById(R.id.Hvalue);
+            hString  += val;
+            valueH.setText(hString);
+        }
+        if(focus.equals("H") && hString.length() == 0 ){
+            TextView valueH = findViewById(R.id.Hvalue);
+            hString  = val+"";
+            valueH.setText(hString);
+        }
+        if(focus.equals("W") && wString.length() != 0){
+            TextView valueW = findViewById(R.id.Wvalue);
+            wString  += val;
+            valueW.setText(wString);
+        }
+        if(focus.equals("W") && wString.length() == 0 ){
+            TextView valueW = findViewById(R.id.Wvalue);
+            wString  = val+"";
+            valueW.setText(wString);
+        }
+        if(focus.equals("D") && dString.length() != 0){
+            //TextView valueD = findViewById(R.id.Dvalue);
+            dString  += val;
+            //valueD.setText(dString);
+        }
+        if(focus.equals("D") && dString.length() == 0 ){
+            //TextView valueD = findViewById(R.id.Dvalue);
+            dString  = val+"";
+            //valueD.setText(dString);
+        }
+        if(focus.equals("total") && totalString.length() != 0){
+            TextView valueTotal = findViewById(R.id.Totvalue);
+            totalString  += val;
+            valueTotal.setText(totalString);
+        }
+        if(focus.equals("total") && totalString.length() == 0 ){
+            TextView valueTotal = findViewById(R.id.Totvalue);
+            totalString  = val+"";
+            valueTotal.setText(totalString);
         }
     }
 
@@ -141,6 +197,9 @@ public class Emulator extends AppCompatActivity {
         TextView xText = findViewById(R.id.Xvalue);
         TextView yText = findViewById(R.id.Yvalue);
         TextView zText = findViewById(R.id.Zvalue);
+        TextView hText = findViewById(R.id.Hvalue);
+        TextView wText = findViewById(R.id.Wvalue);
+        TextView dText = findViewById(R.id.Dvalue);
         if(func.equals("del")) {
             if (focus.equals("X") && xString.length() > 0) {
                 String xLastChar = xString.charAt(xString.length() - 1) + "";
@@ -185,6 +244,51 @@ public class Emulator extends AppCompatActivity {
             }
             if(zString.length() == 0){
                 zText.setText("z");
+            }
+
+            if (focus.equals("H") && hString.length() > 0) {
+                String hLastChar = hString.charAt(hString.length() - 1) + "";
+                if (hLastChar.equals(".")) {
+                    isDecimal[3] = 0;
+                    hString = hString.substring(0, (hString.length()) - 1);
+                    hText.setText(hString);
+                } else if (focus.equals("H") && (hString.length() > 0)) {
+                    hString = hString.substring(0, (hString.length()) - 1);
+                    hText.setText(hString);
+                }
+            }
+            if(hString.length() == 0){
+                hText.setText("h");
+            }
+
+            if (focus.equals("W") && wString.length() > 0) {
+                String wLastChar = wString.charAt(wString.length() - 1) + "";
+                if (wLastChar.equals(".")) {
+                    isDecimal[4] = 0;
+                    wString = wString.substring(0, (wString.length()) - 1);
+                    wText.setText(wString);
+                } else if (focus.equals("W") && (wString.length() > 0)) {
+                    wString = wString.substring(0, (wString.length()) - 1);
+                    wText.setText(wString);
+                }
+            }
+            if(wString.length() == 0){
+                wText.setText("w");
+            }
+
+            if (focus.equals("D") && dString.length() > 0) {
+                String dLastChar = dString.charAt(dString.length() - 1) + "";
+                if (dLastChar.equals(".")) {
+                    isDecimal[5] = 0;
+                    dString = dString.substring(0, (dString.length()) - 1);
+                    dText.setText(dString);
+                } else if (focus.equals("D") && (dString.length() > 0)) {
+                    dString = dString.substring(0, (dString.length()) - 1);
+                    dText.setText(dString);
+                }
+            }
+            if(dString.length() == 0){
+                dText.setText("d");
             }
         }
     }
@@ -598,4 +702,4 @@ public class Emulator extends AppCompatActivity {
             textMessageSub.setText("Check your formula");
         }
     }
-}//601
+}//705
