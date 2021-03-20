@@ -11,18 +11,30 @@ public class Formula {
                 t1 = (Integer.parseInt(value1))*(Integer.parseInt(value2))+"";
             }
             if(value2.equals("")){
-                int h = Integer.parseInt(value1);
-                int t = Integer.parseInt(value3);
-                t1 = t/h+"";
+                if(Double.valueOf(value3)/Double.valueOf(value1) != 0){
+                    t1 = Double.valueOf(value3)/Double.valueOf(value1) + "";
+                }else {
+                    t1 = Integer.parseInt(value3) / Integer.parseInt(value1) + "";
+                }
             }
             if(value1.equals("")){
-                int t = Integer.parseInt(value3);
-                int w = Integer.parseInt(value2);
-                t1 = w/t+"";
+                if(Double.valueOf(value3)/Double.valueOf(value3) != 0){
+                    t1 = Double.valueOf(value3)/Double.valueOf(value2) + "";
+                }else {
+                    t1 = Integer.parseInt(value3) / Integer.parseInt(value2) + "";
+                }
             }
         }else{
-
+            if(value3.equals("")){
+                t1 = (Double.valueOf(value1))*(Double.valueOf(value2))+"";
+            }
+            if(value2.equals("")){
+                t1 = (Double.valueOf(value3))/(Double.valueOf(value1))+"";
+            }
+            if(value1.equals("")){
+                t1 = (Double.valueOf(value3))/(Double.valueOf(value2))+"";
+            }
         }
         return  t1;
     }
-}//28
+}//40

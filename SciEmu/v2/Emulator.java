@@ -646,19 +646,36 @@ public class Emulator extends AppCompatActivity {
             }
         }
         if(subCategory.equals("Area2D")){
-            String result = formula.Multiply(hString, wString, totalString, 0);
-            if(hString.length() > 0 && wString.length() > 0 && totalString.length() == 0){
-                TextView TotalText = findViewById(R.id.Totvalue);
-                TotalText.setText(result);
-                totalString = "";
-            }else if(hString.length() > 0 && wString.length() == 0 && totalString.length() > 0){
-                TextView wText = findViewById(R.id.Wvalue);
-                wText.setText(result);
-                wString = "";
-            }else if(hString.length() == 0 && wString.length() > 0 && totalString.length() > 0){
-                TextView hText = findViewById(R.id.Hvalue);
-                hText.setText(result);
-                hString = "";
+            if(isDecimal[3] == 1 || isDecimal[4] == 1 || isDecimal[6] == 1){
+                String result1 = formula.Multiply(hString, wString, totalString, 1);
+                if(hString.length() > 0 && wString.length() > 0 && totalString.length() == 0){
+                    TextView TotalText = findViewById(R.id.Totvalue);
+                    TotalText.setText(result1);
+                    totalString = "";
+                }else if(hString.length() > 0 && wString.length() == 0 && totalString.length() > 0){
+                    TextView wText = findViewById(R.id.Wvalue);
+                    wText.setText(result1);
+                    wString = "";
+                }else if(hString.length() == 0 && wString.length() > 0 && totalString.length() > 0){
+                    TextView hText = findViewById(R.id.Hvalue);
+                    hText.setText(result1);
+                    hString = "";
+                }
+            }else{
+                String result2 = formula.Multiply(hString, wString, totalString, 0);
+                if(hString.length() > 0 && wString.length() > 0 && totalString.length() == 0){
+                    TextView TotalText = findViewById(R.id.Totvalue);
+                    TotalText.setText(result2);
+                    totalString = "";
+                }else if(hString.length() > 0 && wString.length() == 0 && totalString.length() > 0){
+                    TextView wText = findViewById(R.id.Wvalue);
+                    wText.setText(result2);
+                    wString = "";
+                }else if(hString.length() == 0 && wString.length() > 0 && totalString.length() > 0){
+                    TextView hText = findViewById(R.id.Hvalue);
+                    hText.setText(result2);
+                    hString = "";
+                }
             }
         }
     }
@@ -667,9 +684,17 @@ public class Emulator extends AppCompatActivity {
         xString = "";
         yString = "";
         zString = "";
+        hString = "";
+        wString = "";
+        dString = "";
+        totalString = "";
         x=0;
         y=0;
         z=0;
+        h=0;
+        w=0;
+        d=0;
+        total=0;
         TextView xTextString = findViewById(R.id.Xvalue);
         xTextString.setText("x");
         xTextString.setVisibility(View.VISIBLE);
@@ -728,4 +753,4 @@ public class Emulator extends AppCompatActivity {
             textMessageSub.setText("Check your formula");
         }
     }
-}//731
+}//756
