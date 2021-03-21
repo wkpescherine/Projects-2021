@@ -61,7 +61,7 @@ public class Formula {
                 if(Double.valueOf(value3)/Double.valueOf(value3) != 0){
                     t1 = (Double.valueOf(value4)/Double.valueOf(value2)*Double.valueOf(value3))+ "";
                 }else {
-                    t1 = (Integer.parseInt(value4) / Integer.parseInt(value2) * Integer.parseInt(value3)) + ""; + "";
+                    t1 = (Integer.parseInt(value4) / Integer.parseInt(value2) * Integer.parseInt(value3)) + "";
                 }
             }
         }else{
