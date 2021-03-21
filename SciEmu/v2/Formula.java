@@ -44,26 +44,40 @@ public class Formula {
                 t1 = Integer.parseInt(value1)*Integer.parseInt(value2)*Integer.parseInt(value3)+"";
             }
             if(value3.equals("")){
-                t1 = (Integer.parseInt(value1))*(Integer.parseInt(value2))+"";
+                if((Double.valueOf(value4)%Double.valueOf(value1)*Double.valueOf(value2)) != 0){
+                    t1 = (Double.valueOf(value4)/Double.valueOf(value1)*Double.valueOf(value2))+"";
+                }else {
+                    t1 = (Integer.parseInt(value4) / Integer.parseInt(value1) * Integer.parseInt(value2)) + "";
+                }
             }
             if(value2.equals("")){
-                if(Double.valueOf(value3)/Double.valueOf(value1) != 0){
-                    t1 = Double.valueOf(value3)/Double.valueOf(value1) + "";
+                if((Double.valueOf(value4)%Double.valueOf(value1)*Double.valueOf(value3)) != 0){
+                    t1 = (Double.valueOf(value4)/Double.valueOf(value1)*Double.valueOf(value3))+ "";
                 }else {
-                    t1 = Integer.parseInt(value3) / Integer.parseInt(value1) + "";
+                    t1 = (Integer.parseInt(value4) / Integer.parseInt(value1) * Integer.parseInt(value3)) + "";
                 }
             }
             if(value1.equals("")){
                 if(Double.valueOf(value3)/Double.valueOf(value3) != 0){
-                    t1 = Double.valueOf(value3)/Double.valueOf(value2) + "";
+                    t1 = (Double.valueOf(value4)/Double.valueOf(value2)*Double.valueOf(value3))+ "";
                 }else {
-                    t1 = Integer.parseInt(value3) / Integer.parseInt(value2) + "";
+                    t1 = (Integer.parseInt(value4) / Integer.parseInt(value2) * Integer.parseInt(value3)) + ""; + "";
                 }
             }
         }else{
-
+            if(value4.equals("")){
+                t1 = (Double.valueOf(value1))*(Double.valueOf(value2))*(Double.valueOf(value3))+"";
+            }
+            if(value3.equals("")){
+                t1 = (Double.valueOf(value4)/Double.valueOf(value1)*Double.valueOf(value2))+"";
+            }
+            if(value2.equals("")){
+                t1 = (Double.valueOf(value4)/Double.valueOf(value1)*Double.valueOf(value3))+ "";
+            }
+            if(value1.equals("")){
+                t1 = (Double.valueOf(value4)/Double.valueOf(value2)*Double.valueOf(value3))+ "";
+            }
         }
-
         return t1;
     }
-}//69
+}//83
