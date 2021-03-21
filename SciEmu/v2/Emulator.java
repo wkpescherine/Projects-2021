@@ -338,6 +338,10 @@ public class Emulator extends AppCompatActivity {
         subCategory = "Area2D";
         setFormulaText(subCategory);
     }
+    public void Area3D(View v){
+        subCategory = "Area3D";
+        setFormulaText(subCategory);
+    }
 
     public void displaySubs(int num){
         LinearLayout layout1 = findViewById(R.id.basicSub);
@@ -678,6 +682,22 @@ public class Emulator extends AppCompatActivity {
                 }
             }
         }
+        if(subCategory.equals("Area3D")){
+            String result2 = formula.Area3(hString, wString, dString, totalString, 0);
+            if(hString.length() > 0 && wString.length() > 0 && totalString.length() == 0){
+                TextView TotalText = findViewById(R.id.Totvalue);
+                TotalText.setText(result2);
+                totalString = "";
+            }else if(hString.length() > 0 && wString.length() == 0 && totalString.length() > 0){
+                TextView wText = findViewById(R.id.Wvalue);
+                wText.setText(result2);
+                wString = "";
+            }else if(hString.length() == 0 && wString.length() > 0 && totalString.length() > 0){
+                TextView hText = findViewById(R.id.Hvalue);
+                hText.setText(result2);
+                hString = "";
+            }
+        }
     }
 
     public void resetUI(){
@@ -708,6 +728,8 @@ public class Emulator extends AppCompatActivity {
         hTextString.setVisibility(View.INVISIBLE);
         TextView wTextString = findViewById(R.id.Wvalue);
         wTextString.setVisibility(View.INVISIBLE);
+        TextView dTextString = findViewById(R.id.Dvalue);
+        dTextString.setVisibility(View.INVISIBLE);
         TextView totTextString = findViewById(R.id.Totvalue);
         totTextString.setVisibility(View.INVISIBLE);
     }
@@ -749,8 +771,29 @@ public class Emulator extends AppCompatActivity {
             TextView totTextString = findViewById(R.id.Totvalue);
             totTextString.setVisibility(View.VISIBLE);
             textMessageSub.setText("2D Area Selected");
-        }else{
+        }else if(subCategory.equals("Area3D")){
+            TextView xTextString = findViewById(R.id.Xvalue);
+            xTextString.setVisibility(View.INVISIBLE);
+            TextView yTextString = findViewById(R.id.Yvalue);
+            yTextString.setVisibility(View.INVISIBLE);
+            TextView zTextString = findViewById(R.id.Zvalue);
+            zTextString.setVisibility(View.INVISIBLE);
+            TextView hTextString = findViewById(R.id.Hvalue);
+            hTextString.setVisibility(View.VISIBLE);
+            TextView wTextString = findViewById(R.id.Wvalue);
+            wTextString.setVisibility(View.VISIBLE);
+            TextView sign2Text = findViewById(R.id.sign2);
+            sign2Text.setVisibility(View.VISIBLE);
+            sign2Text.setText("*");
+            TextView dTextString = findViewById(R.id.Dvalue);
+            dTextString.setVisibility(View.VISIBLE);
+            dTextString.setText("d");
+            sign1Text.setText("*");
+            TextView totTextString = findViewById(R.id.Totvalue);
+            totTextString.setVisibility(View.VISIBLE);
+            textMessageSub.setText("3D Area Selected");
+        } else{
             textMessageSub.setText("Check your formula");
         }
     }
-}//756
+}//783

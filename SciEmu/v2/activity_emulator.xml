@@ -9,12 +9,22 @@
     android:orientation="vertical"
     android:background="#000">
 
-    <!--  x?y=z  -->
+    <!--  xh?yw?d=ztotal  -->
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="75dp"
+        android:layout_height="200dp"
         android:id="@+id/main"
         android:visibility="invisible">
+        <TextView
+            android:id="@+id/Hvalue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@id/sign1"
+            android:text="h"
+            android:textSize="32dp"
+            android:textColor="#fff"
+            android:onClick="focusH"
+            android:visibility="invisible"/>
         <TextView
             android:id="@+id/Xvalue"
             android:layout_width="wrap_content"
@@ -42,6 +52,35 @@
             android:textColor="#fff"
             android:onClick="focusY"/>
         <TextView
+            android:id="@+id/Wvalue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="w"
+            android:layout_centerInParent="true"
+            android:textSize="32dp"
+            android:textColor="#fff"
+            android:onClick="focusW"
+            android:visibility="invisible"/>
+        <TextView
+            android:id="@+id/sign2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/Wvalue"
+            android:text="*"
+            android:textSize="32dp"
+            android:textColor="#fff"
+            android:visibility="invisible"/>
+        <TextView
+            android:id="@+id/Dvalue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/sign2"
+            android:text="d"
+            android:textSize="32dp"
+            android:textColor="#fff"
+            android:visibility="invisible"
+            android:onClick="focusD"/>
+        <TextView
             android:id="@+id/equals"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -58,6 +97,16 @@
             android:textSize="32dp"
             android:textColor="#fff"
             android:onClick="focusZ"/>
+        <TextView
+            android:id="@+id/Totvalue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Total"
+            android:layout_toRightOf="@id/equals"
+            android:textSize="32dp"
+            android:textColor="#fff"
+            android:onClick="focusTot"
+            android:visibility="invisible"/>
     </RelativeLayout>
 
     <!--  MESSAGE  -->
@@ -331,7 +380,7 @@
             android:textSize="16dp" />
     </LinearLayout>
 
-    <!-- Physics SUB SECTION-->
+    <!-- PHYSICS SUB SECTION-->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -353,4 +402,4 @@
             android:textSize="16dp" />
     </LinearLayout>
 
-</LinearLayout><!--  356  -->
+</LinearLayout><!--  405  -->
