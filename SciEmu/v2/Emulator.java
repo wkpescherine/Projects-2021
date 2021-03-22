@@ -342,6 +342,10 @@ public class Emulator extends AppCompatActivity {
         subCategory = "Area3D";
         setFormulaText(subCategory);
     }
+    public void setExponent(View v){
+        subCategory = "Exponent";
+        setFormulaText(subCategory);
+    }
 
     public void displaySubs(int num){
         LinearLayout layout1 = findViewById(R.id.basicSub);
@@ -768,20 +772,28 @@ public class Emulator extends AppCompatActivity {
         if(subCategory.equals("add")){
             resetUI();
             sign1Text.setText("+");
+            sign1Text.setVisibility(View.VISIBLE);
             textMessageSub.setText("Addition selected");
         }else if(subCategory.equals("subtract")){
             resetUI();
             sign1Text.setText("-");
+            sign1Text.setVisibility(View.VISIBLE);
             textMessageSub.setText("Subtraction selected");
         }else if(subCategory.equals("divide")){
             resetUI();
             sign1Text.setText("/");
+            sign1Text.setVisibility(View.VISIBLE);
             textMessageSub.setText("Division Selected");
         }else if(subCategory.equals("multiply")){
             resetUI();
             sign1Text.setText("*");
+            sign1Text.setVisibility(View.VISIBLE);
             textMessageSub.setText("Multiplication Selected");
         }else if(subCategory.equals("Area2D")){
+            TextView sign2Text = findViewById(R.id.sign2);
+            sign2Text.setVisibility(View.GONE);
+            TextView dTextString = findViewById(R.id.Dvalue);
+            dTextString.setVisibility(View.GONE);
             TextView xTextString = findViewById(R.id.Xvalue);
             xTextString.setVisibility(View.INVISIBLE);
             TextView yTextString = findViewById(R.id.Yvalue);
@@ -814,11 +826,21 @@ public class Emulator extends AppCompatActivity {
             dTextString.setVisibility(View.VISIBLE);
             dTextString.setText("d");
             sign1Text.setText("*");
+            TextView equalString = findViewById(R.id.equals);
             TextView totTextString = findViewById(R.id.Totvalue);
             totTextString.setVisibility(View.VISIBLE);
             textMessageSub.setText("3D Area Selected");
-        } else{
+        } else if(subCategory.equals("Exponent")){
+            TextView yTextString = findViewById(R.id.Yvalue);
+            yTextString.setVisibility(View.INVISIBLE);
+            TextView zTextString = findViewById(R.id.Zvalue);
+            zTextString.setVisibility(View.INVISIBLE);
+            TextView sign1String = findViewById(R.id.sign1);
+            sign1String.setVisibility(View.GONE);
+            TextView totTextString = findViewById(R.id.Totvalue);
+            totTextString.setVisibility(View.VISIBLE);
+        }else{
             textMessageSub.setText("Check your formula");
         }
     }
-}//824
+}//845

@@ -20,6 +20,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_toLeftOf="@id/sign1"
+            android:layout_centerInParent="true"
             android:text="h"
             android:textSize="32dp"
             android:textColor="#fff"
@@ -29,6 +30,7 @@
             android:id="@+id/Xvalue"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
             android:layout_toLeftOf="@id/sign1"
             android:text="x"
             android:textSize="32dp"
@@ -39,6 +41,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_toLeftOf="@id/Yvalue"
+            android:layout_centerInParent="true"
             android:text=""
             android:textSize="32dp"
             android:textColor="#fff"/>
@@ -60,30 +63,33 @@
             android:textSize="32dp"
             android:textColor="#fff"
             android:onClick="focusW"
-            android:visibility="invisible"/>
+            android:visibility="gone"/>
         <TextView
             android:id="@+id/sign2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
             android:layout_toRightOf="@id/Wvalue"
             android:text="*"
             android:textSize="32dp"
             android:textColor="#fff"
-            android:visibility="invisible"/>
+            android:visibility="gone"/>
         <TextView
             android:id="@+id/Dvalue"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_toRightOf="@id/sign2"
+            android:layout_centerInParent="true"
             android:text="d"
             android:textSize="32dp"
             android:textColor="#fff"
-            android:visibility="invisible"
+            android:visibility="gone"
             android:onClick="focusD"/>
         <TextView
             android:id="@+id/equals"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
             android:text="="
             android:layout_toRightOf="@id/Yvalue"
             android:textSize="32dp"
@@ -92,6 +98,7 @@
             android:id="@+id/Zvalue"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
             android:text="z"
             android:layout_toRightOf="@id/equals"
             android:textSize="32dp"
@@ -101,6 +108,7 @@
             android:id="@+id/Totvalue"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
             android:text="Total"
             android:layout_toRightOf="@id/equals"
             android:textSize="32dp"
@@ -324,14 +332,22 @@
             android:textColor="#fff"
             android:textSize="16dp"
             android:onClick="setDivision"/>
-        <TextView
+        <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
             android:text="Multiply"
             android:textColor="#fff"
-            android:textSize="16dp"
+            android:textSize="8dp"
             android:onClick="setMultiplication"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:text="Exponent"
+            android:textColor="#fff"
+            android:textSize="8dp"
+            android:onClick="setExponent"/>
     </LinearLayout>
 
     <!-- ALGEBRA SUB SECTION -->
@@ -402,4 +418,4 @@
             android:textSize="16dp" />
     </LinearLayout>
 
-</LinearLayout><!--  405  -->
+</LinearLayout><!--  421  -->
