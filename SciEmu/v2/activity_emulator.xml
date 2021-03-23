@@ -46,6 +46,17 @@
             android:textSize="32dp"
             android:textColor="#fff"/>
         <TextView
+            android:id="@+id/expSuper"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@id/equals"
+            android:layout_centerInParent="true"
+            android:text="exp"
+            android:textSize="10dp"
+            android:textColor="#fff"
+            android:visibility="invisible"
+            android:onClick="focusEXP"/>
+        <TextView
             android:id="@+id/Yvalue"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -91,7 +102,7 @@
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:text="="
-            android:layout_toRightOf="@id/Yvalue"
+            android:layout_toRightOf="@id/Dvalue"
             android:textSize="32dp"
             android:textColor="#fff"/>
         <TextView
@@ -418,4 +429,4 @@
             android:textSize="16dp" />
     </LinearLayout>
 
-</LinearLayout><!--  421  -->
+</LinearLayout><!--  432  -->
