@@ -21,8 +21,8 @@ public class Emulator extends AppCompatActivity {
     int w = 0;
     int d = 0;
     int total = 0;
-    // Location   is =  x,y,z,h,w,d,total
-    int [] isDecimal = {0,0,0,0,0,0,0};
+    // Location is = x,y,z,h,w,d,total, exp value, exponent
+    int [] isDecimal = {0,0,0,0,0,0,0,0,0};
     String xString = "";
     String yString = "";
     String zString = "";
@@ -83,6 +83,10 @@ public class Emulator extends AppCompatActivity {
         if(focus.equals("total") && isDecimal[6] != 1){
             setValues(".");
             isDecimal[6] = 1;
+        }
+        if(focus.equals("expValue") && isDecimal[7] != 1){
+            setValues(".");
+            isDecimal[7] = 1;
         }
     }
 
@@ -232,6 +236,8 @@ public class Emulator extends AppCompatActivity {
         TextView hText = findViewById(R.id.Hvalue);
         TextView wText = findViewById(R.id.Wvalue);
         TextView dText = findViewById(R.id.Dvalue);
+        TextView eText = findViewById(R.id.expSuper);
+        TextView evText = findViewById(R.id.expValue);
         TextView t1Text = findViewById(R.id.Totvalue);
         if(func.equals("del")) {
             if (focus.equals("X") && xString.length() > 0) {
@@ -337,6 +343,36 @@ public class Emulator extends AppCompatActivity {
             }
             if(totalString.length() == 0){
                 t1Text.setText("total");
+            }
+
+            if (focus.equals("expValue") && expValueString.length() > 0) {
+                String expValueLastChar = expValueString.charAt(expValueString.length() - 1) + "";
+                if (expValueLastChar.equals(".")) {
+                    isDecimal[7] = 0;
+                    expValueString = expValueString.substring(0, (expValueString.length()) - 1);
+                    evText.setText(expValueString);
+                } else if (focus.equals("expValue") && (expValueString.length() > 0)) {
+                    expValueString = expValueString.substring(0, (expValueString.length()) - 1);
+                    evText.setText(expValueString);
+                }
+            }
+            if(expValueString.length() == 0){
+                evText.setText("x");
+            }
+
+            if (focus.equals("expSuper") && expString.length() > 0) {
+                String expLastChar = expString.charAt(expString.length() - 1) + "";
+                if (expLastChar.equals(".")) {
+                    isDecimal[8] = 0;
+                    expString = expString.substring(0, (expString.length()) - 1);
+                    eText.setText(expString);
+                } else if (focus.equals("expSuper") && (expString.length() > 0)) {
+                    expString = expString.substring(0, (expString.length()) - 1);
+                    eText.setText(expString);
+                }
+            }
+            if(expString.length() == 0){
+                eText.setText("exp");
             }
         }
     }
@@ -759,6 +795,12 @@ public class Emulator extends AppCompatActivity {
                 }
             }
         }
+        if(subCategory.equals("Exponent")){
+            String result = formula.Exponent(expValueString, expString);
+            TextView totalText = findViewById(R.id.Totvalue);
+            totalText.setText(result);
+            totalString = "";
+        }
     }
 
     public void resetUI(){
@@ -924,4 +966,4 @@ public class Emulator extends AppCompatActivity {
             textMessageSub.setText("Check your formula");
         }
     }
-}//927
+}//969
