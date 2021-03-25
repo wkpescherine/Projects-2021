@@ -24,8 +24,8 @@ public class Emulator extends AppCompatActivity {
     int w = 0;
     int d = 0;
     int total = 0;
-    // Location is = x,y,z,h,w,d,total, exp value, exponent
-    int [] isDecimal = {0,0,0,0,0,0,0,0,0};
+    // Location is = x,y,z,h,w,d,total, exp value, exponent, custom
+    int [] isDecimal = {0,0,0,0,0,0,0,0,0,0};
     String xString = "";
     String yString = "";
     String zString = "";
@@ -91,6 +91,10 @@ public class Emulator extends AppCompatActivity {
         if(focus.equals("expValue") && isDecimal[7] != 1){
             setValues(".");
             isDecimal[7] = 1;
+        }
+        if(focus.equals("custom") && isDecimal[9] != 1){
+            setValues(".");
+            isDecimal[9] = 1;
         }
     }
 
@@ -231,6 +235,17 @@ public class Emulator extends AppCompatActivity {
             expString  = val+"";
             valueExp.setText(expString);
         }
+
+        if(focus.equals("custom") && customString.length() != 0){
+            TextView valueCustom = findViewById(R.id.custom);
+            customString  += val;
+            valueCustom.setText(customString);
+        }
+        if(focus.equals("custom") && customString.length() == 0 ){
+            TextView valueCustom = findViewById(R.id.custom);
+            customString  = val+"";
+            valueCustom.setText(customString);
+        }
     }
 
     public void specialFunc(String func){
@@ -243,6 +258,7 @@ public class Emulator extends AppCompatActivity {
         TextView eText = findViewById(R.id.expSuper);
         TextView evText = findViewById(R.id.expValue);
         TextView t1Text = findViewById(R.id.Totvalue);
+        TextView customText = findViewById(R.id.custom);
         if(func.equals("del")) {
             if (focus.equals("X") && xString.length() > 0) {
                 String xLastChar = xString.charAt(xString.length() - 1) + "";
@@ -386,6 +402,9 @@ public class Emulator extends AppCompatActivity {
     public void displayCalculus(View v){ displaySubs(3); }
     public void displayPhysics(View v){ displaySubs(4); }
     public void displayCustom(View v){
+        focus = "custom";
+        TextView textMessageX = findViewById(R.id.message);
+        textMessageX.setText("Custom formula");
         TextView xTextString = findViewById(R.id.Xvalue);
         xTextString.setVisibility(View.INVISIBLE);
         TextView yTextString = findViewById(R.id.Yvalue);
@@ -823,7 +842,7 @@ public class Emulator extends AppCompatActivity {
             totalText.setText(result);
             totalString = "";
         }
-        if(subCategory.equals("Csutom")){
+        if(subCategory.equals("Custom")){
             String result =custom.customSolve(customString);
             TextView totalCustom = findViewById(R.id.Totvalue);
             totalCustom.setText(result);
@@ -993,4 +1012,4 @@ public class Emulator extends AppCompatActivity {
             textMessageSub.setText("Check your formula");
         }
     }
-}//996
+}//1015
