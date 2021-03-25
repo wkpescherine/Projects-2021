@@ -10,9 +10,12 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import org.w3c.dom.Text;
+
 public class Emulator extends AppCompatActivity {
     DataConfig data = new DataConfig();
     Formula formula = new Formula();
+    SolveCustom custom = new SolveCustom();
 
     int x = 0;
     int y = 0;
@@ -34,6 +37,7 @@ public class Emulator extends AppCompatActivity {
     String totalString = "";
     String focus = "";
     String subCategory = "";
+    String customString = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -381,6 +385,24 @@ public class Emulator extends AppCompatActivity {
     public void displayAlgebra(View v){ displaySubs(2); }
     public void displayCalculus(View v){ displaySubs(3); }
     public void displayPhysics(View v){ displaySubs(4); }
+    public void displayCustom(View v){
+        TextView xTextString = findViewById(R.id.Xvalue);
+        xTextString.setVisibility(View.INVISIBLE);
+        TextView yTextString = findViewById(R.id.Yvalue);
+        yTextString.setVisibility(View.INVISIBLE);
+        TextView zTextString = findViewById(R.id.Zvalue);
+        zTextString.setVisibility(View.INVISIBLE);
+        TextView hTextString = findViewById(R.id.Hvalue);
+        hTextString.setVisibility(View.INVISIBLE);
+        TextView wTextString = findViewById(R.id.Wvalue);
+        wTextString.setVisibility(View.INVISIBLE);
+        TextView dTextString = findViewById(R.id.Dvalue);
+        dTextString.setVisibility(View.INVISIBLE);
+        TextView customTextString = findViewById(R.id.Custom);
+        customTextString.setVisibility(View.VISIBLE);
+        TextView totTextString = findViewById(R.id.Totvalue);
+        totTextString.setVisibility(View.VISIBLE);
+    }
 
     public void setAddition(View v){
         resetUI();
@@ -801,6 +823,11 @@ public class Emulator extends AppCompatActivity {
             totalText.setText(result);
             totalString = "";
         }
+        if(subCategory.equals("Csutom")){
+            String result =custom.customSolve(customString);
+            TextView totalCustom = findViewById(R.id.Totvalue);
+            totalCustom.setText(result);
+        }
     }
 
     public void resetUI(){
@@ -966,4 +993,4 @@ public class Emulator extends AppCompatActivity {
             textMessageSub.setText("Check your formula");
         }
     }
-}//969
+}//996
