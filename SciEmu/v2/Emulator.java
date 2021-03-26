@@ -24,6 +24,7 @@ public class Emulator extends AppCompatActivity {
     int w = 0;
     int d = 0;
     int total = 0;
+    int customValid = 0;
     // Location is = x,y,z,h,w,d,total, exp value, exponent, custom
     int [] isDecimal = {0,0,0,0,0,0,0,0,0,0};
     String xString = "";
@@ -97,6 +98,10 @@ public class Emulator extends AppCompatActivity {
             isDecimal[9] = 1;
         }
     }
+    public void plus(View v){ setValues("+"); }
+    public void minus(View v){ setValues("-"); }
+    public void multi(View v){ setValues("*"); }
+
 
     public void focusX(View v){
         focus = "X";
@@ -235,11 +240,19 @@ public class Emulator extends AppCompatActivity {
             expString  = val+"";
             valueExp.setText(expString);
         }
-
-        if(focus.equals("custom") && customString.length() != 0){
-            TextView valueCustom = findViewById(R.id.custom);
-            customString  += val;
-            valueCustom.setText(customString);
+        //if(focus.equals("custom") && customString.length() != 0){
+        if(focus.equals("custom")){
+            if(customValid == 1 && (val.equals("+") || val.equals("-") || val.equals("*"))) {
+                TextView valueCustom = findViewById(R.id.Custom);
+                customString += val;
+                valueCustom.setText(customString);
+                customValid = 0;
+            } else {
+                TextView valueCustom = findViewById(R.id.Custom);
+                customString += val;
+                valueCustom.setText(customString);
+                customValid = 1;
+            }
         }
         if(focus.equals("custom") && customString.length() == 0 ){
             TextView valueCustom = findViewById(R.id.custom);
@@ -394,6 +407,21 @@ public class Emulator extends AppCompatActivity {
             if(expString.length() == 0){
                 eText.setText("exp");
             }
+
+            if (focus.equals("custom") && customString.length() > 0) {
+                String customLastChar = customString.charAt(expString.length() - 1) + "";
+                if (customLastChar.equals(".")) {
+                    isDecimal[9] = 0;
+                    customString = customString.substring(0, (customString.length()) - 1);
+                    eText.setText(expString);
+                } else if (focus.equals("custom") && (customString.length() > 0)) {
+                    customString = customString.substring(0, (customString.length()) - 1);
+                    customText.setText(customString);
+                }
+            }
+            if(customString.length() == 0){
+                customText.setText("");
+            }
         }
     }
 
@@ -403,6 +431,8 @@ public class Emulator extends AppCompatActivity {
     public void displayPhysics(View v){ displaySubs(4); }
     public void displayCustom(View v){
         focus = "custom";
+        RelativeLayout mainView = findViewById(R.id.main);
+        mainView.setVisibility(View.VISIBLE);
         TextView textMessageX = findViewById(R.id.message);
         textMessageX.setText("Custom formula");
         TextView xTextString = findViewById(R.id.Xvalue);
@@ -1012,4 +1042,4 @@ public class Emulator extends AppCompatActivity {
             textMessageSub.setText("Check your formula");
         }
     }
-}//1015
+}//1045
