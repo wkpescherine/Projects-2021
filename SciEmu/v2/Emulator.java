@@ -431,6 +431,14 @@ public class Emulator extends AppCompatActivity {
     public void displayPhysics(View v){ displaySubs(4); }
     public void displayCustom(View v){
         focus = "custom";
+        TextView sign2Text = findViewById(R.id.sign2);
+        sign2Text.setVisibility(View.GONE);
+        TextView sign1Text = findViewById(R.id.sign1);
+        sign1Text.setVisibility(View.GONE);
+        TextView expValueTextString = findViewById(R.id.expValue);
+        expValueTextString.setVisibility(View.INVISIBLE);
+        TextView expTextString = findViewById(R.id.expSuper);
+        expTextString.setVisibility(View.INVISIBLE);
         RelativeLayout mainView = findViewById(R.id.main);
         mainView.setVisibility(View.VISIBLE);
         TextView textMessageX = findViewById(R.id.message);
@@ -872,10 +880,10 @@ public class Emulator extends AppCompatActivity {
             totalText.setText(result);
             totalString = "";
         }
-        if(subCategory.equals("Custom")){
-            String result =custom.customSolve(customString);
+        if(subCategory.equals("custom")){
+            String result = custom.customSolve(customString);
             TextView totalCustom = findViewById(R.id.Totvalue);
-            totalCustom.setText(result);
+            totalCustom.setText(customString);
         }
     }
 
@@ -920,6 +928,8 @@ public class Emulator extends AppCompatActivity {
         TextView textMessageSub = findViewById(R.id.message);
         textMessageSub.setText(subCategory);
         if(subCategory.equals("add")){
+            TextView customTextString = findViewById(R.id.Custom);
+            customTextString.setVisibility(View.INVISIBLE);
             TextView expValueTextString = findViewById(R.id.expValue);
             expValueTextString.setVisibility(View.INVISIBLE);
             TextView expTextString = findViewById(R.id.expSuper);
@@ -935,6 +945,8 @@ public class Emulator extends AppCompatActivity {
         }else if(subCategory.equals("subtract")){
             resetUI();
             sign1Text.setText("-");
+            TextView customTextString = findViewById(R.id.Custom);
+            customTextString.setVisibility(View.INVISIBLE);
             sign1Text.setVisibility(View.VISIBLE);
             TextView sign2Text = findViewById(R.id.sign2);
             sign2Text.setVisibility(View.GONE);
@@ -951,6 +963,8 @@ public class Emulator extends AppCompatActivity {
             sign1Text.setVisibility(View.VISIBLE);
             TextView sign2Text = findViewById(R.id.sign2);
             sign2Text.setVisibility(View.GONE);
+            TextView customTextString = findViewById(R.id.Custom);
+            customTextString.setVisibility(View.INVISIBLE);
             TextView dTextString = findViewById(R.id.Dvalue);
             dTextString.setVisibility(View.GONE);
             TextView expValueTextString = findViewById(R.id.expValue);
@@ -961,6 +975,8 @@ public class Emulator extends AppCompatActivity {
         }else if(subCategory.equals("multiply")){
             resetUI();
             sign1Text.setText("*");
+            TextView customTextString = findViewById(R.id.Custom);
+            customTextString.setVisibility(View.INVISIBLE);
             sign1Text.setVisibility(View.VISIBLE);
             TextView sign2Text = findViewById(R.id.sign2);
             sign2Text.setVisibility(View.GONE);
@@ -972,6 +988,8 @@ public class Emulator extends AppCompatActivity {
             expTextString.setVisibility(View.INVISIBLE);
             textMessageSub.setText("Multiplication Selected");
         }else if(subCategory.equals("Area2D")){
+            TextView customTextString = findViewById(R.id.Custom);
+            customTextString.setVisibility(View.INVISIBLE);
             TextView sign2Text = findViewById(R.id.sign2);
             sign2Text.setVisibility(View.GONE);
             TextView dTextString = findViewById(R.id.Dvalue);
@@ -995,6 +1013,8 @@ public class Emulator extends AppCompatActivity {
             expTextString.setVisibility(View.INVISIBLE);
             textMessageSub.setText("2D Area Selected");
         }else if(subCategory.equals("Area3D")){
+            TextView customTextString = findViewById(R.id.Custom);
+            customTextString.setVisibility(View.INVISIBLE);
             TextView expValueTextString = findViewById(R.id.expValue);
             expValueTextString.setVisibility(View.INVISIBLE);
             TextView expTextString = findViewById(R.id.expSuper);
@@ -1020,6 +1040,8 @@ public class Emulator extends AppCompatActivity {
             totTextString.setVisibility(View.VISIBLE);
             textMessageSub.setText("3D Area Selected");
         } else if(subCategory.equals("Exponent")){
+            TextView customTextString = findViewById(R.id.Custom);
+            customTextString.setVisibility(View.INVISIBLE);
             TextView xTextString = findViewById(R.id.Xvalue);
             xTextString.setVisibility(View.INVISIBLE);
             TextView yTextString = findViewById(R.id.Yvalue);
@@ -1042,4 +1064,4 @@ public class Emulator extends AppCompatActivity {
             textMessageSub.setText("Check your formula");
         }
     }
-}//1045
+}//1067
