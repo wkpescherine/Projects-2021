@@ -431,6 +431,7 @@ public class Emulator extends AppCompatActivity {
     public void displayPhysics(View v){ displaySubs(4); }
     public void displayCustom(View v){
         focus = "custom";
+        subCategory = "custom";
         TextView sign2Text = findViewById(R.id.sign2);
         sign2Text.setVisibility(View.GONE);
         TextView sign1Text = findViewById(R.id.sign1);
@@ -881,9 +882,9 @@ public class Emulator extends AppCompatActivity {
             totalString = "";
         }
         if(subCategory.equals("custom")){
-            String result = custom.customSolve(customString);
+            String result = custom.customSolve2(customString);
             TextView totalCustom = findViewById(R.id.Totvalue);
-            totalCustom.setText(customString);
+            totalCustom.setText(result);
         }
     }
 
@@ -1064,4 +1065,4 @@ public class Emulator extends AppCompatActivity {
             textMessageSub.setText("Check your formula");
         }
     }
-}//1067
+}//1068
