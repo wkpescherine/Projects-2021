@@ -1,56 +1,59 @@
 package com.example.sciemu_x2;
 
+import java.util.ArrayList;
+
 public class SolveCustom {
     private static String t1 = "";
 
     static String customSolve2(String customStringArg){
-        String parseString = customStringArg;
-        String [] brokenString = customStringArg.split("*");
-        for(int count = 1; count <3; count ++ ){
-            for(int a = 0; a < parseString.length(); a++) {
-                char aChar = parseString.charAt(a);
-                if (aChar == "*" && count == 1) {
-                    brokenString[a-1] = (Integer.parseInt(brokenString[a-1])*Integer.parseInt(brokenString[a+1]))+"";
-                    for(int b = a+2; b < brokenString.length; b++){
-                        //1*2*3*4
-                        //2*3*4
-                        //6*4
-                        //24
-                        brokenString[b-2] = brokenString[b];
-                        brokenString[b] = "";
-                    }
-                    a = 0;
-                }
+        String [] breakString = customStringArg.split("");
+        String [] valueBreakString = customStringArg.split("[*+-/]");
+        ArrayList <String> opString = new ArrayList<String>();
+        ArrayList <String> valueString = new ArrayList<String>();
+        for(int a = 0; a< breakString.length; a++){
+            if(breakString[a].equals("*") || breakString[a].equals("/") || breakString[a].equals("+") || breakString[a].equals("-")){
+                opString.add(breakString[a]);
             }
         }
-        //t1 = brokenString[0];
+
+        for(int a = 0; a< valueBreakString.length; a++){
+            valueString.add(valueBreakString[a]);
+        }
+
+        for(int aa = 0; aa < opString.size();){
+            if(opString.get(aa).equals("*")){
+                String newIndex = (Integer.parseInt(valueString.get(aa))*Integer.parseInt(valueString.get(aa+1))) +"";
+                valueString.set( valueString.indexOf(valueString.get(aa)) , newIndex);
+                valueString.remove(aa+1 );
+                opString.remove(aa);
+            }else{
+                aa += 1;
+            }
+        }
+
+        for(int aa = 0; aa < opString.size();){
+            if(opString.get(aa).equals("+")){
+                String newIndex = (Integer.parseInt(valueString.get(aa))+Integer.parseInt(valueString.get(aa+1))) +"";
+                valueString.set( valueString.indexOf(valueString.get(aa)) , newIndex);
+                valueString.remove(aa+1 );
+                opString.remove(aa);
+            }else{
+                aa += 1;
+            }
+        }
+
+        for(int aa = 0; aa < opString.size();){
+            if(opString.get(aa).equals("-")){
+                String newIndex = (Integer.parseInt(valueString.get(aa))-Integer.parseInt(valueString.get(aa+1))) +"";
+                valueString.set( valueString.indexOf(valueString.get(aa)) , newIndex);
+                valueString.remove(aa+1 );
+                opString.remove(aa);
+            }else{
+                aa += 1;
+            }
+        }
+
+        t1 = valueString.get(0);
         return t1;
     }
-
-    /*static String customSolve(String customStringArg){
-        String parseString = customStringArg;
-        String [] brokenString = customStringArg.split("*");
-        for(int count = 1; count <3; count ++ ){
-            for(int a = 0; a < brokenString.length; a++) {
-                if (brokenString[a].equals("*") && count == 1) {
-                    brokenString[a-1] = (Integer.parseInt(brokenString[a-1])*Integer.parseInt(brokenString[a+1]))+"";
-                    for(int b = a+2; b < brokenString.length; b++){
-                        //1*2*3*4
-                        //2*3*4
-                        //6*4
-                        //24
-                        brokenString[b-2] = brokenString[b];
-                        brokenString[b] = "";
-                    }
-                }
-            }
-        }
-        for(int c = 0; c< brokenString.length;c++){
-            t1 += brokenString[c];
-        }
-        //t1 = brokenString[0];
-        return t1;
-    }*/
-}//29
-//sample formula
-//1*2*3*4
+}//59
