@@ -320,6 +320,13 @@
         android:textAlignment="center"
         android:onClick="practiceSection"/>
 
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Test UI"
+        android:textAlignment="center"
+        android:onClick="testUI"/>
+
     <!-- LIST OF SUBJECTS-->
     <LinearLayout
         android:layout_width="match_parent"

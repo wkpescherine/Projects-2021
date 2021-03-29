@@ -16,6 +16,7 @@ public class Emulator extends AppCompatActivity {
     DataConfig data = new DataConfig();
     Formula formula = new Formula();
     SolveCustom custom = new SolveCustom();
+    setUIMain setMain = new setUIMain();
 
     int x = 0;
     int y = 0;
@@ -920,6 +921,10 @@ public class Emulator extends AppCompatActivity {
         dTextString.setVisibility(View.INVISIBLE);
         TextView totTextString = findViewById(R.id.Totvalue);
         totTextString.setVisibility(View.INVISIBLE);
+    }
+
+    public void testUI(View v){
+        setMain.Something();
     }
 
     public void setFormulaText(String sub){
