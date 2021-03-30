@@ -155,8 +155,7 @@ public class Emulator extends AppCompatActivity {
             TextView valueX = findViewById(R.id.Xvalue);
             xString  += val+"";
             valueX.setText(xString);
-        }
-        if(focus.equals("X") && xString.length() == 0){
+        }else {
             TextView valueX = findViewById(R.id.Xvalue);
             xString  = val+"";
             valueX.setText(xString);
@@ -441,7 +440,7 @@ public class Emulator extends AppCompatActivity {
         expValueTextString.setVisibility(View.INVISIBLE);
         TextView expTextString = findViewById(R.id.expSuper);
         expTextString.setVisibility(View.INVISIBLE);
-        RelativeLayout mainView = findViewById(R.id.main);
+        LinearLayout mainView = findViewById(R.id.CustomFormula);
         mainView.setVisibility(View.VISIBLE);
         TextView textMessageX = findViewById(R.id.message);
         textMessageX.setText("Custom formula");
@@ -920,16 +919,11 @@ public class Emulator extends AppCompatActivity {
         totTextString.setVisibility(View.INVISIBLE);
     }
 
-    public void testUI(View v){
-        TextView subSign = findViewById(R.id.sign1);
-        LinearLayout LL = findViewById(R.id.basicFormulas);
-        subSign.setText("+");
-        LL.setVisibility(View.VISIBLE);
-    }
-
     public void setFormulaText(String sub){
         LinearLayout mainBasic = findViewById(R.id.basicFormulas);
         LinearLayout main23DArea = findViewById(R.id.Area23DFormulas);
+        LinearLayout mainExponent = findViewById(R.id.ExponentFormula);
+        LinearLayout mainCustom = findViewById(R.id.CustomFormula);
         TextView sign1Text = findViewById(R.id.sign1);
         TextView textMessageSub = findViewById(R.id.message);
         textMessageSub.setText(subCategory);
@@ -937,110 +931,51 @@ public class Emulator extends AppCompatActivity {
             resetUI();
             mainBasic.setVisibility(View.VISIBLE);
             main23DArea.setVisibility(View.INVISIBLE);
+            mainExponent.setVisibility(View.INVISIBLE);
+            mainCustom.setVisibility(View.INVISIBLE);
             sign1Text.setText("+");
-            TextView customTextString = findViewById(R.id.Custom);
-            customTextString.setVisibility(View.INVISIBLE);
-            TextView expValueTextString = findViewById(R.id.expValue);
-            expValueTextString.setVisibility(View.INVISIBLE);
-            TextView expTextString = findViewById(R.id.expSuper);
-            expTextString.setVisibility(View.INVISIBLE);
             textMessageSub.setText("Addition selected");
         }else if(subCategory.equals("subtract")){
             resetUI();
+            mainBasic.setVisibility(View.VISIBLE);
+            main23DArea.setVisibility(View.INVISIBLE);
+            mainExponent.setVisibility(View.INVISIBLE);
+            mainCustom.setVisibility(View.INVISIBLE);
             sign1Text.setText("-");
-            TextView customTextString = findViewById(R.id.Custom);
-            customTextString.setVisibility(View.INVISIBLE);
-            sign1Text.setVisibility(View.VISIBLE);
-            TextView sign2Text = findViewById(R.id.sign2);
-            sign2Text.setVisibility(View.GONE);
-            TextView dTextString = findViewById(R.id.Dvalue);
-            dTextString.setVisibility(View.GONE);
-            TextView expValueTextString = findViewById(R.id.expValue);
-            expValueTextString.setVisibility(View.INVISIBLE);
-            TextView expTextString = findViewById(R.id.expSuper);
-            expTextString.setVisibility(View.INVISIBLE);
             textMessageSub.setText("Subtraction selected");
         }else if(subCategory.equals("divide")){
             resetUI();
+            mainBasic.setVisibility(View.VISIBLE);
+            main23DArea.setVisibility(View.INVISIBLE);
+            mainExponent.setVisibility(View.INVISIBLE);
+            mainCustom.setVisibility(View.INVISIBLE);
             sign1Text.setText("/");
-            sign1Text.setVisibility(View.VISIBLE);
-            TextView sign2Text = findViewById(R.id.sign2);
-            sign2Text.setVisibility(View.GONE);
-            TextView customTextString = findViewById(R.id.Custom);
-            customTextString.setVisibility(View.INVISIBLE);
-            TextView dTextString = findViewById(R.id.Dvalue);
-            dTextString.setVisibility(View.GONE);
-            TextView expValueTextString = findViewById(R.id.expValue);
-            expValueTextString.setVisibility(View.INVISIBLE);
-            TextView expTextString = findViewById(R.id.expSuper);
-            expTextString.setVisibility(View.INVISIBLE);
             textMessageSub.setText("Division Selected");
         }else if(subCategory.equals("multiply")){
             resetUI();
-            sign1Text.setText("*");
-            TextView customTextString = findViewById(R.id.Custom);
-            customTextString.setVisibility(View.INVISIBLE);
-            sign1Text.setVisibility(View.VISIBLE);
-            TextView sign2Text = findViewById(R.id.sign2);
-            sign2Text.setVisibility(View.GONE);
-            TextView dTextString = findViewById(R.id.Dvalue);
-            dTextString.setVisibility(View.GONE);
-            TextView expValueTextString = findViewById(R.id.expValue);
-            expValueTextString.setVisibility(View.INVISIBLE);
-            TextView expTextString = findViewById(R.id.expSuper);
-            expTextString.setVisibility(View.INVISIBLE);
+            mainBasic.setVisibility(View.VISIBLE);
+            main23DArea.setVisibility(View.INVISIBLE);
+            mainExponent.setVisibility(View.INVISIBLE);
+            mainCustom.setVisibility(View.INVISIBLE);
+            sign1Text.setText("+");
             textMessageSub.setText("Multiplication Selected");
         }else if(subCategory.equals("Area2D")){
-            TextView customTextString = findViewById(R.id.Custom);
-            customTextString.setVisibility(View.INVISIBLE);
-            TextView sign2Text = findViewById(R.id.sign2);
-            sign2Text.setVisibility(View.GONE);
-            TextView dTextString = findViewById(R.id.Dvalue);
-            dTextString.setVisibility(View.GONE);
-            TextView xTextString = findViewById(R.id.Xvalue);
-            xTextString.setVisibility(View.INVISIBLE);
-            TextView yTextString = findViewById(R.id.Yvalue);
-            yTextString.setVisibility(View.INVISIBLE);
-            TextView zTextString = findViewById(R.id.Zvalue);
-            zTextString.setVisibility(View.INVISIBLE);
-            TextView hTextString = findViewById(R.id.Hvalue);
-            hTextString.setVisibility(View.VISIBLE);
-            TextView wTextString = findViewById(R.id.Wvalue);
-            wTextString.setVisibility(View.VISIBLE);
-            sign1Text.setText("*");
-            TextView totTextString = findViewById(R.id.Totvalue);
-            totTextString.setVisibility(View.VISIBLE);
-            TextView expValueTextString = findViewById(R.id.expValue);
-            expValueTextString.setVisibility(View.INVISIBLE);
-            TextView expTextString = findViewById(R.id.expSuper);
-            expTextString.setVisibility(View.INVISIBLE);
+            resetUI();
+            mainBasic.setVisibility(View.INVISIBLE);
+            main23DArea.setVisibility(View.VISIBLE);
+            mainExponent.setVisibility(View.INVISIBLE);
+            mainCustom.setVisibility(View.INVISIBLE);
             textMessageSub.setText("2D Area Selected");
         }else if(subCategory.equals("Area3D")){
-            TextView customTextString = findViewById(R.id.Custom);
-            customTextString.setVisibility(View.INVISIBLE);
-            TextView expValueTextString = findViewById(R.id.expValue);
-            expValueTextString.setVisibility(View.INVISIBLE);
-            TextView expTextString = findViewById(R.id.expSuper);
-            expTextString.setVisibility(View.INVISIBLE);
-            TextView xTextString = findViewById(R.id.Xvalue);
-            xTextString.setVisibility(View.INVISIBLE);
-            TextView yTextString = findViewById(R.id.Yvalue);
-            yTextString.setVisibility(View.INVISIBLE);
-            TextView zTextString = findViewById(R.id.Zvalue);
-            zTextString.setVisibility(View.INVISIBLE);
-            TextView hTextString = findViewById(R.id.Hvalue);
-            hTextString.setVisibility(View.VISIBLE);
-            TextView wTextString = findViewById(R.id.Wvalue);
-            wTextString.setVisibility(View.VISIBLE);
+            resetUI();
+            mainBasic.setVisibility(View.INVISIBLE);
+            main23DArea.setVisibility(View.VISIBLE);
+            mainExponent.setVisibility(View.INVISIBLE);
+            mainCustom.setVisibility(View.INVISIBLE);
             TextView sign2Text = findViewById(R.id.sign2);
             sign2Text.setVisibility(View.VISIBLE);
-            sign2Text.setText("*");
             TextView dTextString = findViewById(R.id.Dvalue);
             dTextString.setVisibility(View.VISIBLE);
-            dTextString.setText("d");
-            sign1Text.setText("*");
-            TextView totTextString = findViewById(R.id.Totvalue);
-            totTextString.setVisibility(View.VISIBLE);
             textMessageSub.setText("3D Area Selected");
         } else if(subCategory.equals("Exponent")){
             TextView customTextString = findViewById(R.id.Custom);
@@ -1067,4 +1002,4 @@ public class Emulator extends AppCompatActivity {
             textMessageSub.setText("Check your formula");
         }
     }
-}//1070
+}//1005

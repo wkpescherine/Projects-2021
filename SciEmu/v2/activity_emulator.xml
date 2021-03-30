@@ -117,46 +117,69 @@
                 android:textColor="#fff"
                 android:onClick="focusTot"/>
         </LinearLayout>
-    </RelativeLayout>
-
-    <!--  xh?yw?d=ztotal  -->
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:id="@+id/main"
-        android:visibility="gone">
-        <TextView
-            android:id="@+id/expValue"
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toLeftOf="@id/expSuper"
-            android:layout_centerInParent="true"
-            android:text="x"
-            android:textSize="32dp"
-            android:textColor="#fff"
+            android:orientation="horizontal"
             android:visibility="invisible"
-            android:onClick="focusEXP"/>
-        <TextView
-            android:id="@+id/expSuper"
+            android:id="@+id/ExponentFormula">
+            <TextView
+                android:id="@+id/expValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="x"
+                android:textSize="32dp"
+                android:textColor="#fff"
+                android:onClick="focusEXP"/>
+            <TextView
+                android:id="@+id/expSuper"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="exp"
+                android:textSize="10dp"
+                android:textColor="#fff"
+                android:onClick="focusEXPSUP"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="="
+                android:textSize="32dp"
+                android:textColor="#fff"/>
+            <TextView
+                android:id="@+id/ExpTotvalue2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Total"
+                android:textSize="32dp"
+                android:textColor="#fff"/>
+        </LinearLayout>
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toLeftOf="@id/equals"
-            android:layout_centerInParent="true"
-            android:text="exp"
-            android:textSize="10dp"
-            android:textColor="#fff"
+            android:orientation="horizontal"
             android:visibility="invisible"
-            android:onClick="focusEXPSUP"/>
-        <TextView
-            android:id="@+id/Custom"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_toLeftOf="@id/equals"
-            android:layout_centerInParent="true"
-            android:text=""
-            android:textSize="32dp"
-            android:textColor="#fff"
-            android:visibility="invisible"/>
+            android:id="@+id/CustomFormula">
+            <TextView
+                android:id="@+id/Custom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textSize="32dp"
+                android:textColor="#fff"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="="
+                android:textSize="32dp"
+                android:textColor="#fff"/>
+            <TextView
+                android:id="@+id/CusTotvalue2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Total"
+                android:textSize="32dp"
+                android:textColor="#fff"/>
+        </LinearLayout>
     </RelativeLayout>
 
     <!--  MESSAGE  -->
@@ -330,56 +353,49 @@
         android:textAlignment="center"
         android:onClick="practiceSection"/>
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Test UI"
-        android:textAlignment="center"
-        android:onClick="testUI"/>
-
     <!-- LIST OF SUBJECTS-->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-        <TextView
+        <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
             android:text="Basic"
             android:textColor="#fff"
-            android:textSize="16dp"
+            android:textSize="8dp"
             android:onClick="displayBasic"/>
-        <TextView
+        <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
             android:text="Algebra"
             android:textColor="#fff"
-            android:textSize="16dp"
+            android:textSize="8dp"
             android:onClick="displayAlgebra"/>
-        <TextView
+        <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
             android:text="Calculus"
             android:textColor="#fff"
-            android:textSize="16dp"
+            android:textSize="8dp"
             android:onClick="displayCalculus"/>
-        <TextView
+        <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
             android:text="Physics"
             android:textColor="#fff"
-            android:textSize="16dp"
+            android:textSize="8dp"
             android:onClick="displayPhysics"/>
-        <TextView
+        <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
             android:text="Custom"
             android:textColor="#fff"
-            android:textSize="16dp"
+            android:textSize="8dp"
             android:onClick="displayCustom"/>
     </LinearLayout>
 
@@ -499,4 +515,4 @@
             android:textSize="16dp" />
     </LinearLayout>
 
-</LinearLayout><!--  502  -->
+</LinearLayout><!--  518  -->
