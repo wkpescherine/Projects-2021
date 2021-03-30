@@ -906,12 +906,9 @@ public class Emulator extends AppCompatActivity {
         total=0;
         TextView xTextString = findViewById(R.id.Xvalue);
         xTextString.setText("x");
-        xTextString.setVisibility(View.VISIBLE);
         TextView yTextString = findViewById(R.id.Yvalue);
-        yTextString.setVisibility(View.VISIBLE);
         yTextString.setText("y");
         TextView zTextString = findViewById(R.id.Zvalue);
-        zTextString.setVisibility(View.VISIBLE);
         zTextString.setText("z");
         TextView hTextString = findViewById(R.id.Hvalue);
         hTextString.setVisibility(View.INVISIBLE);
@@ -924,29 +921,29 @@ public class Emulator extends AppCompatActivity {
     }
 
     public void testUI(View v){
-        setMain.Something();
+        TextView subSign = findViewById(R.id.sign1);
+        LinearLayout LL = findViewById(R.id.basicFormulas);
+        subSign.setText("+");
+        LL.setVisibility(View.VISIBLE);
     }
 
     public void setFormulaText(String sub){
-        RelativeLayout main = findViewById(R.id.main);
+        LinearLayout mainBasic = findViewById(R.id.basicFormulas);
+        LinearLayout main23DArea = findViewById(R.id.Area23DFormulas);
         TextView sign1Text = findViewById(R.id.sign1);
-        main.setVisibility(View.VISIBLE);
         TextView textMessageSub = findViewById(R.id.message);
         textMessageSub.setText(subCategory);
         if(subCategory.equals("add")){
+            resetUI();
+            mainBasic.setVisibility(View.VISIBLE);
+            main23DArea.setVisibility(View.INVISIBLE);
+            sign1Text.setText("+");
             TextView customTextString = findViewById(R.id.Custom);
             customTextString.setVisibility(View.INVISIBLE);
             TextView expValueTextString = findViewById(R.id.expValue);
             expValueTextString.setVisibility(View.INVISIBLE);
             TextView expTextString = findViewById(R.id.expSuper);
             expTextString.setVisibility(View.INVISIBLE);
-            resetUI();
-            sign1Text.setText("+");
-            sign1Text.setVisibility(View.VISIBLE);
-            TextView sign2Text = findViewById(R.id.sign2);
-            sign2Text.setVisibility(View.GONE);
-            TextView dTextString = findViewById(R.id.Dvalue);
-            dTextString.setVisibility(View.GONE);
             textMessageSub.setText("Addition selected");
         }else if(subCategory.equals("subtract")){
             resetUI();
@@ -1070,4 +1067,4 @@ public class Emulator extends AppCompatActivity {
             textMessageSub.setText("Check your formula");
         }
     }
-}//1068
+}//1070
