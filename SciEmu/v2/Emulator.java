@@ -16,7 +16,6 @@ public class Emulator extends AppCompatActivity {
     DataConfig data = new DataConfig();
     Formula formula = new Formula();
     SolveCustom custom = new SolveCustom();
-    setUIMain setMain = new setUIMain();
 
     int x = 0;
     int y = 0;
@@ -155,93 +154,75 @@ public class Emulator extends AppCompatActivity {
             TextView valueX = findViewById(R.id.Xvalue);
             xString  += val+"";
             valueX.setText(xString);
-        }else {
+        }else if (focus.equals("X") && xString.length() == 0 ) {
             TextView valueX = findViewById(R.id.Xvalue);
             xString  = val+"";
             valueX.setText(xString);
-        }
-        if(focus.equals("Y") && yString.length() != 0){
+        } else if(focus.equals("Y") && yString.length() != 0){
             TextView valueY = findViewById(R.id.Yvalue);
             yString  += val;
             valueY.setText(yString);
-        }
-        if(focus.equals("Y") && yString.length() == 0 ){
+        } else if(focus.equals("Y") && yString.length() == 0 ){
             TextView valueY = findViewById(R.id.Yvalue);
             yString  = val+"";
             valueY.setText(yString);
-        }
-        if(focus.equals("Z") && zString.length() != 0){
+        } else if(focus.equals("Z") && zString.length() != 0){
             TextView valueZ = findViewById(R.id.Zvalue);
             zString  += val;
             valueZ.setText(zString);
-        }
-        if(focus.equals("Z") && zString.length() == 0 ){
+        } else if(focus.equals("Z") && zString.length() == 0 ){
             TextView valueZ = findViewById(R.id.Zvalue);
             zString  = val+"";
             valueZ.setText(zString);
-        }
-        if(focus.equals("H") && hString.length() != 0){
+        } else if(focus.equals("H") && hString.length() != 0){
             TextView valueH = findViewById(R.id.Hvalue);
             hString  += val;
             valueH.setText(hString);
-        }
-        if(focus.equals("H") && hString.length() == 0 ){
+        } else if(focus.equals("H") && hString.length() == 0 ){
             TextView valueH = findViewById(R.id.Hvalue);
             hString  = val+"";
             valueH.setText(hString);
-        }
-        if(focus.equals("W") && wString.length() != 0){
+        } else if(focus.equals("W") && wString.length() != 0){
             TextView valueW = findViewById(R.id.Wvalue);
             wString  += val;
             valueW.setText(wString);
-        }
-        if(focus.equals("W") && wString.length() == 0 ){
+        } else if(focus.equals("W") && wString.length() == 0 ){
             TextView valueW = findViewById(R.id.Wvalue);
             wString  = val+"";
             valueW.setText(wString);
-        }
-        if(focus.equals("D") && dString.length() != 0){
+        } else if(focus.equals("D") && dString.length() != 0){
             TextView valueD = findViewById(R.id.Dvalue);
             dString  += val;
             valueD.setText(dString);
-        }
-        if(focus.equals("D") && dString.length() == 0 ){
+        } else if(focus.equals("D") && dString.length() == 0 ){
             TextView valueD = findViewById(R.id.Dvalue);
             dString  = val+"";
             valueD.setText(dString);
-        }
-        if(focus.equals("total") && totalString.length() != 0){
+        } else if(focus.equals("total") && totalString.length() != 0){
             TextView valueTotal = findViewById(R.id.Totvalue);
             totalString  += val;
             valueTotal.setText(totalString);
-        }
-        if(focus.equals("total") && totalString.length() == 0 ){
+        } else if(focus.equals("total") && totalString.length() == 0 ){
             TextView valueTotal = findViewById(R.id.Totvalue);
             totalString  = val+"";
             valueTotal.setText(totalString);
-        }
-        if(focus.equals("expValue") && expValueString.length() != 0){
+        } else if(focus.equals("expValue") && expValueString.length() != 0){
             TextView valueExpValue = findViewById(R.id.expValue);
             expValueString  += val;
             valueExpValue.setText(expValueString);
-        }
-        if(focus.equals("expValue") && expValueString.length() == 0 ){
+        } else if(focus.equals("expValue") && expValueString.length() == 0 ){
             TextView valueExpValue = findViewById(R.id.expValue);
             expValueString  = val+"";
             valueExpValue.setText(expValueString);
-        }
-        if(focus.equals("expSuper") && expString.length() != 0){
+        } else if(focus.equals("expSuper") && expString.length() != 0){
             TextView valueExp = findViewById(R.id.expSuper);
             expString  += val;
             valueExp.setText(expString);
-        }
-        if(focus.equals("expSuper") && expString.length() == 0 ){
+        } else if(focus.equals("expSuper") && expString.length() == 0 ){
             TextView valueExp = findViewById(R.id.expSuper);
             expString  = val+"";
             valueExp.setText(expString);
-        }
-        //if(focus.equals("custom") && customString.length() != 0){
-        if(focus.equals("custom")){
+        } else if(focus.equals("custom")){
             if(customValid == 1 && (val.equals("+") || val.equals("-") || val.equals("*"))) {
                 TextView valueCustom = findViewById(R.id.Custom);
                 customString += val;
@@ -253,14 +234,15 @@ public class Emulator extends AppCompatActivity {
                 valueCustom.setText(customString);
                 customValid = 1;
             }
-        }
-        if(focus.equals("custom") && customString.length() == 0 ){
+        } else if(focus.equals("custom") && customString.length() == 0 ){
             TextView valueCustom = findViewById(R.id.custom);
             customString  = val+"";
             valueCustom.setText(customString);
+        } else {
+            TextView textMessageX = findViewById(R.id.message);
+            textMessageX.setText("ERROR!!!");
         }
     }
-
     public void specialFunc(String func){
         TextView xText = findViewById(R.id.Xvalue);
         TextView yText = findViewById(R.id.Yvalue);
@@ -463,22 +445,18 @@ public class Emulator extends AppCompatActivity {
     }
 
     public void setAddition(View v){
-        resetUI();
         subCategory = "add";
         setFormulaText(subCategory);
     }
     public void setSubtraction(View v){
-        resetUI();
         subCategory = "subtract";
         setFormulaText(subCategory);
     }
     public void setDivision(View v){
-        resetUI();
         subCategory = "divide";
         setFormulaText(subCategory);
     }
     public void setMultiplication(View v){
-        resetUI();
         subCategory = "multiply";
         setFormulaText(subCategory);
     }
@@ -877,13 +855,13 @@ public class Emulator extends AppCompatActivity {
         }
         if(subCategory.equals("Exponent")){
             String result = formula.Exponent(expValueString, expString);
-            TextView totalText = findViewById(R.id.Totvalue);
+            TextView totalText = findViewById(R.id.ExpTotvalue2);
             totalText.setText(result);
             totalString = "";
         }
         if(subCategory.equals("custom")){
             String result = custom.customSolve2(customString);
-            TextView totalCustom = findViewById(R.id.Totvalue);
+            TextView totalCustom = findViewById(R.id.CusTotvalue2);
             totalCustom.setText(result);
         }
     }
@@ -895,6 +873,8 @@ public class Emulator extends AppCompatActivity {
         hString = "";
         wString = "";
         dString = "";
+        expValueString = "";
+        expString ="";
         totalString = "";
         x=0;
         y=0;
@@ -910,16 +890,21 @@ public class Emulator extends AppCompatActivity {
         TextView zTextString = findViewById(R.id.Zvalue);
         zTextString.setText("z");
         TextView hTextString = findViewById(R.id.Hvalue);
-        hTextString.setVisibility(View.INVISIBLE);
+        hTextString.setText("h");
         TextView wTextString = findViewById(R.id.Wvalue);
-        wTextString.setVisibility(View.INVISIBLE);
+        wTextString.setText("w");
         TextView dTextString = findViewById(R.id.Dvalue);
-        dTextString.setVisibility(View.INVISIBLE);
+        dTextString.setText("d");
+        TextView expValTextString = findViewById(R.id.expValue);
+        expValTextString.setText("x");
+        TextView expTextString = findViewById(R.id.expSuper);
+        expTextString.setText("exp");
         TextView totTextString = findViewById(R.id.Totvalue);
-        totTextString.setVisibility(View.INVISIBLE);
+        totTextString.setText("Total");
     }
 
     public void setFormulaText(String sub){
+        resetUI();
         LinearLayout mainBasic = findViewById(R.id.basicFormulas);
         LinearLayout main23DArea = findViewById(R.id.Area23DFormulas);
         LinearLayout mainExponent = findViewById(R.id.ExponentFormula);
@@ -928,7 +913,6 @@ public class Emulator extends AppCompatActivity {
         TextView textMessageSub = findViewById(R.id.message);
         textMessageSub.setText(subCategory);
         if(subCategory.equals("add")){
-            resetUI();
             mainBasic.setVisibility(View.VISIBLE);
             main23DArea.setVisibility(View.INVISIBLE);
             mainExponent.setVisibility(View.INVISIBLE);
@@ -936,7 +920,6 @@ public class Emulator extends AppCompatActivity {
             sign1Text.setText("+");
             textMessageSub.setText("Addition selected");
         }else if(subCategory.equals("subtract")){
-            resetUI();
             mainBasic.setVisibility(View.VISIBLE);
             main23DArea.setVisibility(View.INVISIBLE);
             mainExponent.setVisibility(View.INVISIBLE);
@@ -944,7 +927,6 @@ public class Emulator extends AppCompatActivity {
             sign1Text.setText("-");
             textMessageSub.setText("Subtraction selected");
         }else if(subCategory.equals("divide")){
-            resetUI();
             mainBasic.setVisibility(View.VISIBLE);
             main23DArea.setVisibility(View.INVISIBLE);
             mainExponent.setVisibility(View.INVISIBLE);
@@ -952,7 +934,6 @@ public class Emulator extends AppCompatActivity {
             sign1Text.setText("/");
             textMessageSub.setText("Division Selected");
         }else if(subCategory.equals("multiply")){
-            resetUI();
             mainBasic.setVisibility(View.VISIBLE);
             main23DArea.setVisibility(View.INVISIBLE);
             mainExponent.setVisibility(View.INVISIBLE);
@@ -960,14 +941,16 @@ public class Emulator extends AppCompatActivity {
             sign1Text.setText("+");
             textMessageSub.setText("Multiplication Selected");
         }else if(subCategory.equals("Area2D")){
-            resetUI();
             mainBasic.setVisibility(View.INVISIBLE);
             main23DArea.setVisibility(View.VISIBLE);
             mainExponent.setVisibility(View.INVISIBLE);
             mainCustom.setVisibility(View.INVISIBLE);
             textMessageSub.setText("2D Area Selected");
+            TextView sign2Text = findViewById(R.id.sign2);
+            sign2Text.setVisibility(View.GONE);
+            TextView dTextString = findViewById(R.id.Dvalue);
+            dTextString.setVisibility(View.GONE);
         }else if(subCategory.equals("Area3D")){
-            resetUI();
             mainBasic.setVisibility(View.INVISIBLE);
             main23DArea.setVisibility(View.VISIBLE);
             mainExponent.setVisibility(View.INVISIBLE);
@@ -978,28 +961,12 @@ public class Emulator extends AppCompatActivity {
             dTextString.setVisibility(View.VISIBLE);
             textMessageSub.setText("3D Area Selected");
         } else if(subCategory.equals("Exponent")){
-            TextView customTextString = findViewById(R.id.Custom);
-            customTextString.setVisibility(View.INVISIBLE);
-            TextView xTextString = findViewById(R.id.Xvalue);
-            xTextString.setVisibility(View.INVISIBLE);
-            TextView yTextString = findViewById(R.id.Yvalue);
-            yTextString.setVisibility(View.INVISIBLE);
-            TextView zTextString = findViewById(R.id.Zvalue);
-            zTextString.setVisibility(View.INVISIBLE);
-            TextView sign1String = findViewById(R.id.sign1);
-            sign1String.setVisibility(View.INVISIBLE);
-            TextView totTextString = findViewById(R.id.Totvalue);
-            totTextString.setVisibility(View.VISIBLE);
-            TextView sign2Text = findViewById(R.id.sign2);
-            sign2Text.setVisibility(View.INVISIBLE);
-            TextView expValueTextString = findViewById(R.id.expValue);
-            expValueTextString.setVisibility(View.VISIBLE);
-            TextView expTextString = findViewById(R.id.expSuper);
-            expTextString.setVisibility(View.VISIBLE);
-            TextView dTextString = findViewById(R.id.Dvalue);
-            dTextString.setVisibility(View.GONE);
+            mainBasic.setVisibility(View.INVISIBLE);
+            main23DArea.setVisibility(View.INVISIBLE);
+            mainExponent.setVisibility(View.VISIBLE);
+            mainCustom.setVisibility(View.INVISIBLE);
         }else{
             textMessageSub.setText("Check your formula");
         }
     }
-}//1005
+}//972

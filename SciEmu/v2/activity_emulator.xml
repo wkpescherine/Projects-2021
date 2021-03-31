@@ -131,14 +131,24 @@
                 android:textSize="32dp"
                 android:textColor="#fff"
                 android:onClick="focusEXP"/>
-            <TextView
-                android:id="@+id/expSuper"
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="exp"
-                android:textSize="10dp"
-                android:textColor="#fff"
-                android:onClick="focusEXPSUP"/>
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/expSuper"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="exp"
+                    android:textSize="10dp"
+                    android:textColor="#fff"
+                    android:onClick="focusEXPSUP"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="none"
+                    android:textSize="10dp"/>
+            </LinearLayout>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -354,50 +364,56 @@
         android:onClick="practiceSection"/>
 
     <!-- LIST OF SUBJECTS-->
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <Button
-            android:layout_width="wrap_content"
+    <HorizontalScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fillViewport="true">
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"
-            android:text="Basic"
-            android:textColor="#fff"
-            android:textSize="8dp"
-            android:onClick="displayBasic"/>
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"
-            android:text="Algebra"
-            android:textColor="#fff"
-            android:textSize="8dp"
-            android:onClick="displayAlgebra"/>
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"
-            android:text="Calculus"
-            android:textColor="#fff"
-            android:textSize="8dp"
-            android:onClick="displayCalculus"/>
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"
-            android:text="Physics"
-            android:textColor="#fff"
-            android:textSize="8dp"
-            android:onClick="displayPhysics"/>
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"
-            android:text="Custom"
-            android:textColor="#fff"
-            android:textSize="8dp"
-            android:onClick="displayCustom"/>
-    </LinearLayout>
+            android:orientation="horizontal">
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="Basic"
+                android:textColor="#fff"
+                android:textSize="8dp"
+                android:onClick="displayBasic"/>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="Algebra"
+                android:textColor="#fff"
+                android:textSize="8dp"
+                android:onClick="displayAlgebra"/>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="Calculus"
+                android:textColor="#fff"
+                android:textSize="8dp"
+                android:onClick="displayCalculus"/>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="Physics"
+                android:textColor="#fff"
+                android:textSize="8dp"
+                android:onClick="displayPhysics"/>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="Custom"
+                android:textColor="#fff"
+                android:textSize="8dp"
+                android:onClick="displayCustom"/>
+        </LinearLayout>
+    </HorizontalScrollView>
 
     <!-- BASIC SUB SECTION -->
     <LinearLayout
@@ -515,4 +531,4 @@
             android:textSize="16dp" />
     </LinearLayout>
 
-</LinearLayout><!--  518  -->
+</LinearLayout><!--  534  -->
