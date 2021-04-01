@@ -17,12 +17,6 @@ public class Emulator extends AppCompatActivity {
     Formula formula = new Formula();
     SolveCustom custom = new SolveCustom();
 
-    int x = 0;
-    int y = 0;
-    int z = 0;
-    int h = 0;
-    int w = 0;
-    int d = 0;
     int total = 0;
     int customValid = 0;
     // Location is = x,y,z,h,w,d,total, exp value, exponent, custom
@@ -517,9 +511,7 @@ public class Emulator extends AppCompatActivity {
                     valueZ.setText(zString);
                     zString = "";
                 }else {
-                    x = Integer.parseInt(xString);
-                    y = Integer.parseInt(yString);
-                    z = x + y;
+                    int z = Integer.parseInt(xString) + Integer.parseInt(yString);
                     zString = z + "";
                     TextView valueZ = findViewById(R.id.Zvalue);
                     textMessageSolve.setText("Solved");
@@ -536,17 +528,13 @@ public class Emulator extends AppCompatActivity {
                     TextView valueY = findViewById(R.id.Yvalue);
                     textMessageSolve.setText("Solved");
                     valueY.setText(yString);
-                    yString = "";
                 }else {
-                    x = Integer.parseInt(xString);
-                    z = Integer.parseInt(zString);
-                    y = z-x;
+                    int y = Integer.parseInt(zString)-Integer.parseInt(xString);
                     yString = y + "";
                     TextView valueY = findViewById(R.id.Yvalue);
                     textMessageSolve.setText("Solved");
                     valueY.setText(yString);
-                    yString = "";
-                }
+                } yString = "";
             }
             if (zString.length() > 0 && yString.length() > 0) {
                 if (isDecimal[2]==1 || isDecimal[1]==1) {
@@ -559,9 +547,7 @@ public class Emulator extends AppCompatActivity {
                     valueX.setText(xString);
                     xString = "";
                 }else {
-                    y = Integer.parseInt(yString);
-                    z = Integer.parseInt(zString);
-                    x = z-y;
+                    int x = Integer.parseInt(zString)-Integer.parseInt(yString);
                     xString = x + "";
                     TextView valueX = findViewById(R.id.Xvalue);
                     textMessageSolve.setText("Solved");
@@ -582,9 +568,7 @@ public class Emulator extends AppCompatActivity {
                     valueZ.setText(zString);
                     zString = "";
                 }else {
-                    x = Integer.parseInt(xString);
-                    y = Integer.parseInt(yString);
-                    z = x - y;
+                    int z = Integer.parseInt(xString) - Integer.parseInt(yString);
                     zString = z + "";
                     TextView valueZ = findViewById(R.id.Zvalue);
                     textMessageSolve.setText("Solved");
@@ -603,9 +587,7 @@ public class Emulator extends AppCompatActivity {
                     valueY.setText(yString);
                     yString = "";
                 }else {
-                    x = Integer.parseInt(xString);
-                    z = Integer.parseInt(zString);
-                    y = x - z;
+                    int y = Integer.parseInt(xString) - Integer.parseInt(zString);
                     yString = y + "";
                     TextView valueY = findViewById(R.id.Yvalue);
                     textMessageSolve.setText("Solved");
@@ -624,9 +606,7 @@ public class Emulator extends AppCompatActivity {
                     valueX.setText(xString);
                     xString = "";
                 }else {
-                    y = Integer.parseInt(yString);
-                    z = Integer.parseInt(zString);
-                    x = z+y;
+                    int x = Integer.parseInt(zString)+Integer.parseInt(yString);
                     xString = x + "";
                     TextView valueX = findViewById(R.id.Xvalue);
                     textMessageSolve.setText("Solved");
@@ -654,7 +634,7 @@ public class Emulator extends AppCompatActivity {
                     valueZ.setText(zString);
                     zString = "";
                 } else {
-                    z = Integer.parseInt(xString)/Integer.parseInt(yString);
+                    int z = Integer.parseInt(xString)/Integer.parseInt(yString);
                     zString = z + "";
                     TextView valueZ = findViewById(R.id.Zvalue);
                     valueZ.setText(zString);
@@ -678,7 +658,7 @@ public class Emulator extends AppCompatActivity {
                     valueY.setText(yString);
                     yString = "";
                 } else {
-                    y = Integer.parseInt(xString)/Integer.parseInt(zString);
+                    int y = Integer.parseInt(xString)/Integer.parseInt(zString);
                     yString = y + "";
                     TextView valueY = findViewById(R.id.Yvalue);
                     valueY.setText(yString);
@@ -694,9 +674,7 @@ public class Emulator extends AppCompatActivity {
                     valueX.setText(xString);
                     xString="";
                 }else {
-                    y = Integer.parseInt(yString);
-                    z = Integer.parseInt(zString);
-                    x = z*y;
+                    int x = Integer.parseInt(zString)*Integer.parseInt(yString);
                     xString = x + "";
                     TextView valueX = findViewById(R.id.Xvalue);
                     valueX.setText(xString);
@@ -718,9 +696,7 @@ public class Emulator extends AppCompatActivity {
                     valueZ.setText(zString);
                     zString = "";
                 } else {
-                    x =Integer.parseInt(xString);
-                    y =Integer.parseInt(yString);
-                    z = x * y;
+                    int z = Integer.parseInt(xString) * Integer.parseInt(yString);
                     zString = z + "";
                     TextView valueZ = findViewById(R.id.Zvalue);
                     valueZ.setText(zString);
@@ -744,7 +720,7 @@ public class Emulator extends AppCompatActivity {
                     valueY.setText(yString);
                     yString = "";
                 } else {
-                    y = Integer.parseInt(zString) / Integer.parseInt(xString);
+                    int y = Integer.parseInt(zString) / Integer.parseInt(xString);
                     yString = y + "";
                     TextView valueY = findViewById(R.id.Yvalue);
                     valueY.setText(yString);
@@ -768,7 +744,7 @@ public class Emulator extends AppCompatActivity {
                     valueX.setText(xString);
                     xString = "";
                 } else {
-                    x = Integer.parseInt(zString) / Integer.parseInt(yString);
+                    int x = Integer.parseInt(zString) / Integer.parseInt(yString);
                     xString = x + "";
                     TextView valueX = findViewById(R.id.Xvalue);
                     valueX.setText(xString);
@@ -876,12 +852,6 @@ public class Emulator extends AppCompatActivity {
         expValueString = "";
         expString ="";
         totalString = "";
-        x=0;
-        y=0;
-        z=0;
-        h=0;
-        w=0;
-        d=0;
         total=0;
         TextView xTextString = findViewById(R.id.Xvalue);
         xTextString.setText("x");
@@ -969,4 +939,4 @@ public class Emulator extends AppCompatActivity {
             textMessageSub.setText("Check your formula");
         }
     }
-}//972
+}//942
