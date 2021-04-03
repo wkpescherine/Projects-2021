@@ -388,6 +388,7 @@
                 android:textColor="#fff"
                 android:textSize="8dp"
                 android:onClick="displayAlgebra"/>
+
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -421,7 +422,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/basicSub"
         android:visibility="gone">
-        <TextView
+        <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
@@ -429,7 +430,7 @@
             android:textColor="#fff"
             android:textSize="16dp"
             android:onClick="setAddition"/>
-        <TextView
+        <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
@@ -437,7 +438,7 @@
             android:textColor="#fff"
             android:textSize="16dp"
             android:onClick="setSubtraction"/>
-        <TextView
+        <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
@@ -469,7 +470,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/algebraSub"
         android:visibility="gone">
-        <TextView
+        <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
@@ -477,7 +478,7 @@
             android:textColor="#fff"
             android:textSize="16dp"
             android:onClick="Area2D"/>
-        <TextView
+        <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
@@ -493,14 +494,14 @@
         android:layout_height="wrap_content"
         android:id="@+id/calculusSub"
         android:visibility="gone">
-        <TextView
+        <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
             android:text="Pythahorean"
             android:textColor="#fff"
             android:textSize="16dp" />
-        <TextView
+        <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
@@ -515,14 +516,14 @@
         android:layout_height="wrap_content"
         android:id="@+id/physicsSub"
         android:visibility="gone">
-        <TextView
+        <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
             android:text="Linear Motion"
             android:textColor="#fff"
             android:textSize="16dp" />
-        <TextView
+        <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
