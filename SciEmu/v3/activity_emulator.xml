@@ -13,6 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:gravity="center">
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -184,6 +185,34 @@
                 android:textColor="#fff"/>
             <TextView
                 android:id="@+id/CusTotvalue2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Total"
+                android:textSize="32dp"
+                android:textColor="#fff"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:visibility="invisible"
+            android:id="@+id/CircleFormula">
+            <TextView
+                android:id="@+id/Radius"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textSize="32dp"
+                android:textColor="#fff"
+                android:onClick="focusRadius"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="="
+                android:textSize="32dp"
+                android:textColor="#fff"/>
+            <TextView
+                android:id="@+id/CircleTotvalue"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Total"
@@ -388,7 +417,14 @@
                 android:textColor="#fff"
                 android:textSize="8dp"
                 android:onClick="displayAlgebra"/>
-
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="Geometry"
+                android:textColor="#fff"
+                android:textSize="8dp"
+                android:onClick="displayGeometry"/>
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -532,4 +568,28 @@
             android:textSize="16dp" />
     </LinearLayout>
 
-</LinearLayout><!--  534  -->
+    <!--   GEOMETRY SUB SECTIONS-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/geometrySub"
+        android:visibility="gone">
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:text="Area Triangle"
+            android:textColor="#fff"
+            android:textSize="16dp"
+            android:onClick="AreaTriangle"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:text="Area Circle"
+            android:textColor="#fff"
+            android:textSize="16dp"
+            android:onClick="AreaCircle"/>
+    </LinearLayout>
+
+</LinearLayout><!--  565  -->

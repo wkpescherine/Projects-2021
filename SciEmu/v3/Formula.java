@@ -97,4 +97,13 @@ public class Formula {
         }
         return t1;
     }
-}//100
+
+    static String AreaTriangle(String value1, String value2){
+        if(Integer.parseInt(value1)%2 != 0){
+            t1 = ((Double.valueOf(value1)/2)* Double.valueOf(value2)) + "";
+        } else {
+            t1 = ((Integer.parseInt(value1)/2) * Integer.parseInt(value2))+ "";
+        }
+        return t1;
+    }
+}//109
