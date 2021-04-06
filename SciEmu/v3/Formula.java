@@ -106,4 +106,9 @@ public class Formula {
         }
         return t1;
     }
+
+    static String AreaCircle(String value1){
+        t1 = (3.16*(2*(Double.valueOf(value1)*Double.valueOf(value1))))+"";
+        return t1;
+    }
 }//109
