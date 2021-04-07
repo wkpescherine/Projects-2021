@@ -198,10 +198,16 @@
             android:visibility="invisible"
             android:id="@+id/CircleFormula">
             <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="\u03C0"
+                android:textSize="32dp"
+                android:textColor="#fff"/>
+            <TextView
                 android:id="@+id/Radius"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text=""
+                android:text="r"
                 android:textSize="32dp"
                 android:textColor="#fff"
                 android:onClick="focusRadius"/>
@@ -453,55 +459,64 @@
     </HorizontalScrollView>
 
     <!-- BASIC SUB SECTION -->
-    <LinearLayout
-        android:layout_width="match_parent"
+    <HorizontalScrollView
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/basicSub"
-        android:visibility="gone">
-        <Button
-            android:layout_width="wrap_content"
+        android:fillViewport="true">
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"
-            android:text="Add"
-            android:textColor="#fff"
-            android:textSize="16dp"
-            android:onClick="setAddition"/>
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"
-            android:text="Subtract"
-            android:textColor="#fff"
-            android:textSize="16dp"
-            android:onClick="setSubtraction"/>
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"
-            android:text="Divide"
-            android:textColor="#fff"
-            android:textSize="16dp"
-            android:onClick="setDivision"/>
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"
-            android:text="Multiply"
-            android:textColor="#fff"
-            android:textSize="8dp"
-            android:onClick="setMultiplication"/>
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"
-            android:text="Exponent"
-            android:textColor="#fff"
-            android:textSize="8dp"
-            android:onClick="setExponent"/>
-    </LinearLayout>
+            android:id="@+id/basicSub"
+            android:visibility="gone">
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="Add"
+                android:textColor="#fff"
+                android:textSize="16dp"
+                android:onClick="setAddition"/>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="Subtract"
+                android:textColor="#fff"
+                android:textSize="16dp"
+                android:onClick="setSubtraction"/>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="Divide"
+                android:textColor="#fff"
+                android:textSize="16dp"
+                android:onClick="setDivision"/>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="Multiply"
+                android:textColor="#fff"
+                android:textSize="8dp"
+                android:onClick="setMultiplication"/>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="Exponent"
+                android:textColor="#fff"
+                android:textSize="8dp"
+                android:onClick="setExponent"/>
+        </LinearLayout>
+    </HorizontalScrollView>
 
     <!-- ALGEBRA SUB SECTION -->
-    <LinearLayout
+    <HorizontalScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fillViewport="true">
+        <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/algebraSub"
@@ -523,9 +538,14 @@
             android:textSize="16dp"
             android:onClick="Area3D"/>
     </LinearLayout>
+    </HorizontalScrollView>
 
     <!-- CALCULUS SUB SECTION-->
-    <LinearLayout
+    <HorizontalScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fillViewport="true">
+        <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/calculusSub"
@@ -545,9 +565,14 @@
             android:textColor="#fff"
             android:textSize="16dp" />
     </LinearLayout>
+    </HorizontalScrollView>
 
     <!-- PHYSICS SUB SECTION-->
-    <LinearLayout
+    <HorizontalScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fillViewport="true">
+      <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/physicsSub"
@@ -567,9 +592,14 @@
             android:textColor="#fff"
             android:textSize="16dp" />
     </LinearLayout>
+    </HorizontalScrollView>
 
     <!--   GEOMETRY SUB SECTIONS-->
-    <LinearLayout
+    <HorizontalScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fillViewport="true">
+        <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/geometrySub"
@@ -591,5 +621,5 @@
             android:textSize="16dp"
             android:onClick="AreaCircle"/>
     </LinearLayout>
-
-</LinearLayout><!--  565  -->
+    </HorizontalScrollView>
+</LinearLayout><!--  625  -->
