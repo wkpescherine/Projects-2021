@@ -443,34 +443,7 @@ public class Emulator extends AppCompatActivity {
     public void displayCustom(View v){
         focus = "custom";
         subCategory = "custom";
-        TextView sign2Text = findViewById(R.id.sign2);
-        sign2Text.setVisibility(View.GONE);
-        TextView sign1Text = findViewById(R.id.sign1);
-        sign1Text.setVisibility(View.GONE);
-        TextView expValueTextString = findViewById(R.id.expValue);
-        expValueTextString.setVisibility(View.INVISIBLE);
-        TextView expTextString = findViewById(R.id.expSuper);
-        expTextString.setVisibility(View.INVISIBLE);
-        LinearLayout mainView = findViewById(R.id.CustomFormula);
-        mainView.setVisibility(View.VISIBLE);
-        TextView textMessageX = findViewById(R.id.message);
-        textMessageX.setText("Custom formula");
-        TextView xTextString = findViewById(R.id.Xvalue);
-        xTextString.setVisibility(View.INVISIBLE);
-        TextView yTextString = findViewById(R.id.Yvalue);
-        yTextString.setVisibility(View.INVISIBLE);
-        TextView zTextString = findViewById(R.id.Zvalue);
-        zTextString.setVisibility(View.INVISIBLE);
-        TextView hTextString = findViewById(R.id.Hvalue);
-        hTextString.setVisibility(View.INVISIBLE);
-        TextView wTextString = findViewById(R.id.Wvalue);
-        wTextString.setVisibility(View.INVISIBLE);
-        TextView dTextString = findViewById(R.id.Dvalue);
-        dTextString.setVisibility(View.INVISIBLE);
-        TextView customTextString = findViewById(R.id.Custom);
-        customTextString.setVisibility(View.VISIBLE);
-        TextView totTextString = findViewById(R.id.Totvalue);
-        totTextString.setVisibility(View.VISIBLE);
+        setFormulaText(subCategory);
     }
 
     public void setAddition(View v){
@@ -548,8 +521,11 @@ public class Emulator extends AppCompatActivity {
     public void clickToSolve(View v){
         TextView textMessageSolve = findViewById(R.id.message);
         if(subCategory.equals("add")) {
+            TextView valueZ = findViewById(R.id.Zvalue);
             if (yString.length() > 0 && xString.length() > 0) {
-                if (isDecimal[0]==1 || isDecimal[1]==1) {
+                String result = formula.Addition(xString, yString, zString);
+                valueZ.setText(result);
+                /*if (isDecimal[0]==1 || isDecimal[1]==1) {
                     double yy = Double.valueOf(yString);
                     double xx = Double.valueOf(xString);
                     double zz = xx+yy;
@@ -565,7 +541,7 @@ public class Emulator extends AppCompatActivity {
                     textMessageSolve.setText("Solved");
                     valueZ.setText(zString);
                     zString = "";
-                }
+                }*/
             }
             if (zString.length() > 0 && xString.length() > 0) {
                 if (isDecimal[2]==1 || isDecimal[0]==1) {
@@ -1008,7 +984,7 @@ public class Emulator extends AppCompatActivity {
             mainExponent.setVisibility(View.VISIBLE);
             mainCustom.setVisibility(View.INVISIBLE);
             mainCircle.setVisibility(View.INVISIBLE);
-        } else if(subCategory.equals("Exponent")) {
+        } else if(subCategory.equals("AreaCircle")) {
             mainBasic.setVisibility(View.INVISIBLE);
             main23DArea.setVisibility(View.INVISIBLE);
             mainExponent.setVisibility(View.VISIBLE);
@@ -1018,4 +994,4 @@ public class Emulator extends AppCompatActivity {
             textMessageSub.setText("Check your formula");
         }
     }
-}//1021
+}//994
