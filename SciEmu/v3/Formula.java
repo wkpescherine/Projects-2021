@@ -4,11 +4,9 @@ import android.widget.TextView;
 
 public class Formula {
     private static String t1;
-    boolean isDecimal = false;
 
     public String Addition(String value1, String value2, String value3){
-        findDecimal(value1, value2, value3);
-        if(isDecimal == false){
+        if(isDecimal == 0){
             if(value1.equals("")){
                 t1 = (Integer.parseInt(value3)-Integer.parseInt(value2))+"";
             }
@@ -19,7 +17,7 @@ public class Formula {
                 t1 = (Integer.parseInt(value1)+Integer.parseInt(value2))+"";
             }
         } else {
-            if (isDecimal == true) {
+            if (isDecimal == 1) {
                 if (value1.equals("")) {
                     t1 = (Double.valueOf(value3) - Double.valueOf(value2)) + "";
                 }
@@ -140,16 +138,4 @@ public class Formula {
         t1 = (3.16*(Double.valueOf(value1)*Double.valueOf(value1)))+"";
         return t1;
     }
-
-    public void findDecimal(String a, String b, String c){
-        if(Double.valueOf(a)%2 != 0){
-            isDecimal = true;
-        }
-        if(Double.valueOf(b)%2 != 0){
-            isDecimal = true;
-        }
-        if(Double.valueOf(c)%2 != 0){
-            isDecimal = true;
-        }
-    }
-}//155
+}//141
