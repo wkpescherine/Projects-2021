@@ -519,296 +519,88 @@ public class Emulator extends AppCompatActivity {
     }
 
     public void clickToSolve(View v){
-        TextView textMessageSolve = findViewById(R.id.message);
         if(subCategory.equals("add")) {
-            TextView valueZ = findViewById(R.id.Zvalue);
-            if (yString.length() > 0 && xString.length() > 0) {
-                String result = formula.Addition(xString, yString, zString);
+            if (xString.length() > 0 && yString.length() > 0 && zString.length() == 0) {
+                String result = formula.Addition(xString, yString, zString, isDecimal[0], isDecimal[1], isDecimal[2]);
+                TextView valueZ = findViewById(R.id.Zvalue);
                 valueZ.setText(result);
-                /*if (isDecimal[0]==1 || isDecimal[1]==1) {
-                    double yy = Double.valueOf(yString);
-                    double xx = Double.valueOf(xString);
-                    double zz = xx+yy;
-                    zString = zz+"";
-                    TextView valueZ = findViewById(R.id.Zvalue);
-                    textMessageSolve.setText("Solved");
-                    valueZ.setText(zString);
-                    zString = "";
-                }else {
-                    int z = Integer.parseInt(xString) + Integer.parseInt(yString);
-                    zString = z + "";
-                    TextView valueZ = findViewById(R.id.Zvalue);
-                    textMessageSolve.setText("Solved");
-                    valueZ.setText(zString);
-                    zString = "";
-                }*/
             }
-            if (zString.length() > 0 && xString.length() > 0) {
-                if (isDecimal[2]==1 || isDecimal[0]==1) {
-                    double zz = Double.valueOf(zString);
-                    double xx = Double.valueOf(xString);
-                    double yy = zz - xx;
-                    yString = yy+"";
-                    TextView valueY = findViewById(R.id.Yvalue);
-                    textMessageSolve.setText("Solved");
-                    valueY.setText(yString);
-                }else {
-                    int y = Integer.parseInt(zString)-Integer.parseInt(xString);
-                    yString = y + "";
-                    TextView valueY = findViewById(R.id.Yvalue);
-                    textMessageSolve.setText("Solved");
-                    valueY.setText(yString);
-                } yString = "";
+            if (xString.length() > 0 && yString.length() == 0 && zString.length() > 0) {
+                String result = formula.Addition(xString, yString, zString, isDecimal[0], isDecimal[1], isDecimal[2]);
+                TextView valueY = findViewById(R.id.Yvalue);
+                valueY.setText(result);
             }
-            if (zString.length() > 0 && yString.length() > 0) {
-                if (isDecimal[2]==1 || isDecimal[1]==1) {
-                    double zz = Double.valueOf(zString);
-                    double yy = Double.valueOf(yString);
-                    double xx = zz - yy;
-                    xString = xx+"";
-                    TextView valueX = findViewById(R.id.Xvalue);
-                    textMessageSolve.setText("Solved");
-                    valueX.setText(xString);
-                    xString = "";
-                }else {
-                    int x = Integer.parseInt(zString)-Integer.parseInt(yString);
-                    xString = x + "";
-                    TextView valueX = findViewById(R.id.Xvalue);
-                    textMessageSolve.setText("Solved");
-                    valueX.setText(xString);
-                    xString = "";
-                }
+            if (xString.length() == 0 && yString.length() > 0 && zString.length() > 0) {
+                String result = formula.Addition(xString, yString, zString, isDecimal[0], isDecimal[1], isDecimal[2]);
+                TextView valueX = findViewById(R.id.Xvalue);
+                valueX.setText(result);
             }
         }
         if(subCategory.equals("subtract")) {
-            if (yString.length() > 0 && xString.length() > 0) {
-                if (isDecimal[0]==1 || isDecimal[1]==1) {
-                    double yy = Double.valueOf(yString);
-                    double xx = Double.valueOf(xString);
-                    double zz = xx-yy;
-                    zString = zz+"";
-                    TextView valueZ = findViewById(R.id.Zvalue);
-                    textMessageSolve.setText("Solved");
-                    valueZ.setText(zString);
-                    zString = "";
-                }else {
-                    int z = Integer.parseInt(xString) - Integer.parseInt(yString);
-                    zString = z + "";
-                    TextView valueZ = findViewById(R.id.Zvalue);
-                    textMessageSolve.setText("Solved");
-                    valueZ.setText(zString);
-                    zString = "";
-                }
+            if (xString.length() > 0 && yString.length() > 0 && zString.length() == 0) {
+                String result = formula.Subtraction(xString, yString, zString, isDecimal[0], isDecimal[1], isDecimal[2]);
+                TextView valueZ = findViewById(R.id.Zvalue);
+                valueZ.setText(result);
             }
-            if (zString.length() > 0 && xString.length() > 0) {
-                if (isDecimal[2]==1 || isDecimal[0]==1) {
-                    double zz = Double.valueOf(zString);
-                    double xx = Double.valueOf(xString);
-                    double yy = xx - zz;
-                    yString = yy+"";
-                    TextView valueY = findViewById(R.id.Yvalue);
-                    textMessageSolve.setText("Solved");
-                    valueY.setText(yString);
-                    yString = "";
-                }else {
-                    int y = Integer.parseInt(xString) - Integer.parseInt(zString);
-                    yString = y + "";
-                    TextView valueY = findViewById(R.id.Yvalue);
-                    textMessageSolve.setText("Solved");
-                    valueY.setText(yString);
-                    yString = "";
-                }
+            if (xString.length() > 0 && yString.length() == 0 && zString.length() > 0) {
+                String result = formula.Subtraction(xString, yString, zString, isDecimal[0], isDecimal[1], isDecimal[2]);
+                TextView valueY = findViewById(R.id.Yvalue);
+                valueY.setText(result);
             }
-            if (zString.length() > 0 && yString.length() > 0) {
-                if (isDecimal[2]==1 || isDecimal[1]==1) {
-                    double zz = Double.valueOf(zString);
-                    double yy = Double.valueOf(yString);
-                    double xx = zz + yy;
-                    xString = xx+"";
-                    TextView valueX = findViewById(R.id.Xvalue);
-                    textMessageSolve.setText("Solved");
-                    valueX.setText(xString);
-                    xString = "";
-                }else {
-                    int x = Integer.parseInt(zString)+Integer.parseInt(yString);
-                    xString = x + "";
-                    TextView valueX = findViewById(R.id.Xvalue);
-                    textMessageSolve.setText("Solved");
-                    valueX.setText(xString);
-                    xString = "";
-                }
+            if (xString.length() == 0 && yString.length() > 0 && zString.length() > 0) {
+                String result = formula.Subtraction(xString, yString, zString, isDecimal[0], isDecimal[1], isDecimal[2]);
+                TextView valueX = findViewById(R.id.Xvalue);
+                valueX.setText(result);
             }
         }
         if(subCategory.equals("divide")) {
-            if (zString.length() == 0 && yString.length() > 0 && xString.length() > 0) {
-                if (Double.valueOf(xString)%Double.valueOf(yString)!=0) {
-                    double xx = Double.valueOf(xString);
-                    double yy = Double.valueOf(yString);
-                    double zz = xx/yy;
-                    zString = zz + "";
-                    TextView valueZ = findViewById(R.id.Zvalue);
-                    valueZ.setText(zString);
-                    zString = "";
-                } else if (isDecimal[0]==1 || isDecimal[1]==1) {
-                    double xx = Double.valueOf(xString);
-                    double yy = Double.valueOf(yString);
-                    double zz = xx/yy;
-                    zString = zz + "";
-                    TextView valueZ = findViewById(R.id.Zvalue);
-                    valueZ.setText(zString);
-                    zString = "";
-                } else {
-                    int z = Integer.parseInt(xString)/Integer.parseInt(yString);
-                    zString = z + "";
-                    TextView valueZ = findViewById(R.id.Zvalue);
-                    valueZ.setText(zString);
-                    zString = "";
-                }
-            }else if (zString.length() > 0 && yString.length() == 0 && xString.length() > 0) {
-                if (Double.valueOf(xString)%Double.valueOf(zString)!=0) {
-                    double xx = Double.valueOf(xString);
-                    double zz = Double.valueOf(zString);
-                    double yy = xx/zz;
-                    yString = yy + "";
-                    TextView valueY = findViewById(R.id.Yvalue);
-                    valueY.setText(yString);
-                    yString = "";
-                } else if (isDecimal[0]==1 || isDecimal[2]==1) {
-                    double xx = Double.valueOf(xString);
-                    double zz = Double.valueOf(zString);
-                    double yy = xx/zz;
-                    yString = yy + "";
-                    TextView valueY = findViewById(R.id.Yvalue);
-                    valueY.setText(yString);
-                    yString = "";
-                } else {
-                    int y = Integer.parseInt(xString)/Integer.parseInt(zString);
-                    yString = y + "";
-                    TextView valueY = findViewById(R.id.Yvalue);
-                    valueY.setText(yString);
-                    yString = "";
-                }
-            } else if (zString.length() > 0 && yString.length() > 0 && xString.length() == 0) {
-                if (isDecimal[2]==1 || isDecimal[1]==1) {
-                    double yy = Double.valueOf(yString);
-                    double zz = Double.valueOf(zString);
-                    double xx = zz*yy;
-                    xString = xx + "";
-                    TextView valueX = findViewById(R.id.Xvalue);
-                    valueX.setText(xString);
-                    xString="";
-                }else {
-                    int x = Integer.parseInt(zString)*Integer.parseInt(yString);
-                    xString = x + "";
-                    TextView valueX = findViewById(R.id.Xvalue);
-                    valueX.setText(xString);
-                    xString="";
-                }
-            } else {
-                TextView errorMessage = findViewById(R.id.message);
-                errorMessage.setText("Check your forumla as there sames to be an error");
+            if (xString.length() > 0 && yString.length() > 0 && zString.length() == 0) {
+                String result = formula.Division(xString, yString, zString, isDecimal[0], isDecimal[1], isDecimal[2]);
+                TextView valueZ = findViewById(R.id.Zvalue);
+                valueZ.setText(result);
+            }
+            if (xString.length() > 0 && yString.length() == 0 && zString.length() > 0) {
+                String result = formula.Division(xString, yString, zString, isDecimal[0], isDecimal[1], isDecimal[2]);
+                TextView valueY = findViewById(R.id.Yvalue);
+                valueY.setText(result);
+            }
+            if (xString.length() == 0 && yString.length() > 0 && zString.length() > 0) {
+                String result = formula.Division(xString, yString, zString, isDecimal[0], isDecimal[1], isDecimal[2]);
+                TextView valueX = findViewById(R.id.Xvalue);
+                valueX.setText(result);
             }
         }
         if(subCategory.equals("multiply")) {
-            if (zString.length() == 0 && yString.length() > 0 && xString.length() > 0) {
-                if (isDecimal[0] == 1 || isDecimal[1] == 1) {
-                    double yy = Double.valueOf(yString);
-                    double xx = Double.valueOf(xString);
-                    double zz = xx * yy;
-                    zString = zz + "";
-                    TextView valueZ = findViewById(R.id.Zvalue);
-                    valueZ.setText(zString);
-                    zString = "";
-                } else {
-                    int z = Integer.parseInt(xString) * Integer.parseInt(yString);
-                    zString = z + "";
-                    TextView valueZ = findViewById(R.id.Zvalue);
-                    valueZ.setText(zString);
-                    zString = "";
-                }
-            }else if (zString.length() > 0 && yString.length() == 0 && xString.length() > 0) {
-                if (Double.valueOf(zString) % Double.valueOf(xString) != 0) {
-                    double xx = Double.valueOf(xString);
-                    double zz = Double.valueOf(zString);
-                    double yy = zz / xx;
-                    yString = yy + "";
-                    TextView valueY = findViewById(R.id.Yvalue);
-                    valueY.setText(yString);
-                    yString = "";
-                } else if (isDecimal[0] == 1 || isDecimal[2] == 1) {
-                    double xx = Double.valueOf(xString);
-                    double zz = Double.valueOf(zString);
-                    double yy = zz / xx;
-                    yString = yy + "";
-                    TextView valueY = findViewById(R.id.Yvalue);
-                    valueY.setText(yString);
-                    yString = "";
-                } else {
-                    int y = Integer.parseInt(zString) / Integer.parseInt(xString);
-                    yString = y + "";
-                    TextView valueY = findViewById(R.id.Yvalue);
-                    valueY.setText(yString);
-                    yString = "";
-                }
-            }else if (zString.length() > 0 && yString.length() > 0 && xString.length() == 0) {
-                if (Double.valueOf(zString) % Double.valueOf(yString) != 0) {
-                    double yy = Double.valueOf(yString);
-                    double zz = Double.valueOf(zString);
-                    double xx = zz / yy;
-                    yString = xx + "";
-                    TextView valueX = findViewById(R.id.Xvalue);
-                    valueX.setText(xString);
-                    xString = "";
-                } else if (isDecimal[1] == 1 || isDecimal[2] == 1) {
-                    double yy = Double.valueOf(yString);
-                    double zz = Double.valueOf(zString);
-                    double xx = zz / yy;
-                    yString = xx + "";
-                    TextView valueX = findViewById(R.id.Xvalue);
-                    valueX.setText(xString);
-                    xString = "";
-                } else {
-                    int x = Integer.parseInt(zString) / Integer.parseInt(yString);
-                    xString = x + "";
-                    TextView valueX = findViewById(R.id.Xvalue);
-                    valueX.setText(xString);
-                    xString = "";
-                }
-            } else {
-                TextView errorMessage = findViewById(R.id.message);
-                errorMessage.setText("Check your forumla as there sames to be an error");
+            if (xString.length() > 0 && yString.length() > 0 && zString.length() == 0) {
+                String result = formula.Multiply(xString, yString, zString, isDecimal[0], isDecimal[1], isDecimal[2]);
+                TextView valueZ = findViewById(R.id.Zvalue);
+                valueZ.setText(result);
+            }
+            if (xString.length() > 0 && yString.length() == 0 && zString.length() > 0) {
+                String result = formula.Multiply(xString, yString, zString, isDecimal[0], isDecimal[1], isDecimal[2]);
+                TextView valueY = findViewById(R.id.Yvalue);
+                valueY.setText(result);
+            }
+            if (xString.length() == 0 && yString.length() > 0 && zString.length() > 0) {
+                String result = formula.Multiply(xString, yString, zString, isDecimal[0], isDecimal[1], isDecimal[2]);
+                TextView valueX = findViewById(R.id.Xvalue);
+                valueX.setText(result);
             }
         }
         if(subCategory.equals("Area2D")){
-            if(isDecimal[3] == 1 || isDecimal[4] == 1 || isDecimal[6] == 1){
-                String result1 = formula.Multiply(hString, wString, totalString, 1);
-                if(hString.length() > 0 && wString.length() > 0 && totalString.length() == 0){
-                    TextView TotalText = findViewById(R.id.Totvalue);
-                    TotalText.setText(result1);
-                    totalString = "";
-                }else if(hString.length() > 0 && wString.length() == 0 && totalString.length() > 0){
-                    TextView wText = findViewById(R.id.Wvalue);
-                    wText.setText(result1);
-                    wString = "";
-                }else if(hString.length() == 0 && wString.length() > 0 && totalString.length() > 0){
-                    TextView hText = findViewById(R.id.Hvalue);
-                    hText.setText(result1);
-                    hString = "";
+            if(hString.length() > 0 && wString.length() > 0 && totalString.length() == 0){
+                String result = formula.Multiply(hString, wString, totalString, isDecimal[3], isDecimal[4],isDecimal[6]);
+                TextView TotalText = findViewById(R.id.Totvalue);
+                TotalText.setText(result);
+            }else if(hString.length() > 0 && wString.length() == 0 && totalString.length() > 0){
+                String result = formula.Multiply(hString, wString, totalString, isDecimal[3], isDecimal[4],isDecimal[6]);
+                TextView wText = findViewById(R.id.Wvalue);
+                wText.setText(result);
                 }
-            }else{
-                String result2 = formula.Multiply(hString, wString, totalString, 0);
-                if(hString.length() > 0 && wString.length() > 0 && totalString.length() == 0){
-                    TextView TotalText = findViewById(R.id.Totvalue);
-                    TotalText.setText(result2);
-                    totalString = "";
-                }else if(hString.length() > 0 && wString.length() == 0 && totalString.length() > 0){
-                    TextView wText = findViewById(R.id.Wvalue);
-                    wText.setText(result2);
-                    wString = "";
-                }else if(hString.length() == 0 && wString.length() > 0 && totalString.length() > 0){
-                    TextView hText = findViewById(R.id.Hvalue);
-                    hText.setText(result2);
-                    hString = "";
+            else if(hString.length() == 0 && wString.length() > 0 && totalString.length() > 0){
+                String result = formula.Multiply(hString, wString, totalString, isDecimal[3], isDecimal[4],isDecimal[6]);
+                TextView hText = findViewById(R.id.Hvalue);
+                hText.setText(result);
                 }
             }
         }
@@ -912,7 +704,7 @@ public class Emulator extends AppCompatActivity {
 
     public void setFormulaText(String sub){
         resetUI();
-        LinearLayout mainBasic = findViewById(R.id.basicFormulas);
+        LinearLayout mainBasic = findViewById(R.id.Basic);
         LinearLayout main23DArea = findViewById(R.id.Area23DFormulas);
         LinearLayout mainExponent = findViewById(R.id.ExponentFormula);
         LinearLayout mainCustom = findViewById(R.id.CustomFormula);
@@ -994,4 +786,4 @@ public class Emulator extends AppCompatActivity {
             textMessageSub.setText("Check your formula");
         }
     }
-}//994
+}//805

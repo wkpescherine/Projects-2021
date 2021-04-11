@@ -5,8 +5,18 @@ import android.widget.TextView;
 public class Formula {
     private static String t1;
 
-    public String Addition(String value1, String value2, String value3){
-        if(isDecimal == 0){
+    public String Addition(String value1, String value2, String value3, int a, int b, int c){
+        if(a == 1 || b == 1 || c ==1){
+            if (value1.equals("")) {
+                t1 = (Double.valueOf(value3) - Double.valueOf(value2)) + "";
+            }
+            if (value2.equals("")) {
+                t1 = (Double.valueOf(value3) - Double.valueOf(value1)) + "";
+            }
+            if (value3.equals("")) {
+                t1 = (Double.valueOf(value1) + Double.valueOf(value2)) + "";
+            }
+        } else {
             if(value1.equals("")){
                 t1 = (Integer.parseInt(value3)-Integer.parseInt(value2))+"";
             }
@@ -16,24 +26,80 @@ public class Formula {
             if(value3.equals("")){
                 t1 = (Integer.parseInt(value1)+Integer.parseInt(value2))+"";
             }
+        }
+        return t1;
+    }
+
+    public String Subtraction(String value1, String value2, String value3, int a, int b, int c){
+        if(a == 1 || b == 1 || c ==1){
+            if (value1.equals("")) {
+                t1 = (Double.valueOf(value3) + Double.valueOf(value2)) + "";
+            }
+            if (value2.equals("")) {
+                t1 = (Double.valueOf(value1) - Double.valueOf(value3)) + "";
+            }
+            if (value3.equals("")) {
+                t1 = (Double.valueOf(value1) - Double.valueOf(value2)) + "";
+            }
         } else {
-            if (isDecimal == 1) {
-                if (value1.equals("")) {
-                    t1 = (Double.valueOf(value3) - Double.valueOf(value2)) + "";
+            if(value1.equals("")){
+                t1 = (Integer.parseInt(value3)+Integer.parseInt(value2))+"";
+            }
+            if(value2.equals("")){
+                t1 = (Integer.parseInt(value1)-Integer.parseInt(value3))+"";
+            }
+            if(value3.equals("")){
+                t1 = (Integer.parseInt(value1)-Integer.parseInt(value2))+"";
+            }
+        }
+        return t1;
+    }
+
+    public String Division(String value1, String value2, String value3, int a, int b, int c){
+        if(a == 1 || b == 1 || c ==1){
+            if (value1.equals("")) {
+                t1 = (Double.valueOf(value3) * Double.valueOf(value2)) + "";
+            }
+            if (value2.equals("")) {
+                t1 = (Double.valueOf(value1) / Double.valueOf(value3)) + "";
+            }
+            if (value3.equals("")) {
+                t1 = (Double.valueOf(value1) / Double.valueOf(value2)) + "";
+            }
+        } else {
+            if(value1.equals("")){
+                t1 = (Integer.parseInt(value3)*Integer.parseInt(value2))+"";
+            }
+            if(value2.equals("")){
+                if(Double.valueOf(value1)%Double.valueOf(value3) != 0){
+                    t1 = (Double.valueOf(value1)/Double.valueOf(value3))+"";
+                }else{
+                    t1 = (Integer.parseInt(value1)/Integer.parseInt(value3))+"";
                 }
-                if (value2.equals("")) {
-                    t1 = (Double.valueOf(value3) - Double.valueOf(value1)) + "";
-                }
-                if (value3.equals("")) {
-                    t1 = (Double.valueOf(value1) + Double.valueOf(value2)) + "";
+            }
+            if(value3.equals("")){
+                if(Double.valueOf(value1)%Double.valueOf(value2) != 0){
+                    t1 = (Double.valueOf(value1)/Double.valueOf(value2))+"";
+                }else{
+                    t1 = (Integer.parseInt(value1)/Integer.parseInt(value2))+"";
                 }
             }
         }
         return t1;
     }
 
-    static String Multiply(String value1, String value2, String value3, int  decimal){
-        if(decimal == 0){
+    static String Multiply(String value1, String value2, String value3, int a, int b, int c){
+        if(a == 1 || b == 1 || c ==1){
+            if(value3.equals("")){
+                t1 = (Double.valueOf(value1))*(Double.valueOf(value2))+"";
+            }
+            if(value2.equals("")){
+                t1 = (Double.valueOf(value3))/(Double.valueOf(value1))+"";
+            }
+            if(value1.equals("")){
+                t1 = (Double.valueOf(value3))/(Double.valueOf(value2))+"";
+            }
+        }else{
             if(value3.equals("")){
                 t1 = (Integer.parseInt(value1))*(Integer.parseInt(value2))+"";
             }
@@ -50,16 +116,6 @@ public class Formula {
                 }else {
                     t1 = Integer.parseInt(value3) / Integer.parseInt(value2) + "";
                 }
-            }
-        }else{
-            if(value3.equals("")){
-                t1 = (Double.valueOf(value1))*(Double.valueOf(value2))+"";
-            }
-            if(value2.equals("")){
-                t1 = (Double.valueOf(value3))/(Double.valueOf(value1))+"";
-            }
-            if(value1.equals("")){
-                t1 = (Double.valueOf(value3))/(Double.valueOf(value2))+"";
             }
         }
         return  t1;
@@ -138,4 +194,4 @@ public class Formula {
         t1 = (3.16*(Double.valueOf(value1)*Double.valueOf(value1)))+"";
         return t1;
     }
-}//141
+}//197

@@ -9,6 +9,7 @@
     android:orientation="vertical"
     android:background="#000">
 
+    <!--  FORMULAS  -->
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="200dp"
@@ -19,7 +20,7 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:visibility="invisible"
-            android:id="@+id/basicFormulas">
+            android:id="@+id/Basic">
             <TextView
                 android:id="@+id/Xvalue"
                 android:layout_width="wrap_content"
@@ -546,24 +547,31 @@
         android:layout_height="wrap_content"
         android:fillViewport="true">
         <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/calculusSub"
-        android:visibility="gone">
-        <Button
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"
-            android:text="Pythahorean"
-            android:textColor="#fff"
-            android:textSize="16dp" />
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"
-            android:text="Triangle 90"
-            android:textColor="#fff"
-            android:textSize="16dp" />
+            android:id="@+id/calculusSub"
+            android:visibility="gone">
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="Pythahorean"
+                android:textColor="#fff"
+                android:textSize="16dp" />
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="Derivative"
+                android:textColor="#fff"
+                android:textSize="16dp" />
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="Triangle 90"
+                android:textColor="#fff"
+                android:textSize="16dp" />
     </LinearLayout>
     </HorizontalScrollView>
 
@@ -594,7 +602,7 @@
     </LinearLayout>
     </HorizontalScrollView>
 
-    <!--   GEOMETRY SUB SECTIONS-->
+    <!-- GEOMETRY SUB SECTIONS-->
     <HorizontalScrollView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -622,4 +630,4 @@
             android:onClick="AreaCircle"/>
     </LinearLayout>
     </HorizontalScrollView>
-</LinearLayout><!--  625  -->
+</LinearLayout><!--  633  -->
