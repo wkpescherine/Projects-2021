@@ -44,17 +44,9 @@ public class Emulator extends AppCompatActivity {
         getSupportActionBar().hide();
     }
 
-    public void num1(View v) {
-        setValues("1");
-    }
-
-    public void num2(View v) {
-        setValues("2");
-    }
-
-    public void num3(View v) {
-        setValues("3");
-    }
+    public void num1(View v) { setValues("1"); }
+    public void num2(View v) { setValues("2"); }
+    public void num3(View v) { setValues("3"); }
 
     public void num4(View v) {
         setValues("4");

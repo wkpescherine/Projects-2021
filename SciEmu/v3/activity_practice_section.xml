@@ -56,50 +56,50 @@
                 <TextView
                     android:id="@+id/val1"
                     android:text="1"
-                    android:layout_width="90dp"
-                    android:layout_height="90dp"
+                    android:layout_width="72dp"
+                    android:layout_height="72dp"
                     android:textColor="#fff"
                     android:gravity="center"
                     android:textSize="32dp"
                     android:onClick="num1"/>
                 <TextView
                     android:text="2"
-                    android:layout_width="90dp"
-                    android:layout_height="90dp"
+                    android:layout_width="72dp"
+                    android:layout_height="72dp"
                     android:textColor="#fff"
                     android:gravity="center"
                     android:textSize="32dp"
                     android:onClick="num2"/>
                 <TextView
                     android:text="3"
-                    android:layout_width="90dp"
-                    android:layout_height="90dp"
+                    android:layout_width="72dp"
+                    android:layout_height="72dp"
                     android:textColor="#fff"
                     android:gravity="center"
                     android:textSize="32dp"
                     android:onClick="num3"/>
                 <TextView
                     android:text="4"
-                    android:layout_width="90dp"
-                    android:layout_height="90dp"
+                    android:layout_width="72dp"
+                    android:layout_height="72dp"
                     android:textColor="#fff"
                     android:gravity="center"
                     android:textSize="32dp"
                     android:onClick="num4"/>
+                <TextView
+                    android:id="@+id/val5"
+                    android:text="5"
+                    android:layout_width="72dp"
+                    android:layout_height="72dp"
+                    android:textColor="#fff"
+                    android:gravity="center"
+                    android:textSize="32dp"
+                    android:onClick="num5"/>
             </TableRow>
             <TableRow
                 android:id="@+id/row2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
-                <TextView
-                    android:id="@+id/val5"
-                    android:text="5"
-                    android:layout_width="90dp"
-                    android:layout_height="90dp"
-                    android:textColor="#fff"
-                    android:gravity="center"
-                    android:textSize="32dp"
-                    android:onClick="num5"/>
                 <TextView
                     android:text="6"
                     android:layout_width="90dp"
@@ -176,8 +176,16 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/startButton"
-        android:text="STart"
+        android:text="Start"
         android:textAlignment="center"
         android:onClick="startTest"/>
 
-</LinearLayout><!--  183  -->
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/backToEmulator"
+        android:text="BacktoEmulator"
+        android:textAlignment="center"
+        android:onClick="backToEmulator"/>
+
+</LinearLayout><!--  191  -->

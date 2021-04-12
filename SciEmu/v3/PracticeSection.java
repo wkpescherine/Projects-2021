@@ -2,6 +2,7 @@ package com.example.sciemu;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
@@ -11,7 +12,12 @@ import android.widget.TextView;
 import java.util.Random;
 
 public class PracticeSection extends AppCompatActivity {
+    SolvePractice solution = new SolvePractice();
+
+    int score = 0;
     int level = 0;
+    String answer = "";
+    int total = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,6 +26,18 @@ public class PracticeSection extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         getSupportActionBar().hide();
+    }
+
+    public void num1(View v) { setAnswer("1"); }
+    public void num2(View v) { setAnswer("2"); }
+    public void num3(View v) { setAnswer("3"); }
+    public void num4(View v) { setAnswer("4"); }
+    public void num5(View v) { setAnswer("5"); }
+
+    public void setAnswer(String value){
+        TextView answerText = findViewById(R.id.answer);
+        answer += value;
+        answerText.setText(answer);
     }
 
     public void startTest(View v){
@@ -40,18 +58,29 @@ public class PracticeSection extends AppCompatActivity {
         operation = equationBasic[rand.nextInt(3)];
         TextView questionText = findViewById(R.id.question);
         questionText.setText(x +" " + operation+" " +y);
+        total = solution.Solution(x,y,operation);
     }
 
     public void checkAnswer(View v){
-        TextView question2solve = findViewById(R.id.question);
-        String qString = question2solve.getText().toString();
-        String [] splitQ = qString.split(" ");
-        int xSub = Integer.parseInt(splitQ[0]);
-        int ySub = Integer.parseInt(splitQ[2]);
-        int totalSub = 0;
-        if(splitQ[1].equals("+")){totalSub = xSub+ySub;};
-        if(splitQ[1].equals("-")){totalSub = xSub-ySub;};
-        if(splitQ[1].equals("*")){totalSub = xSub*ySub;};
-        if(splitQ[1].equals("/")){totalSub = xSub/ySub;};
+        TextView scoreText = findViewById(R.id.score);
+        TextView answerText = findViewById(R.id.answer);
+        if(total == Integer.parseInt(answer)){
+            score +=1 ;
+            scoreText.setText(score+"");
+            answerText.setText("Answer");
+            answer = "";
+            buildEquation();
+        }else {
+            score -= 1 ;
+            scoreText.setText(score+"");
+            answerText.setText("Answer");
+            answer = "";
+            buildEquation();
+        }
     }
-}//57
+
+    public void backToEmulator(View v){
+        Intent intent = new Intent(this, Emulator.class);
+        startActivity(intent);
+    }
+}//86
