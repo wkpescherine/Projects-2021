@@ -121,8 +121,21 @@ public class Formula {
         return  t1;
     }
 
-    static String Area3(String value1, String value2 , String value3, String value4, int decimal){
-        if( decimal == 0){
+    static String Cube(String value1, String value2 , String value3, String value4, int a, int b, int c, int d){
+        if( a == 1 || b == 1 || c == 1 || d == 1){
+            if(value4.equals("")){
+                t1 = (Double.valueOf(value1))*(Double.valueOf(value2))*(Double.valueOf(value3))+"";
+            }
+            if(value3.equals("")){
+                t1 = (Double.valueOf(value4)/Double.valueOf(value1)*Double.valueOf(value2))+"";
+            }
+            if(value2.equals("")){
+                t1 = (Double.valueOf(value4)/Double.valueOf(value1)*Double.valueOf(value3))+ "";
+            }
+            if(value1.equals("")){
+                t1 = (Double.valueOf(value4)/Double.valueOf(value2)*Double.valueOf(value3))+ "";
+            }
+        }else{
             if(value4.equals("")){
                 t1 = Integer.parseInt(value1)*Integer.parseInt(value2)*Integer.parseInt(value3)+"";
             }
@@ -146,19 +159,6 @@ public class Formula {
                 }else {
                     t1 = (Integer.parseInt(value4) / Integer.parseInt(value2) * Integer.parseInt(value3)) + "";
                 }
-            }
-        }else{
-            if(value4.equals("")){
-                t1 = (Double.valueOf(value1))*(Double.valueOf(value2))*(Double.valueOf(value3))+"";
-            }
-            if(value3.equals("")){
-                t1 = (Double.valueOf(value4)/Double.valueOf(value1)*Double.valueOf(value2))+"";
-            }
-            if(value2.equals("")){
-                t1 = (Double.valueOf(value4)/Double.valueOf(value1)*Double.valueOf(value3))+ "";
-            }
-            if(value1.equals("")){
-                t1 = (Double.valueOf(value4)/Double.valueOf(value2)*Double.valueOf(value3))+ "";
             }
         }
         return t1;

@@ -526,18 +526,18 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
-            android:text="2D Area"
+            android:text="Square"
             android:textColor="#fff"
             android:textSize="16dp"
-            android:onClick="Area2D"/>
+            android:onClick="Square"/>
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
-            android:text="3D Area"
+            android:text="Cube"
             android:textColor="#fff"
             android:textSize="16dp"
-            android:onClick="Area3D"/>
+            android:onClick="Cube"/>
     </LinearLayout>
     </HorizontalScrollView>
 
