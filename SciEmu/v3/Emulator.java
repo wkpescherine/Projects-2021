@@ -138,31 +138,26 @@ public class Emulator extends AppCompatActivity {
         TextView textMessageZ = findViewById(R.id.message);
         textMessageZ.setText("Focus on z selected");
     }
-
     public void focusH(View v) {
         focus = "H";
         TextView textMessageH = findViewById(R.id.message);
         textMessageH.setText("Focus on h selected");
     }
-
     public void focusW(View v) {
         focus = "W";
         TextView textMessageW = findViewById(R.id.message);
         textMessageW.setText("Focus on w selected");
     }
-
     public void focusD(View v) {
         focus = "D";
         TextView textMessageW = findViewById(R.id.message);
         textMessageW.setText("Focus on D selected");
     }
-
     public void focusRadius(View v) {
         focus = "radius";
         TextView textMessageW = findViewById(R.id.message);
         textMessageW.setText("Focus on Radius selected");
     }
-
     public void focusTot(View v) {
         focus = "total";
         TextView textMessageW = findViewById(R.id.message);
@@ -478,6 +473,9 @@ public class Emulator extends AppCompatActivity {
         subCategory = "custom";
         setFormulaText(subCategory);
     }
+    public void displayTrig(View v){
+        displaySubs(6);
+    }
 
     public void setAddition(View v) {
         subCategory = "add";
@@ -522,11 +520,13 @@ public class Emulator extends AppCompatActivity {
         LinearLayout layout3 = findViewById(R.id.calculusSub);
         LinearLayout layout4 = findViewById(R.id.physicsSub);
         LinearLayout layout5 = findViewById(R.id.geometrySub);
+        LinearLayout layout6 = findViewById(R.id.trigSub);
         layout1.setVisibility(View.GONE);
         layout2.setVisibility(View.GONE);
         layout3.setVisibility(View.GONE);
         layout4.setVisibility(View.GONE);
         layout5.setVisibility(View.GONE);
+        layout6.setVisibility(View.GONE);
         switch (num) {
             case 1:
                 layout1.setVisibility(View.VISIBLE);
@@ -542,6 +542,9 @@ public class Emulator extends AppCompatActivity {
                 break;
             case 5:
                 layout5.setVisibility(View.VISIBLE);
+                break;
+            case 6:
+                layout6.setVisibility(View.VISIBLE);
                 break;
         }
     }
@@ -804,4 +807,4 @@ public class Emulator extends AppCompatActivity {
             textMessageSub.setText("Check your formula");
         }
     }
-}//807
+}//810

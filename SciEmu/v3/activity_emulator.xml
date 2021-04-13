@@ -436,6 +436,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
+                android:text="Trigonometry"
+                android:textColor="#fff"
+                android:textSize="8dp"
+                android:onClick="displayTrig"/>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
                 android:text="Calculus"
                 android:textColor="#fff"
                 android:textSize="8dp"
@@ -630,4 +638,39 @@
             android:onClick="AreaCircle"/>
     </LinearLayout>
     </HorizontalScrollView>
-</LinearLayout><!--  633  -->
+
+    <!-- TRIG SUB SECTIONS-->
+    <HorizontalScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fillViewport="true">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/trigSub"
+            android:visibility="gone">
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="Sin"
+                android:textColor="#fff"
+                android:textSize="8dp" />
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="Cos"
+                android:textColor="#fff"
+                android:textSize="8dp" />
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="Tan"
+                android:textColor="#fff"
+                android:textSize="8dp" />
+        </LinearLayout>
+    </HorizontalScrollView>
+
+</LinearLayout><!--  676  -->
