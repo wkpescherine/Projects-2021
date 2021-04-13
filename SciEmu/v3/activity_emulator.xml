@@ -455,7 +455,7 @@
                 android:text="Custom"
                 android:textColor="#fff"
                 android:textSize="8dp"
-                android:onClick="displayCustom"/>
+                android:onClick="displayCustom" />
         </LinearLayout>
     </HorizontalScrollView>
 

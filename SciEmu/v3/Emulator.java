@@ -47,39 +47,30 @@ public class Emulator extends AppCompatActivity {
     public void num1(View v) { setValues("1"); }
     public void num2(View v) { setValues("2"); }
     public void num3(View v) { setValues("3"); }
-
     public void num4(View v) {
         setValues("4");
     }
-
     public void num5(View v) {
         setValues("5");
     }
-
     public void num6(View v) {
         setValues("6");
     }
-
     public void num7(View v) {
         setValues("7");
     }
-
     public void num8(View v) {
         setValues("8");
     }
-
     public void num9(View v) {
         setValues("9");
     }
-
     public void num0(View v) {
         setValues("0");
     }
-
     public void del(View v) {
         specialFunc("del");
     }
-
     public void decimal(View v) {
         if (focus.equals("X") && isDecimal[0] != 1) {
             setValues(".");
@@ -113,41 +104,35 @@ public class Emulator extends AppCompatActivity {
             setValues(".");
             isDecimal[7] = 1;
         }
-        if (focus.equals("custom") && isDecimal[9] != 1) {
+        /*if (focus.equals("custom") && isDecimal[9] != 1) {
             setValues(".");
             isDecimal[9] = 1;
-        }
+        }*/
         if (focus.equals("Radius") && isDecimal[10] != 1) {
             setValues(".");
             isDecimal[10] = 1;
         }
     }
-
     public void plus(View v) {
         setValues("+");
     }
-
     public void minus(View v) {
         setValues("-");
     }
-
     public void multi(View v) {
         setValues("*");
     }
-
 
     public void focusX(View v) {
         focus = "X";
         TextView textMessageX = findViewById(R.id.message);
         textMessageX.setText("Focus on x selected");
     }
-
     public void focusY(View v) {
         focus = "Y";
         TextView textMessageY = findViewById(R.id.message);
         textMessageY.setText("Focus on y selected");
     }
-
     public void focusZ(View v) {
         focus = "Z";
         TextView textMessageZ = findViewById(R.id.message);
@@ -173,7 +158,7 @@ public class Emulator extends AppCompatActivity {
     }
 
     public void focusRadius(View v) {
-        focus = "Radius";
+        focus = "radius";
         TextView textMessageW = findViewById(R.id.message);
         textMessageW.setText("Focus on Radius selected");
     }
@@ -309,7 +294,7 @@ public class Emulator extends AppCompatActivity {
         TextView eText = findViewById(R.id.expSuper);
         TextView evText = findViewById(R.id.expValue);
         TextView t1Text = findViewById(R.id.Totvalue);
-        TextView customText = findViewById(R.id.custom);
+        TextView customText = findViewById(R.id.Custom);
         TextView radiusText = findViewById(R.id.Radius);
         if (func.equals("del")) {
             if (focus.equals("X") && xString.length() > 0) {
@@ -447,20 +432,14 @@ public class Emulator extends AppCompatActivity {
                 eText.setText("exp");
             }
 
-            if (focus.equals("custom") && customString.length() > 0) {
-                String customLastChar = customString.charAt(expString.length() - 1) + "";
-                if (customLastChar.equals(".")) {
-                    isDecimal[9] = 0;
-                    customString = customString.substring(0, (customString.length()) - 1);
-                    eText.setText(expString);
-                } else if (focus.equals("custom") && (customString.length() > 0)) {
-                    customString = customString.substring(0, (customString.length()) - 1);
-                    customText.setText(customString);
+            if(focus.equals("custom") && customString.length()>0){
+                customString = customString.substring(0,(customString.length())-1);
+                customText.setText(customString);
+                String customLastChar = customString.charAt(customString.length() - 1) + "";
+                if(customLastChar.equals("+") || customLastChar.equals("-") || customLastChar.equals("8")){
+                    customString = customString.substring(0,(customString.length())-1);
                 }
-            }
-            /*
-            if(customString.length() == 0){
-                customText.setText("");
+                customText.setText(customString);
             }
 
             if (focus.equals("radius") && radius.length() > 0) {
@@ -475,30 +454,25 @@ public class Emulator extends AppCompatActivity {
             }
             if(radius.length() == 0){
                 radiusText.setText("radius");
-            }*/
+            }
         }
     }
 
     public void displayBasic(View v) {
         displaySubs(1);
     }
-
     public void displayAlgebra(View v) {
         displaySubs(2);
     }
-
     public void displayCalculus(View v) {
         displaySubs(3);
     }
-
     public void displayPhysics(View v) {
         displaySubs(4);
     }
-
     public void displayGeometry(View v) {
         displaySubs(5);
     }
-
     public void displayCustom(View v) {
         focus = "custom";
         subCategory = "custom";
@@ -509,42 +483,34 @@ public class Emulator extends AppCompatActivity {
         subCategory = "add";
         setFormulaText(subCategory);
     }
-
     public void setSubtraction(View v) {
         subCategory = "subtract";
         setFormulaText(subCategory);
     }
-
     public void setDivision(View v) {
         subCategory = "divide";
         setFormulaText(subCategory);
     }
-
     public void setMultiplication(View v) {
         subCategory = "multiply";
         setFormulaText(subCategory);
     }
-
     public void Square(View v) {
         subCategory = "square";
         setFormulaText(subCategory);
     }
-
     public void Cube(View v) {
         subCategory = "cube";
         setFormulaText(subCategory);
     }
-
     public void setExponent(View v) {
         subCategory = "Exponent";
         setFormulaText(subCategory);
     }
-
     public void AreaTriangle(View v) {
         subCategory = "AreaTriangle";
         setFormulaText(subCategory);
     }
-
     public void AreaCircle(View v) {
         subCategory = "AreaCircle";
         setFormulaText(subCategory);
@@ -838,4 +804,4 @@ public class Emulator extends AppCompatActivity {
             textMessageSub.setText("Check your formula");
         }
     }
-}//849
+}//807
