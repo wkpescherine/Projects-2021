@@ -1,6 +1,7 @@
 package com.example.sciemu;
 
 import android.widget.TextView;
+import java.util.*;
 
 public class Formula {
     private static String t1;
@@ -195,15 +196,16 @@ public class Formula {
         return t1;
     }
 
-    static String SCTsolve(String value1, String mathType){
+    static String SCTSolve(String value1, String mathType){
         if(mathType.equals("sin")){
-            t1 =
+            t1 =(Math.sin(Math.toRadians(Double.valueOf(value1))))+"";
         }
         if(mathType.equals("cos")){
-
+            t1 =(Math.cos(Math.toRadians(Double.valueOf(value1))))+"";
         }
         if(mathType.equals("tan")){
-
+            t1 =(Math.tan(Math.toRadians(Double.valueOf(value1))))+"";
         }
+        return t1;
     }
-}//209
+}//211
