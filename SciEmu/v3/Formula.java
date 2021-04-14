@@ -194,4 +194,16 @@ public class Formula {
         t1 = (3.16*(Double.valueOf(value1)*Double.valueOf(value1)))+"";
         return t1;
     }
-}//197
+
+    static String SCTsolve(String value1, String mathType){
+        if(mathType.equals("sin")){
+            t1 =
+        }
+        if(mathType.equals("cos")){
+
+        }
+        if(mathType.equals("tan")){
+
+        }
+    }
+}//209

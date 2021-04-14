@@ -169,6 +169,11 @@ public class Emulator extends AppCompatActivity {
         TextView textMessageW = findViewById(R.id.message);
         textMessageW.setText("Focus on Exponent Value");
     }
+    public void focusDegree(View v){
+        focus = "degree";
+        TextView textMessageW = findViewById(R.id.message);
+        textMessageW.setText("Focus is on Degrees");
+    }
 
     public void focusEXPSUP(View v) {
         focus = "expSuper";
@@ -273,6 +278,14 @@ public class Emulator extends AppCompatActivity {
             TextView valueRadius = findViewById(R.id.Radius);
             radius = val + "";
             valueRadius.setText(radius);
+        } else if (focus.equals("degree") && data.degree.length() != 0) {
+            TextView valueDegree = findViewById(R.id.Degree);
+            data.degree += val;
+            valueDegree.setText(data.degree);
+        } else if (focus.equals("degree") && data.degree.length() == 0) {
+            TextView valueDegree = findViewById(R.id.Degree);
+            data.degree = val + "";
+            valueDegree.setText(data.degree);
         } else {
             TextView textMessageX = findViewById(R.id.message);
             textMessageX.setText("ERROR!!!");
@@ -291,6 +304,7 @@ public class Emulator extends AppCompatActivity {
         TextView t1Text = findViewById(R.id.Totvalue);
         TextView customText = findViewById(R.id.Custom);
         TextView radiusText = findViewById(R.id.Radius);
+        TextView degreeText = findViewById(R.id.Degree);
         if (func.equals("del")) {
             if (focus.equals("X") && xString.length() > 0) {
                 String xLastChar = xString.charAt(xString.length() - 1) + "";
@@ -450,6 +464,14 @@ public class Emulator extends AppCompatActivity {
             if(radius.length() == 0){
                 radiusText.setText("radius");
             }
+
+            if (focus.equals("degree") && data.degree.length() > 0) {
+                data.degree = data.degree.substring(0, (data.degree.length()) - 1);
+                eText.setText(data.degree);
+            }
+            if(data.degree.length() == 0){
+                radiusText.setText("degree");
+            }
         }
     }
 
@@ -468,13 +490,13 @@ public class Emulator extends AppCompatActivity {
     public void displayGeometry(View v) {
         displaySubs(5);
     }
+    public void displayTrig(View v){
+        displaySubs(6);
+    }
     public void displayCustom(View v) {
         focus = "custom";
         subCategory = "custom";
         setFormulaText(subCategory);
-    }
-    public void displayTrig(View v){
-        displaySubs(6);
     }
 
     public void setAddition(View v) {
@@ -511,6 +533,18 @@ public class Emulator extends AppCompatActivity {
     }
     public void AreaCircle(View v) {
         subCategory = "AreaCircle";
+        setFormulaText(subCategory);
+    }
+    public void setSin(View v){
+        subCategory ="sin";
+        setFormulaText(subCategory);
+    }
+    public void setCos(View v){
+        subCategory ="sin";
+        setFormulaText(subCategory);
+    }
+    public void setTan(View v){
+        subCategory ="sin";
         setFormulaText(subCategory);
     }
 
@@ -678,6 +712,11 @@ public class Emulator extends AppCompatActivity {
             TextView circleAreaTotal = findViewById(R.id.CircleTotvalue);
             circleAreaTotal.setText(result);
         }
+        if(subCategory.equals("sin") || subCategory.equals("cos") || subCategory.equals("tan")){
+            String result = formula.SCTsolve(data.degree, subCategory);
+            TextView randiansTotal = findViewById(R.id.radians);
+            randiansTotal.setText(result);
+        }
     }
 
     public void resetUI(){
@@ -688,6 +727,7 @@ public class Emulator extends AppCompatActivity {
         wString = "";
         dString = "";
         radius = "";
+        data.degree = "";
         expValueString = "";
         expString ="";
         totalString = "";
@@ -712,6 +752,8 @@ public class Emulator extends AppCompatActivity {
         totTextString.setText("Total");
         TextView radiusTextString = findViewById(R.id.Radius);
         radiusTextString.setText("radius");
+        TextView degreeTextString = findViewById(R.id.Radius);
+        degreeTextString.setText("degree");
     }
 
     public void setFormulaText(String sub){
@@ -721,6 +763,7 @@ public class Emulator extends AppCompatActivity {
         LinearLayout mainExponent = findViewById(R.id.ExponentFormula);
         LinearLayout mainCustom = findViewById(R.id.CustomFormula);
         LinearLayout mainCircle = findViewById(R.id.CircleFormula);
+        LinearLayout mainSCT = findViewById(R.id.sincostan);
         TextView sign1Text = findViewById(R.id.sign1);
         TextView textMessageSub = findViewById(R.id.message);
         textMessageSub.setText(subCategory);
@@ -730,6 +773,7 @@ public class Emulator extends AppCompatActivity {
             mainExponent.setVisibility(View.INVISIBLE);
             mainCustom.setVisibility(View.INVISIBLE);
             mainCircle.setVisibility(View.INVISIBLE);
+            mainSCT.setVisibility(View.INVISIBLE);
             sign1Text.setText("+");
             textMessageSub.setText("Addition selected");
         }else if(subCategory.equals("subtract")){
@@ -738,6 +782,7 @@ public class Emulator extends AppCompatActivity {
             mainExponent.setVisibility(View.INVISIBLE);
             mainCustom.setVisibility(View.INVISIBLE);
             mainCircle.setVisibility(View.INVISIBLE);
+            mainSCT.setVisibility(View.INVISIBLE);
             sign1Text.setText("-");
             textMessageSub.setText("Subtraction selected");
         }else if(subCategory.equals("divide")){
@@ -746,6 +791,7 @@ public class Emulator extends AppCompatActivity {
             mainExponent.setVisibility(View.INVISIBLE);
             mainCustom.setVisibility(View.INVISIBLE);
             mainCircle.setVisibility(View.INVISIBLE);
+            mainSCT.setVisibility(View.INVISIBLE);
             sign1Text.setText("/");
             textMessageSub.setText("Division Selected");
         }else if(subCategory.equals("multiply")){
@@ -754,6 +800,7 @@ public class Emulator extends AppCompatActivity {
             mainExponent.setVisibility(View.INVISIBLE);
             mainCustom.setVisibility(View.INVISIBLE);
             mainCircle.setVisibility(View.INVISIBLE);
+            mainSCT.setVisibility(View.INVISIBLE);
             sign1Text.setText("+");
             textMessageSub.setText("Multiplication Selected");
         }else if(subCategory.equals("square") || subCategory.equals("AreaTriangle")){
@@ -762,6 +809,7 @@ public class Emulator extends AppCompatActivity {
             mainExponent.setVisibility(View.INVISIBLE);
             mainCustom.setVisibility(View.INVISIBLE);
             mainCircle.setVisibility(View.INVISIBLE);
+            mainSCT.setVisibility(View.INVISIBLE);
             if(subCategory.equals("square")){
                 textMessageSub.setText("2D Area Selected");
             } else {
@@ -777,6 +825,7 @@ public class Emulator extends AppCompatActivity {
             mainExponent.setVisibility(View.INVISIBLE);
             mainCustom.setVisibility(View.INVISIBLE);
             mainCircle.setVisibility(View.INVISIBLE);
+            mainSCT.setVisibility(View.INVISIBLE);
             TextView sign2Text = findViewById(R.id.sign2);
             sign2Text.setVisibility(View.VISIBLE);
             TextView dTextString = findViewById(R.id.Dvalue);
@@ -788,6 +837,7 @@ public class Emulator extends AppCompatActivity {
             mainExponent.setVisibility(View.VISIBLE);
             mainCustom.setVisibility(View.INVISIBLE);
             mainCircle.setVisibility(View.INVISIBLE);
+            mainSCT.setVisibility(View.INVISIBLE);
             textMessageSub.setText("Exponent selected");
         } else if(subCategory.equals("AreaCircle")) {
             mainBasic.setVisibility(View.INVISIBLE);
@@ -795,6 +845,7 @@ public class Emulator extends AppCompatActivity {
             mainExponent.setVisibility(View.INVISIBLE);
             mainCustom.setVisibility(View.INVISIBLE);
             mainCircle.setVisibility(View.VISIBLE);
+            mainSCT.setVisibility(View.INVISIBLE);
             textMessageSub.setText("Circle Area Selected");
         } else if(subCategory.equals("custom")){
             mainBasic.setVisibility(View.INVISIBLE);
@@ -802,9 +853,25 @@ public class Emulator extends AppCompatActivity {
             mainExponent.setVisibility(View.INVISIBLE);
             mainCustom.setVisibility(View.VISIBLE);
             mainCircle.setVisibility(View.INVISIBLE);
+            mainSCT.setVisibility(View.INVISIBLE);
             textMessageSub.setText("Custom Selected");
-        }else {
+        } else if(subCategory.equals("Sin") || subCategory.equals("Cos") || subCategory.equals("Sin")){
+            TextView sctText = findViewById(R.id.SCT);
+            mainBasic.setVisibility(View.INVISIBLE);
+            main23DArea.setVisibility(View.INVISIBLE);
+            mainExponent.setVisibility(View.INVISIBLE);
+            mainCustom.setVisibility(View.INVISIBLE);
+            mainCircle.setVisibility(View.INVISIBLE);
+            mainSCT.setVisibility(View.VISIBLE);
+            if(subCategory.equals("sin")){
+                sctText.setText("sin");
+            }else if(subCategory.equals("cos")){
+                sctText.setText("cos");
+            }else{
+                sctText.setText("tan");
+            }
+        } else {
             textMessageSub.setText("Check your formula");
         }
     }
-}//810
+}//877

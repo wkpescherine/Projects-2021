@@ -4,4 +4,6 @@ public class DataConfig {
     String aString ="";
     String bString ="";
     String cString ="";
-}//7
+    String degree = "";
+    String radians = "";
+}//9
