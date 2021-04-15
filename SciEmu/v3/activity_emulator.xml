@@ -695,22 +695,25 @@
                 android:layout_marginLeft="5dp"
                 android:text="Sin"
                 android:textColor="#fff"
-                android:textSize="8dp" />
+                android:textSize="8dp"
+                android:onClick="setSin"/>
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
                 android:text="Cos"
                 android:textColor="#fff"
-                android:textSize="8dp" />
+                android:textSize="8dp"
+                android:onClick="setCos"/>
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
                 android:text="Tan"
                 android:textColor="#fff"
-                android:textSize="8dp" />
+                android:textSize="8dp"
+                android:onClick="setTan"/>
         </LinearLayout>
     </HorizontalScrollView>
 
-</LinearLayout><!--  716  -->
+</LinearLayout><!--  719  -->

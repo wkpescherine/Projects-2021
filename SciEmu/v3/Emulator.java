@@ -538,14 +538,20 @@ public class Emulator extends AppCompatActivity {
     public void setSin(View v){
         subCategory ="sin";
         setFormulaText(subCategory);
+        TextView setType = findViewById(R.id.SCT);
+        setType.setText("sin");
     }
     public void setCos(View v){
-        subCategory ="sin";
+        subCategory ="cos";
         setFormulaText(subCategory);
+        TextView setType = findViewById(R.id.SCT);
+        setType.setText("cos");
     }
     public void setTan(View v){
-        subCategory ="sin";
+        subCategory ="tan";
         setFormulaText(subCategory);
+        TextView setType = findViewById(R.id.SCT);
+        setType.setText("tan");
     }
 
     public void displaySubs(int num) {
@@ -713,7 +719,7 @@ public class Emulator extends AppCompatActivity {
             circleAreaTotal.setText(result);
         }
         if(subCategory.equals("sin") || subCategory.equals("cos") || subCategory.equals("tan")){
-            String result = formula.SCTsolve(data.degree, subCategory);
+            String result = formula.SCTSolve(data.degree, subCategory);
             TextView randiansTotal = findViewById(R.id.radians);
             randiansTotal.setText(result);
         }
@@ -874,4 +880,4 @@ public class Emulator extends AppCompatActivity {
             textMessageSub.setText("Check your formula");
         }
     }
-}//877
+}//883

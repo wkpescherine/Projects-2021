@@ -1,8 +1,5 @@
 package com.example.sciemu;
 
-import android.widget.TextView;
-import java.util.*;
-
 public class Formula {
     private static String t1;
 
@@ -208,4 +205,4 @@ public class Formula {
         }
         return t1;
     }
-}//211
+}//208
