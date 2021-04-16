@@ -6,4 +6,5 @@ public class DataConfig {
     String cString ="";
     String degree = "";
     String radians = "";
-}//9
+    int paren = 0;
+}//10

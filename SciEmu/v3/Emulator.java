@@ -122,6 +122,8 @@ public class Emulator extends AppCompatActivity {
     public void multi(View v) {
         setValues("*");
     }
+    public void openBracket(View v){ setValues("(");}
+    public void closeBracket(View v){ setValues(")");}
 
     public void focusX(View v) {
         focus = "X";
@@ -265,6 +267,18 @@ public class Emulator extends AppCompatActivity {
                 customString += val;
                 valueCustom.setText(customString);
                 customValid = 1;
+            }
+            if(val.equals("(") && data.paren == 0){
+                TextView valueCustom = findViewById(R.id.Custom);
+                customString += val;
+                data.paren = 1;
+                valueCustom.setText(customString);
+            }
+            if(val.equals(")") && data.paren == 1){
+                TextView valueCustom = findViewById(R.id.Custom);
+                customString += val;
+                data.paren = 0;
+                valueCustom.setText(customString);
             }
         } else if (focus.equals("custom") && customString.length() == 0) {
             TextView valueCustom = findViewById(R.id.custom);
@@ -880,4 +894,4 @@ public class Emulator extends AppCompatActivity {
             textMessageSub.setText("Check your formula");
         }
     }
-}//883
+}//897

@@ -6,6 +6,22 @@ public class SolveCustom {
     private static String t1 = "";
 
     static String customSolve2(String customStringArg){
+        String [] firstBreak = customStringArg.split("[()]");
+        if(firstBreak.length > 0){
+            String tempString = "";
+            for(int a = 0; a> firstBreak.length;){
+                String lastChar = firstBreak[a].charAt(firstBreak[a].length()-1)+"";
+                if(lastChar.equals("+") || lastChar.equals("-") || lastChar.equals("*") || lastChar.equals("/")){
+                    tempString = tempString + firstBreak[a];
+                    a++;
+                }else{
+                    String subT = customSolve2(firstBreak[a]);
+                    tempString = tempString + subT;
+                    a++;
+                }
+            }
+            customStringArg = tempString;
+        }
         String [] breakString = customStringArg.split("");
         String [] valueBreakString = customStringArg.split("[*+-/]");
         ArrayList<String> opString = new ArrayList<String>();
@@ -56,4 +72,4 @@ public class SolveCustom {
         t1 = valueString.get(0);
         return t1;
     }
-}//59
+}//75
