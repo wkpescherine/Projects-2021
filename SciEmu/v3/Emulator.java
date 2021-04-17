@@ -552,20 +552,14 @@ public class Emulator extends AppCompatActivity {
     public void setSin(View v){
         subCategory ="sin";
         setFormulaText(subCategory);
-        TextView setType = findViewById(R.id.SCT);
-        setType.setText("sin");
     }
     public void setCos(View v){
         subCategory ="cos";
         setFormulaText(subCategory);
-        TextView setType = findViewById(R.id.SCT);
-        setType.setText("cos");
     }
     public void setTan(View v){
         subCategory ="tan";
         setFormulaText(subCategory);
-        TextView setType = findViewById(R.id.SCT);
-        setType.setText("tan");
     }
 
     public void displaySubs(int num) {
@@ -875,7 +869,7 @@ public class Emulator extends AppCompatActivity {
             mainCircle.setVisibility(View.INVISIBLE);
             mainSCT.setVisibility(View.INVISIBLE);
             textMessageSub.setText("Custom Selected");
-        } else if(subCategory.equals("Sin") || subCategory.equals("Cos") || subCategory.equals("Sin")){
+        } else if(subCategory.equals("sin") || subCategory.equals("cos") || subCategory.equals("tan")){
             TextView sctText = findViewById(R.id.SCT);
             mainBasic.setVisibility(View.INVISIBLE);
             main23DArea.setVisibility(View.INVISIBLE);
@@ -894,4 +888,4 @@ public class Emulator extends AppCompatActivity {
             textMessageSub.setText("Check your formula");
         }
     }
-}//897
+}//891

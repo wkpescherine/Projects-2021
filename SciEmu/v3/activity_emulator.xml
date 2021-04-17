@@ -17,9 +17,9 @@
 
         <!--  Sin/Cos/Tan  -->
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center"
+            android:layout_centerInParent="true"
             android:visibility="invisible"
             android:id="@+id/sincostan"
             android:orientation="horizontal">
@@ -62,6 +62,7 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:visibility="invisible"
+            android:layout_centerInParent="true"
             android:id="@+id/Basic">
             <TextView
                 android:id="@+id/Xvalue"
@@ -105,6 +106,7 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
             android:orientation="horizontal"
             android:visibility="invisible"
             android:id="@+id/Area23DFormulas">
@@ -168,6 +170,7 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:visibility="invisible"
+            android:layout_centerInParent="true"
             android:id="@+id/ExponentFormula">
             <TextView
                 android:id="@+id/expValue"
@@ -215,6 +218,7 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:visibility="invisible"
+            android:layout_centerInParent="true"
             android:id="@+id/CustomFormula">
             <TextView
                 android:id="@+id/Custom"
@@ -243,6 +247,7 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:visibility="invisible"
+            android:layout_centerInParent="true"
             android:id="@+id/CircleFormula">
             <TextView
                 android:layout_width="wrap_content"
@@ -745,4 +750,4 @@
         </LinearLayout>
     </HorizontalScrollView>
 
-</LinearLayout><!--  748  -->
+</LinearLayout><!--  753  -->
