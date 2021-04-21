@@ -6,5 +6,9 @@ public class DataConfig {
     String cString ="";
     String degree = "";
     String radians = "";
+    String velocity = "";
+    String speedI = "";
+    String speedF = "";
+    String time = "";
     int paren = 0;
 }//10
