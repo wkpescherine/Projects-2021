@@ -286,7 +286,8 @@
                 android:id="@+id/intSpeed"
                 android:text="si"
                 android:textSize="32dp"
-                android:textColor="#fff"/>
+                android:textColor="#fff"
+                android:onClick="focusSpeedI"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -299,7 +300,8 @@
                 android:id="@+id/finalSpeed"
                 android:text="sf"
                 android:textSize="32dp"
-                android:textColor="#fff"/>
+                android:textColor="#fff"
+                android:onClick="focusSpeedF"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -312,7 +314,8 @@
                 android:id="@+id/time"
                 android:text="t"
                 android:textSize="32dp"
-                android:textColor="#fff"/>
+                android:textColor="#fff"
+                android:onClick="focusTime"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -329,4 +332,4 @@
         </LinearLayout>
     </RelativeLayout>
 
-</LinearLayout><!--  332 -->
+</LinearLayout><!--  335 -->

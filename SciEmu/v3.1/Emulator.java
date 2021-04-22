@@ -182,6 +182,21 @@ public class Emulator extends AppCompatActivity {
         TextView textMessageW = findViewById(R.id.message);
         textMessageW.setText("Focus on Exponent");
     }
+    public void focusSpeedI(View v) {
+        focus = "si";
+        TextView textMessageW = findViewById(R.id.message);
+        textMessageW.setText("Focus on Speed Int");
+    }
+    public void focusSpeedF(View v) {
+        focus = "sf";
+        TextView textMessageW = findViewById(R.id.message);
+        textMessageW.setText("Focus on Speed Final");
+    }
+    public void focusTime(View v) {
+        focus = "t";
+        TextView textMessageW = findViewById(R.id.message);
+        textMessageW.setText("Focus on Time");
+    }
 
     public void setValues(String val) {
         if (focus.equals("X") && xString.length() != 0) {
@@ -300,6 +315,30 @@ public class Emulator extends AppCompatActivity {
             TextView valueDegree = findViewById(R.id.Degree);
             data.degree = val + "";
             valueDegree.setText(data.degree);
+        } else if (focus.equals("si") && data.speedI.length() != 0) {
+            TextView valueSpeedI = findViewById(R.id.intSpeed);
+            data.speedI += val;
+            valueSpeedI.setText(data.speedI);
+        } else if (focus.equals("si") && data.speedI.length() == 0) {
+            TextView valueSpeedI = findViewById(R.id.intSpeed);
+            data.speedI = val + "";
+            valueSpeedI.setText(data.speedI);
+        } else if (focus.equals("sf") && data.speedF.length() != 0) {
+            TextView valueSpeedF = findViewById(R.id.finalSpeed);
+            data.speedF += val;
+            valueSpeedF.setText(data.speedF);
+        } else if (focus.equals("sf") && data.speedF.length() == 0) {
+            TextView valueSpeedF = findViewById(R.id.finalSpeed);
+            data.speedF = val + "";
+            valueSpeedF.setText(data.speedF);
+        } else if (focus.equals("t") && data.time.length() != 0) {
+            TextView valueTime = findViewById(R.id.time);
+            data.speedF += val;
+            valueTime.setText(data.speedF);
+        } else if (focus.equals("t") && data.time.length() == 0) {
+            TextView valueTime = findViewById(R.id.time);
+            data.time = val + "";
+            valueTime.setText(data.time);
         } else {
             TextView textMessageX = findViewById(R.id.message);
             textMessageX.setText("ERROR!!!");
@@ -319,6 +358,9 @@ public class Emulator extends AppCompatActivity {
         TextView customText = findViewById(R.id.Custom);
         TextView radiusText = findViewById(R.id.Radius);
         TextView degreeText = findViewById(R.id.Degree);
+        TextView speedIText = findViewById(R.id.intSpeed);
+        TextView speedFText = findViewById(R.id.finalSpeed);
+        TextView timeText = findViewById(R.id.time);
         if (func.equals("del")) {
             if (focus.equals("X") && xString.length() > 0) {
                 String xLastChar = xString.charAt(xString.length() - 1) + "";
@@ -481,10 +523,31 @@ public class Emulator extends AppCompatActivity {
 
             if (focus.equals("degree") && data.degree.length() > 0) {
                 data.degree = data.degree.substring(0, (data.degree.length()) - 1);
-                eText.setText(data.degree);
+                degreeText.setText(data.degree);
             }
             if(data.degree.length() == 0){
-                radiusText.setText("degree");
+                degreeText.setText("degree");
+            }
+            if (focus.equals("si") && data.speedI.length() > 0) {
+                data.speedI = data.speedI.substring(0, (data.speedI.length()) - 1);
+                speedIText.setText(data.speedI);
+            }
+            if(data.speedI.length() == 0){
+                speedIText.setText("si");
+            }
+            if (focus.equals("sf") && data.speedF.length() > 0) {
+                data.speedF = data.speedF.substring(0, (data.speedF.length()) - 1);
+                speedFText.setText(data.speedF);
+            }
+            if(data.speedF.length() == 0){
+                speedFText.setText("sf");
+            }
+            if (focus.equals("t") && data.time.length() > 0) {
+                data.time = data.time.substring(0, (data.time.length()) - 1);
+                timeText.setText(data.time);
+            }
+            if(data.time.length() == 0){
+                timeText.setText("t");
             }
         }
     }
@@ -920,4 +983,4 @@ public class Emulator extends AppCompatActivity {
             textMessageSub.setText("Check your formula");
         }
     }
-}//923
+}//986
