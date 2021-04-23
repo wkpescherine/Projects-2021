@@ -205,4 +205,12 @@ public class Formula {
         }
         return t1;
     }
-}//208
+
+    static String LinearVelocity(String value1, String value2, String value3){
+        t1 =((Math.abs(Double.valueOf(value1) - Double.valueOf(value2)))/Double.valueOf(value3))+"";
+        //if(Double.valueOf(t1) == Double.valueOf(Integer.parseInt(t1))){
+        //    t1 = Integer.parseInt(t1)+"";
+        //}
+        return t1;
+    }
+}//216

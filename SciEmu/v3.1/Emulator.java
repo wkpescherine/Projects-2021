@@ -798,6 +798,11 @@ public class Emulator extends AppCompatActivity {
             TextView randiansTotal = findViewById(R.id.radians);
             randiansTotal.setText(result);
         }
+        if(subCategory.equals("LinearVelocity")){
+            String result = formula.LinearVelocity(data.speedI, data.speedF, data.time);
+            TextView linVelocityTotal = findViewById(R.id.linearVelocity);
+            linVelocityTotal.setText(result);
+        }
     }
 
     public void resetUI(){
@@ -848,7 +853,7 @@ public class Emulator extends AppCompatActivity {
     public void setFormulaText(String sub){
         resetUI();
         LinearLayout mainBasic = findViewById(R.id.Basic);
-        LinearLayout main23DArea = findViewById(R.id.Area23DFormulas);
+        LinearLayout main23DArea = findViewById(R.id.SquareCube);
         LinearLayout mainExponent = findViewById(R.id.ExponentFormula);
         LinearLayout mainCustom = findViewById(R.id.CustomFormula);
         LinearLayout mainCircle = findViewById(R.id.CircleFormula);
@@ -983,4 +988,4 @@ public class Emulator extends AppCompatActivity {
             textMessageSub.setText("Check your formula");
         }
     }
-}//986
+}//991
