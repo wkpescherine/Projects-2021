@@ -11,4 +11,4 @@ public class DataConfig {
     String speedF = "";
     String time = "";
     int paren = 0;
-}//10
+}//14

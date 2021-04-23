@@ -203,22 +203,9 @@
                 android:layout_marginLeft="5dp"
                 android:text="Pythahorean"
                 android:textColor="#fff"
-                android:textSize="8dp" />
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
-                android:text="Derivative"
-                android:textColor="#fff"
-                android:textSize="8dp" />
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
-                android:text="Triangle 90"
-                android:textColor="#fff"
-                android:textSize="8dp" />
-    </LinearLayout>
+                android:textSize="8dp"
+                android:onClick="setPythagoren"/>
+        </LinearLayout>
     </HorizontalScrollView>
 
     <!-- PHYSICS SUB SECTION-->
@@ -226,27 +213,20 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fillViewport="true">
-      <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/physicsSub"
-        android:visibility="gone">
-        <Button
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"
-            android:text="Linear: Velocity"
-            android:textColor="#fff"
-            android:textSize="8dp"
-            android:onClick="LinearVelocity"/>
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"
-            android:text="Circular Motion"
-            android:textColor="#fff"
-            android:textSize="8dp" />
-    </LinearLayout>
+            android:id="@+id/physicsSub"
+            android:visibility="gone">
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="Linear: Velocity"
+                android:textColor="#fff"
+                android:textSize="8dp"
+                android:onClick="LinearVelocity"/>
+        </LinearLayout>
     </HorizontalScrollView>
 
     <!-- GEOMETRY SUB SECTIONS-->
@@ -275,7 +255,7 @@
             android:textColor="#fff"
             android:textSize="8dp"
             android:onClick="AreaCircle"/>
-    </LinearLayout>
+        </LinearLayout>
     </HorizontalScrollView>
 
     <!-- TRIG SUB SECTIONS-->
@@ -315,4 +295,4 @@
         </LinearLayout>
     </HorizontalScrollView>
 
-</LinearLayout><!--  317  -->
+</LinearLayout><!--  297  -->

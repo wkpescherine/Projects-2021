@@ -197,6 +197,21 @@ public class Emulator extends AppCompatActivity {
         TextView textMessageW = findViewById(R.id.message);
         textMessageW.setText("Focus on Time");
     }
+    public void focusA(View v) {
+        focus = "a";
+        TextView textMessageW = findViewById(R.id.message);
+        textMessageW.setText("Focus on A");
+    }
+    public void focusB(View v) {
+        focus = "b";
+        TextView textMessageW = findViewById(R.id.message);
+        textMessageW.setText("Focus on B");
+    }
+    public void focusC(View v) {
+        focus = "c";
+        TextView textMessageW = findViewById(R.id.message);
+        textMessageW.setText("Focus on C");
+    }
 
     public void setValues(String val) {
         if (focus.equals("X") && xString.length() != 0) {
@@ -333,12 +348,36 @@ public class Emulator extends AppCompatActivity {
             valueSpeedF.setText(data.speedF);
         } else if (focus.equals("t") && data.time.length() != 0) {
             TextView valueTime = findViewById(R.id.time);
-            data.speedF += val;
+            data.time += val;
             valueTime.setText(data.speedF);
         } else if (focus.equals("t") && data.time.length() == 0) {
             TextView valueTime = findViewById(R.id.time);
             data.time = val + "";
             valueTime.setText(data.time);
+        } else if (focus.equals("a") && data.aString.length() != 0) {
+            TextView aValueTime = findViewById(R.id.Avalue);
+            data.aString += val;
+            aValueTime.setText(data.aString);
+        } else if (focus.equals("a") && data.aString.length() == 0) {
+            TextView aValueTime = findViewById(R.id.Avalue);
+            data.aString = val + "";
+            aValueTime.setText(data.aString);
+        } else if (focus.equals("b") && data.bString.length() != 0) {
+            TextView bValueTime = findViewById(R.id.Bvalue);
+            data.bString += val;
+            bValueTime.setText(data.bString);
+        } else if (focus.equals("b") && data.bString.length() == 0) {
+            TextView bValueTime = findViewById(R.id.Bvalue);
+            data.bString = val + "";
+            bValueTime.setText(data.bString);
+        } else if (focus.equals("c") && data.cString.length() != 0) {
+            TextView cValueTime = findViewById(R.id.Cvalue);
+            data.cString += val;
+            cValueTime.setText(data.cString);
+        } else if (focus.equals("c") && data.cString.length() == 0) {
+            TextView cValueTime = findViewById(R.id.Cvalue);
+            data.cString = val + "";
+            cValueTime.setText(data.cString);
         } else {
             TextView textMessageX = findViewById(R.id.message);
             textMessageX.setText("ERROR!!!");
@@ -549,6 +588,27 @@ public class Emulator extends AppCompatActivity {
             if(data.time.length() == 0){
                 timeText.setText("t");
             }
+            if (focus.equals("a") && data.aString.length() > 0) {
+                data.aString = data.aString.substring(0, (data.aString.length()) - 1);
+                timeText.setText(data.aString);
+            }
+            if(data.aString.length() == 0){
+                timeText.setText("a");
+            }
+            if (focus.equals("b") && data.bString.length() > 0) {
+                data.bString = data.bString.substring(0, (data.bString.length()) - 1);
+                timeText.setText(data.bString);
+            }
+            if(data.bString.length() == 0){
+                timeText.setText("b");
+            }
+            if (focus.equals("c") && data.cString.length() > 0) {
+                data.cString = data.cString.substring(0, (data.cString.length()) - 1);
+                timeText.setText(data.cString);
+            }
+            if(data.cString.length() == 0){
+                timeText.setText("c");
+            }
         }
     }
 
@@ -626,6 +686,10 @@ public class Emulator extends AppCompatActivity {
     }
     public void LinearVelocity(View v){
         subCategory = "LinearVelocity";
+        setFormulaText(subCategory);
+    }
+    public void setPythagoren(View v){
+        subCategory = "Pythagoren";
         setFormulaText(subCategory);
     }
 
@@ -859,6 +923,7 @@ public class Emulator extends AppCompatActivity {
         LinearLayout mainCircle = findViewById(R.id.CircleFormula);
         LinearLayout mainSCT = findViewById(R.id.sincostan);
         LinearLayout mainLinVelocity = findViewById(R.id.LinearVelocity);
+        LinearLayout mainPythagoren = findViewById(R.id.Pythagoren);
         TextView sign1Text = findViewById(R.id.sign1);
         TextView textMessageSub = findViewById(R.id.message);
         textMessageSub.setText(subCategory);
@@ -870,6 +935,7 @@ public class Emulator extends AppCompatActivity {
             mainCircle.setVisibility(View.INVISIBLE);
             mainSCT.setVisibility(View.INVISIBLE);
             mainLinVelocity.setVisibility(View.INVISIBLE);
+            mainPythagoren.setVisibility(View.INVISIBLE);
             sign1Text.setText("+");
             textMessageSub.setText("Addition selected");
         }else if(subCategory.equals("subtract")){
@@ -880,6 +946,7 @@ public class Emulator extends AppCompatActivity {
             mainCircle.setVisibility(View.INVISIBLE);
             mainSCT.setVisibility(View.INVISIBLE);
             mainLinVelocity.setVisibility(View.INVISIBLE);
+            mainPythagoren.setVisibility(View.INVISIBLE);
             sign1Text.setText("-");
             textMessageSub.setText("Subtraction selected");
         }else if(subCategory.equals("divide")){
@@ -890,6 +957,7 @@ public class Emulator extends AppCompatActivity {
             mainCircle.setVisibility(View.INVISIBLE);
             mainSCT.setVisibility(View.INVISIBLE);
             mainLinVelocity.setVisibility(View.INVISIBLE);
+            mainPythagoren.setVisibility(View.INVISIBLE);
             sign1Text.setText("/");
             textMessageSub.setText("Division Selected");
         }else if(subCategory.equals("multiply")){
@@ -900,6 +968,7 @@ public class Emulator extends AppCompatActivity {
             mainCircle.setVisibility(View.INVISIBLE);
             mainSCT.setVisibility(View.INVISIBLE);
             mainLinVelocity.setVisibility(View.INVISIBLE);
+            mainPythagoren.setVisibility(View.INVISIBLE);
             sign1Text.setText("+");
             textMessageSub.setText("Multiplication Selected");
         }else if(subCategory.equals("square") || subCategory.equals("AreaTriangle")){
@@ -910,6 +979,7 @@ public class Emulator extends AppCompatActivity {
             mainCircle.setVisibility(View.INVISIBLE);
             mainSCT.setVisibility(View.INVISIBLE);
             mainLinVelocity.setVisibility(View.INVISIBLE);
+            mainPythagoren.setVisibility(View.INVISIBLE);
             if(subCategory.equals("square")){
                 textMessageSub.setText("2D Area Selected");
             } else {
@@ -927,6 +997,7 @@ public class Emulator extends AppCompatActivity {
             mainCircle.setVisibility(View.INVISIBLE);
             mainSCT.setVisibility(View.INVISIBLE);
             mainLinVelocity.setVisibility(View.INVISIBLE);
+            mainPythagoren.setVisibility(View.INVISIBLE);
             TextView sign2Text = findViewById(R.id.sign2);
             sign2Text.setVisibility(View.VISIBLE);
             TextView dTextString = findViewById(R.id.Dvalue);
@@ -940,6 +1011,7 @@ public class Emulator extends AppCompatActivity {
             mainCircle.setVisibility(View.INVISIBLE);
             mainSCT.setVisibility(View.INVISIBLE);
             mainLinVelocity.setVisibility(View.INVISIBLE);
+            mainPythagoren.setVisibility(View.INVISIBLE);
             textMessageSub.setText("Exponent selected");
         } else if(subCategory.equals("AreaCircle")) {
             mainBasic.setVisibility(View.INVISIBLE);
@@ -949,6 +1021,7 @@ public class Emulator extends AppCompatActivity {
             mainCircle.setVisibility(View.VISIBLE);
             mainSCT.setVisibility(View.INVISIBLE);
             mainLinVelocity.setVisibility(View.INVISIBLE);
+            mainPythagoren.setVisibility(View.INVISIBLE);
             textMessageSub.setText("Circle Area Selected");
         } else if(subCategory.equals("custom")){
             mainBasic.setVisibility(View.INVISIBLE);
@@ -958,6 +1031,7 @@ public class Emulator extends AppCompatActivity {
             mainCircle.setVisibility(View.INVISIBLE);
             mainSCT.setVisibility(View.INVISIBLE);
             mainLinVelocity.setVisibility(View.INVISIBLE);
+            mainPythagoren.setVisibility(View.INVISIBLE);
             textMessageSub.setText("Custom Selected");
         } else if(subCategory.equals("sin") || subCategory.equals("cos") || subCategory.equals("tan")){
             TextView sctText = findViewById(R.id.SCT);
@@ -968,6 +1042,7 @@ public class Emulator extends AppCompatActivity {
             mainCircle.setVisibility(View.INVISIBLE);
             mainSCT.setVisibility(View.VISIBLE);
             mainLinVelocity.setVisibility(View.INVISIBLE);
+            mainPythagoren.setVisibility(View.INVISIBLE);
             if(subCategory.equals("sin")){
                 sctText.setText("sin");
             }else if(subCategory.equals("cos")){
@@ -983,9 +1058,20 @@ public class Emulator extends AppCompatActivity {
             mainCircle.setVisibility(View.INVISIBLE);
             mainSCT.setVisibility(View.INVISIBLE);
             mainLinVelocity.setVisibility(View.VISIBLE);
+            mainPythagoren.setVisibility(View.INVISIBLE);
             textMessageSub.setText("Linear Velocity Selected");
-        } else {
+        } else if(subCategory.equals("Pythagoren")){
+            mainBasic.setVisibility(View.INVISIBLE);
+            main23DArea.setVisibility(View.INVISIBLE);
+            mainExponent.setVisibility(View.INVISIBLE);
+            mainCustom.setVisibility(View.INVISIBLE);
+            mainCircle.setVisibility(View.INVISIBLE);
+            mainSCT.setVisibility(View.INVISIBLE);
+            mainLinVelocity.setVisibility(View.INVISIBLE);
+            mainPythagoren.setVisibility(View.VISIBLE);
+            textMessageSub.setText("Linear Velocity Selected");
+        }else {
             textMessageSub.setText("Check your formula");
         }
     }
-}//991
+}//1077
