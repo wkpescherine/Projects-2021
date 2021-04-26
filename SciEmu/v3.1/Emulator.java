@@ -822,15 +822,15 @@ public class Emulator extends AppCompatActivity {
                 String result = formula.Cube(hString, wString, dString, totalString, isDecimal[3], isDecimal[4], isDecimal[5], isDecimal[6]);
                 TextView TotalText = findViewById(R.id.Totvalue);
                 TotalText.setText(result);
-          } else if (hString.length() > 0 && wString.length() > 0 && dString.length() == 0 && totalString.length() > 0) {
+            } else if (hString.length() > 0 && wString.length() > 0 && dString.length() == 0 && totalString.length() > 0) {
                 String result = formula.Cube(hString, wString, dString, totalString, isDecimal[3], isDecimal[4], isDecimal[5], isDecimal[6]);
                 TextView dText = findViewById(R.id.Dvalue);
                 dText.setText(result);
-          } else if (hString.length() > 0 && wString.length() == 0 && dString.length() > 0 && totalString.length() > 0) {
+            } else if (hString.length() > 0 && wString.length() == 0 && dString.length() > 0 && totalString.length() > 0) {
                 String result = formula.Cube(hString, wString, dString, totalString, isDecimal[3], isDecimal[4], isDecimal[5], isDecimal[6]);
                 TextView wText = findViewById(R.id.Wvalue);
                 wText.setText(result);
-          } else if (hString.length() == 0 && wString.length() > 0 && dString.length() > 0 && totalString.length() > 0) {
+            } else if (hString.length() == 0 && wString.length() > 0 && dString.length() > 0 && totalString.length() > 0) {
                 String result = formula.Cube(hString, wString, dString, totalString, isDecimal[3], isDecimal[4], isDecimal[5], isDecimal[6]);
                 TextView hText = findViewById(R.id.Hvalue);
                 hText.setText(result);
@@ -867,6 +867,26 @@ public class Emulator extends AppCompatActivity {
             TextView linVelocityTotal = findViewById(R.id.linearVelocity);
             linVelocityTotal.setText(result);
         }
+        if(subCategory.equals("Pythagoren")){
+            String result = formula.Pythagoren(data.aString, data.bString, data.cString);
+            String sqrtResult = (Math.sqrt(Double.valueOf(result)))+"";
+            if (data.aString.length() > 0 && data.bString.length() > 0 && data.cString.length() == 0) {
+                TextView cValueText = findViewById(R.id.Cvalue);
+                cValueText.setText(sqrtResult);
+                TextView specMessage = findViewById(R.id.message);
+                specMessage.setText("The sqr of c is "+result);
+            } else if (data.aString.length() > 0 && data.bString.length() == 0 && data.cString.length() > 0) {
+                TextView bValueText = findViewById(R.id.Bvalue);
+                bValueText.setText(sqrtResult);
+                TextView specMessage = findViewById(R.id.message);
+                specMessage.setText("The sqr of b is "+result);
+            } else if (data.aString.length() == 0 && data.bString.length() > 0 && data.cString.length() > 0) {
+                TextView aValueText = findViewById(R.id.Avalue);
+                aValueText.setText(sqrtResult);
+                TextView specMessage = findViewById(R.id.message);
+                specMessage.setText("The sqr of a is "+result);
+            }
+        }
     }
 
     public void resetUI(){
@@ -886,6 +906,9 @@ public class Emulator extends AppCompatActivity {
         data.speedI = "";
         data.time = "";
         data.velocity = "";
+        data.aString = "";
+        data.bString = "";
+        data.bString = "";
         TextView xTextString = findViewById(R.id.Xvalue);
         xTextString.setText("x");
         TextView yTextString = findViewById(R.id.Yvalue);
@@ -912,6 +935,12 @@ public class Emulator extends AppCompatActivity {
         speedITextString.setText("si");
         TextView speedFTextString = findViewById(R.id.finalSpeed);
         speedFTextString.setText("sf");
+        TextView aTextString = findViewById(R.id.Avalue);
+        aTextString.setText("a");
+        TextView bTextString = findViewById(R.id.Bvalue);
+        bTextString.setText("b");
+        TextView cTextString = findViewById(R.id.Cvalue);
+        cTextString.setText("c");
     }
 
     public void setFormulaText(String sub){
@@ -1074,4 +1103,4 @@ public class Emulator extends AppCompatActivity {
             textMessageSub.setText("Check your formula");
         }
     }
-}//1077
+}//1106

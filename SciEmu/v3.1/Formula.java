@@ -208,9 +208,28 @@ public class Formula {
 
     static String LinearVelocity(String value1, String value2, String value3){
         t1 =((Math.abs(Double.valueOf(value1) - Double.valueOf(value2)))/Double.valueOf(value3))+"";
-        //if(Double.valueOf(t1) == Double.valueOf(Integer.parseInt(t1))){
-        //    t1 = Integer.parseInt(t1)+"";
-        //}
+        checkDecimal(t1);
         return t1;
     }
-}//216
+
+    static String Pythagoren(String value1, String value2, String value3){
+        if(value1.equals("")){
+            t1 = (Math.pow(Double.valueOf(value3),2)-Math.pow(Double.valueOf(value1),2))+"";
+        }
+        if(value2.equals("")){
+            t1 = (Math.pow(Double.valueOf(value3),2)-Math.pow(Double.valueOf(value1),2))+"";
+        }
+        if(value3.equals("")){
+            t1 = (Math.pow(Double.valueOf(value1),2)+Math.pow(Double.valueOf(value2),2))+"";
+        }
+        checkDecimal(t1);
+        return t1;
+    }
+
+    public static void checkDecimal(String valueCheck){
+        String intCheck = (Integer.parseInt(valueCheck))+"";
+        if(Double.valueOf(valueCheck) != Double.valueOf(intCheck)){
+            t1 = intCheck;
+        }
+    }
+}//235
