@@ -10,5 +10,7 @@ public class DataConfig {
     String speedI = "";
     String speedF = "";
     String time = "";
+    String subCategory2 = "";
+    String angle1 = "";
     int paren = 0;
 }//14
