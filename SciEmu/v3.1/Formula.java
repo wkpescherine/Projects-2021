@@ -227,9 +227,10 @@ public class Formula {
     }
 
     public static void checkDecimal(String valueCheck){
-        String intCheck = (Integer.parseInt(valueCheck))+"";
-        if(Double.valueOf(valueCheck) != Double.valueOf(intCheck)){
-            t1 = intCheck;
+        double doubleCheck = Double.valueOf(valueCheck);
+        int intCheck = (int)Math.round(doubleCheck);
+        if(doubleCheck == intCheck){
+            t1 = intCheck+"";
         }
     }
-}//235
+}//236

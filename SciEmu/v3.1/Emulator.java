@@ -399,15 +399,23 @@ public class Emulator extends AppCompatActivity {
             TextView cValueTime = findViewById(R.id.angle1);
             data.angle1 = val + "";
             cValueTime.setText(data.angle1);
-        } else if (focus.equals("angle1") && data.angle1.length() != 0) {
-            TextView angle1ValueTime = findViewById(R.id.angle1);
-            data.angle1 += val;
-            angle1ValueTime.setText(data.angle1);
-        } else if (focus.equals("angle1") && data.angle1.length() == 0) {
-            TextView cValueTime = findViewById(R.id.angle1);
-            data.angle1 = val + "";
-            cValueTime.setText(data.angle1);
-        } else {
+        } else if (focus.equals("angle2") && data.angle2.length() != 0) {
+            TextView angle2ValueTime = findViewById(R.id.angle2);
+            data.angle2 += val;
+            angle2ValueTime.setText(data.angle2);
+        } else if (focus.equals("angle2") && data.angle2.length() == 0) {
+            TextView angle2ValueTime = findViewById(R.id.angle2);
+            data.angle2 = val + "";
+            angle2ValueTime.setText(data.angle2);
+        } else if (focus.equals("time2") && data.time.length() != 0) {
+            TextView time2ValueTime = findViewById(R.id.time2);
+            data.time += val;
+            time2ValueTime.setText(data.time);
+        } else if (focus.equals("time2") && data.time.length() == 0) {
+            TextView time2ValueTime = findViewById(R.id.time2);
+            data.time = val + "";
+            time2ValueTime.setText(data.time);
+        }else {
             TextView textMessageX = findViewById(R.id.message);
             textMessageX.setText("ERROR!!!");
         }
@@ -984,6 +992,8 @@ public class Emulator extends AppCompatActivity {
         speedITextString.setText("si");
         TextView speedFTextString = findViewById(R.id.finalSpeed);
         speedFTextString.setText("sf");
+        TextView timeTextString = findViewById(R.id.time);
+        timeTextString.setText("t");
         TextView aTextString = findViewById(R.id.Avalue);
         aTextString.setText("a");
         TextView bTextString = findViewById(R.id.Bvalue);
@@ -1180,4 +1190,4 @@ public class Emulator extends AppCompatActivity {
             textMessageSub.setText("Check your formula");
         }
     }
-}//1175
+}//1191

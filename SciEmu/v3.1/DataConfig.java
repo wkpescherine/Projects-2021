@@ -12,5 +12,6 @@ public class DataConfig {
     String time = "";
     String subCategory2 = "";
     String angle1 = "";
+    String angle2 = "";
     int paren = 0;
-}//14
+}//17
