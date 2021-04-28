@@ -236,26 +236,6 @@
                 android:onClick="displaySubAngularMotion"/>
         </LinearLayout>
     </HorizontalScrollView>
-    <!-- PHYSICS SUBS2 -->
-    <HorizontalScrollView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fillViewport="true">
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/angMotionSub"
-            android:visibility="gone">
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
-                android:text="Velocity"
-                android:textColor="#fff"
-                android:textSize="8dp"
-                android:onClick="AngularVelocity"/>
-        </LinearLayout>
-    </HorizontalScrollView>
 
     <!-- GEOMETRY SUB SECTIONS-->
     <HorizontalScrollView
@@ -323,4 +303,25 @@
         </LinearLayout>
     </HorizontalScrollView>
 
-</LinearLayout><!--  326  -->
+    <!-- PHYSICS SUBS2 -->
+    <HorizontalScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fillViewport="true">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/angularMotionSub"
+            android:visibility="gone">
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="Velocity"
+                android:textColor="#fff"
+                android:textSize="8dp"
+                android:onClick="AngularVelocity"/>
+        </LinearLayout>
+    </HorizontalScrollView>
+
+</LinearLayout><!--  327  -->

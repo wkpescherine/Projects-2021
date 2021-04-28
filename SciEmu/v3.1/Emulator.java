@@ -428,6 +428,9 @@ public class Emulator extends AppCompatActivity {
         TextView hText = findViewById(R.id.Hvalue);
         TextView wText = findViewById(R.id.Wvalue);
         TextView dText = findViewById(R.id.Dvalue);
+        TextView aText = findViewById(R.id.Avalue);
+        TextView bText = findViewById(R.id.Bvalue);
+        TextView cText = findViewById(R.id.Cvalue);
         TextView eText = findViewById(R.id.expSuper);
         TextView evText = findViewById(R.id.expValue);
         TextView t1Text = findViewById(R.id.Totvalue);
@@ -627,24 +630,24 @@ public class Emulator extends AppCompatActivity {
             }
             if (focus.equals("a") && data.aString.length() > 0) {
                 data.aString = data.aString.substring(0, (data.aString.length()) - 1);
-                timeText.setText(data.aString);
+                aText.setText(data.aString);
             }
             if(data.aString.length() == 0){
-                timeText.setText("a");
+                aText.setText("a");
             }
             if (focus.equals("b") && data.bString.length() > 0) {
                 data.bString = data.bString.substring(0, (data.bString.length()) - 1);
-                timeText.setText(data.bString);
+                bText.setText(data.bString);
             }
             if(data.bString.length() == 0){
-                timeText.setText("b");
+                bText.setText("b");
             }
             if (focus.equals("c") && data.cString.length() > 0) {
                 data.cString = data.cString.substring(0, (data.cString.length()) - 1);
-                timeText.setText(data.cString);
+                cText.setText(data.cString);
             }
             if(data.cString.length() == 0){
-                timeText.setText("c");
+                cText.setText("c");
             }
         }
     }
@@ -773,7 +776,7 @@ public class Emulator extends AppCompatActivity {
         }
     }
     public void displaySubs2(int num) {
-        LinearLayout subLayout = findViewById(R.id.basicSub);
+        LinearLayout subLayout = findViewById(R.id.angularMotionSub);
         subLayout.setVisibility(View.GONE);
         switch (num) {
             case 0:
@@ -965,7 +968,9 @@ public class Emulator extends AppCompatActivity {
         data.velocity = "";
         data.aString = "";
         data.bString = "";
-        data.bString = "";
+        data.cString = "";
+        data.angle1 = "";
+        data.angle2 = "";
         TextView xTextString = findViewById(R.id.Xvalue);
         xTextString.setText("x");
         TextView yTextString = findViewById(R.id.Yvalue);
@@ -1000,6 +1005,12 @@ public class Emulator extends AppCompatActivity {
         bTextString.setText("b");
         TextView cTextString = findViewById(R.id.Cvalue);
         cTextString.setText("c");
+        TextView angle1TextString = findViewById(R.id.angle1);
+        angle1TextString.setText("\u03B8");
+        TextView angle2TextString = findViewById(R.id.angle2);
+        angle2TextString.setText("\u03B8");
+        TextView time2TextString = findViewById(R.id.time2);
+        time2TextString.setText("t");
     }
 
     public void setFormulaText(String sub){
@@ -1013,19 +1024,20 @@ public class Emulator extends AppCompatActivity {
         LinearLayout mainLinVelocity = findViewById(R.id.LinearVelocity);
         LinearLayout mainPythagoren = findViewById(R.id.Pythagoren);
         LinearLayout mainAngVelocity = findViewById(R.id.AngularVelocity);
+        mainBasic.setVisibility(View.INVISIBLE);
+        main23DArea.setVisibility(View.INVISIBLE);
+        mainExponent.setVisibility(View.INVISIBLE);
+        mainCustom.setVisibility(View.INVISIBLE);
+        mainCircle.setVisibility(View.INVISIBLE);
+        mainSCT.setVisibility(View.INVISIBLE);
+        mainLinVelocity.setVisibility(View.INVISIBLE);
+        mainPythagoren.setVisibility(View.INVISIBLE);
+        mainAngVelocity.setVisibility(View.INVISIBLE);
         TextView sign1Text = findViewById(R.id.sign1);
         TextView textMessageSub = findViewById(R.id.message);
         textMessageSub.setText(subCategory);
         if(subCategory.equals("add")){
             mainBasic.setVisibility(View.VISIBLE);
-            main23DArea.setVisibility(View.INVISIBLE);
-            mainExponent.setVisibility(View.INVISIBLE);
-            mainCustom.setVisibility(View.INVISIBLE);
-            mainCircle.setVisibility(View.INVISIBLE);
-            mainSCT.setVisibility(View.INVISIBLE);
-            mainLinVelocity.setVisibility(View.INVISIBLE);
-            mainPythagoren.setVisibility(View.INVISIBLE);
-            mainAngVelocity.setVisibility(View.INVISIBLE);
             sign1Text.setText("+");
             textMessageSub.setText("Addition selected");
         }else if(subCategory.equals("subtract")){
@@ -1170,8 +1182,8 @@ public class Emulator extends AppCompatActivity {
             mainLinVelocity.setVisibility(View.INVISIBLE);
             mainPythagoren.setVisibility(View.VISIBLE);
             mainAngVelocity.setVisibility(View.INVISIBLE);
-            textMessageSub.setText("Linear Pythagoren Selected");
-        } else if(subCategory.equals("Angular Motion")){
+            textMessageSub.setText("Pythagoren Selected");
+        } else if(data.subCategory2.equals("Angular Velocity")){
             mainBasic.setVisibility(View.INVISIBLE);
             main23DArea.setVisibility(View.INVISIBLE);
             mainExponent.setVisibility(View.INVISIBLE);
@@ -1179,15 +1191,12 @@ public class Emulator extends AppCompatActivity {
             mainCircle.setVisibility(View.INVISIBLE);
             mainSCT.setVisibility(View.INVISIBLE);
             mainLinVelocity.setVisibility(View.INVISIBLE);
-            mainPythagoren.setVisibility(View.VISIBLE);
-            mainAngVelocity.setVisibility(View.INVISIBLE);
-            if(data.subCategory2.equals("Angular Velocity")){
-                mainAngVelocity.setVisibility(View.VISIBLE);
-            }
-            textMessageSub.setText("Linear Angular Velocity Selected");
+            mainPythagoren.setVisibility(View.INVISIBLE);
+            mainAngVelocity.setVisibility(View.VISIBLE);
+            textMessageSub.setText("Angular Motion Selected");
         }
         else {
             textMessageSub.setText("Check your formula");
         }
     }
-}//1191
+}//1202
