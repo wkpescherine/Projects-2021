@@ -403,14 +403,14 @@
                 android:textSize="8dp"
                 android:textColor="#fff"/>
         </LinearLayout>
-        <!-- Angular Velocity -->
+        <!-- Angular Acceleration -->
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:visibility="invisible"
             android:layout_centerInParent="true"
-            android:id="@+id/AngularVelocity">
+            android:id="@+id/AngularAcceleration">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -468,15 +468,14 @@
                 android:textSize="32dp"
                 android:textColor="#fff"/>
             <TextView
-                android:id="@+id/accValue"
+                android:id="@+id/AngMotionAcc"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="acc"
                 android:textSize="32dp"
-                android:textColor="#fff"
-                android:onClick="focusAcc"/>
+                android:textColor="#fff"/>
         </LinearLayout>
 
     </RelativeLayout>
 
-</LinearLayout><!--  482 -->
+</LinearLayout><!--  481 -->

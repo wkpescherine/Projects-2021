@@ -317,10 +317,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
-                android:text="Velocity"
+                android:text="acceleration"
                 android:textColor="#fff"
                 android:textSize="8dp"
-                android:onClick="AngularVelocity"/>
+                android:onClick="AngularAcc"/>
         </LinearLayout>
     </HorizontalScrollView>
 

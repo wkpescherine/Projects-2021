@@ -13,5 +13,6 @@ public class DataConfig {
     String subCategory2 = "";
     String angle1 = "";
     String angle2 = "";
+    String acceleration = "";
     int paren = 0;
-}//17
+}//18

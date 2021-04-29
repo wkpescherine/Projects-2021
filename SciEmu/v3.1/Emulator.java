@@ -676,6 +676,7 @@ public class Emulator extends AppCompatActivity {
         setFormulaText(subCategory);
     }
     public void displaySubAngularMotion(View v){
+        subCategory = "Angular Motion";
         displaySubs2(1);
     }
 
@@ -735,8 +736,8 @@ public class Emulator extends AppCompatActivity {
         subCategory = "Pythagoren";
         setFormulaText(subCategory);
     }
-    public void AngularVelocity(View v){
-        data.subCategory2 = "Angular Velocity";
+    public void AngularAcc(View v){
+        data.subCategory2 = "Angular Acceleration";
         setFormulaText(data.subCategory2);
     }
 
@@ -784,6 +785,8 @@ public class Emulator extends AppCompatActivity {
                 break;
             case 1:
                 subLayout.setVisibility(View.VISIBLE);
+                TextView message = findViewById(R.id.message);
+                message.setText("Angular Motion selected");
                 break;
         }
     }
@@ -947,6 +950,11 @@ public class Emulator extends AppCompatActivity {
                 specMessage.setText("The sqr of a is "+result);
             }
         }
+        if(data.subCategory2.equals("Angular Acceleration")){
+            String result = formula.AngularAcceleration(data.angle1, data.angle2, data.time, data.acceleration);
+            TextView angAccTotal = findViewById(R.id.AngMotionAcc);
+            angAccTotal.setText(result);
+        }
     }
 
     public void resetUI(){
@@ -1023,16 +1031,18 @@ public class Emulator extends AppCompatActivity {
         LinearLayout mainSCT = findViewById(R.id.sincostan);
         LinearLayout mainLinVelocity = findViewById(R.id.LinearVelocity);
         LinearLayout mainPythagoren = findViewById(R.id.Pythagoren);
-        LinearLayout mainAngVelocity = findViewById(R.id.AngularVelocity);
-        mainBasic.setVisibility(View.INVISIBLE);
-        main23DArea.setVisibility(View.INVISIBLE);
-        mainExponent.setVisibility(View.INVISIBLE);
-        mainCustom.setVisibility(View.INVISIBLE);
-        mainCircle.setVisibility(View.INVISIBLE);
-        mainSCT.setVisibility(View.INVISIBLE);
-        mainLinVelocity.setVisibility(View.INVISIBLE);
-        mainPythagoren.setVisibility(View.INVISIBLE);
-        mainAngVelocity.setVisibility(View.INVISIBLE);
+        LinearLayout mainAngAcceleration = findViewById(R.id.AngularAcceleration);
+        LinearLayout subMotion = findViewById(R.id.angularMotionSub);
+        subMotion.setVisibility(View.GONE);
+        mainBasic.setVisibility(View.GONE);
+        main23DArea.setVisibility(View.GONE);
+        mainExponent.setVisibility(View.GONE);
+        mainCustom.setVisibility(View.GONE);
+        mainCircle.setVisibility(View.GONE);
+        mainSCT.setVisibility(View.GONE);
+        mainLinVelocity.setVisibility(View.GONE);
+        mainPythagoren.setVisibility(View.GONE);
+        mainAngAcceleration.setVisibility(View.GONE);
         TextView sign1Text = findViewById(R.id.sign1);
         TextView textMessageSub = findViewById(R.id.message);
         textMessageSub.setText(subCategory);
@@ -1049,7 +1059,7 @@ public class Emulator extends AppCompatActivity {
             mainSCT.setVisibility(View.INVISIBLE);
             mainLinVelocity.setVisibility(View.INVISIBLE);
             mainPythagoren.setVisibility(View.INVISIBLE);
-            mainAngVelocity.setVisibility(View.INVISIBLE);
+            mainAngAcceleration.setVisibility(View.INVISIBLE);
             sign1Text.setText("-");
             textMessageSub.setText("Subtraction selected");
         }else if(subCategory.equals("divide")){
@@ -1061,7 +1071,7 @@ public class Emulator extends AppCompatActivity {
             mainSCT.setVisibility(View.INVISIBLE);
             mainLinVelocity.setVisibility(View.INVISIBLE);
             mainPythagoren.setVisibility(View.INVISIBLE);
-            mainAngVelocity.setVisibility(View.INVISIBLE);
+            mainAngAcceleration.setVisibility(View.INVISIBLE);
             sign1Text.setText("/");
             textMessageSub.setText("Division Selected");
         }else if(subCategory.equals("multiply")){
@@ -1073,7 +1083,7 @@ public class Emulator extends AppCompatActivity {
             mainSCT.setVisibility(View.INVISIBLE);
             mainLinVelocity.setVisibility(View.INVISIBLE);
             mainPythagoren.setVisibility(View.INVISIBLE);
-            mainAngVelocity.setVisibility(View.INVISIBLE);
+            mainAngAcceleration.setVisibility(View.INVISIBLE);
             sign1Text.setText("+");
             textMessageSub.setText("Multiplication Selected");
         }else if(subCategory.equals("square") || subCategory.equals("AreaTriangle")){
@@ -1085,7 +1095,7 @@ public class Emulator extends AppCompatActivity {
             mainSCT.setVisibility(View.INVISIBLE);
             mainLinVelocity.setVisibility(View.INVISIBLE);
             mainPythagoren.setVisibility(View.INVISIBLE);
-            mainAngVelocity.setVisibility(View.INVISIBLE);
+            mainAngAcceleration.setVisibility(View.INVISIBLE);
             if(subCategory.equals("square")){
                 textMessageSub.setText("2D Area Selected");
             } else {
@@ -1104,7 +1114,7 @@ public class Emulator extends AppCompatActivity {
             mainSCT.setVisibility(View.INVISIBLE);
             mainLinVelocity.setVisibility(View.INVISIBLE);
             mainPythagoren.setVisibility(View.INVISIBLE);
-            mainAngVelocity.setVisibility(View.INVISIBLE);
+            mainAngAcceleration.setVisibility(View.INVISIBLE);
             TextView sign2Text = findViewById(R.id.sign2);
             sign2Text.setVisibility(View.VISIBLE);
             TextView dTextString = findViewById(R.id.Dvalue);
@@ -1119,7 +1129,7 @@ public class Emulator extends AppCompatActivity {
             mainSCT.setVisibility(View.INVISIBLE);
             mainLinVelocity.setVisibility(View.INVISIBLE);
             mainPythagoren.setVisibility(View.INVISIBLE);
-            mainAngVelocity.setVisibility(View.INVISIBLE);
+            mainAngAcceleration.setVisibility(View.INVISIBLE);
             textMessageSub.setText("Exponent selected");
         } else if(subCategory.equals("AreaCircle")) {
             mainBasic.setVisibility(View.INVISIBLE);
@@ -1130,7 +1140,7 @@ public class Emulator extends AppCompatActivity {
             mainSCT.setVisibility(View.INVISIBLE);
             mainLinVelocity.setVisibility(View.INVISIBLE);
             mainPythagoren.setVisibility(View.INVISIBLE);
-            mainAngVelocity.setVisibility(View.INVISIBLE);
+            mainAngAcceleration.setVisibility(View.INVISIBLE);
             textMessageSub.setText("Circle Area Selected");
         } else if(subCategory.equals("custom")){
             mainBasic.setVisibility(View.INVISIBLE);
@@ -1141,7 +1151,7 @@ public class Emulator extends AppCompatActivity {
             mainSCT.setVisibility(View.INVISIBLE);
             mainLinVelocity.setVisibility(View.INVISIBLE);
             mainPythagoren.setVisibility(View.INVISIBLE);
-            mainAngVelocity.setVisibility(View.INVISIBLE);
+            mainAngAcceleration.setVisibility(View.INVISIBLE);
             textMessageSub.setText("Custom Selected");
         } else if(subCategory.equals("sin") || subCategory.equals("cos") || subCategory.equals("tan")){
             TextView sctText = findViewById(R.id.SCT);
@@ -1153,7 +1163,7 @@ public class Emulator extends AppCompatActivity {
             mainSCT.setVisibility(View.VISIBLE);
             mainLinVelocity.setVisibility(View.INVISIBLE);
             mainPythagoren.setVisibility(View.INVISIBLE);
-            mainAngVelocity.setVisibility(View.INVISIBLE);
+            mainAngAcceleration.setVisibility(View.INVISIBLE);
             if(subCategory.equals("sin")){
                 sctText.setText("sin");
             }else if(subCategory.equals("cos")){
@@ -1170,7 +1180,7 @@ public class Emulator extends AppCompatActivity {
             mainSCT.setVisibility(View.INVISIBLE);
             mainLinVelocity.setVisibility(View.VISIBLE);
             mainPythagoren.setVisibility(View.INVISIBLE);
-            mainAngVelocity.setVisibility(View.INVISIBLE);
+            mainAngAcceleration.setVisibility(View.INVISIBLE);
             textMessageSub.setText("Linear Velocity Selected");
         } else if(subCategory.equals("Pythagoren")){
             mainBasic.setVisibility(View.INVISIBLE);
@@ -1181,9 +1191,9 @@ public class Emulator extends AppCompatActivity {
             mainSCT.setVisibility(View.INVISIBLE);
             mainLinVelocity.setVisibility(View.INVISIBLE);
             mainPythagoren.setVisibility(View.VISIBLE);
-            mainAngVelocity.setVisibility(View.INVISIBLE);
+            mainAngAcceleration.setVisibility(View.INVISIBLE);
             textMessageSub.setText("Pythagoren Selected");
-        } else if(data.subCategory2.equals("Angular Velocity")){
+        } else if(subCategory.equals("Angular Motion")){
             mainBasic.setVisibility(View.INVISIBLE);
             main23DArea.setVisibility(View.INVISIBLE);
             mainExponent.setVisibility(View.INVISIBLE);
@@ -1192,11 +1202,12 @@ public class Emulator extends AppCompatActivity {
             mainSCT.setVisibility(View.INVISIBLE);
             mainLinVelocity.setVisibility(View.INVISIBLE);
             mainPythagoren.setVisibility(View.INVISIBLE);
-            mainAngVelocity.setVisibility(View.VISIBLE);
-            textMessageSub.setText("Angular Motion Selected");
-        }
-        else {
+            if(data.subCategory2.equals("Angular Acceleration")){
+                mainAngAcceleration.setVisibility(View.VISIBLE);
+            }
+            textMessageSub.setText("Angular Acceleration Selected");
+        } else {
             textMessageSub.setText("Check your formula");
         }
     }
-}//1202
+}//1213

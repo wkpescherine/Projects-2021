@@ -226,6 +226,23 @@ public class Formula {
         return t1;
     }
 
+    static String AngularAcceleration(String value1, String value2, String value3, String value4){
+        if(value1.equals("")){
+            t1 = ((Double.valueOf(value3)-Double.valueOf(value4))-Double.valueOf(value2))+"";
+        }
+        if(value2.equals("")){
+            t1 = ((Double.valueOf(value3)*Double.valueOf(value4))-Double.valueOf(value1))+"";
+        }
+        if(value3.equals("")){
+            t1 = ((Double.valueOf(value2)-Double.valueOf(value1))/Double.valueOf(value4))+"";
+        }
+        if(value4.equals("")){
+            t1 = ((Double.valueOf(value2)-Double.valueOf(value1))/Double.valueOf(value3))+"";
+        }
+        checkDecimal(t1);
+        return t1;
+    }
+
     public static void checkDecimal(String valueCheck){
         double doubleCheck = Double.valueOf(valueCheck);
         int intCheck = (int)Math.round(doubleCheck);
@@ -233,4 +250,4 @@ public class Formula {
             t1 = intCheck+"";
         }
     }
-}//236
+}//253
