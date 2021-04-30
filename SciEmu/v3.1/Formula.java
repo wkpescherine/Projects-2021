@@ -206,12 +206,6 @@ public class Formula {
         return t1;
     }
 
-    static String LinearVelocity(String value1, String value2, String value3){
-        t1 =((Math.abs(Double.valueOf(value1) - Double.valueOf(value2)))/Double.valueOf(value3))+"";
-        checkDecimal(t1);
-        return t1;
-    }
-
     static String Pythagoren(String value1, String value2, String value3){
         if(value1.equals("")){
             t1 = (Math.pow(Double.valueOf(value3),2)-Math.pow(Double.valueOf(value1),2))+"";
@@ -222,6 +216,12 @@ public class Formula {
         if(value3.equals("")){
             t1 = (Math.pow(Double.valueOf(value1),2)+Math.pow(Double.valueOf(value2),2))+"";
         }
+        checkDecimal(t1);
+        return t1;
+    }
+
+    static String LinearVelocity(String value1, String value2, String value3){
+        t1 =((Math.abs(Double.valueOf(value1) - Double.valueOf(value2)))/Double.valueOf(value3))+"";
         checkDecimal(t1);
         return t1;
     }
