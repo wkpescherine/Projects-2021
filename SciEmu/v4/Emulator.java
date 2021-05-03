@@ -19,11 +19,8 @@ public class Emulator extends AppCompatActivity {
 
     int total = 0;
     int customValid = 0;
-    // Location is = x,y,z,h,w,d,total, exp value, exponent, custom, radius
-    int[] isDecimal = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
-    String xString = "";
-    String yString = "";
-    String zString = "";
+    // Location is = x,y,z,h,w,d,total, exp value, exponent, custom, radius, sppedI,speedF,time
+    int[] isDecimal = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
     String hString = "";
     String wString = "";
     String dString = "";
@@ -165,7 +162,6 @@ public class Emulator extends AppCompatActivity {
         TextView textMessageW = findViewById(R.id.message);
         textMessageW.setText("Focus on Total selected");
     }
-
     public void focusEXP(View v) {
         focus = "expValue";
         TextView textMessageW = findViewById(R.id.message);
@@ -176,38 +172,82 @@ public class Emulator extends AppCompatActivity {
         TextView textMessageW = findViewById(R.id.message);
         textMessageW.setText("Focus is on Degrees");
     }
-
     public void focusEXPSUP(View v) {
         focus = "expSuper";
         TextView textMessageW = findViewById(R.id.message);
         textMessageW.setText("Focus on Exponent");
     }
+    public void focusSpeedI(View v) {
+        focus = "si";
+        TextView textMessageW = findViewById(R.id.message);
+        textMessageW.setText("Focus on Speed Int");
+    }
+    public void focusSpeedF(View v) {
+        focus = "sf";
+        TextView textMessageW = findViewById(R.id.message);
+        textMessageW.setText("Focus on Speed Final");
+    }
+    public void focusTime(View v) {
+        focus = "t";
+        TextView textMessageW = findViewById(R.id.message);
+        textMessageW.setText("Focus on Time");
+    }
+    public void focusA(View v) {
+        focus = "a";
+        TextView textMessageW = findViewById(R.id.message);
+        textMessageW.setText("Focus on A");
+    }
+    public void focusB(View v) {
+        focus = "b";
+        TextView textMessageW = findViewById(R.id.message);
+        textMessageW.setText("Focus on B");
+    }
+    public void focusC(View v) {
+        focus = "c";
+        TextView textMessageW = findViewById(R.id.message);
+        textMessageW.setText("Focus on C");
+    }
+    public void focusAngle1(View v) {
+        focus = "angle1";
+        TextView textMessageW = findViewById(R.id.message);
+        textMessageW.setText("Focus on angle1");
+    }
+    public void focusAngle2(View v) {
+        focus = "angle2";
+        TextView textMessageW = findViewById(R.id.message);
+        textMessageW.setText("Focus on angle2");
+    }
+    public void focusTime2(View v) {
+        focus = "time2";
+        TextView textMessageW = findViewById(R.id.message);
+        textMessageW.setText("Focus on time");
+    }
 
     public void setValues(String val) {
-        if (focus.equals("X") && xString.length() != 0) {
+        if (focus.equals("X") && data.xString.length() != 0) {
             TextView valueX = findViewById(R.id.Xvalue);
-            xString += val + "";
-            valueX.setText(xString);
-        } else if (focus.equals("X") && xString.length() == 0) {
+            data.xString += val + "";
+            valueX.setText(data.xString);
+        } else if (focus.equals("X") && data.xString.length() == 0) {
             TextView valueX = findViewById(R.id.Xvalue);
-            xString = val + "";
-            valueX.setText(xString);
-        } else if (focus.equals("Y") && yString.length() != 0) {
+            data.xString = val + "";
+            valueX.setText(data.xString);
+        } else if (focus.equals("Y") && data.yString.length() != 0) {
             TextView valueY = findViewById(R.id.Yvalue);
-            yString += val;
-            valueY.setText(yString);
-        } else if (focus.equals("Y") && yString.length() == 0) {
+            data.yString += val;
+            valueY.setText(data.yString);
+        } else if (focus.equals("Y") && data.yString.length() == 0) {
             TextView valueY = findViewById(R.id.Yvalue);
-            yString = val + "";
-            valueY.setText(yString);
-        } else if (focus.equals("Z") && zString.length() != 0) {
+            data.yString = val + "";
+            valueY.setText(data.yString);
+        } else if (focus.equals("Z") && data.zString.length() != 0) {
             TextView valueZ = findViewById(R.id.Zvalue);
-            zString += val;
-            valueZ.setText(zString);
-        } else if (focus.equals("Z") && zString.length() == 0) {
+            data.zString += val;
+            valueZ.setText(data.zString);
+        } else if (focus.equals("Z") && data.zString.length() == 0) {
             TextView valueZ = findViewById(R.id.Zvalue);
-            zString = val + "";
-            valueZ.setText(zString);
+            data.zString = val + "";
+            valueZ.setText(data.zString);
         } else if (focus.equals("H") && hString.length() != 0) {
             TextView valueH = findViewById(R.id.Hvalue);
             hString += val;
@@ -300,7 +340,79 @@ public class Emulator extends AppCompatActivity {
             TextView valueDegree = findViewById(R.id.Degree);
             data.degree = val + "";
             valueDegree.setText(data.degree);
-        } else {
+        } else if (focus.equals("si") && data.speedI.length() != 0) {
+            TextView valueSpeedI = findViewById(R.id.intSpeed);
+            data.speedI += val;
+            valueSpeedI.setText(data.speedI);
+        } else if (focus.equals("si") && data.speedI.length() == 0) {
+            TextView valueSpeedI = findViewById(R.id.intSpeed);
+            data.speedI = val + "";
+            valueSpeedI.setText(data.speedI);
+        } else if (focus.equals("sf") && data.speedF.length() != 0) {
+            TextView valueSpeedF = findViewById(R.id.finalSpeed);
+            data.speedF += val;
+            valueSpeedF.setText(data.speedF);
+        } else if (focus.equals("sf") && data.speedF.length() == 0) {
+            TextView valueSpeedF = findViewById(R.id.finalSpeed);
+            data.speedF = val + "";
+            valueSpeedF.setText(data.speedF);
+        } else if (focus.equals("t") && data.time.length() != 0) {
+            TextView valueTime = findViewById(R.id.time);
+            data.time += val;
+            valueTime.setText(data.speedF);
+        } else if (focus.equals("t") && data.time.length() == 0) {
+            TextView valueTime = findViewById(R.id.time);
+            data.time = val + "";
+            valueTime.setText(data.time);
+        } else if (focus.equals("a") && data.aString.length() != 0) {
+            TextView aValueTime = findViewById(R.id.Avalue);
+            data.aString += val;
+            aValueTime.setText(data.aString);
+        } else if (focus.equals("a") && data.aString.length() == 0) {
+            TextView aValueTime = findViewById(R.id.Avalue);
+            data.aString = val + "";
+            aValueTime.setText(data.aString);
+        } else if (focus.equals("b") && data.bString.length() != 0) {
+            TextView bValueTime = findViewById(R.id.Bvalue);
+            data.bString += val;
+            bValueTime.setText(data.bString);
+        } else if (focus.equals("b") && data.bString.length() == 0) {
+            TextView bValueTime = findViewById(R.id.Bvalue);
+            data.bString = val + "";
+            bValueTime.setText(data.bString);
+        } else if (focus.equals("c") && data.cString.length() != 0) {
+            TextView cValueTime = findViewById(R.id.Cvalue);
+            data.cString += val;
+            cValueTime.setText(data.cString);
+        } else if (focus.equals("c") && data.cString.length() == 0) {
+            TextView cValueTime = findViewById(R.id.Cvalue);
+            data.cString = val + "";
+            cValueTime.setText(data.cString);
+        } else if (focus.equals("angle1") && data.angle1.length() != 0) {
+            TextView angle1ValueTime = findViewById(R.id.angle1);
+            data.angle1 += val;
+            angle1ValueTime.setText(data.angle1);
+        } else if (focus.equals("angle1") && data.angle1.length() == 0) {
+            TextView cValueTime = findViewById(R.id.angle1);
+            data.angle1 = val + "";
+            cValueTime.setText(data.angle1);
+        } else if (focus.equals("angle2") && data.angle2.length() != 0) {
+            TextView angle2ValueTime = findViewById(R.id.angle2);
+            data.angle2 += val;
+            angle2ValueTime.setText(data.angle2);
+        } else if (focus.equals("angle2") && data.angle2.length() == 0) {
+            TextView angle2ValueTime = findViewById(R.id.angle2);
+            data.angle2 = val + "";
+            angle2ValueTime.setText(data.angle2);
+        } else if (focus.equals("time2") && data.time.length() != 0) {
+            TextView time2ValueTime = findViewById(R.id.time2);
+            data.time += val;
+            time2ValueTime.setText(data.time);
+        } else if (focus.equals("time2") && data.time.length() == 0) {
+            TextView time2ValueTime = findViewById(R.id.time2);
+            data.time = val + "";
+            time2ValueTime.setText(data.time);
+        }else {
             TextView textMessageX = findViewById(R.id.message);
             textMessageX.setText("ERROR!!!");
         }
@@ -313,55 +425,61 @@ public class Emulator extends AppCompatActivity {
         TextView hText = findViewById(R.id.Hvalue);
         TextView wText = findViewById(R.id.Wvalue);
         TextView dText = findViewById(R.id.Dvalue);
+        TextView aText = findViewById(R.id.Avalue);
+        TextView bText = findViewById(R.id.Bvalue);
+        TextView cText = findViewById(R.id.Cvalue);
         TextView eText = findViewById(R.id.expSuper);
         TextView evText = findViewById(R.id.expValue);
         TextView t1Text = findViewById(R.id.Totvalue);
         TextView customText = findViewById(R.id.Custom);
         TextView radiusText = findViewById(R.id.Radius);
         TextView degreeText = findViewById(R.id.Degree);
+        TextView speedIText = findViewById(R.id.intSpeed);
+        TextView speedFText = findViewById(R.id.finalSpeed);
+        TextView timeText = findViewById(R.id.time);
         if (func.equals("del")) {
-            if (focus.equals("X") && xString.length() > 0) {
-                String xLastChar = xString.charAt(xString.length() - 1) + "";
+            if (focus.equals("X") && data.xString.length() > 0) {
+                String xLastChar = data.xString.charAt(data.xString.length() - 1) + "";
                 if (xLastChar.equals(".")) {
                     isDecimal[0] = 0;
-                    xString = xString.substring(0, (xString.length()) - 1);
-                    xText.setText(xString);
-                } else if (focus.equals("X") && (xString.length() > 0)) {
-                    xString = xString.substring(0, (xString.length()) - 1);
-                    xText.setText(xString);
+                    data.xString = data.xString.substring(0, (data.xString.length()) - 1);
+                    xText.setText(data.xString);
+                } else if (focus.equals("X") && (data.xString.length() > 0)) {
+                    data.xString = data.xString.substring(0, (data.xString.length()) - 1);
+                    xText.setText(data.xString);
                 }
             }
-            if (xString.length() == 0) {
+            if (data.xString.length() == 0) {
                 xText.setText("x");
             }
 
-            if (focus.equals("Y") && yString.length() > 0) {
-                String yLastChar = yString.charAt(yString.length() - 1) + "";
+            if (focus.equals("Y") && data.yString.length() > 0) {
+                String yLastChar = data.yString.charAt(data.yString.length() - 1) + "";
                 if (yLastChar.equals(".")) {
                     isDecimal[1] = 0;
-                    yString = yString.substring(0, (yString.length()) - 1);
-                    yText.setText(yString);
-                } else if (focus.equals("Y") && (yString.length() > 0)) {
-                    yString = yString.substring(0, (yString.length()) - 1);
-                    yText.setText(yString);
+                    data.yString = data.yString.substring(0, (data.yString.length()) - 1);
+                    yText.setText(data.yString);
+                } else if (focus.equals("Y") && (data.yString.length() > 0)) {
+                    data.yString = data.yString.substring(0, (data.yString.length()) - 1);
+                    yText.setText(data.yString);
                 }
             }
-            if (yString.length() == 0) {
+            if (data.yString.length() == 0) {
                 yText.setText("y");
             }
 
-            if (focus.equals("Z") && zString.length() > 0) {
-                String zLastChar = zString.charAt(zString.length() - 1) + "";
+            if (focus.equals("Z") && data.zString.length() > 0) {
+                String zLastChar = data.zString.charAt(data.zString.length() - 1) + "";
                 if (zLastChar.equals(".")) {
                     isDecimal[2] = 0;
-                    zString = zString.substring(0, (zString.length()) - 1);
-                    zText.setText(zString);
-                } else if (focus.equals("Z") && (zString.length() > 0)) {
-                    zString = zString.substring(0, (zString.length()) - 1);
-                    zText.setText(zString);
+                    data.zString = data.zString.substring(0, (data.zString.length()) - 1);
+                    zText.setText(data.zString);
+                } else if (focus.equals("Z") && (data.zString.length() > 0)) {
+                    data.zString = data.zString.substring(0, (data.zString.length()) - 1);
+                    zText.setText(data.zString);
                 }
             }
-            if (zString.length() == 0) {
+            if (data.zString.length() == 0) {
                 zText.setText("z");
             }
 
@@ -481,10 +599,52 @@ public class Emulator extends AppCompatActivity {
 
             if (focus.equals("degree") && data.degree.length() > 0) {
                 data.degree = data.degree.substring(0, (data.degree.length()) - 1);
-                eText.setText(data.degree);
+                degreeText.setText(data.degree);
             }
             if(data.degree.length() == 0){
-                radiusText.setText("degree");
+                degreeText.setText("degree");
+            }
+            if (focus.equals("si") && data.speedI.length() > 0) {
+                data.speedI = data.speedI.substring(0, (data.speedI.length()) - 1);
+                speedIText.setText(data.speedI);
+            }
+            if(data.speedI.length() == 0){
+                speedIText.setText("si");
+            }
+            if (focus.equals("sf") && data.speedF.length() > 0) {
+                data.speedF = data.speedF.substring(0, (data.speedF.length()) - 1);
+                speedFText.setText(data.speedF);
+            }
+            if(data.speedF.length() == 0){
+                speedFText.setText("sf");
+            }
+            if (focus.equals("t") && data.time.length() > 0) {
+                data.time = data.time.substring(0, (data.time.length()) - 1);
+                timeText.setText(data.time);
+            }
+            if(data.time.length() == 0){
+                timeText.setText("t");
+            }
+            if (focus.equals("a") && data.aString.length() > 0) {
+                data.aString = data.aString.substring(0, (data.aString.length()) - 1);
+                aText.setText(data.aString);
+            }
+            if(data.aString.length() == 0){
+                aText.setText("a");
+            }
+            if (focus.equals("b") && data.bString.length() > 0) {
+                data.bString = data.bString.substring(0, (data.bString.length()) - 1);
+                bText.setText(data.bString);
+            }
+            if(data.bString.length() == 0){
+                bText.setText("b");
+            }
+            if (focus.equals("c") && data.cString.length() > 0) {
+                data.cString = data.cString.substring(0, (data.cString.length()) - 1);
+                cText.setText(data.cString);
+            }
+            if(data.cString.length() == 0){
+                cText.setText("c");
             }
         }
     }
@@ -511,6 +671,10 @@ public class Emulator extends AppCompatActivity {
         focus = "custom";
         subCategory = "custom";
         setFormulaText(subCategory);
+    }
+    public void displaySubAngularMotion(View v){
+        subCategory = "Angular Motion";
+        displaySubs2(1);
     }
 
     public void setAddition(View v) {
@@ -561,8 +725,21 @@ public class Emulator extends AppCompatActivity {
         subCategory ="tan";
         setFormulaText(subCategory);
     }
+    public void LinearVelocity(View v){
+        subCategory = "LinearVelocity";
+        setFormulaText(subCategory);
+    }
+    public void setPythagoren(View v){
+        subCategory = "Pythagoren";
+        setFormulaText(subCategory);
+    }
+    public void AngularAcc(View v){
+        data.subCategory2 = "Angular Acceleration";
+        setFormulaText(data.subCategory2);
+    }
 
     public void displaySubs(int num) {
+        displaySubs2(0);
         LinearLayout layout1 = findViewById(R.id.basicSub);
         LinearLayout layout2 = findViewById(R.id.algebraSub);
         LinearLayout layout3 = findViewById(R.id.calculusSub);
@@ -596,6 +773,20 @@ public class Emulator extends AppCompatActivity {
                 break;
         }
     }
+    public void displaySubs2(int num) {
+        LinearLayout subLayout = findViewById(R.id.angularMotionSub);
+        subLayout.setVisibility(View.GONE);
+        switch (num) {
+            case 0:
+                subLayout.setVisibility(View.GONE);
+                break;
+            case 1:
+                subLayout.setVisibility(View.VISIBLE);
+                TextView message = findViewById(R.id.message);
+                message.setText("Angular Motion selected");
+                break;
+        }
+    }
 
     public void practiceSection(View v) {
         Intent intent = new Intent(this, PracticeSection.class);
@@ -603,70 +794,19 @@ public class Emulator extends AppCompatActivity {
     }
 
     public void clickToSolve(View v) {
-        if (subCategory.equals("add")) {
-            if (xString.length() > 0 && yString.length() > 0 && zString.length() == 0) {
-                String result = formula.Addition(xString, yString, zString, isDecimal[0], isDecimal[1], isDecimal[2]);
+        if (subCategory.equals("add") || subCategory.equals("subtract") || subCategory.equals("divide") || subCategory.equals("multiply")) {
+            if (data.xString.length() > 0 && data.yString.length() > 0 && data.zString.length() == 0) {
+                String result = formula.Basic(data.xString, data.yString, data.zString, subCategory);
                 TextView valueZ = findViewById(R.id.Zvalue);
                 valueZ.setText(result);
             }
-            if (xString.length() > 0 && yString.length() == 0 && zString.length() > 0) {
-                String result = formula.Addition(xString, yString, zString, isDecimal[0], isDecimal[1], isDecimal[2]);
+            if (data.xString.length() > 0 && data.yString.length() == 0 && data.zString.length() > 0) {
+                String result = formula.Basic(data.xString, data.yString, data.zString, subCategory);
                 TextView valueY = findViewById(R.id.Yvalue);
                 valueY.setText(result);
             }
-            if (xString.length() == 0 && yString.length() > 0 && zString.length() > 0) {
-                String result = formula.Addition(xString, yString, zString, isDecimal[0], isDecimal[1], isDecimal[2]);
-                TextView valueX = findViewById(R.id.Xvalue);
-                valueX.setText(result);
-            }
-        }
-        if (subCategory.equals("subtract")) {
-            if (xString.length() > 0 && yString.length() > 0 && zString.length() == 0) {
-                String result = formula.Subtraction(xString, yString, zString, isDecimal[0], isDecimal[1], isDecimal[2]);
-                TextView valueZ = findViewById(R.id.Zvalue);
-                valueZ.setText(result);
-            }
-            if (xString.length() > 0 && yString.length() == 0 && zString.length() > 0) {
-                String result = formula.Subtraction(xString, yString, zString, isDecimal[0], isDecimal[1], isDecimal[2]);
-                TextView valueY = findViewById(R.id.Yvalue);
-                valueY.setText(result);
-            }
-            if (xString.length() == 0 && yString.length() > 0 && zString.length() > 0) {
-                String result = formula.Subtraction(xString, yString, zString, isDecimal[0], isDecimal[1], isDecimal[2]);
-                TextView valueX = findViewById(R.id.Xvalue);
-                valueX.setText(result);
-            }
-        }
-        if (subCategory.equals("divide")) {
-            if (xString.length() > 0 && yString.length() > 0 && zString.length() == 0) {
-                String result = formula.Division(xString, yString, zString, isDecimal[0], isDecimal[1], isDecimal[2]);
-                TextView valueZ = findViewById(R.id.Zvalue);
-                valueZ.setText(result);
-            }
-            if (xString.length() > 0 && yString.length() == 0 && zString.length() > 0) {
-                String result = formula.Division(xString, yString, zString, isDecimal[0], isDecimal[1], isDecimal[2]);
-                TextView valueY = findViewById(R.id.Yvalue);
-                valueY.setText(result);
-            }
-            if (xString.length() == 0 && yString.length() > 0 && zString.length() > 0) {
-                String result = formula.Division(xString, yString, zString, isDecimal[0], isDecimal[1], isDecimal[2]);
-                TextView valueX = findViewById(R.id.Xvalue);
-                valueX.setText(result);
-            }
-        }
-        if (subCategory.equals("multiply")) {
-            if (xString.length() > 0 && yString.length() > 0 && zString.length() == 0) {
-                String result = formula.Multiply(xString, yString, zString, isDecimal[0], isDecimal[1], isDecimal[2]);
-                TextView valueZ = findViewById(R.id.Zvalue);
-                valueZ.setText(result);
-            }
-            if (xString.length() > 0 && yString.length() == 0 && zString.length() > 0) {
-                String result = formula.Multiply(xString, yString, zString, isDecimal[0], isDecimal[1], isDecimal[2]);
-                TextView valueY = findViewById(R.id.Yvalue);
-                valueY.setText(result);
-            }
-            if (xString.length() == 0 && yString.length() > 0 && zString.length() > 0) {
-                String result = formula.Multiply(xString, yString, zString, isDecimal[0], isDecimal[1], isDecimal[2]);
+            if (data.xString.length() == 0 && data.yString.length() > 0 && data.zString.length() > 0) {
+                String result = formula.Basic(data.xString, data.yString, data.zString, subCategory);
                 TextView valueX = findViewById(R.id.Xvalue);
                 valueX.setText(result);
             }
@@ -691,15 +831,15 @@ public class Emulator extends AppCompatActivity {
                 String result = formula.Cube(hString, wString, dString, totalString, isDecimal[3], isDecimal[4], isDecimal[5], isDecimal[6]);
                 TextView TotalText = findViewById(R.id.Totvalue);
                 TotalText.setText(result);
-          } else if (hString.length() > 0 && wString.length() > 0 && dString.length() == 0 && totalString.length() > 0) {
+            } else if (hString.length() > 0 && wString.length() > 0 && dString.length() == 0 && totalString.length() > 0) {
                 String result = formula.Cube(hString, wString, dString, totalString, isDecimal[3], isDecimal[4], isDecimal[5], isDecimal[6]);
                 TextView dText = findViewById(R.id.Dvalue);
                 dText.setText(result);
-          } else if (hString.length() > 0 && wString.length() == 0 && dString.length() > 0 && totalString.length() > 0) {
+            } else if (hString.length() > 0 && wString.length() == 0 && dString.length() > 0 && totalString.length() > 0) {
                 String result = formula.Cube(hString, wString, dString, totalString, isDecimal[3], isDecimal[4], isDecimal[5], isDecimal[6]);
                 TextView wText = findViewById(R.id.Wvalue);
                 wText.setText(result);
-          } else if (hString.length() == 0 && wString.length() > 0 && dString.length() > 0 && totalString.length() > 0) {
+            } else if (hString.length() == 0 && wString.length() > 0 && dString.length() > 0 && totalString.length() > 0) {
                 String result = formula.Cube(hString, wString, dString, totalString, isDecimal[3], isDecimal[4], isDecimal[5], isDecimal[6]);
                 TextView hText = findViewById(R.id.Hvalue);
                 hText.setText(result);
@@ -731,12 +871,42 @@ public class Emulator extends AppCompatActivity {
             TextView randiansTotal = findViewById(R.id.radians);
             randiansTotal.setText(result);
         }
+        if(subCategory.equals("LinearVelocity")){
+            String result = formula.LinearVelocity(data.speedI, data.speedF, data.time);
+            TextView linVelocityTotal = findViewById(R.id.linearVelocity);
+            linVelocityTotal.setText(result);
+        }
+        if(subCategory.equals("Pythagoren")){
+            String result = formula.Pythagoren(data.aString, data.bString, data.cString);
+            String sqrtResult = (Math.sqrt(Double.valueOf(result)))+"";
+            if (data.aString.length() > 0 && data.bString.length() > 0 && data.cString.length() == 0) {
+                TextView cValueText = findViewById(R.id.Cvalue);
+                cValueText.setText(sqrtResult);
+                TextView specMessage = findViewById(R.id.message);
+                specMessage.setText("The sqr of c is "+result);
+            } else if (data.aString.length() > 0 && data.bString.length() == 0 && data.cString.length() > 0) {
+                TextView bValueText = findViewById(R.id.Bvalue);
+                bValueText.setText(sqrtResult);
+                TextView specMessage = findViewById(R.id.message);
+                specMessage.setText("The sqr of b is "+result);
+            } else if (data.aString.length() == 0 && data.bString.length() > 0 && data.cString.length() > 0) {
+                TextView aValueText = findViewById(R.id.Avalue);
+                aValueText.setText(sqrtResult);
+                TextView specMessage = findViewById(R.id.message);
+                specMessage.setText("The sqr of a is "+result);
+            }
+        }
+        if(data.subCategory2.equals("Angular Acceleration")){
+            String result = formula.AngularAcceleration(data.angle1, data.angle2, data.time, data.acceleration);
+            TextView angAccTotal = findViewById(R.id.AngMotionAcc);
+            angAccTotal.setText(result);
+        }
     }
 
     public void resetUI(){
-        xString = "";
-        yString = "";
-        zString = "";
+        data.xString = "";
+        data.yString = "";
+        data.zString = "";
         hString = "";
         wString = "";
         dString = "";
@@ -746,6 +916,15 @@ public class Emulator extends AppCompatActivity {
         expString ="";
         totalString = "";
         total=0;
+        data.speedF = "";
+        data.speedI = "";
+        data.time = "";
+        data.velocity = "";
+        data.aString = "";
+        data.bString = "";
+        data.cString = "";
+        data.angle1 = "";
+        data.angle2 = "";
         TextView xTextString = findViewById(R.id.Xvalue);
         xTextString.setText("x");
         TextView yTextString = findViewById(R.id.Yvalue);
@@ -766,55 +945,67 @@ public class Emulator extends AppCompatActivity {
         totTextString.setText("Total");
         TextView radiusTextString = findViewById(R.id.Radius);
         radiusTextString.setText("radius");
-        TextView degreeTextString = findViewById(R.id.Radius);
+        TextView degreeTextString = findViewById(R.id.Degree);
         degreeTextString.setText("degree");
+        TextView speedITextString = findViewById(R.id.intSpeed);
+        speedITextString.setText("si");
+        TextView speedFTextString = findViewById(R.id.finalSpeed);
+        speedFTextString.setText("sf");
+        TextView timeTextString = findViewById(R.id.time);
+        timeTextString.setText("t");
+        TextView aTextString = findViewById(R.id.Avalue);
+        aTextString.setText("a");
+        TextView bTextString = findViewById(R.id.Bvalue);
+        bTextString.setText("b");
+        TextView cTextString = findViewById(R.id.Cvalue);
+        cTextString.setText("c");
+        TextView angle1TextString = findViewById(R.id.angle1);
+        angle1TextString.setText("\u03B8");
+        TextView angle2TextString = findViewById(R.id.angle2);
+        angle2TextString.setText("\u03B8");
+        TextView time2TextString = findViewById(R.id.time2);
+        time2TextString.setText("t");
     }
 
     public void setFormulaText(String sub){
         resetUI();
         LinearLayout mainBasic = findViewById(R.id.Basic);
-        LinearLayout main23DArea = findViewById(R.id.Area23DFormulas);
+        LinearLayout main23DArea = findViewById(R.id.SquareCube);
         LinearLayout mainExponent = findViewById(R.id.ExponentFormula);
         LinearLayout mainCustom = findViewById(R.id.CustomFormula);
         LinearLayout mainCircle = findViewById(R.id.CircleFormula);
         LinearLayout mainSCT = findViewById(R.id.sincostan);
+        LinearLayout mainLinVelocity = findViewById(R.id.LinearVelocity);
+        LinearLayout mainPythagoren = findViewById(R.id.Pythagoren);
+        LinearLayout mainAngAcceleration = findViewById(R.id.AngularAcceleration);
+        LinearLayout subMotion = findViewById(R.id.angularMotionSub);
+        subMotion.setVisibility(View.GONE);
+        mainBasic.setVisibility(View.GONE);
+        main23DArea.setVisibility(View.GONE);
+        mainExponent.setVisibility(View.GONE);
+        mainCustom.setVisibility(View.GONE);
+        mainCircle.setVisibility(View.GONE);
+        mainSCT.setVisibility(View.GONE);
+        mainLinVelocity.setVisibility(View.GONE);
+        mainPythagoren.setVisibility(View.GONE);
+        mainAngAcceleration.setVisibility(View.GONE);
         TextView sign1Text = findViewById(R.id.sign1);
         TextView textMessageSub = findViewById(R.id.message);
         textMessageSub.setText(subCategory);
         if(subCategory.equals("add")){
             mainBasic.setVisibility(View.VISIBLE);
-            main23DArea.setVisibility(View.INVISIBLE);
-            mainExponent.setVisibility(View.INVISIBLE);
-            mainCustom.setVisibility(View.INVISIBLE);
-            mainCircle.setVisibility(View.INVISIBLE);
-            mainSCT.setVisibility(View.INVISIBLE);
             sign1Text.setText("+");
             textMessageSub.setText("Addition selected");
         }else if(subCategory.equals("subtract")){
-            mainBasic.setVisibility(View.VISIBLE);
-            main23DArea.setVisibility(View.INVISIBLE);
-            mainExponent.setVisibility(View.INVISIBLE);
-            mainCustom.setVisibility(View.INVISIBLE);
-            mainCircle.setVisibility(View.INVISIBLE);
-            mainSCT.setVisibility(View.INVISIBLE);
+            mainBasic.setVisibility(View.VISIBLE);;
             sign1Text.setText("-");
             textMessageSub.setText("Subtraction selected");
         }else if(subCategory.equals("divide")){
             mainBasic.setVisibility(View.VISIBLE);
-            main23DArea.setVisibility(View.INVISIBLE);
-            mainExponent.setVisibility(View.INVISIBLE);
-            mainCustom.setVisibility(View.INVISIBLE);
-            mainCircle.setVisibility(View.INVISIBLE);
-            mainSCT.setVisibility(View.INVISIBLE);
             sign1Text.setText("/");
             textMessageSub.setText("Division Selected");
         }else if(subCategory.equals("multiply")){
             mainBasic.setVisibility(View.VISIBLE);
-            main23DArea.setVisibility(View.INVISIBLE);
-            mainExponent.setVisibility(View.INVISIBLE);
-            mainCustom.setVisibility(View.INVISIBLE);
-            mainCircle.setVisibility(View.INVISIBLE);
-            mainSCT.setVisibility(View.INVISIBLE);
             sign1Text.setText("+");
             textMessageSub.setText("Multiplication Selected");
         }else if(subCategory.equals("square") || subCategory.equals("AreaTriangle")){
@@ -824,6 +1015,9 @@ public class Emulator extends AppCompatActivity {
             mainCustom.setVisibility(View.INVISIBLE);
             mainCircle.setVisibility(View.INVISIBLE);
             mainSCT.setVisibility(View.INVISIBLE);
+            mainLinVelocity.setVisibility(View.INVISIBLE);
+            mainPythagoren.setVisibility(View.INVISIBLE);
+            mainAngAcceleration.setVisibility(View.INVISIBLE);
             if(subCategory.equals("square")){
                 textMessageSub.setText("2D Area Selected");
             } else {
@@ -840,6 +1034,9 @@ public class Emulator extends AppCompatActivity {
             mainCustom.setVisibility(View.INVISIBLE);
             mainCircle.setVisibility(View.INVISIBLE);
             mainSCT.setVisibility(View.INVISIBLE);
+            mainLinVelocity.setVisibility(View.INVISIBLE);
+            mainPythagoren.setVisibility(View.INVISIBLE);
+            mainAngAcceleration.setVisibility(View.INVISIBLE);
             TextView sign2Text = findViewById(R.id.sign2);
             sign2Text.setVisibility(View.VISIBLE);
             TextView dTextString = findViewById(R.id.Dvalue);
@@ -852,6 +1049,9 @@ public class Emulator extends AppCompatActivity {
             mainCustom.setVisibility(View.INVISIBLE);
             mainCircle.setVisibility(View.INVISIBLE);
             mainSCT.setVisibility(View.INVISIBLE);
+            mainLinVelocity.setVisibility(View.INVISIBLE);
+            mainPythagoren.setVisibility(View.INVISIBLE);
+            mainAngAcceleration.setVisibility(View.INVISIBLE);
             textMessageSub.setText("Exponent selected");
         } else if(subCategory.equals("AreaCircle")) {
             mainBasic.setVisibility(View.INVISIBLE);
@@ -860,6 +1060,9 @@ public class Emulator extends AppCompatActivity {
             mainCustom.setVisibility(View.INVISIBLE);
             mainCircle.setVisibility(View.VISIBLE);
             mainSCT.setVisibility(View.INVISIBLE);
+            mainLinVelocity.setVisibility(View.INVISIBLE);
+            mainPythagoren.setVisibility(View.INVISIBLE);
+            mainAngAcceleration.setVisibility(View.INVISIBLE);
             textMessageSub.setText("Circle Area Selected");
         } else if(subCategory.equals("custom")){
             mainBasic.setVisibility(View.INVISIBLE);
@@ -868,6 +1071,9 @@ public class Emulator extends AppCompatActivity {
             mainCustom.setVisibility(View.VISIBLE);
             mainCircle.setVisibility(View.INVISIBLE);
             mainSCT.setVisibility(View.INVISIBLE);
+            mainLinVelocity.setVisibility(View.INVISIBLE);
+            mainPythagoren.setVisibility(View.INVISIBLE);
+            mainAngAcceleration.setVisibility(View.INVISIBLE);
             textMessageSub.setText("Custom Selected");
         } else if(subCategory.equals("sin") || subCategory.equals("cos") || subCategory.equals("tan")){
             TextView sctText = findViewById(R.id.SCT);
@@ -877,6 +1083,9 @@ public class Emulator extends AppCompatActivity {
             mainCustom.setVisibility(View.INVISIBLE);
             mainCircle.setVisibility(View.INVISIBLE);
             mainSCT.setVisibility(View.VISIBLE);
+            mainLinVelocity.setVisibility(View.INVISIBLE);
+            mainPythagoren.setVisibility(View.INVISIBLE);
+            mainAngAcceleration.setVisibility(View.INVISIBLE);
             if(subCategory.equals("sin")){
                 sctText.setText("sin");
             }else if(subCategory.equals("cos")){
@@ -884,8 +1093,43 @@ public class Emulator extends AppCompatActivity {
             }else{
                 sctText.setText("tan");
             }
+        } else if(subCategory.equals("LinearVelocity")){
+            mainBasic.setVisibility(View.INVISIBLE);
+            main23DArea.setVisibility(View.INVISIBLE);
+            mainExponent.setVisibility(View.INVISIBLE);
+            mainCustom.setVisibility(View.INVISIBLE);
+            mainCircle.setVisibility(View.INVISIBLE);
+            mainSCT.setVisibility(View.INVISIBLE);
+            mainLinVelocity.setVisibility(View.VISIBLE);
+            mainPythagoren.setVisibility(View.INVISIBLE);
+            mainAngAcceleration.setVisibility(View.INVISIBLE);
+            textMessageSub.setText("Linear Velocity Selected");
+        } else if(subCategory.equals("Pythagoren")){
+            mainBasic.setVisibility(View.INVISIBLE);
+            main23DArea.setVisibility(View.INVISIBLE);
+            mainExponent.setVisibility(View.INVISIBLE);
+            mainCustom.setVisibility(View.INVISIBLE);
+            mainCircle.setVisibility(View.INVISIBLE);
+            mainSCT.setVisibility(View.INVISIBLE);
+            mainLinVelocity.setVisibility(View.INVISIBLE);
+            mainPythagoren.setVisibility(View.VISIBLE);
+            mainAngAcceleration.setVisibility(View.INVISIBLE);
+            textMessageSub.setText("Pythagoren Selected");
+        } else if(subCategory.equals("Angular Motion")){
+            mainBasic.setVisibility(View.INVISIBLE);
+            main23DArea.setVisibility(View.INVISIBLE);
+            mainExponent.setVisibility(View.INVISIBLE);
+            mainCustom.setVisibility(View.INVISIBLE);
+            mainCircle.setVisibility(View.INVISIBLE);
+            mainSCT.setVisibility(View.INVISIBLE);
+            mainLinVelocity.setVisibility(View.INVISIBLE);
+            mainPythagoren.setVisibility(View.INVISIBLE);
+            if(data.subCategory2.equals("Angular Acceleration")){
+                mainAngAcceleration.setVisibility(View.VISIBLE);
+            }
+            textMessageSub.setText("Angular Acceleration Selected");
         } else {
             textMessageSub.setText("Check your formula");
         }
     }
-}//891
+}//1135
