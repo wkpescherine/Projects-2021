@@ -21,175 +21,7 @@
         android:textColor="#fff"
         android:textAlignment="center"/>
 
-    <!-- KEYPAD SECTION -->
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <TableLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <TableRow
-                android:id="@+id/row1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-                <TextView
-                    android:id="@+id/val1"
-                    android:text="1"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    android:textColor="#fff"
-                    android:gravity="center"
-                    android:textSize="32dp"
-                    android:onClick="num1"/>
-                <TextView
-                    android:text="2"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    android:textColor="#fff"
-                    android:gravity="center"
-                    android:textSize="32dp"
-                    android:onClick="num2"/>
-                <TextView
-                    android:text="3"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    android:textColor="#fff"
-                    android:gravity="center"
-                    android:textSize="32dp"
-                    android:onClick="num3"/>
-                <TextView
-                    android:text="4"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    android:textColor="#fff"
-                    android:gravity="center"
-                    android:textSize="32dp"
-                    android:onClick="num4"/>
-                <TextView
-                    android:id="@+id/val5"
-                    android:text="5"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    android:textColor="#fff"
-                    android:gravity="center"
-                    android:textSize="32dp"
-                    android:onClick="num5"/>
-                <TextView
-                    android:text="6"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    android:textColor="#fff"
-                    android:gravity="center"
-                    android:textSize="32dp"
-                    android:onClick="num6"/>
-            </TableRow>
-            <TableRow
-                android:id="@+id/row2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-                <TextView
-                    android:text="7"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    android:textColor="#fff"
-                    android:gravity="center"
-                    android:textSize="32dp"
-                    android:onClick="num7"/>
-                <TextView
-                    android:text="8"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    android:textColor="#fff"
-                    android:gravity="center"
-                    android:textSize="32dp"
-                    android:onClick="num8"/>
-                <TextView
-                    android:text="9"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    android:textColor="#fff"
-                    android:gravity="center"
-                    android:textSize="32dp"
-                    android:onClick="num9"/>
-                <TextView
-                    android:text="0"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    android:textColor="#fff"
-                    android:gravity="center"
-                    android:textSize="32dp"
-                    android:onClick="num0"/>
-                <TextView
-                    android:text="DEL"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    android:textColor="#fff"
-                    android:gravity="center"
-                    android:textSize="32dp"
-                    android:onClick="del"/>
-                <TextView
-                    android:text="("
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    android:textColor="#fff"
-                    android:gravity="center"
-                    android:textSize="32dp"
-                    android:onClick="openBracket"/>
-            </TableRow>
-            <TableRow
-                android:id="@+id/row3"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-                <TextView
-                    android:text="/"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    android:textColor="#fff"
-                    android:gravity="center"
-                    android:textSize="32dp" />
-                <TextView
-                    android:text="."
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    android:textColor="#fff"
-                    android:gravity="center"
-                    android:textSize="32dp"
-                    android:onClick="decimal"/>
-                <TextView
-                    android:text="+"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    android:textColor="#fff"
-                    android:gravity="center"
-                    android:textSize="32dp"
-                    android:onClick="plus"/>
-                <TextView
-                    android:text="-"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    android:textColor="#fff"
-                    android:gravity="center"
-                    android:textSize="32dp"
-                    android:onClick="minus"/>
-                <TextView
-                    android:text="*"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    android:textColor="#fff"
-                    android:gravity="center"
-                    android:textSize="32dp"
-                    android:onClick="multi"/>
-                <TextView
-                    android:text=")"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    android:textColor="#fff"
-                    android:gravity="center"
-                    android:textSize="32dp"
-                    android:onClick="closeBracket"/>
-            </TableRow>
-        </TableLayout>
-    </LinearLayout>
+    <include layout="@layout/keypad_ui"/>
 
     <Button
         android:layout_width="match_parent"
@@ -371,22 +203,9 @@
                 android:layout_marginLeft="5dp"
                 android:text="Pythahorean"
                 android:textColor="#fff"
-                android:textSize="8dp" />
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
-                android:text="Derivative"
-                android:textColor="#fff"
-                android:textSize="8dp" />
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
-                android:text="Triangle 90"
-                android:textColor="#fff"
-                android:textSize="8dp" />
-    </LinearLayout>
+                android:textSize="8dp"
+                android:onClick="setPythagoren"/>
+        </LinearLayout>
     </HorizontalScrollView>
 
     <!-- PHYSICS SUB SECTION-->
@@ -394,26 +213,28 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fillViewport="true">
-      <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/physicsSub"
-        android:visibility="gone">
-        <Button
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"
-            android:text="Linear Motion"
-            android:textColor="#fff"
-            android:textSize="8dp" />
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"
-            android:text="Circular Motion"
-            android:textColor="#fff"
-            android:textSize="8dp" />
-    </LinearLayout>
+            android:id="@+id/physicsSub"
+            android:visibility="gone">
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="Linear: Velocity"
+                android:textColor="#fff"
+                android:textSize="8dp"
+                android:onClick="LinearVelocity"/>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="Angular Motion"
+                android:textColor="#fff"
+                android:textSize="8dp"
+                android:onClick="displaySubAngularMotion"/>
+        </LinearLayout>
     </HorizontalScrollView>
 
     <!-- GEOMETRY SUB SECTIONS-->
@@ -442,7 +263,7 @@
             android:textColor="#fff"
             android:textSize="8dp"
             android:onClick="AreaCircle"/>
-    </LinearLayout>
+        </LinearLayout>
     </HorizontalScrollView>
 
     <!-- TRIG SUB SECTIONS-->
@@ -482,4 +303,25 @@
         </LinearLayout>
     </HorizontalScrollView>
 
-</LinearLayout><!--  485  -->
+    <!-- PHYSICS SUBS2 -->
+    <HorizontalScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fillViewport="true">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/angularMotionSub"
+            android:visibility="gone">
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="acceleration"
+                android:textColor="#fff"
+                android:textSize="8dp"
+                android:onClick="AngularAcc"/>
+        </LinearLayout>
+    </HorizontalScrollView>
+
+</LinearLayout><!--  327  -->
