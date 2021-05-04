@@ -122,20 +122,23 @@ public class Emulator extends AppCompatActivity {
     public void openBracket(View v){ setValues("(");}
     public void closeBracket(View v){ setValues(")");}
 
-    public void focusX(View v) {
-        focus = "X";
-        TextView textMessageX = findViewById(R.id.message);
-        textMessageX.setText("Focus on x selected");
-    }
-    public void focusY(View v) {
-        focus = "Y";
-        TextView textMessageY = findViewById(R.id.message);
-        textMessageY.setText("Focus on y selected");
-    }
-    public void focusZ(View v) {
-        focus = "Z";
-        TextView textMessageZ = findViewById(R.id.message);
-        textMessageZ.setText("Focus on z selected");
+    public void setFocus(View v){
+        TextView textMessage = findViewById(R.id.message);
+        switch(v.getId())
+        {
+            case R.id.Xvalue:
+                focus = "X";
+                textMessage.setText("Focus on x selected");
+                break;
+            case R.id.Yvalue:
+                focus = "Y";
+                textMessage.setText("Focus on Y selected");
+                break;
+            case R.id.Zvalue:
+                focus = "Z";
+                textMessage.setText("Focus on Z selected");
+                break;
+        }
     }
     public void focusH(View v) {
         focus = "H";
@@ -1132,4 +1135,4 @@ public class Emulator extends AppCompatActivity {
             textMessageSub.setText("Check your formula");
         }
     }
-}//1135
+}//1138
