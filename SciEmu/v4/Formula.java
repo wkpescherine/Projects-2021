@@ -41,39 +41,31 @@ public class Formula {
         return t1;
     }
 
-    static String Multiply(String value1, String value2, String value3, int a, int b, int c){
-        if(a == 1 || b == 1 || c ==1){
-            if(value3.equals("")){
-                t1 = (Double.valueOf(value1))*(Double.valueOf(value2))+"";
+    public String Area (String value1, String value2, String value3, String value4, String area){
+        if(value1.equals("")){
+            if(area.equals("square")){
+                t1 = ((Double.valueOf(value3))/ (Double.valueOf(value2))) + "";
             }
-            if(value2.equals("")){
-                t1 = (Double.valueOf(value3))/(Double.valueOf(value1))+"";
-            }
-            if(value1.equals("")){
-                t1 = (Double.valueOf(value3))/(Double.valueOf(value2))+"";
-            }
-        }else{
-            if(value3.equals("")){
-                t1 = (Integer.parseInt(value1))*(Integer.parseInt(value2))+"";
-            }
-            if(value2.equals("")){
-                if(Double.valueOf(value3)/Double.valueOf(value1) != 0){
-                    t1 = Double.valueOf(value3)/Double.valueOf(value1) + "";
-                }else {
-                    t1 = Integer.parseInt(value3) / Integer.parseInt(value1) + "";
-                }
-            }
-            if(value1.equals("")){
-                if(Double.valueOf(value3)/Double.valueOf(value3) != 0){
-                    t1 = Double.valueOf(value3)/Double.valueOf(value2) + "";
-                }else {
-                    t1 = Integer.parseInt(value3) / Integer.parseInt(value2) + "";
-                }
+            if(area.equals("cube")){
+                t1 = (Double.valueOf(value4)/(Double.valueOf(value2)*Double.valueOf(value3)))+ "";
             }
         }
-        return  t1;
-    }
+        if(value2.equals("")){
+           if(area.equals("square")){
+                t1 = ((Double.valueOf(value3))/ (Double.valueOf(value1))) + "";
+            }
+        }
+        if(value3.equals("")){
+            if(area.equals("square")){
+                t1 = ((Double.valueOf(value1))*(Double.valueOf(value2))) + "";
+            }
+        }
+        if(value4.equals("")){
 
+        }
+        checkDecimal(t1);
+        return t1;
+    }
     static String Cube(String value1, String value2 , String value3, String value4, int a, int b, int c, int d){
         if( a == 1 || b == 1 || c == 1 || d == 1){
             if(value4.equals("")){
@@ -84,34 +76,6 @@ public class Formula {
             }
             if(value2.equals("")){
                 t1 = (Double.valueOf(value4)/Double.valueOf(value1)*Double.valueOf(value3))+ "";
-            }
-            if(value1.equals("")){
-                t1 = (Double.valueOf(value4)/Double.valueOf(value2)*Double.valueOf(value3))+ "";
-            }
-        }else{
-            if(value4.equals("")){
-                t1 = Integer.parseInt(value1)*Integer.parseInt(value2)*Integer.parseInt(value3)+"";
-            }
-            if(value3.equals("")){
-                if((Double.valueOf(value4)%Double.valueOf(value1)*Double.valueOf(value2)) != 0){
-                    t1 = (Double.valueOf(value4)/Double.valueOf(value1)*Double.valueOf(value2))+"";
-                }else {
-                    t1 = (Integer.parseInt(value4) / Integer.parseInt(value1) * Integer.parseInt(value2)) + "";
-                }
-            }
-            if(value2.equals("")){
-                if((Double.valueOf(value4)%Double.valueOf(value1)*Double.valueOf(value3)) != 0){
-                    t1 = (Double.valueOf(value4)/Double.valueOf(value1)*Double.valueOf(value3))+ "";
-                }else {
-                    t1 = (Integer.parseInt(value4) / Integer.parseInt(value1) * Integer.parseInt(value3)) + "";
-                }
-            }
-            if(value1.equals("")){
-                if(Double.valueOf(value3)/Double.valueOf(value3) != 0){
-                    t1 = (Double.valueOf(value4)/Double.valueOf(value2)*Double.valueOf(value3))+ "";
-                }else {
-                    t1 = (Integer.parseInt(value4) / Integer.parseInt(value2) * Integer.parseInt(value3)) + "";
-                }
             }
         }
         return t1;
@@ -130,15 +94,6 @@ public class Formula {
                 subT1 = subT1 * Integer.parseInt(value1);
             }
             t1 = subT1+"";
-        }
-        return t1;
-    }
-
-    static String AreaTriangle(String value1, String value2){
-        if(Integer.parseInt(value1)%2 != 0){
-            t1 = ((Double.valueOf(value1)/2)* Double.valueOf(value2)) + "";
-        } else {
-            t1 = ((Integer.parseInt(value1)/2) * Integer.parseInt(value2))+ "";
         }
         return t1;
     }
@@ -205,4 +160,4 @@ public class Formula {
             t1 = intCheck+"";
         }
     }
-}//208
+}//184
