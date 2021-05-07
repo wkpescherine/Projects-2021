@@ -797,52 +797,50 @@ public class Emulator extends AppCompatActivity {
 
     public void clickToSolve(View v) {
         if (subCategory.equals("add") || subCategory.equals("subtract") || subCategory.equals("divide") || subCategory.equals("multiply")) {
+            String result = formula.Basic(data.xString, data.yString, data.zString, subCategory);
             if (data.xString.length() > 0 && data.yString.length() > 0 && data.zString.length() == 0) {
-                String result = formula.Basic(data.xString, data.yString, data.zString, subCategory);
                 TextView valueZ = findViewById(R.id.Zvalue);
                 valueZ.setText(result);
             }
             if (data.xString.length() > 0 && data.yString.length() == 0 && data.zString.length() > 0) {
-                String result = formula.Basic(data.xString, data.yString, data.zString, subCategory);
                 TextView valueY = findViewById(R.id.Yvalue);
                 valueY.setText(result);
             }
             if (data.xString.length() == 0 && data.yString.length() > 0 && data.zString.length() > 0) {
-                String result = formula.Basic(data.xString, data.yString, data.zString, subCategory);
                 TextView valueX = findViewById(R.id.Xvalue);
                 valueX.setText(result);
             }
         }
         if (subCategory.equals("square")) {
+            String result = formula.Area(hString, wString, totalString, "0", subCategory);
             if (hString.length() > 0 && wString.length() > 0 && totalString.length() == 0) {
-                String result = formula.Multiply(hString, wString, totalString, isDecimal[3], isDecimal[4], isDecimal[6]);
                 TextView TotalText = findViewById(R.id.Totvalue);
                 TotalText.setText(result);
             } else if (hString.length() > 0 && wString.length() == 0 && totalString.length() > 0) {
-                String result = formula.Multiply(hString, wString, totalString, isDecimal[3], isDecimal[4], isDecimal[6]);
+                String result = formula.Area(hString, wString, totalString, "0", subCategory);
                 TextView wText = findViewById(R.id.Wvalue);
                 wText.setText(result);
             } else if (hString.length() == 0 && wString.length() > 0 && totalString.length() > 0) {
-                String result = formula.Multiply(hString, wString, totalString, isDecimal[3], isDecimal[4], isDecimal[6]);
+                String result = formula.Area(hString, wString, totalString, "0", subCategory);
                 TextView hText = findViewById(R.id.Hvalue);
                 hText.setText(result);
             }
         }
         if(subCategory.equals("cube")) {
             if (hString.length() > 0 && wString.length() > 0 && dString.length() > 0 && totalString.length() == 0) {
-                String result = formula.Cube(hString, wString, dString, totalString, isDecimal[3], isDecimal[4], isDecimal[5], isDecimal[6]);
+                String result = formula.Area(hString, wString, dString, totalString, subCategory);
                 TextView TotalText = findViewById(R.id.Totvalue);
                 TotalText.setText(result);
             } else if (hString.length() > 0 && wString.length() > 0 && dString.length() == 0 && totalString.length() > 0) {
-                String result = formula.Cube(hString, wString, dString, totalString, isDecimal[3], isDecimal[4], isDecimal[5], isDecimal[6]);
+                String result = formula.Area(hString, wString, dString, totalString, isDecimal[3], isDecimal[4], isDecimal[5], isDecimal[6]);
                 TextView dText = findViewById(R.id.Dvalue);
                 dText.setText(result);
             } else if (hString.length() > 0 && wString.length() == 0 && dString.length() > 0 && totalString.length() > 0) {
-                String result = formula.Cube(hString, wString, dString, totalString, isDecimal[3], isDecimal[4], isDecimal[5], isDecimal[6]);
+                String result = formula.Area(hString, wString, dString, totalString, isDecimal[3], isDecimal[4], isDecimal[5], isDecimal[6]);
                 TextView wText = findViewById(R.id.Wvalue);
                 wText.setText(result);
             } else if (hString.length() == 0 && wString.length() > 0 && dString.length() > 0 && totalString.length() > 0) {
-                String result = formula.Cube(hString, wString, dString, totalString, isDecimal[3], isDecimal[4], isDecimal[5], isDecimal[6]);
+                String result = formula.Area(hString, wString, dString, totalString, isDecimal[3], isDecimal[4], isDecimal[5], isDecimal[6]);
                 TextView hText = findViewById(R.id.Hvalue);
                 hText.setText(result);
             }
@@ -859,12 +857,12 @@ public class Emulator extends AppCompatActivity {
             totalCustom.setText(result);
         }
         if(subCategory.equals("AreaTriangle")){
-            String result = formula.AreaTriangle(hString, wString);
+            String result = formula.Area(hString, wString, "0", "0", subCategory);
             TextView triAreaTotal = findViewById(R.id.Totvalue);
             triAreaTotal.setText(result);
         }
         if(subCategory.equals("AreaCircle")){
-            String result = formula.AreaCircle(radius);
+            String result = formula.Area(radius,"0","0","0", subCategory);
             TextView circleAreaTotal = findViewById(R.id.CircleTotvalue);
             circleAreaTotal.setText(result);
         }

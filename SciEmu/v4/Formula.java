@@ -45,39 +45,30 @@ public class Formula {
         if(value1.equals("")){
             if(area.equals("square")){
                 t1 = ((Double.valueOf(value3))/ (Double.valueOf(value2))) + "";
-            }
-            if(area.equals("cube")){
+            } else if(area.equals("cube")){
                 t1 = (Double.valueOf(value4)/(Double.valueOf(value2)*Double.valueOf(value3)))+ "";
             }
         }
         if(value2.equals("")){
-           if(area.equals("square")){
+            if(area.equals("square")){
                 t1 = ((Double.valueOf(value3))/ (Double.valueOf(value1))) + "";
+            } else if(area.equals("cube")){
+                t1 = (Double.valueOf(value4)/Double.valueOf(value1)*Double.valueOf(value3))+ "";
             }
         }
         if(value3.equals("")){
             if(area.equals("square")){
                 t1 = ((Double.valueOf(value1))*(Double.valueOf(value2))) + "";
+            } else if(area.equals("cube")){
+                t1 = (Double.valueOf(value4)/Double.valueOf(value1)*Double.valueOf(value2))+"";
             }
         }
         if(value4.equals("")){
-
-        }
-        checkDecimal(t1);
-        return t1;
-    }
-    static String Cube(String value1, String value2 , String value3, String value4, int a, int b, int c, int d){
-        if( a == 1 || b == 1 || c == 1 || d == 1){
-            if(value4.equals("")){
+            if(area.equals("cube")){
                 t1 = (Double.valueOf(value1))*(Double.valueOf(value2))*(Double.valueOf(value3))+"";
             }
-            if(value3.equals("")){
-                t1 = (Double.valueOf(value4)/Double.valueOf(value1)*Double.valueOf(value2))+"";
-            }
-            if(value2.equals("")){
-                t1 = (Double.valueOf(value4)/Double.valueOf(value1)*Double.valueOf(value3))+ "";
-            }
         }
+        checkDecimal(t1);
         return t1;
     }
 
@@ -160,4 +151,4 @@ public class Formula {
             t1 = intCheck+"";
         }
     }
-}//184
+}//154
