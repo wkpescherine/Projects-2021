@@ -58,7 +58,7 @@ public class Formula {
         }
         if(value3.equals("")){
             if(area.equals("cube")){
-                t1 = (Double.valueOf(value4)/Double.valueOf(value1)*Double.valueOf(value2))+"";
+                t1 = (Double.valueOf(value4)/(Double.valueOf(value1)*Double.valueOf(value2)))+"";
             }
         }
         if(value4.equals("")){
