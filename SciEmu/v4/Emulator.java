@@ -811,40 +811,38 @@ public class Emulator extends AppCompatActivity {
                 valueX.setText(result);
             }
         }
-        if (subCategory.equals("square")) {
-            String result = formula.Area(hString, wString, totalString, "0", subCategory);
+        if (subCategory.equals("square") || subCategory.equals("cube")) {
+            String result = formula.Area(hString, wString, dString, totalString, subCategory);
             if (hString.length() > 0 && wString.length() > 0 && totalString.length() == 0) {
                 TextView TotalText = findViewById(R.id.Totvalue);
                 TotalText.setText(result);
             } else if (hString.length() > 0 && wString.length() == 0 && totalString.length() > 0) {
-                String result = formula.Area(hString, wString, totalString, "0", subCategory);
                 TextView wText = findViewById(R.id.Wvalue);
                 wText.setText(result);
             } else if (hString.length() == 0 && wString.length() > 0 && totalString.length() > 0) {
-                String result = formula.Area(hString, wString, totalString, "0", subCategory);
                 TextView hText = findViewById(R.id.Hvalue);
                 hText.setText(result);
-            }
-        }
-        if(subCategory.equals("cube")) {
-            if (hString.length() > 0 && wString.length() > 0 && dString.length() > 0 && totalString.length() == 0) {
-                String result = formula.Area(hString, wString, dString, totalString, subCategory);
-                TextView TotalText = findViewById(R.id.Totvalue);
-                TotalText.setText(result);
-            } else if (hString.length() > 0 && wString.length() > 0 && dString.length() == 0 && totalString.length() > 0) {
-                String result = formula.Area(hString, wString, dString, totalString, isDecimal[3], isDecimal[4], isDecimal[5], isDecimal[6]);
+            } else if(dString.length() == 0 && hString.length() > 0 && wString.length() > 0 && totalString.length()>0){
                 TextView dText = findViewById(R.id.Dvalue);
                 dText.setText(result);
-            } else if (hString.length() > 0 && wString.length() == 0 && dString.length() > 0 && totalString.length() > 0) {
-                String result = formula.Area(hString, wString, dString, totalString, isDecimal[3], isDecimal[4], isDecimal[5], isDecimal[6]);
-                TextView wText = findViewById(R.id.Wvalue);
-                wText.setText(result);
-            } else if (hString.length() == 0 && wString.length() > 0 && dString.length() > 0 && totalString.length() > 0) {
-                String result = formula.Area(hString, wString, dString, totalString, isDecimal[3], isDecimal[4], isDecimal[5], isDecimal[6]);
-                TextView hText = findViewById(R.id.Hvalue);
-                hText.setText(result);
             }
         }
+        //if(subCategory.equals("cube")) {
+        //    String result = formula.Area(hString, wString, dString, totalString, subCategory);
+        //    if (hString.length() > 0 && wString.length() > 0 && dString.length() > 0 && totalString.length() == 0) {
+        //        TextView TotalText = findViewById(R.id.Totvalue);
+        //        TotalText.setText(result);
+        //    } else if (hString.length() > 0 && wString.length() > 0 && dString.length() == 0 && totalString.length() > 0) {
+        //        TextView dText = findViewById(R.id.Dvalue);
+        //        dText.setText(result);
+        //    } else if (hString.length() > 0 && wString.length() == 0 && dString.length() > 0 && totalString.length() > 0) {
+        //        TextView wText = findViewById(R.id.Wvalue);
+        //        wText.setText(result);
+        //    } else if (hString.length() == 0 && wString.length() > 0 && dString.length() > 0 && totalString.length() > 0) {
+        //        TextView hText = findViewById(R.id.Hvalue);
+        //        hText.setText(result);
+        //    }
+        //}
         if(subCategory.equals("Exponent")) {
             String result = formula.Exponent(expValueString, expString);
             TextView totalText = findViewById(R.id.ExpTotvalue2);
@@ -900,6 +898,9 @@ public class Emulator extends AppCompatActivity {
             String result = formula.AngularAcceleration(data.angle1, data.angle2, data.time, data.acceleration);
             TextView angAccTotal = findViewById(R.id.AngMotionAcc);
             angAccTotal.setText(result);
+        } else {
+            TextView textMessage = findViewById(R.id.message);
+            textMessage.setText("ERROR!!!");
         }
     }
 
@@ -1060,4 +1061,4 @@ public class Emulator extends AppCompatActivity {
             textMessageSub.setText("Check your formula");
         }
     }
-}//1065
+}//1061

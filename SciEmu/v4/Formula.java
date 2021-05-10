@@ -44,27 +44,27 @@ public class Formula {
     public String Area (String value1, String value2, String value3, String value4, String area){
         if(value1.equals("")){
             if(area.equals("square")){
-                t1 = ((Double.valueOf(value3))/ (Double.valueOf(value2))) + "";
+                t1 = ((Double.valueOf(value4))/ (Double.valueOf(value2))) + "";
             } else if(area.equals("cube")){
                 t1 = (Double.valueOf(value4)/(Double.valueOf(value2)*Double.valueOf(value3)))+ "";
             }
         }
         if(value2.equals("")){
             if(area.equals("square")){
-                t1 = ((Double.valueOf(value3))/ (Double.valueOf(value1))) + "";
+                t1 = ((Double.valueOf(value4))/ (Double.valueOf(value1))) + "";
             } else if(area.equals("cube")){
                 t1 = (Double.valueOf(value4)/Double.valueOf(value1)*Double.valueOf(value3))+ "";
             }
         }
         if(value3.equals("")){
-            if(area.equals("square")){
-                t1 = ((Double.valueOf(value1))*(Double.valueOf(value2))) + "";
-            } else if(area.equals("cube")){
+            if(area.equals("cube")){
                 t1 = (Double.valueOf(value4)/Double.valueOf(value1)*Double.valueOf(value2))+"";
             }
         }
         if(value4.equals("")){
-            if(area.equals("cube")){
+            if(area.equals("square")){
+                t1 = ((Double.valueOf(value1))*(Double.valueOf(value2))) + "";
+            } else if(area.equals("cube")){
                 t1 = (Double.valueOf(value1))*(Double.valueOf(value2))*(Double.valueOf(value3))+"";
             }
         }
