@@ -66,7 +66,7 @@
                 android:text="x"
                 android:textSize="32dp"
                 android:textColor="#fff"
-                android:onClick="focusX"/>
+                android:onClick="setFocus"/>
             <TextView
                 android:id="@+id/sign1"
                 android:layout_width="wrap_content"
@@ -81,7 +81,7 @@
                 android:text="y"
                 android:textSize="32dp"
                 android:textColor="#fff"
-                android:onClick="focusY"/>
+                android:onClick="setFocus"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -95,7 +95,7 @@
                 android:text="z"
                 android:textSize="32dp"
                 android:textColor="#fff"
-                android:onClick="focusZ"/>
+                android:onClick="setFocus"/>
         </LinearLayout>
         <!--  Square/Cube  -->
         <LinearLayout
@@ -112,7 +112,7 @@
                 android:text="h"
                 android:textSize="32dp"
                 android:textColor="#fff"
-                android:onClick="focusH"/>
+                android:onClick="setFocus"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

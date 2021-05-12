@@ -226,28 +226,25 @@ public class Emulator extends AppCompatActivity {
     }
 
     public void setValues(String val) {
+        TextView valueX = findViewById(R.id.Xvalue);
+        TextView valueY = findViewById(R.id.Yvalue);
+        TextView valueZ = findViewById(R.id.Zvalue);
         if (focus.equals("X") && data.xString.length() != 0) {
-            TextView valueX = findViewById(R.id.Xvalue);
             data.xString += val + "";
             valueX.setText(data.xString);
         } else if (focus.equals("X") && data.xString.length() == 0) {
-            TextView valueX = findViewById(R.id.Xvalue);
             data.xString = val + "";
             valueX.setText(data.xString);
         } else if (focus.equals("Y") && data.yString.length() != 0) {
-            TextView valueY = findViewById(R.id.Yvalue);
             data.yString += val;
             valueY.setText(data.yString);
         } else if (focus.equals("Y") && data.yString.length() == 0) {
-            TextView valueY = findViewById(R.id.Yvalue);
             data.yString = val + "";
             valueY.setText(data.yString);
         } else if (focus.equals("Z") && data.zString.length() != 0) {
-            TextView valueZ = findViewById(R.id.Zvalue);
             data.zString += val;
             valueZ.setText(data.zString);
         } else if (focus.equals("Z") && data.zString.length() == 0) {
-            TextView valueZ = findViewById(R.id.Zvalue);
             data.zString = val + "";
             valueZ.setText(data.zString);
         } else if (focus.equals("H") && hString.length() != 0) {
@@ -290,11 +287,11 @@ public class Emulator extends AppCompatActivity {
             TextView valueExpValue = findViewById(R.id.expValue);
             expValueString = val + "";
             valueExpValue.setText(expValueString);
-        } else if (focus.equals("expSuper") && expString.length() != 0) {
+        } else if (focus.equals("expSuper") && subCategory.equals("Exponent") && expString.length() != 0) {
             TextView valueExp = findViewById(R.id.expSuper);
             expString += val;
             valueExp.setText(expString);
-        } else if (focus.equals("expSuper") && expString.length() == 0) {
+        } else if (focus.equals("expSuper") && subCategory.equals("Exponent") && expString.length() == 0) {
             TextView valueExp = findViewById(R.id.expSuper);
             expString = val + "";
             valueExp.setText(expString);
@@ -739,6 +736,16 @@ public class Emulator extends AppCompatActivity {
         data.subCategory2 = "Angular Acceleration";
         setFormulaText(data.subCategory2);
     }
+    public void x2(View v){
+        subCategory = "x2";
+        setFormulaText(subCategory);
+        expString = "2";
+    }
+    public void x3(View v){
+        subCategory = "x3";
+        setFormulaText(subCategory);
+        expString = "3";
+    }
 
     public void displaySubs(int num) {
         displaySubs2(0);
@@ -796,7 +803,7 @@ public class Emulator extends AppCompatActivity {
     }
 
     public void clickToSolve(View v) {
-        if (subCategory.equals("add") || subCategory.equals("subtract") || subCategory.equals("divide") || subCategory.equals("multiply")) {
+        if(subCategory.equals("add") || subCategory.equals("subtract") || subCategory.equals("divide") || subCategory.equals("multiply")) {
             String result = formula.Basic(data.xString, data.yString, data.zString, subCategory);
             if (data.xString.length() > 0 && data.yString.length() > 0 && data.zString.length() == 0) {
                 TextView valueZ = findViewById(R.id.Zvalue);
@@ -811,7 +818,7 @@ public class Emulator extends AppCompatActivity {
                 valueX.setText(result);
             }
         }
-        if (subCategory.equals("square") || subCategory.equals("cube")) {
+        if(subCategory.equals("square") || subCategory.equals("cube")) {
             String result = formula.Area(hString, wString, dString, totalString, subCategory);
             if (hString.length() > 0 && wString.length() > 0 && totalString.length() == 0) {
                 TextView TotalText = findViewById(R.id.Totvalue);
@@ -829,6 +836,12 @@ public class Emulator extends AppCompatActivity {
         }
         if(subCategory.equals("Exponent")) {
             String result = formula.Exponent(expValueString, expString);
+            TextView totalText = findViewById(R.id.ExpTotvalue2);
+            totalText.setText(result);
+            totalString = "";
+        }
+        if(subCategory.equals("x2") || subCategory.equals("x3")){
+            String result = formula.Power(expValueString, expString);
             TextView totalText = findViewById(R.id.ExpTotvalue2);
             totalText.setText(result);
             totalString = "";
@@ -1011,9 +1024,17 @@ public class Emulator extends AppCompatActivity {
             TextView dTextString = findViewById(R.id.Dvalue);
             dTextString.setVisibility(View.VISIBLE);
             textMessageSub.setText("3D Area Selected");
-        } else if(subCategory.equals("Exponent")){
+        } else if(subCategory.equals("Exponent") || subCategory.equals("x2") || subCategory.equals("x3")){
             mainExponent.setVisibility(View.VISIBLE);
             textMessageSub.setText("Exponent selected");
+            if(subCategory.equals("x2")){
+                TextView power = findViewById(R.id.expSuper);
+                power.setText("2");
+            }
+            if(subCategory.equals("x3")){
+                TextView power = findViewById(R.id.expSuper);
+                power.setText("3");
+            }
         } else if(subCategory.equals("AreaCircle")) {
             mainCircle.setVisibility(View.VISIBLE);
             textMessageSub.setText("Circle Area Selected");
@@ -1045,4 +1066,4 @@ public class Emulator extends AppCompatActivity {
             textMessageSub.setText("Check your formula");
         }
     }
-}//1048
+}//1069

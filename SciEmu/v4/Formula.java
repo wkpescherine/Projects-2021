@@ -72,6 +72,11 @@ public class Formula {
         return t1;
     }
 
+    static String Power(String value1, String value2){
+        t1 = (Math.pow(Double.valueOf(value1),Integer.parseInt(value2)))+"";
+        checkDecimal(t1);
+        return t1;
+    }
     static String Exponent(String value1, String value2){
         if( Double.valueOf(value1)%2 != 0){
             double subt1 = Double.valueOf(value1);
@@ -151,4 +156,4 @@ public class Formula {
             t1 = intCheck+"";
         }
     }
-}//154
+}//159

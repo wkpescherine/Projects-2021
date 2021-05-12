@@ -164,11 +164,11 @@
         android:layout_height="wrap_content"
         android:fillViewport="true">
         <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/algebraSub"
-        android:visibility="gone">
-        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/algebraSub"
+            android:visibility="gone">
+            <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
@@ -176,7 +176,7 @@
             android:textColor="#fff"
             android:textSize="8dp"
             android:onClick="Square"/>
-        <Button
+            <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
@@ -184,7 +184,25 @@
             android:textColor="#fff"
             android:textSize="8dp"
             android:onClick="Cube"/>
-    </LinearLayout>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="x\U00B2"
+                android:textColor="#fff"
+                android:textSize="8dp"
+                android:onClick="x2"
+                />
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="x\U00B3"
+                android:textColor="#fff"
+                android:textSize="8dp"
+                android:onClick="x3"
+                />
+        </LinearLayout>
     </HorizontalScrollView>
 
     <!-- CALCULUS SUB SECTION-->
@@ -324,4 +342,4 @@
         </LinearLayout>
     </HorizontalScrollView>
 
-</LinearLayout><!--  327  -->
+</LinearLayout><!--  345  -->
