@@ -60,7 +60,7 @@
             android:layout_centerInParent="true"
             android:id="@+id/Basic">
             <TextView
-                android:id="@+id/Xvalue"
+                android:id="@+id/X"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="x"
@@ -75,7 +75,7 @@
                 android:textSize="32dp"
                 android:textColor="#fff"/>
             <TextView
-                android:id="@+id/Yvalue"
+                android:id="@+id/Y"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="y"
@@ -89,7 +89,7 @@
                 android:textSize="32dp"
                 android:textColor="#fff"/>
             <TextView
-                android:id="@+id/Zvalue"
+                android:id="@+id/Z"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="z"
@@ -106,7 +106,7 @@
             android:visibility="invisible"
             android:id="@+id/SquareCube">
             <TextView
-                android:id="@+id/Hvalue"
+                android:id="@+id/H"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="h"
@@ -120,7 +120,7 @@
                 android:textSize="32dp"
                 android:textColor="#fff"/>
             <TextView
-                android:id="@+id/Wvalue"
+                android:id="@+id/W"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="w"
@@ -136,7 +136,7 @@
                 android:textColor="#fff"
                 android:visibility="gone"/>
             <TextView
-                android:id="@+id/Dvalue"
+                android:id="@+id/D"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="d"

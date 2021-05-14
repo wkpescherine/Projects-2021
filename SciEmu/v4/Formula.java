@@ -77,22 +77,6 @@ public class Formula {
         checkDecimal(t1);
         return t1;
     }
-    static String Exponent(String value1, String value2){
-        if( Double.valueOf(value1)%2 != 0){
-            double subt1 = Double.valueOf(value1);
-            for (int a = 1; a < Integer.parseInt(value2); a++) {
-                subt1 = subt1 * Double.valueOf(value1);
-            }
-            t1 = subt1+"";
-        }else {
-            int subT1 = Integer.parseInt(value1);
-            for (int a = 1; a < Integer.parseInt(value2); a++) {
-                subT1 = subT1 * Integer.parseInt(value1);
-            }
-            t1 = subT1+"";
-        }
-        return t1;
-    }
 
     static String AreaCircle(String value1){
         t1 = (3.16*(Double.valueOf(value1)*Double.valueOf(value1)))+"";
@@ -156,4 +140,4 @@ public class Formula {
             t1 = intCheck+"";
         }
     }
-}//159
+}//143

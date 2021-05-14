@@ -1,6 +1,9 @@
 package com.example.sciemu;
 
 public class DataConfig {
+    String hString = "";
+    String wString = "";
+    String dString = "";
     String xString = "";
     String yString = "";
     String zString = "";
