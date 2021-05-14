@@ -10,6 +10,8 @@ public class DataConfig {
     String aString ="";
     String bString ="";
     String cString ="";
+    String radiusString ="";
+    String totalString ="";
     String degree = "";
     String radians = "";
     String velocity = "";
@@ -21,4 +23,4 @@ public class DataConfig {
     String angle2 = "";
     String acceleration = "";
     int paren = 0;
-}//21
+}//26
