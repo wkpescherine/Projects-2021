@@ -45,6 +45,11 @@ public class Emulator extends AppCompatActivity {
         total = findViewById(R.id.Total);
     }
 
+    public void setKeyValues(View v){
+        String getKeyValue = getResources().getResourceEntryName(v.getId());
+        setValues(getKeyValue);
+    }
+
     public void num1(View v) { setValues("1"); }
     public void num2(View v) { setValues("2"); }
     public void num3(View v) { setValues("3"); }
@@ -1000,4 +1005,4 @@ public class Emulator extends AppCompatActivity {
             textMessageSub.setText("Check your formula");
         }
     }
-}//1003
+}//1008

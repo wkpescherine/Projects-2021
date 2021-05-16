@@ -47,6 +47,8 @@ public class Formula {
                 t1 = ((Double.valueOf(value4))/ (Double.valueOf(value2))) + "";
             } else if(area.equals("cube")){
                 t1 = (Double.valueOf(value4)/(Double.valueOf(value2)*Double.valueOf(value3)))+ "";
+            } else if(area.equals("triangle")){
+                t1 = ((Double.valueOf(value4)/Double.valueOf(value2))*2)+"";
             }
         }
         if(value2.equals("")){
@@ -54,6 +56,8 @@ public class Formula {
                 t1 = ((Double.valueOf(value4))/ (Double.valueOf(value1))) + "";
             } else if(area.equals("cube")){
                 t1 = (Double.valueOf(value4)/Double.valueOf(value1)*Double.valueOf(value3))+ "";
+            } else if(area.equals("triangle")) {
+                t1 = ((Double.valueOf(value4) / (Double.valueOf(value2) / 2))) + "";
             }
         }
         if(value3.equals("")){
@@ -61,11 +65,13 @@ public class Formula {
                 t1 = (Double.valueOf(value4)/(Double.valueOf(value1)*Double.valueOf(value2)))+"";
             }
         }
-        if(value4.equals("")){
-            if(area.equals("square")){
-                t1 = ((Double.valueOf(value1))*(Double.valueOf(value2))) + "";
-            } else if(area.equals("cube")){
-                t1 = (Double.valueOf(value1))*(Double.valueOf(value2))*(Double.valueOf(value3))+"";
+        if(value4.equals("")) {
+            if (area.equals("square")) {
+                t1 = ((Double.valueOf(value1)) * (Double.valueOf(value2))) + "";
+            } else if (area.equals("cube")) {
+                t1 = (Double.valueOf(value1)) * (Double.valueOf(value2)) * (Double.valueOf(value3)) + "";
+            } else if (area.equals("triangle")) {
+                t1 = ((Double.valueOf(value2) * (Double.valueOf(value1) / 2))) + "";
             }
         }
         checkDecimal(t1);
@@ -140,4 +146,4 @@ public class Formula {
             t1 = intCheck+"";
         }
     }
-}//143
+}//149
