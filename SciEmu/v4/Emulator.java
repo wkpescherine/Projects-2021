@@ -17,14 +17,8 @@ public class Emulator extends AppCompatActivity {
 
     TextView textMessage, xText, yText, zText, hText, wText, dText, radius, total;
 
-    int customValid = 0;
     // Location is = x,y,z,h,w,d,total, exp value, exponent, custom, radius, speedI,speedF,time
     int[] isDecimal = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
-    String expValueString = "";
-    String expString = "";
-    String focus = "";
-    String subCategory = "";
-    String customString = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,11 +37,6 @@ public class Emulator extends AppCompatActivity {
         dText = findViewById(R.id.D);
         radius = findViewById(R.id.Radius);
         total = findViewById(R.id.Total);
-    }
-
-    public void setKeyValues(View v){
-        String getKeyValue = getResources().getResourceEntryName(v.getId());
-        setValues(getKeyValue);
     }
 
     public void num1(View v) { setValues("1"); }
@@ -133,250 +122,250 @@ public class Emulator extends AppCompatActivity {
 
     public void setFocus(View v){
         String focusOn = getResources().getResourceEntryName(v.getId());
-        focus = focusOn;
+        data.focus = focusOn;
         textMessage.setText("Focus on "+focusOn+ " value");
     }
     public void focusEXP(View v) {
         TextView textMessage = findViewById(R.id.message);
-        focus = "expValue";
+        data.focus = "expValue";
         textMessage.setText("Focus on Exponent Value");
     }
     public void focusDegree(View v){
         TextView textMessage = findViewById(R.id.message);
-        focus = "degree";
+        data.focus = "degree";
         textMessage.setText("Focus is on Degrees");
     }
     public void focusEXPSUP(View v) {
-        focus = "expSuper";
+        data.focus = "expSuper";
         TextView textMessageW = findViewById(R.id.message);
         textMessageW.setText("Focus on Exponent");
     }
     public void focusSpeedI(View v) {
-        focus = "si";
+        data.focus = "si";
         TextView textMessageW = findViewById(R.id.message);
         textMessageW.setText("Focus on Speed Int");
     }
     public void focusSpeedF(View v) {
-        focus = "sf";
+        data.focus = "sf";
         TextView textMessageW = findViewById(R.id.message);
         textMessageW.setText("Focus on Speed Final");
     }
     public void focusTime(View v) {
-        focus = "t";
+        data.focus = "t";
         TextView textMessageW = findViewById(R.id.message);
         textMessageW.setText("Focus on Time");
     }
     public void focusA(View v) {
-        focus = "a";
+        data.focus = "a";
         TextView textMessageW = findViewById(R.id.message);
         textMessageW.setText("Focus on A");
     }
     public void focusB(View v) {
-        focus = "b";
+        data.focus = "b";
         TextView textMessageW = findViewById(R.id.message);
         textMessageW.setText("Focus on B");
     }
     public void focusC(View v) {
-        focus = "c";
+        data.focus = "c";
         TextView textMessageW = findViewById(R.id.message);
         textMessageW.setText("Focus on C");
     }
     public void focusAngle1(View v) {
-        focus = "angle1";
+        data.focus = "angle1";
         TextView textMessageW = findViewById(R.id.message);
         textMessageW.setText("Focus on angle1");
     }
     public void focusAngle2(View v) {
-        focus = "angle2";
+        data.focus = "angle2";
         TextView textMessageW = findViewById(R.id.message);
         textMessageW.setText("Focus on angle2");
     }
     public void focusTime2(View v) {
-        focus = "time2";
+        data.focus = "time2";
         TextView textMessageW = findViewById(R.id.message);
         textMessageW.setText("Focus on time");
     }
 
     public void setValues(String val) {
-        if (focus.equals("X") && data.xString.length() != 0) {
+        if (data.focus.equals("X") && data.xString.length() != 0) {
             data.xString += val + "";
             xText.setText(data.xString);
-        } else if (focus.equals("X") && data.xString.length() == 0) {
+        } else if (data.focus.equals("X") && data.xString.length() == 0) {
             data.xString = val + "";
             xText.setText(data.xString);
-        } else if (focus.equals("Y") && data.yString.length() != 0) {
+        } else if (data.focus.equals("Y") && data.yString.length() != 0) {
             data.yString += val;
             yText.setText(data.yString);
-        } else if (focus.equals("Y") && data.yString.length() == 0) {
+        } else if (data.focus.equals("Y") && data.yString.length() == 0) {
             data.yString = val + "";
             yText.setText(data.yString);
-        } else if (focus.equals("Z") && data.zString.length() != 0) {
+        } else if (data.focus.equals("Z") && data.zString.length() != 0) {
             data.zString += val;
             zText.setText(data.zString);
-        } else if (focus.equals("Z") && data.zString.length() == 0) {
+        } else if (data.focus.equals("Z") && data.zString.length() == 0) {
             data.zString = val + "";
             zText.setText(data.zString);
-        } else if (focus.equals("H") && data.hString.length() != 0) {
+        } else if (data.focus.equals("H") && data.hString.length() != 0) {
             TextView valueH = findViewById(R.id.H);
             data.hString += val;
             valueH.setText(data.hString);
-        } else if (focus.equals("H") && data.hString.length() == 0) {
+        } else if (data.focus.equals("H") && data.hString.length() == 0) {
             TextView valueH = findViewById(R.id.H);
             data.hString = val + "";
             valueH.setText(data.hString);
-        } else if (focus.equals("W") && data.wString.length() != 0) {
+        } else if (data.focus.equals("W") && data.wString.length() != 0) {
             TextView valueW = findViewById(R.id.W);
             data.wString += val;
             valueW.setText(data.wString);
-        } else if (focus.equals("W") && data.wString.length() == 0) {
+        } else if (data.focus.equals("W") && data.wString.length() == 0) {
             TextView valueW = findViewById(R.id.W);
             data.wString = val + "";
             valueW.setText(data.wString);
-        } else if (focus.equals("D") && data.dString.length() != 0) {
+        } else if (data.focus.equals("D") && data.dString.length() != 0) {
             TextView valueD = findViewById(R.id.D);
             data.dString += val;
             valueD.setText(data.dString);
-        } else if (focus.equals("D") && data.dString.length() == 0) {
+        } else if (data.focus.equals("D") && data.dString.length() == 0) {
             TextView valueD = findViewById(R.id.D);
             data.dString = val + "";
             valueD.setText(data.dString);
-        } else if (focus.equals("total") && data.totalString.length() != 0) {
+        } else if (data.focus.equals("total") && data.totalString.length() != 0) {
             TextView valueTotal = findViewById(R.id.Total);
             data.totalString += val;
             valueTotal.setText(data.totalString);
-        } else if (focus.equals("total") && data.totalString.length() == 0) {
+        } else if (data.focus.equals("total") && data.totalString.length() == 0) {
             TextView valueTotal = findViewById(R.id.Total);
             data.totalString = val + "";
             valueTotal.setText(data.totalString);
-        } else if (focus.equals("expValue") && expValueString.length() != 0) {
+        } else if (data.focus.equals("expValue") && data.expValueString.length() != 0) {
             TextView valueExpValue = findViewById(R.id.expValue);
-            expValueString += val;
-            valueExpValue.setText(expValueString);
-        } else if (focus.equals("expValue") && expValueString.length() == 0) {
+            data.expValueString += val;
+            valueExpValue.setText(data.expValueString);
+        } else if (data.focus.equals("expValue") && data.expValueString.length() == 0) {
             TextView valueExpValue = findViewById(R.id.expValue);
-            expValueString = val + "";
-            valueExpValue.setText(expValueString);
-        } else if (focus.equals("expSuper") && subCategory.equals("Exponent") && expString.length() != 0) {
+            data.expValueString = val + "";
+            valueExpValue.setText(data.expValueString);
+        } else if (data.focus.equals("expSuper") && data.subCategory.equals("Exponent") && data.expString.length() != 0) {
             TextView valueExp = findViewById(R.id.expSuper);
-            expString += val;
-            valueExp.setText(expString);
-        } else if (focus.equals("expSuper") && subCategory.equals("Exponent") && expString.length() == 0) {
+            data.expString += val;
+            valueExp.setText(data.expString);
+        } else if (data.focus.equals("expSuper") && data.subCategory.equals("Exponent") && data.expString.length() == 0) {
             TextView valueExp = findViewById(R.id.expSuper);
-            expString = val + "";
-            valueExp.setText(expString);
-        } else if (focus.equals("custom")) {
-            if (customValid == 1 && (val.equals("+") || val.equals("-") || val.equals("*"))) {
+            data.expString = val + "";
+            valueExp.setText(data.expString);
+        } else if (data.focus.equals("custom")) {
+            if (data.customValid == 1 && (val.equals("+") || val.equals("-") || val.equals("*"))) {
                 TextView valueCustom = findViewById(R.id.Custom);
-                customString += val;
-                valueCustom.setText(customString);
-                customValid = 0;
+                data.customString += val;
+                valueCustom.setText(data.customString);
+                data.customValid = 0;
             } else {
                 TextView valueCustom = findViewById(R.id.Custom);
-                customString += val;
-                valueCustom.setText(customString);
-                customValid = 1;
+                data.customString += val;
+                valueCustom.setText(data.customString);
+                data.customValid = 1;
             }
             if(val.equals("(") && data.paren == 0){
                 TextView valueCustom = findViewById(R.id.Custom);
-                customString += val;
+                data.customString += val;
                 data.paren = 1;
-                valueCustom.setText(customString);
+                valueCustom.setText(data.customString);
             }
             if(val.equals(")") && data.paren == 1){
                 TextView valueCustom = findViewById(R.id.Custom);
-                customString += val;
+                data.customString += val;
                 data.paren = 0;
-                valueCustom.setText(customString);
+                valueCustom.setText(data.customString);
             }
-        } else if (focus.equals("custom") && customString.length() == 0) {
+        } else if (data.focus.equals("custom") && data.customString.length() == 0) {
             TextView valueCustom = findViewById(R.id.custom);
-            customString = val + "";
-            valueCustom.setText(customString);
-        } else if (focus.equals("radius") && radius.length() != 0) {
+            data.customString = val + "";
+            valueCustom.setText(data.customString);
+        } else if (data.focus.equals("radius") && radius.length() != 0) {
             TextView valueRadius = findViewById(R.id.Radius);
             data.radiusString += val;
             valueRadius.setText(data.radiusString);
-        } else if (focus.equals("radius") && data.radiusString.length() == 0) {
+        } else if (data.focus.equals("radius") && data.radiusString.length() == 0) {
             TextView valueRadius = findViewById(R.id.Radius);
             data.radiusString = val + "";
             valueRadius.setText(data.radiusString);
-        } else if (focus.equals("degree") && data.degree.length() != 0) {
+        } else if (data.focus.equals("degree") && data.degree.length() != 0) {
             TextView valueDegree = findViewById(R.id.Degree);
             data.degree += val;
             valueDegree.setText(data.degree);
-        } else if (focus.equals("degree") && data.degree.length() == 0) {
+        } else if (data.focus.equals("degree") && data.degree.length() == 0) {
             TextView valueDegree = findViewById(R.id.Degree);
             data.degree = val + "";
             valueDegree.setText(data.degree);
-        } else if (focus.equals("si") && data.speedI.length() != 0) {
+        } else if (data.focus.equals("si") && data.speedI.length() != 0) {
             TextView valueSpeedI = findViewById(R.id.intSpeed);
             data.speedI += val;
             valueSpeedI.setText(data.speedI);
-        } else if (focus.equals("si") && data.speedI.length() == 0) {
+        } else if (data.focus.equals("si") && data.speedI.length() == 0) {
             TextView valueSpeedI = findViewById(R.id.intSpeed);
             data.speedI = val + "";
             valueSpeedI.setText(data.speedI);
-        } else if (focus.equals("sf") && data.speedF.length() != 0) {
+        } else if (data.focus.equals("sf") && data.speedF.length() != 0) {
             TextView valueSpeedF = findViewById(R.id.finalSpeed);
             data.speedF += val;
             valueSpeedF.setText(data.speedF);
-        } else if (focus.equals("sf") && data.speedF.length() == 0) {
+        } else if (data.focus.equals("sf") && data.speedF.length() == 0) {
             TextView valueSpeedF = findViewById(R.id.finalSpeed);
             data.speedF = val + "";
             valueSpeedF.setText(data.speedF);
-        } else if (focus.equals("t") && data.time.length() != 0) {
+        } else if (data.focus.equals("t") && data.time.length() != 0) {
             TextView valueTime = findViewById(R.id.time);
             data.time += val;
             valueTime.setText(data.speedF);
-        } else if (focus.equals("t") && data.time.length() == 0) {
+        } else if (data.focus.equals("t") && data.time.length() == 0) {
             TextView valueTime = findViewById(R.id.time);
             data.time = val + "";
             valueTime.setText(data.time);
-        } else if (focus.equals("a") && data.aString.length() != 0) {
+        } else if (data.focus.equals("a") && data.aString.length() != 0) {
             TextView aValueTime = findViewById(R.id.Avalue);
             data.aString += val;
             aValueTime.setText(data.aString);
-        } else if (focus.equals("a") && data.aString.length() == 0) {
+        } else if (data.focus.equals("a") && data.aString.length() == 0) {
             TextView aValueTime = findViewById(R.id.Avalue);
             data.aString = val + "";
             aValueTime.setText(data.aString);
-        } else if (focus.equals("b") && data.bString.length() != 0) {
+        } else if (data.focus.equals("b") && data.bString.length() != 0) {
             TextView bValueTime = findViewById(R.id.Bvalue);
             data.bString += val;
             bValueTime.setText(data.bString);
-        } else if (focus.equals("b") && data.bString.length() == 0) {
+        } else if (data.focus.equals("b") && data.bString.length() == 0) {
             TextView bValueTime = findViewById(R.id.Bvalue);
             data.bString = val + "";
             bValueTime.setText(data.bString);
-        } else if (focus.equals("c") && data.cString.length() != 0) {
+        } else if (data.focus.equals("c") && data.cString.length() != 0) {
             TextView cValueTime = findViewById(R.id.Cvalue);
             data.cString += val;
             cValueTime.setText(data.cString);
-        } else if (focus.equals("c") && data.cString.length() == 0) {
+        } else if (data.focus.equals("c") && data.cString.length() == 0) {
             TextView cValueTime = findViewById(R.id.Cvalue);
             data.cString = val + "";
             cValueTime.setText(data.cString);
-        } else if (focus.equals("angle1") && data.angle1.length() != 0) {
+        } else if (data.focus.equals("angle1") && data.angle1.length() != 0) {
             TextView angle1ValueTime = findViewById(R.id.angle1);
             data.angle1 += val;
             angle1ValueTime.setText(data.angle1);
-        } else if (focus.equals("angle1") && data.angle1.length() == 0) {
+        } else if (data.focus.equals("angle1") && data.angle1.length() == 0) {
             TextView cValueTime = findViewById(R.id.angle1);
             data.angle1 = val + "";
             cValueTime.setText(data.angle1);
-        } else if (focus.equals("angle2") && data.angle2.length() != 0) {
+        } else if (data.focus.equals("angle2") && data.angle2.length() != 0) {
             TextView angle2ValueTime = findViewById(R.id.angle2);
             data.angle2 += val;
             angle2ValueTime.setText(data.angle2);
-        } else if (focus.equals("angle2") && data.angle2.length() == 0) {
+        } else if (data.focus.equals("angle2") && data.angle2.length() == 0) {
             TextView angle2ValueTime = findViewById(R.id.angle2);
             data.angle2 = val + "";
             angle2ValueTime.setText(data.angle2);
-        } else if (focus.equals("time2") && data.time.length() != 0) {
+        } else if (data.focus.equals("time2") && data.time.length() != 0) {
             TextView time2ValueTime = findViewById(R.id.time2);
             data.time += val;
             time2ValueTime.setText(data.time);
-        } else if (focus.equals("time2") && data.time.length() == 0) {
+        } else if (data.focus.equals("time2") && data.time.length() == 0) {
             TextView time2ValueTime = findViewById(R.id.time2);
             data.time = val + "";
             time2ValueTime.setText(data.time);
@@ -399,13 +388,13 @@ public class Emulator extends AppCompatActivity {
         TextView speedFText = findViewById(R.id.finalSpeed);
         TextView timeText = findViewById(R.id.time);
         if (func.equals("del")) {
-            if (focus.equals("X") && data.xString.length() > 0) {
+            if (data.focus.equals("X") && data.xString.length() > 0) {
                 String xLastChar = data.xString.charAt(data.xString.length() - 1) + "";
                 if (xLastChar.equals(".")) {
                     isDecimal[0] = 0;
                     data.xString = data.xString.substring(0, (data.xString.length()) - 1);
                     xText.setText(data.xString);
-                } else if (focus.equals("X") && (data.xString.length() > 0)) {
+                } else if (data.focus.equals("X") && (data.xString.length() > 0)) {
                     data.xString = data.xString.substring(0, (data.xString.length()) - 1);
                     xText.setText(data.xString);
                 }
@@ -414,13 +403,13 @@ public class Emulator extends AppCompatActivity {
                 xText.setText("x");
             }
 
-            if (focus.equals("Y") && data.yString.length() > 0) {
+            if (data.focus.equals("Y") && data.yString.length() > 0) {
                 String yLastChar = data.yString.charAt(data.yString.length() - 1) + "";
                 if (yLastChar.equals(".")) {
                     isDecimal[1] = 0;
                     data.yString = data.yString.substring(0, (data.yString.length()) - 1);
                     yText.setText(data.yString);
-                } else if (focus.equals("Y") && (data.yString.length() > 0)) {
+                } else if (data.focus.equals("Y") && (data.yString.length() > 0)) {
                     data.yString = data.yString.substring(0, (data.yString.length()) - 1);
                     yText.setText(data.yString);
                 }
@@ -429,13 +418,13 @@ public class Emulator extends AppCompatActivity {
                 yText.setText("y");
             }
 
-            if (focus.equals("Z") && data.zString.length() > 0) {
+            if (data.focus.equals("Z") && data.zString.length() > 0) {
                 String zLastChar = data.zString.charAt(data.zString.length() - 1) + "";
                 if (zLastChar.equals(".")) {
                     isDecimal[2] = 0;
                     data.zString = data.zString.substring(0, (data.zString.length()) - 1);
                     zText.setText(data.zString);
-                } else if (focus.equals("Z") && (data.zString.length() > 0)) {
+                } else if (data.focus.equals("Z") && (data.zString.length() > 0)) {
                     data.zString = data.zString.substring(0, (data.zString.length()) - 1);
                     zText.setText(data.zString);
                 }
@@ -444,13 +433,13 @@ public class Emulator extends AppCompatActivity {
                 zText.setText("z");
             }
 
-            if (focus.equals("H") && data.hString.length() > 0) {
+            if (data.focus.equals("H") && data.hString.length() > 0) {
                 String hLastChar = data.hString.charAt(data.hString.length() - 1) + "";
                 if (hLastChar.equals(".")) {
                     isDecimal[3] = 0;
                     data.hString = data.hString.substring(0, (data.hString.length()) - 1);
                     hText.setText(data.hString);
-                } else if (focus.equals("H") && (data.hString.length() > 0)) {
+                } else if (data.focus.equals("H") && (data.hString.length() > 0)) {
                     data.hString = data.hString.substring(0, (data.hString.length()) - 1);
                     hText.setText(data.hString);
                 }
@@ -459,13 +448,13 @@ public class Emulator extends AppCompatActivity {
                 hText.setText("h");
             }
 
-            if (focus.equals("W") && data.wString.length() > 0) {
+            if (data.focus.equals("W") && data.wString.length() > 0) {
                 String wLastChar = data.wString.charAt(data.wString.length() - 1) + "";
                 if (wLastChar.equals(".")) {
                     isDecimal[4] = 0;
                     data.wString = data.wString.substring(0, (data.wString.length()) - 1);
                     wText.setText(data.wString);
-                } else if (focus.equals("W") && (data.wString.length() > 0)) {
+                } else if (data.focus.equals("W") && (data.wString.length() > 0)) {
                     data.wString = data.wString.substring(0, (data.wString.length()) - 1);
                     wText.setText(data.wString);
                 }
@@ -504,33 +493,33 @@ public class Emulator extends AppCompatActivity {
                 total.setText("total");
             }
 
-            if (focus.equals("expValue") && expValueString.length() > 0) {
-                String expValueLastChar = expValueString.charAt(expValueString.length() - 1) + "";
+            if (focus.equals("expValue") && data.expValueString.length() > 0) {
+                String expValueLastChar = data.expValueString.charAt(data.expValueString.length() - 1) + "";
                 if (expValueLastChar.equals(".")) {
                     isDecimal[7] = 0;
-                    expValueString = expValueString.substring(0, (expValueString.length()) - 1);
-                    evText.setText(expValueString);
-                } else if (focus.equals("expValue") && (expValueString.length() > 0)) {
-                    expValueString = expValueString.substring(0, (expValueString.length()) - 1);
-                    evText.setText(expValueString);
+                    data.expValueString = data.expValueString.substring(0, (data.expValueString.length()) - 1);
+                    evText.setText(data.expValueString);
+                } else if (focus.equals("expValue") && (data.expValueString.length() > 0)) {
+                    data.expValueString = data.expValueString.substring(0, (data.expValueString.length()) - 1);
+                    evText.setText(data.expValueString);
                 }
             }
-            if (expValueString.length() == 0) {
+            if (data.expValueString.length() == 0) {
                 evText.setText("x");
             }
 
-            if (focus.equals("expSuper") && expString.length() > 0) {
-                String expLastChar = expString.charAt(expString.length() - 1) + "";
+            if (focus.equals("expSuper") && data.expString.length() > 0) {
+                String expLastChar = data.expString.charAt(data.expString.length() - 1) + "";
                 if (expLastChar.equals(".")) {
                     isDecimal[8] = 0;
-                    expString = expString.substring(0, (expString.length()) - 1);
-                    eText.setText(expString);
-                } else if (focus.equals("expSuper") && (expString.length() > 0)) {
-                    expString = expString.substring(0, (expString.length()) - 1);
-                    eText.setText(expString);
+                    data.expString = data.expString.substring(0, (data.expString.length()) - 1);
+                    eText.setText(data.expString);
+                } else if (focus.equals("expSuper") && (data.expString.length() > 0)) {
+                    data.expString = data.expString.substring(0, (data.expString.length()) - 1);
+                    eText.setText(data.expString);
                 }
             }
-            if (expString.length() == 0) {
+            if (data.expString.length() == 0) {
                 eText.setText("exp");
             }
 
@@ -563,7 +552,7 @@ public class Emulator extends AppCompatActivity {
                 degreeText.setText(data.degree);
             }
             if(data.degree.length() == 0){
-                degreeText.setText("degree");
+                degreeText.setText("\u00B0");
             }
             if (focus.equals("si") && data.speedI.length() > 0) {
                 data.speedI = data.speedI.substring(0, (data.speedI.length()) - 1);
@@ -695,12 +684,12 @@ public class Emulator extends AppCompatActivity {
     public void x2(View v){
         subCategory = "x2";
         setFormulaText(subCategory);
-        expString = "2";
+        data.expString = "2";
     }
     public void x3(View v){
         subCategory = "x3";
         setFormulaText(subCategory);
-        expString = "3";
+        data.expString = "3";
     }
 
     public void displaySubs(int num) {
@@ -774,7 +763,7 @@ public class Emulator extends AppCompatActivity {
                 valueX.setText(result);
             }
         }
-        if(subCategory.equals("square") || subCategory.equals("cube")) {
+        if(subCategory.equals("square") || subCategory.equals("cube") || subCategory.equals("AreaTriangle")) {
             String result = formula.Area(data.hString, data.wString, data.dString, data.totalString, subCategory);
             if (data.hString.length() > 0 && data.wString.length() > 0 && data.totalString.length() == 0) {
                 TextView TotalText = findViewById(R.id.Total);
@@ -791,7 +780,7 @@ public class Emulator extends AppCompatActivity {
             }
         }
         if(subCategory.equals("x2") || subCategory.equals("x3") || subCategory.equals("Exponent")){
-            String result = formula.Power(expValueString, expString);
+            String result = formula.Power(data.expValueString, data.expString);
             TextView totalText = findViewById(R.id.ExpTotvalue2);
             totalText.setText(result);
             data.totalString = "";
@@ -857,8 +846,8 @@ public class Emulator extends AppCompatActivity {
         data.wString = "";
         data.dString = "";
         data.degree = "";
-        expValueString = "";
-        expString ="";
+        data.expValueString = "";
+        data.expString ="";
         data.totalString = "";
         data.speedF = "";
         data.speedI = "";
@@ -883,7 +872,7 @@ public class Emulator extends AppCompatActivity {
         TextView radiusTextString = findViewById(R.id.Radius);
         radiusTextString.setText("radius");
         TextView degreeTextString = findViewById(R.id.Degree);
-        degreeTextString.setText("degree");
+        degreeTextString.setText("\u00B0");
         TextView speedITextString = findViewById(R.id.intSpeed);
         speedITextString.setText("si");
         TextView speedFTextString = findViewById(R.id.finalSpeed);
@@ -917,6 +906,9 @@ public class Emulator extends AppCompatActivity {
         LinearLayout mainPythagoren = findViewById(R.id.Pythagoren);
         LinearLayout mainAngAcceleration = findViewById(R.id.AngularAcceleration);
         LinearLayout subMotion = findViewById(R.id.angularMotionSub);
+        TextView sign1Text = findViewById(R.id.sign1);
+        TextView getDivBy2 = findViewById(R.id.divBy2);
+        TextView sctText = findViewById(R.id.SCT);
         subMotion.setVisibility(View.GONE);
         mainBasic.setVisibility(View.GONE);
         main23DArea.setVisibility(View.GONE);
@@ -927,7 +919,7 @@ public class Emulator extends AppCompatActivity {
         mainLinVelocity.setVisibility(View.GONE);
         mainPythagoren.setVisibility(View.GONE);
         mainAngAcceleration.setVisibility(View.GONE);
-        TextView sign1Text = findViewById(R.id.sign1);
+        getDivBy2.setVisibility(View.GONE);
         TextView textMessageSub = findViewById(R.id.message);
         textMessageSub.setText(subCategory);
         if(subCategory.equals("add")){
@@ -952,6 +944,7 @@ public class Emulator extends AppCompatActivity {
                 textMessageSub.setText("2D Area Selected");
             } else {
                 textMessageSub.setText("Area of Triangle Selected");
+                getDivBy2.setVisibility(View.VISIBLE);
             }
             TextView sign2Text = findViewById(R.id.sign2);
             sign2Text.setVisibility(View.GONE);
@@ -981,7 +974,6 @@ public class Emulator extends AppCompatActivity {
             mainCustom.setVisibility(View.VISIBLE);
             textMessageSub.setText("Custom Selected");
         } else if(subCategory.equals("sin") || subCategory.equals("cos") || subCategory.equals("tan")){
-            TextView sctText = findViewById(R.id.SCT);
             mainSCT.setVisibility(View.VISIBLE);
             if(subCategory.equals("sin")){
                 sctText.setText("sin");
@@ -1005,4 +997,4 @@ public class Emulator extends AppCompatActivity {
             textMessageSub.setText("Check your formula");
         }
     }
-}//1008
+}//1003

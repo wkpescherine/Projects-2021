@@ -1,6 +1,8 @@
 package com.example.sciemu;
 
 public class DataConfig {
+    String expValueString = "";
+    String expString = "";
     String hString = "";
     String wString = "";
     String dString = "";
@@ -22,5 +24,9 @@ public class DataConfig {
     String angle1 = "";
     String angle2 = "";
     String acceleration = "";
+    String focus = "";
+    String subCategory = "";
+    String customString = "";
+    int customValid = 0;
     int paren = 0;
-}//26
+}//28

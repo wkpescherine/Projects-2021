@@ -30,7 +30,7 @@
                 android:id="@+id/Degree"
                 android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
-                android:text="degree"
+                android:text="\u00B0"
                 android:textSize="32dp"
                 android:textColor="#fff"
                 android:onClick="focusDegree"
@@ -113,6 +113,14 @@
                 android:textSize="32dp"
                 android:textColor="#fff"
                 android:onClick="setFocus"/>
+            <TextView
+                android:id="@+id/divBy2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="/2"
+                android:textSize="32dp"
+                android:textColor="#fff"
+                android:visibility="gone"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -476,4 +484,4 @@
                 android:textColor="#fff"/>
         </LinearLayout>
     </RelativeLayout>
-</LinearLayout><!--  479 -->
+</LinearLayout><!--  487 -->
