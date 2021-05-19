@@ -16,7 +16,8 @@ public class Emulator extends AppCompatActivity {
     Formula formula = new Formula();
     SolveCustom custom = new SolveCustom();
 
-    TextView textMessage, xText, yText, zText, hText, wText, dText, radius, total, aText, bText, cText;
+    TextView textMessage, xText, yText, zText, hText, wText, dText, radius, total, aText, bText,
+            cText, power, xPower;
 
     // Location is = x,y,z,h,w,d,total, exp value, exponent, custom, radius, speedI,speedF,time
     int[] isDecimal = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
@@ -40,9 +41,14 @@ public class Emulator extends AppCompatActivity {
         bText = findViewById(R.id.B);
         cText = findViewById(R.id.C);
         radius = findViewById(R.id.Radius);
+        power = findViewById(R.id.Power);
+        xPower = findViewById(R.id.xPower);
         total = findViewById(R.id.Total);
     }
 
+    public void setNumber(View v){
+
+    }
     public void num1(View v) { setValues("1"); }
     public void num2(View v) { setValues("2"); }
     public void num3(View v) { setValues("3"); }
@@ -130,49 +136,36 @@ public class Emulator extends AppCompatActivity {
         textMessage.setText("Focus on "+focusOn+ " value");
     }
     public void focusEXP(View v) {
-        TextView textMessage = findViewById(R.id.message);
         data.focus = "expValue";
         textMessage.setText("Focus on Exponent Value");
     }
     public void focusDegree(View v){
-        TextView textMessage = findViewById(R.id.message);
         data.focus = "degree";
         textMessage.setText("Focus is on Degrees");
     }
-    public void focusEXPSUP(View v) {
-        data.focus = "expSuper";
-        TextView textMessageW = findViewById(R.id.message);
-        textMessageW.setText("Focus on Exponent");
-    }
     public void focusSpeedI(View v) {
         data.focus = "si";
-        TextView textMessageW = findViewById(R.id.message);
-        textMessageW.setText("Focus on Speed Int");
+        textMessage.setText("Focus on Speed Int");
     }
     public void focusSpeedF(View v) {
         data.focus = "sf";
-        TextView textMessageW = findViewById(R.id.message);
-        textMessageW.setText("Focus on Speed Final");
+        textMessage.setText("Focus on Speed Final");
     }
     public void focusTime(View v) {
         data.focus = "t";
-        TextView textMessageW = findViewById(R.id.message);
-        textMessageW.setText("Focus on Time");
+        textMessage.setText("Focus on Time");
     }
     public void focusAngle1(View v) {
         data.focus = "angle1";
-        TextView textMessageW = findViewById(R.id.message);
-        textMessageW.setText("Focus on angle1");
+        textMessage.setText("Focus on angle1");
     }
     public void focusAngle2(View v) {
         data.focus = "angle2";
-        TextView textMessageW = findViewById(R.id.message);
-        textMessageW.setText("Focus on angle2");
+        textMessage.setText("Focus on angle2");
     }
     public void focusTime2(View v) {
         data.focus = "time2";
-        TextView textMessageW = findViewById(R.id.message);
-        textMessageW.setText("Focus on time");
+        textMessage.setText("Focus on time");
     }
 
     public void setValues(String val) {
@@ -224,22 +217,18 @@ public class Emulator extends AppCompatActivity {
             TextView valueTotal = findViewById(R.id.Total);
             data.totalString = val + "";
             valueTotal.setText(data.totalString);
-        } else if (data.focus.equals("expValue") && data.expValueString.length() != 0) {
-            TextView valueExpValue = findViewById(R.id.expValue);
-            data.expValueString += val;
-            valueExpValue.setText(data.expValueString);
-        } else if (data.focus.equals("expValue") && data.expValueString.length() == 0) {
-            TextView valueExpValue = findViewById(R.id.expValue);
-            data.expValueString = val + "";
-            valueExpValue.setText(data.expValueString);
-        } else if (data.focus.equals("expSuper") && data.subCategory.equals("Exponent") && data.expString.length() != 0) {
-            TextView valueExp = findViewById(R.id.expSuper);
-            data.expString += val;
-            valueExp.setText(data.expString);
-        } else if (data.focus.equals("expSuper") && data.subCategory.equals("Exponent") && data.expString.length() == 0) {
-            TextView valueExp = findViewById(R.id.expSuper);
-            data.expString = val + "";
-            valueExp.setText(data.expString);
+        } else if (data.focus.equals("xPower") && data.xPowerString.length() != 0) {
+            data.xPowerString += val;
+            xPower.setText(data.xPowerString);
+        } else if (data.focus.equals("xPower") && data.xPowerString.length() == 0) {
+            data.xPowerString = val + "";
+            xPower.setText(data.xPowerString);
+        } else if (data.focus.equals("power") && data.subCategory.equals("power") && data.powerString.length() != 0) {
+            data.powerString += val;
+            power.setText(data.powerString);
+        } else if (data.focus.equals("power") && data.subCategory.equals("power") && data.powerString.length() == 0) {
+            data.powerString = val + "";
+            power.setText(data.powerString);
         } else if (data.focus.equals("custom")) {
             if (data.customValid == 1 && (val.equals("+") || val.equals("-") || val.equals("*"))) {
                 TextView valueCustom = findViewById(R.id.Custom);
@@ -357,8 +346,6 @@ public class Emulator extends AppCompatActivity {
     }
 
     public void specialFunc(String func) {
-        TextView eText = findViewById(R.id.expSuper);
-        TextView evText = findViewById(R.id.expValue);
         TextView customText = findViewById(R.id.Custom);
         TextView degreeText = findViewById(R.id.Degree);
         TextView speedIText = findViewById(R.id.intSpeed);
@@ -469,35 +456,34 @@ public class Emulator extends AppCompatActivity {
             if (data.totalString.length() == 0) {
                 total.setText("total");
             }
-
-            if (data.focus.equals("expValue") && data.expValueString.length() > 0) {
-                String expValueLastChar = data.expValueString.charAt(data.expValueString.length() - 1) + "";
+            if (data.focus.equals("xPower") && data.xPowerString.length() > 0) {
+                String expValueLastChar = data.xPowerString.charAt(data.xPowerString.length() - 1) + "";
                 if (expValueLastChar.equals(".")) {
                     isDecimal[7] = 0;
-                    data.expValueString = data.expValueString.substring(0, (data.expValueString.length()) - 1);
-                    evText.setText(data.expValueString);
-                } else if (data.focus.equals("expValue") && (data.expValueString.length() > 0)) {
-                    data.expValueString = data.expValueString.substring(0, (data.expValueString.length()) - 1);
-                    evText.setText(data.expValueString);
+                    data.xPowerString = data.xPowerString.substring(0, (data.xPowerString.length()) - 1);
+                    xPower.setText(data.xPowerString);
+                } else if (data.focus.equals("xPower") && (data.xPowerString.length() > 0)) {
+                    data.xPowerString = data.xPowerString.substring(0, (data.xPowerString.length()) - 1);
+                    xPower.setText(data.xPowerString);
                 }
             }
-            if (data.expValueString.length() == 0) {
-                evText.setText("x");
+            if (data.xPowerString.length() == 0) {
+                xPower.setText("x");
             }
 
-            if (data.focus.equals("expSuper") && data.expString.length() > 0) {
-                String expLastChar = data.expString.charAt(data.expString.length() - 1) + "";
+            if (data.focus.equals("Power") && data.powerString.length() > 0) {
+                String expLastChar = data.powerString.charAt(data.powerString.length() - 1) + "";
                 if (expLastChar.equals(".")) {
                     isDecimal[8] = 0;
-                    data.expString = data.expString.substring(0, (data.expString.length()) - 1);
-                    eText.setText(data.expString);
-                } else if (data.focus.equals("expSuper") && (data.expString.length() > 0)) {
-                    data.expString = data.expString.substring(0, (data.expString.length()) - 1);
-                    eText.setText(data.expString);
+                    data.powerString = data.powerString.substring(0, (data.powerString.length()) - 1);
+                    power.setText(data.powerString);
+                } else if (data.focus.equals("Power") && (data.powerString.length() > 0)) {
+                    data.powerString = data.powerString.substring(0, (data.powerString.length()) - 1);
+                    power.setText(data.powerString);
                 }
             }
-            if (data.expString.length() == 0) {
-                eText.setText("exp");
+            if (data.powerString.length() == 0) {
+                power.setText("exp");
             }
 
             if(data.focus.equals("custom") && data.customString.length()>0){
@@ -517,7 +503,7 @@ public class Emulator extends AppCompatActivity {
                     radius.setText(data.radiusString);
                 } else if (data.focus.equals("radius") && (data.radiusString.length() > 0)) {
                     data.radiusString = data.radiusString.substring(0, (data.radiusString.length()) - 1);
-                    eText.setText(data.radiusString);
+                    radius.setText(data.radiusString);
                 }
             }
             if(data.radiusString.length() == 0){
@@ -668,12 +654,12 @@ public class Emulator extends AppCompatActivity {
     public void x2(View v){
         data.subCategory = "x2";
         setFormulaText(data.subCategory);
-        data.expString = "2";
+        data.powerString = "2";
     }
     public void x3(View v){
         data.subCategory = "x3";
         setFormulaText(data.subCategory);
-        data.expString = "3";
+        data.powerString = "3";
     }
 
     public void displaySubs(int num) {
@@ -764,7 +750,7 @@ public class Emulator extends AppCompatActivity {
             }
         }
         if(data.subCategory.equals("x2") || data.subCategory.equals("x3") || data.subCategory.equals("Exponent")){
-            String result = formula.Power(data.expValueString, data.expString);
+            String result = formula.Power(data.xPowerString, data.powerString);
             TextView totalText = findViewById(R.id.ExpTotvalue2);
             totalText.setText(result);
             data.totalString = "";
@@ -820,35 +806,15 @@ public class Emulator extends AppCompatActivity {
 
     public void resetUI(){
         displaySubs2(0);
-        data.xString = "";
-        data.yString = "";
-        data.zString = "";
-        data.hString = "";
-        data.wString = "";
-        data.dString = "";
-        data.degree = "";
-        data.expValueString = "";
-        data.expString ="";
-        data.totalString = "";
-        data.speedF = "";
-        data.speedI = "";
-        data.time = "";
-        data.velocity = "";
-        data.aString = "";
-        data.bString = "";
-        data.cString = "";
-        data.angle1 = "";
-        data.angle2 = "";
+        data.resetStats();
         xText.setText("x");
         yText.setText("y");
         zText.setText("z");
         hText.setText("h");
         wText.setText("w");
         dText.setText("d");
-        TextView expValTextString = findViewById(R.id.expValue);
-        expValTextString.setText("x");
-        TextView expTextString = findViewById(R.id.expSuper);
-        expTextString.setText("exp");
+        xPower.setText("x");
+        power.setText("power");
         total.setText("Total");
         TextView radiusTextString = findViewById(R.id.Radius);
         radiusTextString.setText("radius");
@@ -938,11 +904,9 @@ public class Emulator extends AppCompatActivity {
             mainExponent.setVisibility(View.VISIBLE);
             textMessageSub.setText("Exponent selected");
             if(data.subCategory.equals("x2")){
-                TextView power = findViewById(R.id.expSuper);
                 power.setText("2");
             }
             if(data.subCategory.equals("x3")){
-                TextView power = findViewById(R.id.expSuper);
                 power.setText("3");
             }
         } else if(data.subCategory.equals("AreaCircle")) {
@@ -975,4 +939,4 @@ public class Emulator extends AppCompatActivity {
             textMessageSub.setText("Check your formula");
         }
     }
-}//978
+}//942

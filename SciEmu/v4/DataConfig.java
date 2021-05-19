@@ -1,8 +1,8 @@
 package com.example.sciemu;
 
 public class DataConfig {
-    String expValueString = "";
-    String expString = "";
+    String xPowerString = "";
+    String powerString = "";
     String hString = "";
     String wString = "";
     String dString = "";
@@ -29,4 +29,26 @@ public class DataConfig {
     String customString = "";
     int customValid = 0;
     int paren = 0;
-}//28
+
+    public void resetStats(){
+        xString = "";
+        yString = "";
+        zString = "";
+        hString = "";
+        wString = "";
+        dString = "";
+        degree = "";
+        xPowerString = "";
+        powerString ="";
+        totalString = "";
+        speedF = "";
+        speedI = "";
+        time = "";
+        velocity = "";
+        aString = "";
+        bString = "";
+        cString = "";
+        angle1 = "";
+        angle2 = "";
+    }
+}//54
