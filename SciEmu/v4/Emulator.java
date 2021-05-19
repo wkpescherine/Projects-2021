@@ -195,13 +195,11 @@ public class Emulator extends AppCompatActivity {
             data.zString = val + "";
             zText.setText(data.zString);
         } else if (data.focus.equals("H") && data.hString.length() != 0) {
-            TextView valueH = findViewById(R.id.H);
             data.hString += val;
-            valueH.setText(data.hString);
+            hText.setText(data.hString);
         } else if (data.focus.equals("H") && data.hString.length() == 0) {
-            TextView valueH = findViewById(R.id.H);
             data.hString = val + "";
-            valueH.setText(data.hString);
+            hText.setText(data.hString);
         } else if (data.focus.equals("W") && data.wString.length() != 0) {
             TextView valueW = findViewById(R.id.W);
             data.wString += val;
@@ -362,7 +360,6 @@ public class Emulator extends AppCompatActivity {
         TextView eText = findViewById(R.id.expSuper);
         TextView evText = findViewById(R.id.expValue);
         TextView customText = findViewById(R.id.Custom);
-        TextView radiusText = findViewById(R.id.Radius);
         TextView degreeText = findViewById(R.id.Degree);
         TextView speedIText = findViewById(R.id.intSpeed);
         TextView speedFText = findViewById(R.id.finalSpeed);
@@ -517,14 +514,14 @@ public class Emulator extends AppCompatActivity {
                 String expLastChar = data.radiusString.charAt(radius.length() - 1) + "";
                 if (expLastChar.equals(".")) {
                     data.radiusString = data.radiusString.substring(0, (radius.length()) - 1);
-                    radiusText.setText(data.radiusString);
+                    radius.setText(data.radiusString);
                 } else if (data.focus.equals("radius") && (data.radiusString.length() > 0)) {
                     data.radiusString = data.radiusString.substring(0, (data.radiusString.length()) - 1);
                     eText.setText(data.radiusString);
                 }
             }
             if(data.radiusString.length() == 0){
-                radiusText.setText("radius");
+                radius.setText("radius");
             }
 
             if (data.focus.equals("degree") && data.degree.length() > 0) {
@@ -978,4 +975,4 @@ public class Emulator extends AppCompatActivity {
             textMessageSub.setText("Check your formula");
         }
     }
-}//980
+}//978
