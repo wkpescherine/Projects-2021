@@ -58,6 +58,8 @@ public class Formula {
                 t1 = (Double.valueOf(value4)/Double.valueOf(value1)*Double.valueOf(value3))+ "";
             } else if(area.equals("triangle")) {
                 t1 = ((Double.valueOf(value4) / (Double.valueOf(value2) / 2))) + "";
+            } else if(area.equals("circle")){
+                t1 = (3.16*(Double.valueOf(value1)*Double.valueOf(value1)))+"";
             }
         }
         if(value3.equals("")){
@@ -84,11 +86,6 @@ public class Formula {
         return t1;
     }
 
-    static String AreaCircle(String value1){
-        t1 = (3.16*(Double.valueOf(value1)*Double.valueOf(value1)))+"";
-        return t1;
-    }
-
     static String SCTSolve(String value1, String mathType){
         if(mathType.equals("sin")){
             t1 =(Math.sin(Math.toRadians(Double.valueOf(value1))))+"";
@@ -102,7 +99,7 @@ public class Formula {
         return t1;
     }
 
-    static String Pythagoren(String value1, String value2, String value3){
+    static String Pythagorean(String value1, String value2, String value3){
         if(value1.equals("")){
             t1 = (Math.pow(Double.valueOf(value3),2)-Math.pow(Double.valueOf(value1),2))+"";
         }
@@ -146,4 +143,4 @@ public class Formula {
             t1 = intCheck+"";
         }
     }
-}//149
+}//146

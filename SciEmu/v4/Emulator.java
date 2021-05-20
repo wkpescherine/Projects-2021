@@ -135,10 +135,6 @@ public class Emulator extends AppCompatActivity {
         data.focus = focusOn;
         textMessage.setText("Focus on "+focusOn+ " value");
     }
-    public void focusEXP(View v) {
-        data.focus = "expValue";
-        textMessage.setText("Focus on Exponent Value");
-    }
     public void focusDegree(View v){
         data.focus = "degree";
         textMessage.setText("Focus is on Degrees");
@@ -620,11 +616,11 @@ public class Emulator extends AppCompatActivity {
         setFormulaText(data.subCategory);
     }
     public void AreaTriangle(View v) {
-        data.subCategory = "AreaTriangle";
+        data.subCategory = "triangle";
         setFormulaText(data.subCategory);
     }
     public void AreaCircle(View v) {
-        data.subCategory = "AreaCircle";
+        data.subCategory = "circle";
         setFormulaText(data.subCategory);
     }
     public void setSin(View v){
@@ -781,20 +777,17 @@ public class Emulator extends AppCompatActivity {
             linVelocityTotal.setText(result);
         }
         if(data.subCategory.equals("Pythagoren")){
-            String result = formula.Pythagoren(data.aString, data.bString, data.cString);
+            String result = formula.Pythagorean(data.aString, data.bString, data.cString);
             String sqrtResult = (Math.sqrt(Double.valueOf(result)))+"";
             if (data.aString.length() > 0 && data.bString.length() > 0 && data.cString.length() == 0) {
                 cText.setText(sqrtResult);
-                TextView specMessage = findViewById(R.id.message);
-                specMessage.setText("The sqr of c is "+result);
+                textMessage.setText("The sqr of c is "+result);
             } else if (data.aString.length() > 0 && data.bString.length() == 0 && data.cString.length() > 0) {
                 bText.setText(sqrtResult);
-                TextView specMessage = findViewById(R.id.message);
-                specMessage.setText("The sqr of b is "+result);
+                textMessage.setText("The sqr of b is "+result);
             } else if (data.aString.length() == 0 && data.bString.length() > 0 && data.cString.length() > 0) {
                 aText.setText(sqrtResult);
-                TextView specMessage = findViewById(R.id.message);
-                specMessage.setText("The sqr of a is "+result);
+                textMessage.setText("The sqr of a is "+result);
             }
         }
         if(data.subCategory2.equals("Angular Acceleration")){
@@ -816,8 +809,7 @@ public class Emulator extends AppCompatActivity {
         xPower.setText("x");
         power.setText("power");
         total.setText("Total");
-        TextView radiusTextString = findViewById(R.id.Radius);
-        radiusTextString.setText("radius");
+        radius.setText("radius");
         TextView degreeTextString = findViewById(R.id.Degree);
         degreeTextString.setText("\u00B0");
         TextView speedITextString = findViewById(R.id.intSpeed);
@@ -880,7 +872,7 @@ public class Emulator extends AppCompatActivity {
             textMessageSub.setText("Division Selected");
         }else if(data.subCategory.equals("multiply")){
             mainBasic.setVisibility(View.VISIBLE);
-            sign1Text.setText("+");
+            sign1Text.setText("*");
             textMessageSub.setText("Multiplication Selected");
         }else if(data.subCategory.equals("square") || data.subCategory.equals("AreaTriangle")){
             main23DArea.setVisibility(View.VISIBLE);
@@ -939,4 +931,4 @@ public class Emulator extends AppCompatActivity {
             textMessageSub.setText("Check your formula");
         }
     }
-}//942
+}//934

@@ -122,7 +122,7 @@
                 android:text="Add"
                 android:textColor="#fff"
                 android:textSize="8dp"
-                android:onClick="setAddition"/>
+                android:onClick="setFormula"/>
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
