@@ -119,7 +119,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
-                android:text="Add"
+                android:text="add"
                 android:textColor="#fff"
                 android:textSize="8dp"
                 android:onClick="setFormula"/>
@@ -127,26 +127,26 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
-                android:text="Subtract"
+                android:text="subtract"
                 android:textColor="#fff"
                 android:textSize="8dp"
-                android:onClick="setSubtraction"/>
+                android:onClick="setFormula"/>
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
-                android:text="Divide"
+                android:text="divide"
                 android:textColor="#fff"
                 android:textSize="8dp"
-                android:onClick="setDivision"/>
+                android:onClick="setFormula"/>
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
-                android:text="Multiply"
+                android:text="multiply"
                 android:textColor="#fff"
                 android:textSize="8dp"
-                android:onClick="setMultiplication"/>
+                android:onClick="setFormula"/>
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

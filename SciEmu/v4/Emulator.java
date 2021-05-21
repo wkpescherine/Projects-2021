@@ -587,23 +587,11 @@ public class Emulator extends AppCompatActivity {
     }
 
     public void setFormula(View v){
-        //String formulaSelect = getResources().getResourceEntryName(v.getText().toString());
         Button b = (Button)v;
         String formulaSelect = b.getText().toString();
+        data.subCategory = formulaSelect;
         setFormulaText(formulaSelect);
         textMessage.setText("Formula selected "+formulaSelect);
-    }
-    public void setAddition(View v) {
-        setFormulaText("add");
-    }
-    public void setSubtraction(View v) {
-        setFormulaText("subtract");
-    }
-    public void setDivision(View v) {
-        setFormulaText("divide");
-    }
-    public void setMultiplication(View v) {
-        setFormulaText("multiply");
     }
     public void Square(View v) {
         setFormulaText("square");
@@ -858,10 +846,10 @@ public class Emulator extends AppCompatActivity {
         getDivBy2.setVisibility(View.GONE);
         TextView textMessageSub = findViewById(R.id.message);
         textMessageSub.setText(data.subCategory);
-        if(data.subCategory.equals("add")){
+        if(sub.equals("add")){
             mainBasic.setVisibility(View.VISIBLE);
             sign1Text.setText("+");
-            textMessageSub.setText("Addition selected");
+            //textMessageSub.setText("Addition selected");
         }else if(data.subCategory.equals("subtract")){
             mainBasic.setVisibility(View.VISIBLE);;
             sign1Text.setText("-");
@@ -931,4 +919,4 @@ public class Emulator extends AppCompatActivity {
             textMessageSub.setText("Check your formula");
         }
     }
-}//934
+}//922

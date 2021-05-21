@@ -1,41 +1,48 @@
 package com.example.sciemu;
 
+import java.io.IOException;
+
 public class Formula {
     private static String t1;
 
     public String Basic (String value1, String value2, String value3, String sign){
-        if (value1.equals("")) {
-            if(sign.equals("add")){
-                t1 = (Double.valueOf(value3) - Double.valueOf(value2)) + "";
-            } else if(sign.equals("subtract")){
-                t1 = (Double.valueOf(value3) + Double.valueOf(value2)) + "";
-            } else if(sign.equals("divide")){
-                t1 = (Double.valueOf(value3) * Double.valueOf(value2)) + "";
-            } else if(sign.equals("multiply")){
-                t1 = (Double.valueOf(value3))/(Double.valueOf(value2))+"";
+        try {
+            if (value1.equals("")) {
+                if(sign.equals("add")){
+                    t1 = (Double.valueOf(value3) - Double.valueOf(value2)) + "";
+                } else if(sign.equals("subtract")){
+                    t1 = (Double.valueOf(value3) + Double.valueOf(value2)) + "";
+                } else if(sign.equals("divide")){
+                    t1 = (Double.valueOf(value3) * Double.valueOf(value2)) + "";
+                } else if(sign.equals("multiply")){
+                    t1 = (Double.valueOf(value3))/(Double.valueOf(value2))+"";
+                }
             }
-        }
-        if (value2.equals("")) {
-            if(sign.equals("add")){
-                t1 = (Double.valueOf(value3) - Double.valueOf(value1)) + "";
-            } else if(sign.equals("subtract")){
-                t1 = (Double.valueOf(value1) - Double.valueOf(value3)) + "";
-            } else if(sign.equals("divide")){
-                t1 = (Double.valueOf(value1) / Double.valueOf(value3)) + "";
-            } else if(sign.equals("multiply")){
-                t1 = (Double.valueOf(value3))/(Double.valueOf(value1))+"";
+            if (value2.equals("")) {
+                if(sign.equals("add")){
+                    t1 = (Double.valueOf(value3) - Double.valueOf(value1)) + "";
+                } else if(sign.equals("subtract")){
+                    t1 = (Double.valueOf(value1) - Double.valueOf(value3)) + "";
+                } else if(sign.equals("divide")){
+                    t1 = (Double.valueOf(value1) / Double.valueOf(value3)) + "";
+                } else if(sign.equals("multiply")){
+                    t1 = (Double.valueOf(value3))/(Double.valueOf(value1))+"";
+                }
             }
-        }
-        if (value3.equals("")) {
-            if(sign.equals("add")){
-                t1 = (Double.valueOf(value1) + Double.valueOf(value2)) + "";
-            } else if(sign.equals("subtract")){
-                t1 = (Double.valueOf(value1) - Double.valueOf(value2)) + "";
-            } else if(sign.equals("divide")){
-                t1 = (Double.valueOf(value1) / Double.valueOf(value2)) + "";
-            } else if(sign.equals("multiply")){
-                t1 = (Double.valueOf(value1))*(Double.valueOf(value2))+"";
+            if (value3.equals("")) {
+                if(sign.equals("add")){
+                    t1 = (Double.valueOf(value1) + Double.valueOf(value2)) + "";
+                } else if(sign.equals("subtract")){
+                    t1 = (Double.valueOf(value1) - Double.valueOf(value2)) + "";
+                } else if(sign.equals("divide")){
+                    t1 = (Double.valueOf(value1) / Double.valueOf(value2)) + "";
+                } else if(sign.equals("multiply")){
+                    t1 = (Double.valueOf(value1))*(Double.valueOf(value2))+"";
+                }
             }
+        } catch (Exception e){
+            t1= "Error";
+            return t1;
         }
         checkDecimal(t1);
         return t1;
@@ -143,4 +150,4 @@ public class Formula {
             t1 = intCheck+"";
         }
     }
-}//146
+}//153
