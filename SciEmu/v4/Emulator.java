@@ -47,45 +47,15 @@ public class Emulator extends AppCompatActivity {
     }
 
     public void setNumber(View v){
-
+        TextView t = (TextView) v;
+        String valueSelect = t.getText().toString();
+        setValues(valueSelect);
     }
-    public void num1(View v) { setValues("1"); }
-    public void num2(View v) { setValues("2"); }
-    public void num3(View v) { setValues("3"); }
-    public void num4(View v) {
-        setValues("4");
-    }
-    public void num5(View v) {
-        setValues("5");
-    }
-    public void num6(View v) {
-        setValues("6");
-    }
-    public void num7(View v) {
-        setValues("7");
-    }
-    public void num8(View v) {
-        setValues("8");
-    }
-    public void num9(View v) {
-        setValues("9");
-    }
-    public void num0(View v) {
-        setValues("0");
-    }
-    public void del(View v) {
-        specialFunc("del");
-    }
-    public void plus(View v) {
-        setValues("+");
-    }
-    public void minus(View v) {
-        setValues("-");
-    }
-    public void multi(View v) {
-        setValues("*");
-    }
-    public void openBracket(View v){ setValues("(");}
+    public void del(View v) {specialFunc("del");}
+    public void plus(View v) {setValues("+");}
+    public void minus(View v) {setValues("-");}
+    public void multi(View v) {setValues("*");}
+    //public void openBracket(View v){ setValues("(");}
     public void closeBracket(View v){ setValues(")");}
     public void decimal(View v) {
         if (data.focus.equals("X") && isDecimal[0] != 1) {
@@ -919,4 +889,4 @@ public class Emulator extends AppCompatActivity {
             textMessageSub.setText("Check your formula");
         }
     }
-}//922
+}//892

@@ -15,14 +15,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
                 <TextView
-                    android:id="@+id/val1"
                     android:text="1"
                     android:layout_width="60dp"
                     android:layout_height="60dp"
                     android:textColor="#fff"
                     android:gravity="center"
                     android:textSize="32dp"
-                    android:onClick="num1"/>
+                    android:onClick="setNumber"/>
                 <TextView
                     android:text="2"
                     android:layout_width="60dp"
@@ -30,7 +29,7 @@
                     android:textColor="#fff"
                     android:gravity="center"
                     android:textSize="32dp"
-                    android:onClick="num2"/>
+                    android:onClick="setNumber"/>
                 <TextView
                     android:text="3"
                     android:layout_width="60dp"
@@ -38,7 +37,7 @@
                     android:textColor="#fff"
                     android:gravity="center"
                     android:textSize="32dp"
-                    android:onClick="num3"/>
+                    android:onClick="setNumber"/>
                 <TextView
                     android:text="4"
                     android:layout_width="60dp"
@@ -46,7 +45,7 @@
                     android:textColor="#fff"
                     android:gravity="center"
                     android:textSize="32dp"
-                    android:onClick="num4"/>
+                    android:onClick="setNumber"/>
                 <TextView
                     android:id="@+id/val5"
                     android:text="5"
@@ -55,7 +54,7 @@
                     android:textColor="#fff"
                     android:gravity="center"
                     android:textSize="32dp"
-                    android:onClick="num5"/>
+                    android:onClick="setNumber"/>
                 <TextView
                     android:text="6"
                     android:layout_width="60dp"
@@ -63,7 +62,7 @@
                     android:textColor="#fff"
                     android:gravity="center"
                     android:textSize="32dp"
-                    android:onClick="num6"/>
+                    android:onClick="setNumber"/>
             </TableRow>
             <TableRow
                 android:id="@+id/row2"
@@ -76,7 +75,7 @@
                     android:textColor="#fff"
                     android:gravity="center"
                     android:textSize="32dp"
-                    android:onClick="num7"/>
+                    android:onClick="setNumber"/>
                 <TextView
                     android:text="8"
                     android:layout_width="60dp"
@@ -84,7 +83,7 @@
                     android:textColor="#fff"
                     android:gravity="center"
                     android:textSize="32dp"
-                    android:onClick="num8"/>
+                    android:onClick="setNumber"/>
                 <TextView
                     android:text="9"
                     android:layout_width="60dp"
@@ -92,7 +91,7 @@
                     android:textColor="#fff"
                     android:gravity="center"
                     android:textSize="32dp"
-                    android:onClick="num9"/>
+                    android:onClick="setNumber"/>
                 <TextView
                     android:text="0"
                     android:layout_width="60dp"
@@ -100,7 +99,7 @@
                     android:textColor="#fff"
                     android:gravity="center"
                     android:textSize="32dp"
-                    android:onClick="num0"/>
+                    android:onClick="setNumber"/>
                 <TextView
                     android:text="DEL"
                     android:layout_width="60dp"
@@ -116,7 +115,7 @@
                     android:textColor="#fff"
                     android:gravity="center"
                     android:textSize="32dp"
-                    android:onClick="openBracket"/>
+                    android:onClick="setNumber"/>
             </TableRow>
             <TableRow
                 android:id="@+id/row3"
@@ -173,4 +172,4 @@
         </TableLayout>
     </LinearLayout>
 
-</LinearLayout><!-- 176 -->
+</LinearLayout><!-- 175 -->
