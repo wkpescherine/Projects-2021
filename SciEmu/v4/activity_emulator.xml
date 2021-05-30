@@ -240,18 +240,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
-                android:text="Linear: Velocity"
+                android:text="Motion"
                 android:textColor="#fff"
                 android:textSize="8dp"
-                android:onClick="LinearVelocity"/>
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
-                android:text="Angular Motion"
-                android:textColor="#fff"
-                android:textSize="8dp"
-                android:onClick="displaySubAngularMotion"/>
+                android:onClick="selectSub2"/>
         </LinearLayout>
     </HorizontalScrollView>
 
@@ -265,22 +257,14 @@
         android:layout_height="wrap_content"
         android:id="@+id/geometrySub"
         android:visibility="gone">
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"
-            android:text="Area Triangle"
-            android:textColor="#fff"
-            android:textSize="8dp"
-            android:onClick="AreaTriangle"/>
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"
-            android:text="Area Circle"
-            android:textColor="#fff"
-            android:textSize="8dp"
-            android:onClick="AreaCircle"/>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="Area"
+                android:textColor="#fff"
+                android:textSize="8dp"
+                android:onClick="selectSub2"/>
         </LinearLayout>
     </HorizontalScrollView>
 
@@ -329,17 +313,67 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/angularMotionSub"
+            android:id="@+id/motionSub"
             android:visibility="gone">
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
-                android:text="acceleration"
+                android:text="Linear: Velocity"
                 android:textColor="#fff"
                 android:textSize="8dp"
-                android:onClick="AngularAcc"/>
+                android:onClick="LinearVelocity"/>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="Linear Acceleration"
+                android:textColor="#fff"
+                android:textSize="8dp" />
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="Angular Velocity"
+                android:textColor="#fff"
+                android:textSize="8dp"
+                android:onClick="AngularVelocity"/>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="Angular Acceleration"
+                android:textColor="#fff"
+                android:textSize="8dp" />
+        </LinearLayout>
+    </HorizontalScrollView>
+    <!-- GEOMETRY SUBS2 -->
+    <HorizontalScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fillViewport="true">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/areaSub"
+            android:visibility="gone">
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="Triangle"
+                android:textColor="#fff"
+                android:textSize="8dp"
+                android:onClick="AreaTriangle"/>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="Circle"
+                android:textColor="#fff"
+                android:textSize="8dp"
+                android:onClick="AreaCircle"/>
         </LinearLayout>
     </HorizontalScrollView>
 
-</LinearLayout><!--  345  -->
+</LinearLayout><!--  379  -->

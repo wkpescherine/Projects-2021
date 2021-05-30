@@ -589,8 +589,8 @@ public class Emulator extends AppCompatActivity {
         data.subCategory = "Pythagoren";
         setFormulaText(data.subCategory);
     }
-    public void AngularAcc(View v){
-        data.subCategory2 = "Angular Acceleration";
+    public void AngularVelocity(View v){
+        data.subCategory2 = "AngularVelocity";
         setFormulaText(data.subCategory2);
     }
     public void x2(View v){
@@ -639,17 +639,32 @@ public class Emulator extends AppCompatActivity {
                 break;
         }
     }
+
+    public void selectSub2(View v){
+        displaySubs2(0);
+        Button b = (Button) v;
+        String sub2Select = b.getText().toString();
+        if(sub2Select.equals("Motion")){displaySubs2(1);}
+        if(sub2Select.equals("Area")){displaySubs2(2);}
+    }
+
     public void displaySubs2(int num) {
-        LinearLayout subLayout = findViewById(R.id.angularMotionSub);
-        subLayout.setVisibility(View.GONE);
+        LinearLayout moSub = findViewById(R.id.motionSub);
+        LinearLayout arSub = findViewById(R.id.areaSub);
         switch (num) {
             case 0:
-                subLayout.setVisibility(View.GONE);
+                moSub.setVisibility(View.GONE);
+                arSub.setVisibility(View.GONE);
                 break;
             case 1:
-                subLayout.setVisibility(View.VISIBLE);
-                TextView message = findViewById(R.id.message);
-                message.setText("Angular Motion selected");
+                arSub.setVisibility(View.GONE);
+                moSub.setVisibility(View.VISIBLE);
+                textMessage.setText(" Motion selected");
+                break;
+            case 2:
+                moSub.setVisibility(View.GONE);
+                arSub.setVisibility(View.VISIBLE);
+                textMessage.setText(" Area selected");
                 break;
         }
     }
@@ -786,12 +801,12 @@ public class Emulator extends AppCompatActivity {
         LinearLayout mainSCT = findViewById(R.id.sincostan);
         LinearLayout mainLinVelocity = findViewById(R.id.LinearVelocity);
         LinearLayout mainPythagoren = findViewById(R.id.Pythagoren);
-        LinearLayout mainAngAcceleration = findViewById(R.id.AngularAcceleration);
-        LinearLayout subMotion = findViewById(R.id.angularMotionSub);
+        LinearLayout mainAngVelocity = findViewById(R.id.AngularVelocity);
+        //LinearLayout subMotion = findViewById(R.id.angularMotionSub);
         TextView sign1Text = findViewById(R.id.sign1);
         TextView getDivBy2 = findViewById(R.id.divBy2);
         TextView sctText = findViewById(R.id.SCT);
-        subMotion.setVisibility(View.GONE);
+        //subMotion.setVisibility(View.GONE);
         mainBasic.setVisibility(View.GONE);
         main23DArea.setVisibility(View.GONE);
         mainExponent.setVisibility(View.GONE);
@@ -800,27 +815,23 @@ public class Emulator extends AppCompatActivity {
         mainSCT.setVisibility(View.GONE);
         mainLinVelocity.setVisibility(View.GONE);
         mainPythagoren.setVisibility(View.GONE);
-        mainAngAcceleration.setVisibility(View.GONE);
+        mainAngVelocity.setVisibility(View.GONE);
         getDivBy2.setVisibility(View.GONE);
         TextView textMessageSub = findViewById(R.id.message);
         textMessageSub.setText(data.subCategory);
         if(sub.equals("add")){
             mainBasic.setVisibility(View.VISIBLE);
             sign1Text.setText("+");
-            //textMessageSub.setText("Addition selected");
         }else if(data.subCategory.equals("subtract")){
             mainBasic.setVisibility(View.VISIBLE);;
             sign1Text.setText("-");
-            textMessageSub.setText("Subtraction selected");
         }else if(data.subCategory.equals("divide")){
             mainBasic.setVisibility(View.VISIBLE);
             sign1Text.setText("/");
-            textMessageSub.setText("Division Selected");
         }else if(data.subCategory.equals("multiply")){
             mainBasic.setVisibility(View.VISIBLE);
             sign1Text.setText("*");
-            textMessageSub.setText("Multiplication Selected");
-        }else if(data.subCategory.equals("square") || data.subCategory.equals("AreaTriangle")){
+        }else if(data.subCategory.equals("square") || data.subCategory.equals("triangle")){
             main23DArea.setVisibility(View.VISIBLE);
             if(data.subCategory.equals("square")){
                 textMessageSub.setText("2D Area Selected");
@@ -847,7 +858,7 @@ public class Emulator extends AppCompatActivity {
             if(data.subCategory.equals("x3")){
                 power.setText("3");
             }
-        } else if(data.subCategory.equals("AreaCircle")) {
+        } else if(data.subCategory.equals("circle")) {
             mainCircle.setVisibility(View.VISIBLE);
             textMessageSub.setText("Circle Area Selected");
         } else if(data.subCategory.equals("custom")){
@@ -868,13 +879,11 @@ public class Emulator extends AppCompatActivity {
         } else if(data.subCategory.equals("Pythagoren")){
             mainPythagoren.setVisibility(View.VISIBLE);
             textMessageSub.setText("Pythagoren Selected");
-        } else if(data.subCategory.equals("Angular Motion")){
-            if(data.subCategory2.equals("Angular Acceleration")){
-                mainAngAcceleration.setVisibility(View.VISIBLE);
-            }
+        } else if(data.subCategory.equals("AngularVelocity")){
+            mainAngVelocity.setVisibility(View.VISIBLE);
             textMessageSub.setText("Angular Acceleration Selected");
         } else {
             textMessageSub.setText("Check your formula");
         }
     }
-}//878
+}//889
