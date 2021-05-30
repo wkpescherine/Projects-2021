@@ -286,11 +286,11 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/intSpeed"
-                android:text="si"
+                android:id="@+id/XF"
+                android:text="xf"
                 android:textSize="32dp"
                 android:textColor="#fff"
-                android:onClick="focusSpeedI"/>
+                android:onClick="setFocus"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -300,11 +300,11 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/finalSpeed"
-                android:text="sf"
+                android:id="@+id/XI"
+                android:text="xi"
                 android:textSize="32dp"
                 android:textColor="#fff"
-                android:onClick="focusSpeedF"/>
+                android:onClick="setFocus"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -326,7 +326,7 @@
                 android:textSize="32dp"
                 android:textColor="#fff"/>
             <TextView
-                android:id="@+id/linearVelocity"
+                android:id="@+id/LV"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="v"

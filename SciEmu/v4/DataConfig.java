@@ -16,9 +16,9 @@ public class DataConfig {
     String totalString ="";
     String degree = "";
     String radians = "";
-    String velocity = "";
-    String speedI = "";
-    String speedF = "";
+    String V = "";
+    String XI = "";
+    String XF = "";
     String time = "";
     String subCategory2 = "";
     String angle1 = "";
@@ -41,10 +41,10 @@ public class DataConfig {
         xPowerString = "";
         powerString ="";
         totalString = "";
-        speedF = "";
-        speedI = "";
+        XF = "";
+        XI = "";
         time = "";
-        velocity = "";
+        V = "";
         aString = "";
         bString = "";
         cString = "";

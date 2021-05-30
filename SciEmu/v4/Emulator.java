@@ -17,7 +17,7 @@ public class Emulator extends AppCompatActivity {
     SolveCustom custom = new SolveCustom();
 
     TextView textMessage, xText, yText, zText, hText, wText, dText, radius, total, aText, bText,
-            cText, power, xPower;
+            cText, power, xPower, XFText, XIText;
 
     // Location is = x,y,z,h,w,d,total, exp value, exponent, custom, radius, speedI,speedF,time
     int[] isDecimal = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
@@ -40,6 +40,8 @@ public class Emulator extends AppCompatActivity {
         aText = findViewById(R.id.A);
         bText = findViewById(R.id.B);
         cText = findViewById(R.id.C);
+        XFText = findViewById(R.id.XF);
+        XIText = findViewById(R.id.XI);
         radius = findViewById(R.id.Radius);
         power = findViewById(R.id.Power);
         xPower = findViewById(R.id.xPower);
@@ -108,14 +110,6 @@ public class Emulator extends AppCompatActivity {
     public void focusDegree(View v){
         data.focus = "degree";
         textMessage.setText("Focus is on Degrees");
-    }
-    public void focusSpeedI(View v) {
-        data.focus = "si";
-        textMessage.setText("Focus on Speed Int");
-    }
-    public void focusSpeedF(View v) {
-        data.focus = "sf";
-        textMessage.setText("Focus on Speed Final");
     }
     public void focusTime(View v) {
         data.focus = "t";
@@ -239,26 +233,22 @@ public class Emulator extends AppCompatActivity {
             TextView valueDegree = findViewById(R.id.Degree);
             data.degree = val + "";
             valueDegree.setText(data.degree);
-        } else if (data.focus.equals("si") && data.speedI.length() != 0) {
-            TextView valueSpeedI = findViewById(R.id.intSpeed);
-            data.speedI += val;
-            valueSpeedI.setText(data.speedI);
-        } else if (data.focus.equals("si") && data.speedI.length() == 0) {
-            TextView valueSpeedI = findViewById(R.id.intSpeed);
-            data.speedI = val + "";
-            valueSpeedI.setText(data.speedI);
-        } else if (data.focus.equals("sf") && data.speedF.length() != 0) {
-            TextView valueSpeedF = findViewById(R.id.finalSpeed);
-            data.speedF += val;
-            valueSpeedF.setText(data.speedF);
-        } else if (data.focus.equals("sf") && data.speedF.length() == 0) {
-            TextView valueSpeedF = findViewById(R.id.finalSpeed);
-            data.speedF = val + "";
-            valueSpeedF.setText(data.speedF);
+        } else if (data.focus.equals("XI") && data.XI.length() != 0) {
+            data.XI += val;
+            XIText.setText(data.XI);
+        } else if (data.focus.equals("XI") && data.XI.length() == 0) {
+            data.XI = val + "";
+            XIText.setText(data.XI);
+        } else if (data.focus.equals("XF") && data.XF.length() != 0) {
+            data.XF += val;
+            XFText.setText(data.XF);
+        } else if (data.focus.equals("XF") && data.XF.length() == 0) {
+            data.XF = val + "";
+            XFText.setText(data.XF);
         } else if (data.focus.equals("t") && data.time.length() != 0) {
             TextView valueTime = findViewById(R.id.time);
             data.time += val;
-            valueTime.setText(data.speedF);
+            valueTime.setText(data.time);
         } else if (data.focus.equals("t") && data.time.length() == 0) {
             TextView valueTime = findViewById(R.id.time);
             data.time = val + "";
@@ -314,8 +304,6 @@ public class Emulator extends AppCompatActivity {
     public void specialFunc(String func) {
         TextView customText = findViewById(R.id.Custom);
         TextView degreeText = findViewById(R.id.Degree);
-        TextView speedIText = findViewById(R.id.intSpeed);
-        TextView speedFText = findViewById(R.id.finalSpeed);
         TextView timeText = findViewById(R.id.time);
         if (func.equals("del")) {
             if (data.focus.equals("X") && data.xString.length() > 0) {
@@ -483,19 +471,19 @@ public class Emulator extends AppCompatActivity {
             if(data.degree.length() == 0){
                 degreeText.setText("\u00B0");
             }
-            if (data.focus.equals("si") && data.speedI.length() > 0) {
-                data.speedI = data.speedI.substring(0, (data.speedI.length()) - 1);
-                speedIText.setText(data.speedI);
+            if (data.focus.equals("XI") && data.XI.length() > 0) {
+                data.XI = data.XI.substring(0, (data.XI.length()) - 1);
+                XIText.setText(data.XI);
             }
-            if(data.speedI.length() == 0){
-                speedIText.setText("si");
+            if(data.XI.length() == 0){
+                XIText.setText("xi");
             }
-            if (data.focus.equals("sf") && data.speedF.length() > 0) {
-                data.speedF = data.speedF.substring(0, (data.speedF.length()) - 1);
-                speedFText.setText(data.speedF);
+            if (data.focus.equals("XF") && data.XF.length() > 0) {
+                data.XF = data.XF.substring(0, (data.XF.length()) - 1);
+                XFText.setText(data.XF);
             }
-            if(data.speedF.length() == 0){
-                speedFText.setText("sf");
+            if(data.XF.length() == 0){
+                XFText.setText("xf");
             }
             if (data.focus.equals("t") && data.time.length() > 0) {
                 data.time = data.time.substring(0, (data.time.length()) - 1);
@@ -730,8 +718,8 @@ public class Emulator extends AppCompatActivity {
             randiansTotal.setText(result);
         }
         if(data.subCategory.equals("LinearVelocity")){
-            String result = formula.LinearVelocity(data.speedI, data.speedF, data.time);
-            TextView linVelocityTotal = findViewById(R.id.linearVelocity);
+            String result = formula.LinearVelocity(data.XI, data.XF, data.time);
+            TextView linVelocityTotal = findViewById(R.id.LV);
             linVelocityTotal.setText(result);
         }
         if(data.subCategory.equals("Pythagoren")){
@@ -770,15 +758,15 @@ public class Emulator extends AppCompatActivity {
         radius.setText("radius");
         TextView degreeTextString = findViewById(R.id.Degree);
         degreeTextString.setText("\u00B0");
-        TextView speedITextString = findViewById(R.id.intSpeed);
-        speedITextString.setText("si");
-        TextView speedFTextString = findViewById(R.id.finalSpeed);
-        speedFTextString.setText("sf");
+        XIText.setText("xi");
+        XFText.setText("xf");
         TextView timeTextString = findViewById(R.id.time);
         timeTextString.setText("t");
         aText.setText("a");
         bText.setText("b");
         cText.setText("c");
+        TextView LVText = findViewById(R.id.LV);
+        LVText.setText("v");
         TextView angle1TextString = findViewById(R.id.angle1);
         angle1TextString.setText("\u03B8");
         TextView angle2TextString = findViewById(R.id.angle2);
@@ -889,4 +877,4 @@ public class Emulator extends AppCompatActivity {
             textMessageSub.setText("Check your formula");
         }
     }
-}//892
+}//878
