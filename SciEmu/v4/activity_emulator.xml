@@ -309,6 +309,27 @@
                 android:textColor="#fff"
                 android:textSize="8dp"
                 android:onClick="setTan"/>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="90"
+                android:textColor="#fff"
+                android:textSize="8dp"/>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="60"
+                android:textColor="#fff"
+                android:textSize="8dp"/>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="45"
+                android:textColor="#fff"
+                android:textSize="8dp"/>
         </LinearLayout>
     </HorizontalScrollView>
 
@@ -397,4 +418,4 @@
         </LinearLayout>
     </HorizontalScrollView>
 
-</LinearLayout><!--  400  -->
+</LinearLayout><!--  421  -->
