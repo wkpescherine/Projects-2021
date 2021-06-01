@@ -265,6 +265,13 @@
                 android:textColor="#fff"
                 android:textSize="8dp"
                 android:onClick="selectSub2"/>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="Circumference"
+                android:textColor="#fff"
+                android:textSize="8dp" />
         </LinearLayout>
     </HorizontalScrollView>
 
@@ -373,7 +380,21 @@
                 android:textColor="#fff"
                 android:textSize="8dp"
                 android:onClick="AreaCircle"/>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="Box"
+                android:textColor="#fff"
+                android:textSize="8dp"/>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="Sphere"
+                android:textColor="#fff"
+                android:textSize="8dp" />
         </LinearLayout>
     </HorizontalScrollView>
 
-</LinearLayout><!--  379  -->
+</LinearLayout><!--  400  -->
