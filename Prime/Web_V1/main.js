@@ -1,11 +1,11 @@
 import React from 'react';
 import './App.css';
 
-import {Link} from 'react-router-dom'
 import {Redirect} from 'react-router-dom'
 
 class Main extends React.Component {
     state={
+        create: false,
         login: false
     }
 
@@ -15,15 +15,28 @@ class Main extends React.Component {
         })
     }
 
+    createButton(){
+        this.setState({
+            create: true
+        })
+    }
+
     render(){
         if(this.state.login === true){
             return <Redirect to="/home" /> 
+        }
+
+        if(this.state.create === true){
+            return <Redirect to="/create"/>
         }
 
         return (
             <div>
                 <h1> Prime Academy</h1>
                 <button onClick={()=>this.submitButton()}>Click to Enter</button>
+                <br></br>
+                <br></br>
+                <button onClick={()=>this.createButton()}>Create Profile</button>
             </div>
         );
     }
