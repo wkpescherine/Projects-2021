@@ -6,6 +6,9 @@ import {Redirect} from 'react-router-dom'
 
 class Create extends React.Component {
     state={
+        username:"Enter username",
+        email: "Enter e-mail",
+        password: "Enter password",
         login: false
     }
 
@@ -13,6 +16,23 @@ class Create extends React.Component {
         this.setState({
             login: true
         })
+    }
+
+    handleUsernameChange = event => {
+      this.setState({
+        username: event.target.value
+      })
+    }
+    handleEmailChange = event => {
+      this.setState({
+        email: event.target.value
+      })
+    }
+  
+    handlePasswordChange = event => {
+      this.setState({
+        password: event.target.value
+      })
     }
 
     render(){

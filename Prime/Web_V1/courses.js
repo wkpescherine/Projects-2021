@@ -3,7 +3,7 @@ import './App.css';
 
 import {Redirect} from 'react-router-dom'
 
-class Profile extends React.Component {
+class Courses extends React.Component {
     state={
         section: "none" 
     }
@@ -15,15 +15,15 @@ class Profile extends React.Component {
     }
     render(){
         if(this.state.section === "home"){
-            return <Redirect to="/home"/>
+                return <Redirect to="/home"/>
         }
-        if(this.state.section !== "none" && this.state.section !== "profile"){
-            if(this.state.section === "profile"){
-                return <Redirect to="/profile"/>
+        if(this.state.section === "profile"){
+            return <Redirect to="/profile"/>
+        }
+        if(this.state.section !=="none" && this.state.section !== "courses"){
+            if(this.state.section === "courses"){
+                return <Redirect to="/courses"/>
             }
-        }
-        if(this.state.section === "courses"){
-            return <Redirect to="/courses"/>
         }
         if(this.state.section === "logout"){
             return <Redirect to="/"/>
@@ -38,10 +38,10 @@ class Profile extends React.Component {
                     <button onClick={()=>this.homeButton("courses")}> Courses</button>
                     <button onClick={()=>this.homeButton("logout")}> Logout</button>
                 </div>
-            <h1>In Profile Section</h1>
+            <h1>In Courses Section</h1>
         </div>
       );
     }
 }
 
-export default Profile;
+export default Courses;

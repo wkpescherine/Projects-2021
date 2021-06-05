@@ -4,7 +4,7 @@ import {BrowserRouter as Router, Route} from 'react-router-dom'
 import Main from './main'
 import Home from './home'
 import Create from "./create"
-import Lesson from "./lesson"
+import Courses from "./courses"
 import Profile from "./profile"
 
 function App() {
@@ -14,7 +14,7 @@ function App() {
         <Route exact path="/" component = {Main} />
         <Route exact path="/home" component = {Home} />
         <Route exact path="/create" component = {Create} />
-        <Route exact path="/lesson" component = {Lesson}/>
+        <Route exact path="/courses" component = {Courses}/>
         <Route exact path="/profile" component = {Profile}/>
       </Router>
     </div>

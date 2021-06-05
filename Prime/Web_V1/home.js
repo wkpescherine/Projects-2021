@@ -24,8 +24,11 @@ class Home extends React.Component {
         if(this.state.section === "profile"){
             return <Redirect to="/profile"/>
         }
-        if(this.state.section === "lesson"){
-            return <Redirect to="/lesson"/>
+        if(this.state.section === "courses"){
+            return <Redirect to="/courses"/>
+        }
+        if(this.state.section === "logout"){
+            return <Redirect to="/"/>
         }
 
         return (
@@ -34,7 +37,8 @@ class Home extends React.Component {
                 <div>
                     <button onClick={()=>this.homeButton("home")}> Home</button>
                     <button onClick={()=>this.homeButton("profile")}> Profile</button>
-                    <button onClick={()=>this.homeButton("lesson")}> Lessons</button>
+                    <button onClick={()=>this.homeButton("courses")}> Courses</button>
+                    <button onClick={()=>this.homeButton("logout")}> Logout</button>
                     <br></br>
                     <h1>This is the home section</h1>
                 </div>
