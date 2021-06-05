@@ -15,15 +15,15 @@ class Lesson extends React.Component {
     }
     render(){
         if(this.state.section === "home"){
-            if(this.state.section === "home"){
                 return <Redirect to="/home"/>
-            }
         }
         if(this.state.section === "profile"){
-            return <Redirect to="/"/>
+            return <Redirect to="/profile"/>
         }
         if(this.state.section !=="none" && this.state.section !== "lesson"){
-            return <Redirect to="/lesson"/>
+            if(this.state.section === "lesson"){
+                return <Redirect to="/lesson"/>
+            }
         }
         return (
         <div>

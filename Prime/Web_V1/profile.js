@@ -17,12 +17,15 @@ class Profile extends React.Component {
         if(this.state.section === "home"){
             return <Redirect to="/home"/>
         }
-        if(this.state.section!=="none" && this.state.section !== "profile"){
-            return <Redirect to="/profile"/>
+        if(this.state.section !== "none" && this.state.section !== "profile"){
+            if(this.state.section === "profile"){
+                return <Redirect to="/profile"/>
+            }
         }
         if(this.state.section === "lesson"){
             return <Redirect to="/lesson"/>
         }
+
         return (
         <div>
             <h3> Prime Academy</h3>
