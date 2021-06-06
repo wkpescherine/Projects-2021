@@ -3,15 +3,31 @@ import './App.css';
 
 import {Redirect} from 'react-router-dom'
 
+import Html from "./html"
+import Java from "./java"
+
 class Courses extends React.Component {
     state={
-        section: "none" 
+        section: "none",
+        course: "none"
     }
 
-    homeButton( something){
+    homeButton( selected){
         this.setState({
-            section: something
+            section: selected
         })
+    }
+
+    selectCourse(courseClicked){
+        if(this.state.course !== courseClicked){
+            this.setState({
+                course: courseClicked
+            })
+        } else  {
+            this.setState({
+                course: "none"
+            })
+        }
     }
     render(){
         if(this.state.section === "home"){
@@ -37,6 +53,28 @@ class Courses extends React.Component {
                     <button onClick={()=>this.homeButton("profile")}> Profile</button>
                     <button onClick={()=>this.homeButton("courses")}> Courses</button>
                     <button onClick={()=>this.homeButton("logout")}> Logout</button>
+                    <div>
+                        <br></br>
+                        <button onClick={()=>this.selectCourse("html")}> HTML/CSS</button>
+                        <br></br>
+                        {this.state.course === "html" &&       
+                            < Html />
+                        }
+                        <br></br>
+                        <button onClick={()=>this.selectCourse("c++")}> C++</button>
+                        <br></br>
+                        <br></br>
+                        <button onClick={()=>this.selectCourse("java")}> Java</button>
+                        <br></br>
+                        {this.state.course === "java" &&       
+                            < Java />
+                        }
+                        <br></br>
+                        <button onClick={()=>this.selectCourse("python")}> Python</button>
+                        <br></br>
+                        <br></br>
+                        <button onClick={()=>this.homeButton("home")}> Home</button>                        
+                    </div>
                 </div>
             <h1>In Courses Section</h1>
         </div>
