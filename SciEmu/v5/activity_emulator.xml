@@ -139,10 +139,11 @@
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Polynomal"
+                android:layout_marginLeft="5dp"
+                android:text="polynomal"
                 android:textColor="#fff"
                 android:textSize="8dp"
-                />
+                android:onClick="setFormula"/>
         </LinearLayout>
     </HorizontalScrollView>
 
@@ -348,7 +349,8 @@
                 android:layout_marginLeft="5dp"
                 android:text="Box"
                 android:textColor="#fff"
-                android:textSize="8dp"/>
+                android:textSize="8dp"
+                android:onClick="setBox"/>
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -368,4 +370,4 @@
         </LinearLayout>
     </HorizontalScrollView>
 
-</LinearLayout><!--  371  -->
+</LinearLayout><!--  373  -->

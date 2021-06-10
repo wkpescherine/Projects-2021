@@ -611,6 +611,10 @@ public class Emulator extends AppCompatActivity {
         data.subCategory = "cone";
         setFormulaText(data.subCategory);
     }
+    public void setBox(View v){
+        data.subCategory = "box";
+        setFormulaText(data.subCategory);
+    }
 
     public void displaySubs(int num) {
         displaySubs2(0);
@@ -810,11 +814,13 @@ public class Emulator extends AppCompatActivity {
         LinearLayout mainLinVelocity = findViewById(R.id.LinearVelocity);
         LinearLayout mainPythagoren = findViewById(R.id.Pythagoren);
         LinearLayout mainAngVelocity = findViewById(R.id.AngularVelocity);
+        LinearLayout mainPolynomal = findViewById(R.id.polynomalFormula);
         //LinearLayout subMotion = findViewById(R.id.angularMotionSub);
         TextView sign1Text = findViewById(R.id.sign1);
         TextView getDivBy2 = findViewById(R.id.divBy2);
         TextView sctText = findViewById(R.id.SCT);
         //subMotion.setVisibility(View.GONE);
+        mainPolynomal.setVisibility(View.GONE);
         mainBasic.setVisibility(View.GONE);
         main23DArea.setVisibility(View.GONE);
         mainExponent.setVisibility(View.GONE);
@@ -894,8 +900,10 @@ public class Emulator extends AppCompatActivity {
             textMessageSub.setText("Area of Sphere Selected.");
         } else if(data.subCategory.equals("cone")){
             textMessageSub.setText("Area of Cone Selected.");
+        } else if(data.subCategory.equals("polynomal")){
+            mainPolynomal.setVisibility(View.VISIBLE);
         } else {
             textMessageSub.setText("Check your formula");
         }
     }
-}//901
+}//909
