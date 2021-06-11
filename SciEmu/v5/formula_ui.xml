@@ -570,7 +570,7 @@
                 android:textSize="32dp"
                 android:textColor="#fff"/>
             <TextView
-                android:id="@+id/SphereTotal"
+                android:id="@+id/SphereTot"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Total"
@@ -599,7 +599,14 @@
                     android:textSize="32dp"
                     android:textColor="#fff"/>
                 <TextView
-                    android:id="@+id/polyX"
+                    android:id="@+id/polyn1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="n1"
+                    android:textSize="32dp"
+                    android:textColor="#fff"
+                    android:onClick="setFocus"/>
+                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="x"
@@ -612,7 +619,14 @@
                     android:textSize="32dp"
                     android:textColor="#fff"/>
                 <TextView
-                    android:id="@+id/polyY"
+                    android:id="@+id/polyn2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="n2"
+                    android:textSize="32dp"
+                    android:textColor="#fff"
+                    android:onClick="setFocus"/>
+                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="y"
@@ -649,4 +663,4 @@
         </LinearLayout>
 
     </RelativeLayout>
-</LinearLayout><!--  652 -->
+</LinearLayout><!--  666 -->

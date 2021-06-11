@@ -17,7 +17,7 @@ public class Emulator extends AppCompatActivity {
     SolveCustom custom = new SolveCustom();
 
     TextView textMessage, xText, yText, zText, hText, wText, dText, radius, total, aText, bText,
-            cText, power, xPower, XFText, XIText;
+            cText, power, xPower, XFText, XIText, n1Text, n2Text;
 
     // Location is = x,y,z,h,w,d,total, exp value, exponent, custom, radius, speedI,speedF,time
     int[] isDecimal = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
@@ -46,6 +46,8 @@ public class Emulator extends AppCompatActivity {
         power = findViewById(R.id.Power);
         xPower = findViewById(R.id.xPower);
         total = findViewById(R.id.Total);
+        n1Text = findViewById(R.id.polyn1);
+        n2Text = findViewById(R.id.polyn2);
     }
 
     public void setNumber(View v){
@@ -295,6 +297,18 @@ public class Emulator extends AppCompatActivity {
             TextView time2ValueTime = findViewById(R.id.time2);
             data.time = val + "";
             time2ValueTime.setText(data.time);
+        } else if (data.focus.equals("polyn1") && data.n1String.length() != 0) {
+            data.n1String += val;
+            n1Text.setText(data.n1String);
+        } else if (data.focus.equals("polyn1") && data.n1String.length() == 0) {
+            data.n1String = val + "";
+            n1Text.setText(data.n1String);
+        } else if (data.focus.equals("polyn2") && data.n1String.length() != 0) {
+            data.n2String += val;
+            n2Text.setText(data.n2String);
+        } else if (data.focus.equals("polyn2") && data.n1String.length() == 0) {
+            data.n2String = val + "";
+            n2Text.setText(data.n2String);
         }else {
             TextView textMessageX = findViewById(R.id.message);
             textMessageX.setText("ERROR!!!");
@@ -512,6 +526,20 @@ public class Emulator extends AppCompatActivity {
             }
             if(data.cString.length() == 0){
                 cText.setText("c");
+            }
+            if (data.focus.equals("polyn1") && data.n1String.length() > 0) {
+                data.n1String = data.n1String.substring(0, (data.n1String.length()) - 1);
+                n1Text.setText(data.n1String);
+            }
+            if(data.n1String.length() == 0){
+                n1Text.setText("n1");
+            }
+            if (data.focus.equals("polyn2") && data.n2String.length() > 0) {
+                data.n2String = data.n2String.substring(0, (data.n2String.length()) - 1);
+                n2Text.setText(data.n2String);
+            }
+            if(data.n2String.length() == 0){
+                n2Text.setText("n2");
             }
         }
     }
@@ -906,4 +934,4 @@ public class Emulator extends AppCompatActivity {
             textMessageSub.setText("Check your formula");
         }
     }
-}//909
+}//937
