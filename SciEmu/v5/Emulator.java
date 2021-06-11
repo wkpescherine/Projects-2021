@@ -169,11 +169,11 @@ public class Emulator extends AppCompatActivity {
             TextView valueD = findViewById(R.id.D);
             data.dString = val + "";
             valueD.setText(data.dString);
-        } else if (data.focus.equals("total") && data.totalString.length() != 0) {
+        } else if (data.focus.equals("Total") && data.totalString.length() != 0) {
             TextView valueTotal = findViewById(R.id.Total);
             data.totalString += val;
             valueTotal.setText(data.totalString);
-        } else if (data.focus.equals("total") && data.totalString.length() == 0) {
+        } else if (data.focus.equals("Total") && data.totalString.length() == 0) {
             TextView valueTotal = findViewById(R.id.Total);
             data.totalString = val + "";
             valueTotal.setText(data.totalString);
@@ -183,10 +183,10 @@ public class Emulator extends AppCompatActivity {
         } else if (data.focus.equals("xPower") && data.xPowerString.length() == 0) {
             data.xPowerString = val + "";
             xPower.setText(data.xPowerString);
-        } else if (data.focus.equals("power") && data.subCategory.equals("power") && data.powerString.length() != 0) {
+        } else if (data.focus.equals("Power") && data.powerString.length() != 0) {
             data.powerString += val;
             power.setText(data.powerString);
-        } else if (data.focus.equals("power") && data.subCategory.equals("power") && data.powerString.length() == 0) {
+        } else if (data.focus.equals("Power") && data.powerString.length() == 0) {
             data.powerString = val + "";
             power.setText(data.powerString);
         } else if (data.focus.equals("custom")) {
@@ -396,19 +396,19 @@ public class Emulator extends AppCompatActivity {
                 dText.setText("d");
             }
 
-            if (data.focus.equals("total") && data.totalString.length() > 0) {
+            if (data.focus.equals("Total") && data.totalString.length() > 0) {
                 String totalLastChar = data.totalString.charAt(data.totalString.length() - 1) + "";
                 if (totalLastChar.equals(".")) {
                     isDecimal[6] = 0;
                     data.totalString = data.totalString.substring(0, (data.totalString.length()) - 1);
                     total.setText(data.totalString);
-                } else if (data.focus.equals("total") && (data.totalString.length() > 0)) {
+                } else if (data.focus.equals("Total") && (data.totalString.length() > 0)) {
                     data.totalString = data.totalString.substring(0, (data.totalString.length()) - 1);
                     total.setText(data.totalString);
                 }
             }
             if (data.totalString.length() == 0) {
-                total.setText("total");
+                total.setText("Total");
             }
             if (data.focus.equals("xPower") && data.xPowerString.length() > 0) {
                 String expValueLastChar = data.xPowerString.charAt(data.xPowerString.length() - 1) + "";
@@ -437,7 +437,7 @@ public class Emulator extends AppCompatActivity {
                 }
             }
             if (data.powerString.length() == 0) {
-                power.setText("exp");
+                power.setText("power");
             }
 
             if(data.focus.equals("custom") && data.customString.length()>0){
