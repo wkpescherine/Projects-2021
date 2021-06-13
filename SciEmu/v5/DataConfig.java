@@ -1,6 +1,7 @@
 package com.example.sciemu;
 
 public class DataConfig {
+    String polySign = "+";
     String n1String = "";
     String n2String = "";
     String xPowerString = "";
@@ -52,5 +53,8 @@ public class DataConfig {
         cString = "";
         angle1 = "";
         angle2 = "";
+        n1String = "";
+        n2String = "";
+        polySign = "+";
     }
-}//56
+}//60

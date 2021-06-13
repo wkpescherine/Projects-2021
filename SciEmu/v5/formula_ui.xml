@@ -613,11 +613,14 @@
                     android:textSize="32dp"
                     android:textColor="#fff" />
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:id="@+id/polySign"
+                    android:layout_width="36dp"
                     android:layout_height="wrap_content"
                     android:text="+"
                     android:textSize="32dp"
-                    android:textColor="#fff"/>
+                    android:textColor="#fff"
+                    android:textAlignment="center"
+                    android:onClick="polyChangeSign"/>
                 <TextView
                     android:id="@+id/polyn2"
                     android:layout_width="wrap_content"
@@ -653,7 +656,7 @@
                 android:layout_centerInParent="true"
                 android:id="@+id/polyResult">
                 <TextView
-                    android:id="@+id/polyResult2"
+                    android:id="@+id/polyResult1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="result"
@@ -663,4 +666,4 @@
         </LinearLayout>
 
     </RelativeLayout>
-</LinearLayout><!--  666 -->
+</LinearLayout><!--  669 -->

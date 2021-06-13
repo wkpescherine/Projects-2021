@@ -17,7 +17,7 @@ public class Emulator extends AppCompatActivity {
     SolveCustom custom = new SolveCustom();
 
     TextView textMessage, xText, yText, zText, hText, wText, dText, radius, total, aText, bText,
-            cText, power, xPower, XFText, XIText, n1Text, n2Text;
+            cText, power, xPower, XFText, XIText, n1Text, n2Text, polySignText;
 
     // Location is = x,y,z,h,w,d,total, exp value, exponent, custom, radius, speedI,speedF,time
     int[] isDecimal = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
@@ -48,6 +48,7 @@ public class Emulator extends AppCompatActivity {
         total = findViewById(R.id.Total);
         n1Text = findViewById(R.id.polyn1);
         n2Text = findViewById(R.id.polyn2);
+        polySignText = findViewById(R.id.polySign);
     }
 
     public void setNumber(View v){
@@ -544,6 +545,16 @@ public class Emulator extends AppCompatActivity {
         }
     }
 
+    public void polyChangeSign(View v){
+        if(data.polySign.equals("+")){
+            data.polySign = "-";
+            polySignText.setText("-");
+        } else {
+            data.polySign = "+";
+            polySignText.setText("+");
+        }
+    }
+
     public void displayBasic(View v) {
         displaySubs(1);
     }
@@ -758,7 +769,7 @@ public class Emulator extends AppCompatActivity {
             totalCustom.setText(result);
         }
         if(data.subCategory.equals("AreaTriangle")){
-            String result = formula.Area(data.hString, data.wString, "0", "0", data.subCategory);
+            String result = formula.Area(data.hString, data.wString, "0", data.totalString, data.subCategory);
             TextView triAreaTotal = findViewById(R.id.Total);
             triAreaTotal.setText(result);
         }
@@ -796,6 +807,15 @@ public class Emulator extends AppCompatActivity {
             TextView angAccTotal = findViewById(R.id.AngMotionAcc);
             angAccTotal.setText(result);
         }
+        if(data.subCategory.equals("polynomal")){
+            String result = formula.Polynomal(data.n1String, data.n2String, data.polySign);
+            LinearLayout polybase = findViewById(R.id.polynomalFormulaBase);
+            LinearLayout polyResults = findViewById(R.id.polyResult);
+            TextView polyResultText = findViewById(R.id.polyResult1);
+            polybase.setVisibility(View.GONE);
+            polyResults.setVisibility(View.VISIBLE);
+            polyResultText.setText(result);
+        }
     }
 
     public void resetUI(){
@@ -820,6 +840,8 @@ public class Emulator extends AppCompatActivity {
         aText.setText("a");
         bText.setText("b");
         cText.setText("c");
+        n1Text.setText("n1");
+        n2Text.setText("n2");
         TextView LVText = findViewById(R.id.LV);
         LVText.setText("v");
         TextView angle1TextString = findViewById(R.id.angle1);
@@ -930,8 +952,12 @@ public class Emulator extends AppCompatActivity {
             textMessageSub.setText("Area of Cone Selected.");
         } else if(data.subCategory.equals("polynomal")){
             mainPolynomal.setVisibility(View.VISIBLE);
+            LinearLayout polybase = findViewById(R.id.polynomalFormulaBase);
+            LinearLayout polyResults = findViewById(R.id.polyResult);
+            polybase.setVisibility(View.VISIBLE);
+            polyResults.setVisibility(View.GONE);
         } else {
             textMessageSub.setText("Check your formula");
         }
     }
-}//937
+}//963
