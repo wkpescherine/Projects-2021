@@ -331,7 +331,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
-                android:text="90 Triangle"
+                android:text="90\u00B0 Triangle"
                 android:textColor="#fff"
                 android:textSize="8dp"
                 android:onClick="AreaTriangle"/>
