@@ -768,10 +768,16 @@ public class Emulator extends AppCompatActivity {
             TextView totalCustom = findViewById(R.id.CusTotvalue2);
             totalCustom.setText(result);
         }
-        if(data.subCategory.equals("AreaTriangle")){
+        if(data.subCategory.equals("triangle")){
             String result = formula.Area(data.hString, data.wString, "0", data.totalString, data.subCategory);
-            TextView triAreaTotal = findViewById(R.id.Total);
-            triAreaTotal.setText(result);
+            if(data.hString.equals("")){
+                hText.setText(result);
+            } else if (data.wString.equals("")){
+                wText.setText(result);
+            } else {
+                TextView triAreaTotal = findViewById(R.id.Total);
+                triAreaTotal.setText(result);
+            }
         }
         if(data.subCategory.equals("AreaCircle")){
             String result = formula.Area(data.radiusString,"0","0","0", data.subCategory);
@@ -960,4 +966,4 @@ public class Emulator extends AppCompatActivity {
             textMessageSub.setText("Check your formula");
         }
     }
-}//963
+}//969
