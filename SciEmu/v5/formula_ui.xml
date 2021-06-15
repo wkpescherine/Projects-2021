@@ -254,13 +254,13 @@
                 android:textSize="32dp"
                 android:textColor="#fff"/>
             <TextView
-                android:id="@+id/Radius"
+                android:id="@+id/R"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="r"
                 android:textSize="32dp"
                 android:textColor="#fff"
-                android:onClick="focusRadius"/>
+                android:onClick="setFocus"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

@@ -81,6 +81,8 @@ public class Formula {
                 t1 = (Double.valueOf(value1)) * (Double.valueOf(value2)) * (Double.valueOf(value3)) + "";
             } else if (area.equals("triangle")) {
                 t1 = ((Double.valueOf(value2) * (Double.valueOf(value1) / 2))) + "";
+            } else if(area.equals("circle")){
+                t1 = ((Double.valueOf(value1) * Double.valueOf(value1))*3.16) + "";
             }
         }
         checkDecimal(t1);
@@ -162,4 +164,4 @@ public class Formula {
             t1 = intCheck+"";
         }
     }
-}//165
+}//167

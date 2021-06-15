@@ -42,7 +42,7 @@ public class Emulator extends AppCompatActivity {
         cText = findViewById(R.id.C);
         XFText = findViewById(R.id.XF);
         XIText = findViewById(R.id.XI);
-        radius = findViewById(R.id.Radius);
+        radius = findViewById(R.id.R);
         power = findViewById(R.id.Power);
         xPower = findViewById(R.id.xPower);
         total = findViewById(R.id.Total);
@@ -220,14 +220,12 @@ public class Emulator extends AppCompatActivity {
             TextView valueCustom = findViewById(R.id.custom);
             data.customString = val + "";
             valueCustom.setText(data.customString);
-        } else if (data.focus.equals("radius") && radius.length() != 0) {
-            TextView valueRadius = findViewById(R.id.Radius);
+        } else if (data.focus.equals("R") && radius.length() != 0) {
             data.radiusString += val;
-            valueRadius.setText(data.radiusString);
-        } else if (data.focus.equals("radius") && data.radiusString.length() == 0) {
-            TextView valueRadius = findViewById(R.id.Radius);
+            radius.setText(data.radiusString);
+        } else if (data.focus.equals("R") && data.radiusString.length() == 0) {
             data.radiusString = val + "";
-            valueRadius.setText(data.radiusString);
+            radius.setText(data.radiusString);
         } else if (data.focus.equals("degree") && data.degree.length() != 0) {
             TextView valueDegree = findViewById(R.id.Degree);
             data.degree += val;
@@ -465,18 +463,18 @@ public class Emulator extends AppCompatActivity {
                 customText.setText(data.customString);
             }
 
-            if (data.focus.equals("radius") && radius.length() > 0) {
+            if (data.focus.equals("R") && radius.length() > 0) {
                 String expLastChar = data.radiusString.charAt(radius.length() - 1) + "";
                 if (expLastChar.equals(".")) {
                     data.radiusString = data.radiusString.substring(0, (radius.length()) - 1);
                     radius.setText(data.radiusString);
-                } else if (data.focus.equals("radius") && (data.radiusString.length() > 0)) {
+                } else if (data.focus.equals("R") && (data.radiusString.length() > 0)) {
                     data.radiusString = data.radiusString.substring(0, (data.radiusString.length()) - 1);
                     radius.setText(data.radiusString);
                 }
             }
             if(data.radiusString.length() == 0){
-                radius.setText("radius");
+                radius.setText("r");
             }
 
             if (data.focus.equals("degree") && data.degree.length() > 0) {
@@ -779,8 +777,8 @@ public class Emulator extends AppCompatActivity {
                 triAreaTotal.setText(result);
             }
         }
-        if(data.subCategory.equals("AreaCircle")){
-            String result = formula.Area(data.radiusString,"0","0","0", data.subCategory);
+        if(data.subCategory.equals("circle")){
+            String result = formula.Area(data.radiusString,"0","0",data.totalString , data.subCategory);
             TextView circleAreaTotal = findViewById(R.id.CircleTotvalue);
             circleAreaTotal.setText(result);
         }
@@ -836,7 +834,9 @@ public class Emulator extends AppCompatActivity {
         xPower.setText("x");
         power.setText("power");
         total.setText("Total");
-        radius.setText("radius");
+        radius.setText("r");
+        TextView circleTotal = findViewById(R.id.CircleTotvalue);
+        circleTotal.setText("Total");
         TextView degreeTextString = findViewById(R.id.Degree);
         degreeTextString.setText("\u00B0");
         XIText.setText("xi");
