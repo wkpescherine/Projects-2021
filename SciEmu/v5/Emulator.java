@@ -17,7 +17,7 @@ public class Emulator extends AppCompatActivity {
     SolveCustom custom = new SolveCustom();
 
     TextView textMessage, xText, yText, zText, hText, wText, dText, radius, total, aText, bText,
-            cText, power, xPower, XFText, XIText, n1Text, n2Text, polySignText;
+            cText, power, xPower, XFText, XIText, n1Text, n2Text, polySignText, rSphere;
 
     // Location is = x,y,z,h,w,d,total, exp value, exponent, custom, radius, speedI,speedF,time
     int[] isDecimal = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
@@ -43,6 +43,7 @@ public class Emulator extends AppCompatActivity {
         XFText = findViewById(R.id.XF);
         XIText = findViewById(R.id.XI);
         radius = findViewById(R.id.R);
+        rSphere = findViewById(R.id.RadiusS1);
         power = findViewById(R.id.Power);
         xPower = findViewById(R.id.xPower);
         total = findViewById(R.id.Total);
@@ -109,6 +110,12 @@ public class Emulator extends AppCompatActivity {
         String focusOn = getResources().getResourceEntryName(v.getId());
         data.focus = focusOn;
         textMessage.setText("Focus on "+focusOn+ " value");
+    }
+    public void getArgFocus(View v){
+        TextView tv = (TextView) v;
+        String argText = tv.getText().toString();
+        data.focus = argText;
+        textMessage.setText("Focus on "+argText+ " value");
     }
     public void focusDegree(View v){
         data.focus = "degree";
@@ -226,6 +233,12 @@ public class Emulator extends AppCompatActivity {
         } else if (data.focus.equals("R") && data.radiusString.length() == 0) {
             data.radiusString = val + "";
             radius.setText(data.radiusString);
+        } else if (data.focus.equals("r") && radius.length() != 0) {
+            data.radiusString += val;
+            rSphere.setText(data.radiusString);
+        } else if (data.focus.equals("r") && data.radiusString.length() == 0) {
+            data.radiusString = val + "";
+            rSphere.setText(data.radiusString);
         } else if (data.focus.equals("degree") && data.degree.length() != 0) {
             TextView valueDegree = findViewById(R.id.Degree);
             data.degree += val;
@@ -475,6 +488,20 @@ public class Emulator extends AppCompatActivity {
             }
             if(data.radiusString.length() == 0){
                 radius.setText("r");
+            }
+
+            if (data.focus.equals("r") && data.radiusString.length() > 0) {
+                String expLastChar = data.radiusString.charAt(data.radiusString.length() - 1) + "";
+                if (expLastChar.equals(".")) {
+                    data.radiusString = data.radiusString.substring(0, (data.radiusString.length()) - 1);
+                    rSphere.setText(data.radiusString);
+                } else if (data.focus.equals("r") && (data.radiusString.length() > 0)) {
+                    data.radiusString = data.radiusString.substring(0, (data.radiusString.length()) - 1);
+                    rSphere.setText(data.radiusString);
+                }
+            }
+            if(data.radiusString.length() == 0){
+                rSphere.setText("r");
             }
 
             if (data.focus.equals("degree") && data.degree.length() > 0) {
@@ -871,6 +898,7 @@ public class Emulator extends AppCompatActivity {
         LinearLayout mainPythagoren = findViewById(R.id.Pythagoren);
         LinearLayout mainAngVelocity = findViewById(R.id.AngularVelocity);
         LinearLayout mainPolynomal = findViewById(R.id.polynomalFormula);
+        LinearLayout mainSphere = findViewById(R.id.sphereFormula);
         //LinearLayout subMotion = findViewById(R.id.angularMotionSub);
         TextView sign1Text = findViewById(R.id.sign1);
         TextView getDivBy2 = findViewById(R.id.divBy2);
@@ -887,6 +915,7 @@ public class Emulator extends AppCompatActivity {
         mainPythagoren.setVisibility(View.GONE);
         mainAngVelocity.setVisibility(View.GONE);
         getDivBy2.setVisibility(View.GONE);
+        mainSphere.setVisibility(View.GONE);
         TextView textMessageSub = findViewById(R.id.message);
         textMessageSub.setText(data.subCategory);
         if(sub.equals("add")){
@@ -956,8 +985,6 @@ public class Emulator extends AppCompatActivity {
         } else if(data.subCategory.equals("AngularVelocity")){
             mainAngVelocity.setVisibility(View.VISIBLE);
             textMessageSub.setText("Angular Acceleration Selected");
-        } else if (data.subCategory.equals("sphere")){
-            textMessageSub.setText("Area of Sphere Selected.");
         } else if(data.subCategory.equals("cone")){
             textMessageSub.setText("Area of Cone Selected.");
         } else if(data.subCategory.equals("polynomal")){
@@ -966,8 +993,10 @@ public class Emulator extends AppCompatActivity {
             LinearLayout polyResults = findViewById(R.id.polyResult);
             polybase.setVisibility(View.VISIBLE);
             polyResults.setVisibility(View.GONE);
+        } else if(data.subCategory.equals("sphere")){
+            mainSphere.setVisibility(View.VISIBLE);
         } else {
             textMessageSub.setText("Check your formula");
         }
     }
-}//969
+}//1002
