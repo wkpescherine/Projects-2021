@@ -739,7 +739,7 @@ public class Emulator extends AppCompatActivity {
                 valueX.setText(result);
             }
         }
-        if(data.subCategory.equals("square") || data.subCategory.equals("cube") || data.subCategory.equals("AreaTriangle")) {
+        if(data.subCategory.equals("square") || data.subCategory.equals("cube") || data.subCategory.equals("AreaTriangle") || data.subCategory.equals("box")) {
             String result = formula.Area(data.hString, data.wString, data.dString, data.totalString, data.subCategory);
             if (data.hString.length() > 0 && data.wString.length() > 0 && data.totalString.length() == 0) {
                 TextView TotalText = findViewById(R.id.Total);
@@ -913,12 +913,16 @@ public class Emulator extends AppCompatActivity {
             sign2Text.setVisibility(View.GONE);
             TextView dTextString = findViewById(R.id.D);
             dTextString.setVisibility(View.GONE);
-        }else if(data.subCategory.equals("cube")){
+        }else if(data.subCategory.equals("cube") || data.subCategory.equals("box")){
             main23DArea.setVisibility(View.VISIBLE);
             TextView sign2Text = findViewById(R.id.sign2);
             sign2Text.setVisibility(View.VISIBLE);
             dText.setVisibility(View.VISIBLE);
-            textMessageSub.setText("3D Area Selected");
+            if(data.subCategory.equals("cube")){
+                textMessage.setText("You have selected Cube");
+            } else {
+                textMessage.setText("You have selected Box");
+            }
         } else if(data.subCategory.equals("Exponent") || data.subCategory.equals("x2") || data.subCategory.equals("x3")){
             mainExponent.setVisibility(View.VISIBLE);
             textMessageSub.setText("Exponent selected");

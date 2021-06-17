@@ -52,7 +52,7 @@ public class Formula {
         if(value1.equals("")){
             if(area.equals("square")){
                 t1 = ((Double.valueOf(value4))/ (Double.valueOf(value2))) + "";
-            } else if(area.equals("cube")){
+            } else if(area.equals("cube") || area.equals("box")){
                 t1 = (Double.valueOf(value4)/(Double.valueOf(value2)*Double.valueOf(value3)))+ "";
             } else if(area.equals("triangle")){
                 t1 = ((Double.valueOf(value4)/Double.valueOf(value2))*2)+"";
@@ -61,7 +61,7 @@ public class Formula {
         if(value2.equals("")){
             if(area.equals("square")){
                 t1 = ((Double.valueOf(value4))/ (Double.valueOf(value1))) + "";
-            } else if(area.equals("cube")){
+            } else if(area.equals("cube") || area.equals("box")){
                 t1 = (Double.valueOf(value4)/(Double.valueOf(value1)*Double.valueOf(value3)))+ "";
             } else if(area.equals("triangle")) {
                 t1 = ((Double.valueOf(value4) / (Double.valueOf(value1) / 2))) + "";
@@ -70,14 +70,14 @@ public class Formula {
             }
         }
         if(value3.equals("")){
-            if(area.equals("cube")){
+            if(area.equals("cube") || area.equals("box")){
                 t1 = (Double.valueOf(value4)/(Double.valueOf(value1)*Double.valueOf(value2)))+"";
             }
         }
         if(value4.equals("")) {
             if (area.equals("square")) {
                 t1 = ((Double.valueOf(value1)) * (Double.valueOf(value2))) + "";
-            } else if (area.equals("cube")) {
+            } else if (area.equals("cube") || area.equals("box")) {
                 t1 = (Double.valueOf(value1)) * (Double.valueOf(value2)) * (Double.valueOf(value3)) + "";
             } else if (area.equals("triangle")) {
                 t1 = ((Double.valueOf(value2) * (Double.valueOf(value1) / 2))) + "";
