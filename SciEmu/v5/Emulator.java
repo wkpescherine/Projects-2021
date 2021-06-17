@@ -804,10 +804,15 @@ public class Emulator extends AppCompatActivity {
                 triAreaTotal.setText(result);
             }
         }
-        if(data.subCategory.equals("circle")){
+        if(data.subCategory.equals("circle") || data.subCategory.equals("sphere")){
             String result = formula.Area(data.radiusString,"0","0",data.totalString , data.subCategory);
-            TextView circleAreaTotal = findViewById(R.id.CircleTotvalue);
-            circleAreaTotal.setText(result);
+            if(data.subCategory.equals("circle")){
+                TextView circleAreaTotal = findViewById(R.id.CircleTotvalue);
+                circleAreaTotal.setText(result);
+            }else{
+                TextView sphereTotal = findViewById(R.id.SphereTotal);
+                sphereTotal.setText(result);
+            }
         }
         if(data.subCategory.equals("sin") || data.subCategory.equals("cos") || data.subCategory.equals("tan")){
             String result = formula.SCTSolve(data.degree, data.subCategory);
@@ -883,6 +888,10 @@ public class Emulator extends AppCompatActivity {
         angle2TextString.setText("\u03B8");
         TextView time2TextString = findViewById(R.id.time2);
         time2TextString.setText("t");
+        TextView radiusSphere = findViewById(R.id.RadiusS1);
+        radiusSphere.setText("r");
+        TextView totalSphere = findViewById(R.id.SphereTotal);
+        totalSphere.setText("total");
     }
 
     public void setFormulaText(String sub){

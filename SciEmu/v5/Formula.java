@@ -83,6 +83,8 @@ public class Formula {
                 t1 = ((Double.valueOf(value2) * (Double.valueOf(value1) / 2))) + "";
             } else if(area.equals("circle")){
                 t1 = ((Double.valueOf(value1) * Double.valueOf(value1))*3.16) + "";
+            } else if(area.equals("sphere")){
+                t1 = (4*(3.16* (Double.valueOf(value1)*Double.valueOf(value1))))+"";
             }
         }
         checkDecimal(t1);
