@@ -463,10 +463,10 @@ public class Emulator extends AppCompatActivity {
                 customText.setText(data.customString);
             }
 
-            if (data.focus.equals("R") && radius.length() > 0) {
-                String expLastChar = data.radiusString.charAt(radius.length() - 1) + "";
+            if (data.focus.equals("R") && data.radiusString.length() > 0) {
+                String expLastChar = data.radiusString.charAt(data.radiusString.length() - 1) + "";
                 if (expLastChar.equals(".")) {
-                    data.radiusString = data.radiusString.substring(0, (radius.length()) - 1);
+                    data.radiusString = data.radiusString.substring(0, (data.radiusString.length()) - 1);
                     radius.setText(data.radiusString);
                 } else if (data.focus.equals("R") && (data.radiusString.length() > 0)) {
                     data.radiusString = data.radiusString.substring(0, (data.radiusString.length()) - 1);
