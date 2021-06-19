@@ -17,7 +17,8 @@ public class Emulator extends AppCompatActivity {
     SolveCustom custom = new SolveCustom();
 
     TextView textMessage, xText, yText, zText, hText, wText, dText, radius, total, aText, bText,
-            cText, power, xPower, XFText, XIText, n1Text, n2Text, polySignText, rSphere;
+            cText, power, xPower, XFText, XIText, n1Text, n2Text, polySignText, rSphere,
+            rCircumference;
 
     // Location is = x,y,z,h,w,d,total, exp value, exponent, custom, radius, speedI,speedF,time
     int[] isDecimal = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
@@ -44,6 +45,7 @@ public class Emulator extends AppCompatActivity {
         XIText = findViewById(R.id.XI);
         radius = findViewById(R.id.R);
         rSphere = findViewById(R.id.RadiusS1);
+        rCircumference = findViewById(R.id.RadiusCir);
         power = findViewById(R.id.Power);
         xPower = findViewById(R.id.xPower);
         total = findViewById(R.id.Total);
@@ -235,10 +237,18 @@ public class Emulator extends AppCompatActivity {
             radius.setText(data.radiusString);
         } else if (data.focus.equals("r") && radius.length() != 0) {
             data.radiusString += val;
-            rSphere.setText(data.radiusString);
+            if(data.subCategory.equals("sphere")){
+                rSphere.setText(data.radiusString);
+            } else if(data.subCategory.equals("circumference")){
+                rCircumference.setText(data.radiusString);
+            }
         } else if (data.focus.equals("r") && data.radiusString.length() == 0) {
             data.radiusString = val + "";
-            rSphere.setText(data.radiusString);
+            if(data.subCategory.equals("sphere")){
+                rSphere.setText(data.radiusString);
+            } else if(data.subCategory.equals("circumference")){
+                rCircumference.setText(data.radiusString);
+            }
         } else if (data.focus.equals("degree") && data.degree.length() != 0) {
             TextView valueDegree = findViewById(R.id.Degree);
             data.degree += val;
@@ -494,14 +504,26 @@ public class Emulator extends AppCompatActivity {
                 String expLastChar = data.radiusString.charAt(data.radiusString.length() - 1) + "";
                 if (expLastChar.equals(".")) {
                     data.radiusString = data.radiusString.substring(0, (data.radiusString.length()) - 1);
-                    rSphere.setText(data.radiusString);
+                    if(data.subCategory.equals("sphere")){
+                        rSphere.setText(data.radiusString);
+                    } else if(data.subCategory.equals("circumference")){
+                        rCircumference.setText(data.radiusString);
+                    }
                 } else if (data.focus.equals("r") && (data.radiusString.length() > 0)) {
                     data.radiusString = data.radiusString.substring(0, (data.radiusString.length()) - 1);
-                    rSphere.setText(data.radiusString);
+                    if(data.subCategory.equals("sphere")){
+                        rSphere.setText(data.radiusString);
+                    } else if(data.subCategory.equals("circumference")){
+                        rCircumference.setText(data.radiusString);
+                    }
                 }
             }
             if(data.radiusString.length() == 0){
-                rSphere.setText("r");
+                if(data.subCategory.equals("sphere")){
+                    rSphere.setText("r");
+                } else if(data.subCategory.equals("circumference")){
+                    rCircumference.setText("r");
+                }
             }
 
             if (data.focus.equals("degree") && data.degree.length() > 0) {
@@ -679,6 +701,10 @@ public class Emulator extends AppCompatActivity {
         data.subCategory = "box";
         setFormulaText(data.subCategory);
     }
+    public void setCircumference(View v){
+        data.subCategory = "circumference";
+        setFormulaText(data.subCategory);
+    }
 
     public void displaySubs(int num) {
         displaySubs2(0);
@@ -852,6 +878,11 @@ public class Emulator extends AppCompatActivity {
             polyResults.setVisibility(View.VISIBLE);
             polyResultText.setText(result);
         }
+        if(data.subCategory.equals("circumference")){
+            String result = formula.Circumference(data.radiusString);
+            TextView cirTotal = findViewById(R.id.circumferenceTotal);
+            cirTotal.setText(result);
+        }
     }
 
     public void resetUI(){
@@ -892,6 +923,10 @@ public class Emulator extends AppCompatActivity {
         radiusSphere.setText("r");
         TextView totalSphere = findViewById(R.id.SphereTotal);
         totalSphere.setText("total");
+        TextView circumRad = findViewById(R.id.RadiusCir);
+        circumRad.setText("r");
+        TextView circumTotal = findViewById(R.id.circumferenceTotal);
+        circumTotal.setText("total");
     }
 
     public void setFormulaText(String sub){
@@ -908,6 +943,7 @@ public class Emulator extends AppCompatActivity {
         LinearLayout mainAngVelocity = findViewById(R.id.AngularVelocity);
         LinearLayout mainPolynomal = findViewById(R.id.polynomalFormula);
         LinearLayout mainSphere = findViewById(R.id.sphereFormula);
+        LinearLayout mainCircumference = findViewById(R.id.circumferenceFormula);
         //LinearLayout subMotion = findViewById(R.id.angularMotionSub);
         TextView sign1Text = findViewById(R.id.sign1);
         TextView getDivBy2 = findViewById(R.id.divBy2);
@@ -925,6 +961,7 @@ public class Emulator extends AppCompatActivity {
         mainAngVelocity.setVisibility(View.GONE);
         getDivBy2.setVisibility(View.GONE);
         mainSphere.setVisibility(View.GONE);
+        mainCircumference.setVisibility(View.GONE);
         TextView textMessageSub = findViewById(R.id.message);
         textMessageSub.setText(data.subCategory);
         if(sub.equals("add")){
@@ -1004,8 +1041,10 @@ public class Emulator extends AppCompatActivity {
             polyResults.setVisibility(View.GONE);
         } else if(data.subCategory.equals("sphere")){
             mainSphere.setVisibility(View.VISIBLE);
+        } else if(data.subCategory.equals("circumference")){
+            mainCircumference.setVisibility(View.VISIBLE);
         } else {
             textMessageSub.setText("Check your formula");
         }
     }
-}//1002
+}//1050

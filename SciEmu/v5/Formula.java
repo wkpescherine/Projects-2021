@@ -159,6 +159,11 @@ public class Formula {
         return t1;
     }
 
+    static String Circumference(String value1){
+        t1 = (2*(3.16*Double.valueOf(value1)))+"";
+        return t1;
+    }
+
     public static void checkDecimal(String valueCheck){
         double doubleCheck = Double.valueOf(valueCheck);
         int intCheck = (int)Math.round(doubleCheck);
@@ -166,4 +171,4 @@ public class Formula {
             t1 = intCheck+"";
         }
     }
-}//167
+}//174

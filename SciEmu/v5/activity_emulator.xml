@@ -213,7 +213,8 @@
                 android:layout_marginLeft="5dp"
                 android:text="Circumference"
                 android:textColor="#fff"
-                android:textSize="8dp" />
+                android:textSize="8dp"
+                android:onClick="setCircumference"/>
         </LinearLayout>
     </HorizontalScrollView>
 
@@ -370,4 +371,4 @@
         </LinearLayout>
     </HorizontalScrollView>
 
-</LinearLayout><!--  373  -->
+</LinearLayout><!--  374  -->
