@@ -536,7 +536,7 @@
                 android:textSize="32dp"
                 android:textColor="#fff"/>
             <TextView
-                android:id="@+id/RadiusC1"
+                android:id="@+id/ConeR1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="r"
@@ -546,9 +546,17 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="\u03C0"
+                android:text="("
                 android:textSize="32dp"
                 android:textColor="#fff"/>
+            <TextView
+                android:id="@+id/ConeR2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="r"
+                android:textSize="32dp"
+                android:textColor="#fff"
+                android:onClick="focusRadius"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -566,7 +574,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="\u00B2"
+                android:text=")"
                 android:textSize="32dp"
                 android:textColor="#fff"/>
             <TextView
@@ -576,7 +584,7 @@
                 android:textSize="32dp"
                 android:textColor="#fff"/>
             <TextView
-                android:id="@+id/SphereTot"
+                android:id="@+id/ConeTotal"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Total"

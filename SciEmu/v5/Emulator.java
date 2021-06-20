@@ -944,6 +944,7 @@ public class Emulator extends AppCompatActivity {
         LinearLayout mainPolynomal = findViewById(R.id.polynomalFormula);
         LinearLayout mainSphere = findViewById(R.id.sphereFormula);
         LinearLayout mainCircumference = findViewById(R.id.circumferenceFormula);
+        LinearLayout mainCone = findViewById(R.id.ConeFormula);
         //LinearLayout subMotion = findViewById(R.id.angularMotionSub);
         TextView sign1Text = findViewById(R.id.sign1);
         TextView getDivBy2 = findViewById(R.id.divBy2);
@@ -962,6 +963,7 @@ public class Emulator extends AppCompatActivity {
         getDivBy2.setVisibility(View.GONE);
         mainSphere.setVisibility(View.GONE);
         mainCircumference.setVisibility(View.GONE);
+        mainCone.setVisibility(View.GONE);
         TextView textMessageSub = findViewById(R.id.message);
         textMessageSub.setText(data.subCategory);
         if(sub.equals("add")){
@@ -1031,8 +1033,6 @@ public class Emulator extends AppCompatActivity {
         } else if(data.subCategory.equals("AngularVelocity")){
             mainAngVelocity.setVisibility(View.VISIBLE);
             textMessageSub.setText("Angular Acceleration Selected");
-        } else if(data.subCategory.equals("cone")){
-            textMessageSub.setText("Area of Cone Selected.");
         } else if(data.subCategory.equals("polynomal")){
             mainPolynomal.setVisibility(View.VISIBLE);
             LinearLayout polybase = findViewById(R.id.polynomalFormulaBase);
@@ -1043,8 +1043,10 @@ public class Emulator extends AppCompatActivity {
             mainSphere.setVisibility(View.VISIBLE);
         } else if(data.subCategory.equals("circumference")){
             mainCircumference.setVisibility(View.VISIBLE);
+        } else if(data.subCategory.equals("cone")){
+            mainCone.setVisibility(View.VISIBLE);
         } else {
             textMessageSub.setText("Check your formula");
         }
     }
-}//1050
+}//1052
