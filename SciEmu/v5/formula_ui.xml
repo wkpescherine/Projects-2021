@@ -542,7 +542,7 @@
                 android:text="r"
                 android:textSize="32dp"
                 android:textColor="#fff"
-                android:onClick="focusRadius"/>
+                android:onClick="getArgFocus"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -556,7 +556,7 @@
                 android:text="r"
                 android:textSize="32dp"
                 android:textColor="#fff"
-                android:onClick="focusRadius"/>
+                android:onClick="getArgFocus"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -564,13 +564,45 @@
                 android:textSize="32dp"
                 android:textColor="#fff"/>
             <TextView
-                android:id="@+id/RadiusC2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="\u221a"
+                android:textSize="32dp"
+                android:textColor="#fff"/>
+            <TextView
+                android:id="@+id/ConeH"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="h"
+                android:textSize="32dp"
+                android:textColor="#fff"
+                android:onClick="focusRadius"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="\u00B2"
+                android:textSize="32dp"
+                android:textColor="#fff"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="+"
+                android:textSize="32dp"
+                android:textColor="#fff"/>
+            <TextView
+                android:id="@+id/ConeR3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="r"
                 android:textSize="32dp"
                 android:textColor="#fff"
-                android:onClick="focusRadius"/>
+                android:onClick="getArgFocus"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="\u00B2"
+                android:textSize="32dp"
+                android:textColor="#fff"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -721,4 +753,4 @@
                 android:textColor="#fff"/>
         </LinearLayout>
     </RelativeLayout>
-</LinearLayout><!--  716 -->
+</LinearLayout><!--  756 -->
