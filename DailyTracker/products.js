@@ -2,19 +2,25 @@ import React from 'react';
 import './App.css';
 
 class Products extends React.Component {
-    submitProduct(selection){
-        this.setState({
-            product: selection
-        })
-        console.log(selection);
-    }
-
     render(){
         return (
             <div>
-                <button onClick={()=>this.submitProduct("AdMob")}>AdMob</button>
-                <button onClick={()=>this.submitProduct("IMA")}>IMA</button>
-                <button onClick={()=>this.submitProduct("GoogleAds")}>Google Ads API</button>
+                <button onClick={()=>this.props.submitProduct("AdMob")}>AdMob</button>
+                <button onClick={()=>this.props.submitProduct("IMA")}>IMA</button>
+                <button onClick={()=>this.props.submitProduct("GoogleAds")}>Google Ads API</button>
+                <button onClick={()=>this.props.submitProduct("AdSense")}>AdSense</button>
+                <button onClick={()=>this.props.submitProduct("AdWords API")}>AdWords API</button>
+                <button onClick={()=>this.props.submitProduct("GoogleAdsAPI")}>Google Ads API</button>
+                <br></br>
+                <button onClick={()=>this.props.submitProduct("ParallelTracking")}>Parallel Tracking</button>
+                <button onClick={()=>this.props.submitProduct("GoogleAdsScript")}>Google Ads Script</button>
+                <button onClick={()=>this.props.submitProduct("ContentAPIforShopping")}>Content API for Shopping</button>
+                <button onClick={()=>this.props.submitProduct("DBMAPI")}>DBMAPI</button>
+                <br></br>
+                <button onClick={()=>this.props.submitProduct("DCMAPI")}>DCMAPI</button>
+                <button onClick={()=>this.props.submitProduct("AudiencePartnerAPI")}>Audience Partner API</button>
+                <button onClick={()=>this.props.submitProduct("GoogleAdManagerAPI")}>Google Ad Manager API</button>
+                <button onClick={()=>this.props.submitProduct("GoogleAnalyticsAPI")}>Google Analytics API</button>
             </div>
         )
     }
