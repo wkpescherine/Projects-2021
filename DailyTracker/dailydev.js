@@ -4,6 +4,7 @@ import './App.css';
 import Products from "./products"
 import Categorys from "./categorys"
 import Status from "./status"
+import SubCategorys from "./subcategorys"
 
 class DailyDev extends React.Component {
     state={
@@ -11,8 +12,8 @@ class DailyDev extends React.Component {
         product: "none",
         status: "none",
         escalation: "none",
-        internal: "none",
-        fr: "none",
+        internal: "no",
+        fr: "no",
         origin: "forum",
         language: "English",
         question: "none",
@@ -27,7 +28,31 @@ class DailyDev extends React.Component {
         bug_id: "bug id"
     }
 
-    handleOriginChange = event => {
+    handleInternalFRChange(choice){
+        if(choice === "internal"){
+            if(this.state.internal === "no"){
+                this.setState({
+                    internal: "yes"
+                })
+            }else {
+                this.setState({
+                    internal: "no"
+                })
+            }
+        } else {
+            if(this.state.fr === "no"){
+                this.setState({
+                    fr: "yes"
+                })
+            }else {
+                this.setState({
+                    fr: "no"
+                })
+            }
+        }
+    }
+
+    handleOriginChange(){
         if(this.state.origin === "forum"){
             this.setState({
                 origin: "support"
@@ -39,7 +64,7 @@ class DailyDev extends React.Component {
         }
     }
 
-    handleLanguageChange = event => {
+    handleLanguageChange(){
         if(this.state.language === "English"){
             this.setState({
                 language: "Chinese"
@@ -63,6 +88,7 @@ class DailyDev extends React.Component {
 
     handleBugIdChange = event => {
         this.setState({
+            status: "Blocked",
             bug_id: event.target.value
         })
     }
@@ -96,13 +122,48 @@ class DailyDev extends React.Component {
         })
     }
 
-    submitCategory(selection){
+    submitCategory(selection2){
         this.setState({
-            category: selection
+            category: selection2
         })
     }
 
-    handleStatusChange = event => {}
+    submitSubCategory(selection3){
+        this.setState({
+            sub_category: selection3
+        })
+    }
+
+    handleStatusChange(selection4){
+        this.setState({
+            status: selection4,
+            escalation: "none",
+            bug_id: "bug id"
+        })
+        if(selection4 === "Escalation"){
+            if(this.stateescalation === "none"){
+                this.setState({
+                    escalation: "Restricted Access"
+                })                
+            } else if (this.state.escalation === "Restricted Access"){
+                this.setState({
+                    escalation: "Issue Complexity"
+                }) 
+            } else if (this.state.escalation === "Issue Complexity"){
+                this.setState({
+                    escalation: "Documentation Review"
+                }) 
+            } else if (this.state.escalation === "Documentation Review"){
+                this.setState({
+                    escalation: "SME Review"
+                }) 
+            } else {
+                this.setState({
+                    escalation: "Restricted Access"
+                }) 
+            }
+        }
+    }
 
     render(){
         return (
@@ -117,12 +178,14 @@ class DailyDev extends React.Component {
                 </div>
                 <br></br>
                 <div>
-                    < Status />
+                    < Status handleStatusChange={this.handleStatusChange.bind(this)}/>
                 </div>
                 <br></br>
                 <div>
                     <button onClick={()=>this.handleLanguageChange()}>{this.state.language}</button>
                     <button onClick={()=>this.handleOriginChange()}>{this.state.origin}</button>
+                    <button onClick={()=>this.handleInternalFRChange("internal")}>Internal: {this.state.internal}</button>
+                    <button onClick={()=>this.handleInternalFRChange("fr")}>FR: {this.state.fr}</button>
                 </div>
                 <br></br>
                 <input type="text" onChange={event => this.handleInitTimeChange(event)} value={this.state.inital_time} />
@@ -131,14 +194,19 @@ class DailyDev extends React.Component {
                 <br></br>
                 <br></br>
                 <div>
-                    <Categorys data = {this.state.product}/>
+                    <Categorys submitCategory={this.submitCategory.bind(this)} data = {this.state.product}/>
+                </div>
+                <br></br>
+                <br></br>
+                <div>
+                    <SubCategorys submitSubCategory={this.submitSubCategory.bind(this)} data = {this.state.category}/>
                 </div>
                 <br></br>
                 <br></br>
                 <div>
                     <button>Submit to sheet</button>
                 </div>
-                <h5> {this.state.case_id}|{this.state.product}|{this.state.status}|{this.state.escalation}|
+                <h5> {this.state.case_id}|{this.state.product}|{this.state.status}|{this.state.escalation}|{this.state.category}| {this.state.sub_category}|
                 </h5>
             </div>
         )
