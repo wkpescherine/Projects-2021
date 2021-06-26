@@ -115,6 +115,75 @@ class SubCategorys extends React.Component {
                 } 
                 {this.props.data === "PolicyIssues" && 
                     <button onClick={()=>this.props.submitSubCategory("General")}>General</button>
+                } 
+                {this.props.data === "Authentication" && 
+                    <button onClick={()=>this.props.submitSubCategory("OAuth")}>OAuth</button>
+                }  
+                {this.props.data === "Authentication" && 
+                    <button onClick={()=>this.props.submitSubCategory("Permission issue")}>Permission issue</button>
+                } 
+                {this.props.data === "Configuration" && 
+                    <button onClick={()=>this.props.submitSubCategory("OAuth")}>OAuth</button>
+                } 
+                {this.props.data === "Configuration" && 
+                    <button onClick={()=>this.props.submitSubCategory("Quota Increase Request")}>Quota Increase Request</button>
+                } 
+                {this.props.data === "Configuration" && 
+                    <button onClick={()=>this.props.submitSubCategory("Rate Limits")}>Rate Limits</button>
+                } 
+                {this.props.data === "ManagementAPI" && 
+                    <button onClick={()=>this.props.submitSubCategory("ClientID")}>ClientID</button>
+                } 
+                {this.props.data === "ManagementAPI" && 
+                    <button onClick={()=>this.props.submitSubCategory("Custom Dimensions")}>Custom Dimensions</button>
+                } 
+                {this.props.data === "ManagementAPI" && 
+                    <button onClick={()=>this.props.submitSubCategory("Custom Metrics")}>Custom Metrics</button>
+                } 
+                {this.props.data === "ManagementAPI" && 
+                    <button onClick={()=>this.props.submitSubCategory("Goals")}>Goals</button>
+                } 
+                {this.props.data === "ManagementAPI" && 
+                    <button onClick={()=>this.props.submitSubCategory("Segments")}>Segments</button>
+                } 
+                {this.props.data === "ManagementAPI" && 
+                    <button onClick={()=>this.props.submitSubCategory("Views(Profile)")}>Views(Profile)</button>
+                } 
+                {this.props.data === "MeasurementProtocol" && 
+                    <button onClick={()=>this.props.submitSubCategory("Events")}>Events</button>
+                }  
+                {this.props.data === "MeasurementProtocol" && 
+                    <button onClick={()=>this.props.submitSubCategory("Session Control")}>Session Control</button>
+                }  
+                {this.props.data === "Others" && 
+                    <button onClick={()=>this.props.submitSubCategory("Data Related Concern")}>Data Related Concern</button>
+                }  
+                {this.props.data === "Others" && 
+                    <button onClick={()=>this.props.submitSubCategory("Documentation")}>Documentation</button>
+                }  
+                {this.props.data === "Others" && 
+                    <button onClick={()=>this.props.submitSubCategory("Product Related Concern")}>Product Related Concern</button>
+                }  
+                {this.props.data === "Reports" && 
+                    <button onClick={()=>this.props.submitSubCategory("Events")}>Events</button>
+                }  
+                {this.props.data === "Reports" && 
+                    <button onClick={()=>this.props.submitSubCategory("Events")}>Events</button>
+                }  
+                {this.props.data === "Reports" && 
+                    <button onClick={()=>this.props.submitSubCategory("Events")}>Events</button>
+                } 
+                {this.props.data === "Reports" && 
+                    <button onClick={()=>this.props.submitSubCategory("Events")}>Events</button>
+                }  
+                {this.props.data === "Reports" && 
+                    <button onClick={()=>this.props.submitSubCategory("Events")}>Events</button>
+                }  
+                {this.props.data === "Reports" && 
+                    <button onClick={()=>this.props.submitSubCategory("Events")}>Events</button>
+                } 
+                {this.props.data === "Reports" && 
+                    <button onClick={()=>this.props.submitSubCategory("Events")}>Events</button>
                 }  
             </div>
         )

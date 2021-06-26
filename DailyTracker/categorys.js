@@ -40,6 +40,30 @@ class Categorys extends React.Component {
                 }
                 {this.props.data === "AdSense" && 
                     <button onClick={()=>this.props.submitCategory("QuotaLimits")}>Quota Limits</button>
+                } 
+                {this.props.data === "GoogleAnalyticsAPI" && 
+                    <button onClick={()=>this.props.submitCategory("Authentication")}>Authentication</button>
+                }
+                {this.props.data === "GoogleAnalyticsAPI" && 
+                    <button onClick={()=>this.props.submitCategory("Configuration")}>Configuration</button>
+                } 
+                {this.props.data === "GoogleAnalyticsAPI" && 
+                    <button onClick={()=>this.props.submitCategory("General Analytics API Question")}>General Analytics API Question</button>
+                } 
+                {this.props.data === "GoogleAnalyticsAPI" && 
+                    <button onClick={()=>this.props.submitCategory("ManagementAPI")}>ManagementAPI</button>
+                } 
+                {this.props.data === "GoogleAnalyticsAPI" && 
+                    <button onClick={()=>this.props.submitCategory("MeasurementProtocol")}>MeasurementProtocol</button>
+                } 
+                {this.props.data === "GoogleAnalyticsAPI" && 
+                    <button onClick={()=>this.props.submitCategory("Others")}>Others</button>
+                } 
+                {this.props.data === "GoogleAnalyticsAPI" && 
+                    <button onClick={()=>this.props.submitCategory("Reports")}>Reports</button>
+                } 
+                {this.props.data === "GoogleAnalyticsAPI" && 
+                    <button onClick={()=>this.props.submitCategory("Wrong Forum/Support")}>Wrong Forum/Support</button>
                 }                 
             </div>
         )
