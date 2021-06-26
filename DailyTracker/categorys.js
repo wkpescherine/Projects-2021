@@ -34,7 +34,13 @@ class Categorys extends React.Component {
                 }   
                 {this.props.data === "AdMob" && 
                     <button onClick={()=>this.props.submitCategory("WrongForum")}>Wrong Forum</button>
-                }                
+                } 
+                {this.props.data === "AdSense" && 
+                    <button onClick={()=>this.props.submitCategory("Other")}>Other</button>
+                }
+                {this.props.data === "AdSense" && 
+                    <button onClick={()=>this.props.submitCategory("QuotaLimits")}>Quota Limits</button>
+                }                 
             </div>
         )
     }
