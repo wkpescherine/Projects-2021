@@ -191,6 +191,57 @@ class SubCategorys extends React.Component {
                 {this.props.data === "WrongForum/Support" && 
                     <button onClick={()=>this.props.submitSubCategory("Shopify users")}>Shopify users</button>
                 }  
+                {/*ParallelTracking*/}
+                {this.props.data === "Documentation" && 
+                    <button onClick={()=>this.props.submitSubCategory("Display")}>Display</button>
+                } 
+                {this.props.data === "Documentation" && 
+                    <button onClick={()=>this.props.submitSubCategory("Shopping")}>Shopping</button>
+                } 
+                {this.props.data === "Documentation" && 
+                    <button onClick={()=>this.props.submitSubCategory("Search")}>Search</button>
+                } 
+                {this.props.data === "Documentation" && 
+                    <button onClick={()=>this.props.submitSubCategory("Video")}>Video</button>
+                }
+                {this.props.data === "Implementation" && 
+                    <button onClick={()=>this.props.submitSubCategory("Display")}>Display</button>
+                } 
+                {this.props.data === "Implementation" && 
+                    <button onClick={()=>this.props.submitSubCategory("Shopping")}>Shopping</button>
+                } 
+                {this.props.data === "Implementation" && 
+                    <button onClick={()=>this.props.submitSubCategory("Search")}>Search</button>
+                } 
+                {this.props.data === "Implementation" && 
+                    <button onClick={()=>this.props.submitSubCategory("Video")}>Video</button>
+                }
+                {this.props.data === "ProductRelatedTroubleshooting" && 
+                    <button onClick={()=>this.props.submitSubCategory("Display")}>Display</button>
+                } 
+                {this.props.data === "ProductRelatedTroubleshooting" && 
+                    <button onClick={()=>this.props.submitSubCategory("Shopping")}>Shopping</button>
+                } 
+                {this.props.data === "ProductRelatedTroubleshooting" && 
+                    <button onClick={()=>this.props.submitSubCategory("Search")}>Search</button>
+                } 
+                {this.props.data === "ProductRelatedTroubleshooting" && 
+                    <button onClick={()=>this.props.submitSubCategory("Video")}>Video</button>
+                }
+                {this.props.data === "Troubleshoot" && 
+                    <button onClick={()=>this.props.submitSubCategory("Display")}>Display</button>
+                } 
+                {this.props.data === "Troubleshoot" && 
+                    <button onClick={()=>this.props.submitSubCategory("Shopping")}>Shopping</button>
+                } 
+                {this.props.data === "Troubleshoot" && 
+                    <button onClick={()=>this.props.submitSubCategory("Search")}>Search</button>
+                } 
+                {this.props.data === "Troubleshoot" && 
+                    <button onClick={()=>this.props.submitSubCategory("Video")}>Video</button>
+                }
+                 
+            
             </div>
         )
     }
