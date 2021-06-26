@@ -5,6 +5,7 @@ class SubCategorys extends React.Component {
     render(){
         return(
             <div>
+                {/*AdMob*/}
                 {this.props.data === "SDKIssues" && 
                     <button onClick={()=>this.props.submitSubCategory("Crash")}>Crash</button>
                 }
@@ -116,6 +117,7 @@ class SubCategorys extends React.Component {
                 {this.props.data === "PolicyIssues" && 
                     <button onClick={()=>this.props.submitSubCategory("General")}>General</button>
                 } 
+                {/*GoogleAnalyticsAPI*/}
                 {this.props.data === "Authentication" && 
                     <button onClick={()=>this.props.submitSubCategory("OAuth")}>OAuth</button>
                 }  
@@ -165,25 +167,29 @@ class SubCategorys extends React.Component {
                     <button onClick={()=>this.props.submitSubCategory("Product Related Concern")}>Product Related Concern</button>
                 }  
                 {this.props.data === "Reports" && 
-                    <button onClick={()=>this.props.submitSubCategory("Events")}>Events</button>
+                    <button onClick={()=>this.props.submitSubCategory("Dimensions and Metrics")}>Dimensions and Metrics</button>
                 }  
                 {this.props.data === "Reports" && 
-                    <button onClick={()=>this.props.submitSubCategory("Events")}>Events</button>
+                    <button onClick={()=>this.props.submitSubCategory("Discrepancies")}>Discrepancies</button>
                 }  
                 {this.props.data === "Reports" && 
-                    <button onClick={()=>this.props.submitSubCategory("Events")}>Events</button>
+                    <button onClick={()=>this.props.submitSubCategory("Incomplete Results")}>Incomplete Results</button>
                 } 
                 {this.props.data === "Reports" && 
-                    <button onClick={()=>this.props.submitSubCategory("Events")}>Events</button>
+                    <button onClick={()=>this.props.submitSubCategory("Quota Error")}>Quota Error</button>
                 }  
                 {this.props.data === "Reports" && 
-                    <button onClick={()=>this.props.submitSubCategory("Events")}>Events</button>
+                    <button onClick={()=>this.props.submitSubCategory("Error 5xx")}>Error 5xx</button>
                 }  
                 {this.props.data === "Reports" && 
-                    <button onClick={()=>this.props.submitSubCategory("Events")}>Events</button>
+                    <button onClick={()=>this.props.submitSubCategory("Error 4xx")}>Error 4xx</button>
                 } 
                 {this.props.data === "Reports" && 
-                    <button onClick={()=>this.props.submitSubCategory("Events")}>Events</button>
+                    <button onClick={()=>this.props.submitSubCategory("No results found")}>No results found</button>
+                }
+                {/*ContentAPIForShopping*/}
+                {this.props.data === "WrongForum/Support" && 
+                    <button onClick={()=>this.props.submitSubCategory("Shopify users")}>Shopify users</button>
                 }  
             </div>
         )

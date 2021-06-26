@@ -64,7 +64,79 @@ class Categorys extends React.Component {
                 } 
                 {this.props.data === "GoogleAnalyticsAPI" && 
                     <button onClick={()=>this.props.submitCategory("Wrong Forum/Support")}>Wrong Forum/Support</button>
-                }                 
+                } 
+                {this.props.data === "ContentAPIforShopping" && 
+                    <button onClick={()=>this.props.submitCategory("4XX Errors")}>4XX Errors</button>
+                }
+                {this.props.data === "ContentAPIforShopping" && 
+                    <button onClick={()=>this.props.submitCategory("5XX Errors")}>5XX Errors</button>
+                }
+                {this.props.data === "ContentAPIforShopping" && 
+                    <button onClick={()=>this.props.submitCategory("Account Suspensions")}>Account Suspensions</button>
+                }
+                {this.props.data === "ContentAPIforShopping" && 
+                    <button onClick={()=>this.props.submitCategory("Accounts")}>Accounts</button>
+                }
+                {this.props.data === "ContentAPIforShopping" && 
+                    <button onClick={()=>this.props.submitCategory("API Clarifications")}>API Clarifications</button>
+                }
+                {this.props.data === "ContentAPIforShopping" && 
+                    <button onClick={()=>this.props.submitCategory("Asking for Documentation")}>Asking for Documentation</button>
+                }
+                {this.props.data === "ContentAPIforShopping" && 
+                    <button onClick={()=>this.props.submitCategory("Authentication Issues")}>Authentication Issues</button>
+                }
+                {this.props.data === "ContentAPIforShopping" && 
+                    <button onClick={()=>this.props.submitCategory("Datafeed Issues")}>Datafeed Issues</button>
+                }
+                {this.props.data === "ContentAPIforShopping" && 
+                    <button onClick={()=>this.props.submitCategory("DataQuality/Validation Issues")}>DataQuality/Validation Issues</button>
+                }
+                {this.props.data === "ContentAPIforShopping" && 
+                    <button onClick={()=>this.props.submitCategory("Inventory Service")}>Inventory Service</button>
+                }
+                {this.props.data === "ContentAPIforShopping" && 
+                    <button onClick={()=>this.props.submitCategory("LIA")}>LIA</button>
+                }
+                {this.props.data === "ContentAPIforShopping" && 
+                    <button onClick={()=>this.props.submitCategory("Manufacturer API")}>Manufacturer API</button>
+                }
+                {this.props.data === "ContentAPIforShopping" && 
+                    <button onClick={()=>this.props.submitCategory("Migration to 2.1")}>Migration to 2.1</button>
+                }
+                {this.props.data === "ContentAPIforShopping" && 
+                    <button onClick={()=>this.props.submitCategory("Multi-Client Accounts")}>Multi-Client Accounts</button>
+                }
+                {this.props.data === "ContentAPIforShopping" && 
+                    <button onClick={()=>this.props.submitCategory("Others")}>Others</button>
+                }
+                {this.props.data === "ContentAPIforShopping" && 
+                    <button onClick={()=>this.props.submitCategory("Policy Issues")}>Policy Issues</button>
+                }
+                {this.props.data === "ContentAPIforShopping" && 
+                    <button onClick={()=>this.props.submitCategory("Product Insertion Issues")}>Product Insertion Issues</button>
+                }
+                {this.props.data === "ContentAPIforShopping" && 
+                    <button onClick={()=>this.props.submitCategory("Quota Limits")}>Quota Limits</button>
+                }
+                {this.props.data === "ContentAPIforShopping" && 
+                    <button onClick={()=>this.props.submitCategory("Related to AdWords")}>Related to AdWords</button>
+                } 
+                {this.props.data === "ContentAPIforShopping" && 
+                    <button onClick={()=>this.props.submitCategory("Retrieving Data From MC")}>Retrieving Data From MC</button>
+                } 
+                {this.props.data === "ContentAPIforShopping" && 
+                    <button onClick={()=>this.props.submitCategory("ShippingSettings")}>ShippingSettings</button>
+                } 
+                {this.props.data === "ContentAPIforShopping" && 
+                    <button onClick={()=>this.props.submitCategory("Shopify pilot")}>Shopify pilot</button>
+                } 
+                {this.props.data === "ContentAPIforShopping" && 
+                    <button onClick={()=>this.props.submitCategory("UI issues")}>UI issues</button>
+                } 
+                {this.props.data === "ContentAPIforShopping" && 
+                    <button onClick={()=>this.props.submitCategory("WrongForum/Support")}>WrongForum/Support</button>
+                }               
             </div>
         )
     }
