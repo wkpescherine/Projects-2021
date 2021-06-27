@@ -5,6 +5,7 @@ import Products from "./products"
 import Categorys from "./categorys"
 import Status from "./status"
 import SubCategorys from "./subcategorys"
+import Technology from "./technology"
 
 class DailyDev extends React.Component {
     state={
@@ -16,12 +17,12 @@ class DailyDev extends React.Component {
         fr: "no",
         origin: "forum",
         language: "English",
-        question: "none",
+        question: "Technology",
         technology: "none",
         category: "none",
         sub_category: "none",
         agent: "agent",
-        interaction: "none",
+        interaction: "Brand New",
         inital_time: "initial time",
         agent_time: "agent time",
         finish_time: "finished time",
@@ -118,7 +119,9 @@ class DailyDev extends React.Component {
 
     submitProduct(selection){
         this.setState({
-            product: selection
+            product: selection,
+            category: "none",
+            sub_category: "none"
         })
     }
 
@@ -165,6 +168,56 @@ class DailyDev extends React.Component {
         }
     }
 
+    handleTechnologyChange(selection5){
+        this.setState({
+            technology: selection5
+        })
+    }
+
+    handleQuestionChange(){
+        if(this.state.question === "Technology"){
+            this.setState({
+                question: "Product"
+            })
+        }else {
+            this.setState({
+                question: "Technology"
+            })
+        }
+    }
+
+    handleInteractionChange(){
+        if(this.state.interaction === "Brand New"){
+            this.setState({
+                interaction: "Follow Up"
+            })
+        } else if (this.state.interaction === "Brand New"){
+            this.setState({
+                interaction: "Follow Up: New User"
+            })
+        } else {
+            this.setState({
+                interaction: "Brand New"
+            })
+        }
+    }
+
+    submitToSheet(){
+        fetch("https://api.apispreadsheets.com/data/14475/", {
+            method: "POST",
+            body: JSON.stringify({"data": {agent:"",inital_time:"",agent_time:"",finish_time:""}}),
+        }).then(res =>{
+            if (res.status === 201){
+                // SUCCESS
+                console.log("Success")
+            }
+            else{
+                // ERROR
+                console.log("Failure")
+            }
+        })
+    }
+
     render(){
         return (
             <div>
@@ -186,11 +239,18 @@ class DailyDev extends React.Component {
                     <button onClick={()=>this.handleOriginChange()}>{this.state.origin}</button>
                     <button onClick={()=>this.handleInternalFRChange("internal")}>Internal: {this.state.internal}</button>
                     <button onClick={()=>this.handleInternalFRChange("fr")}>FR: {this.state.fr}</button>
+                    <button onClick={()=>this.handleQuestionChange()}>Question: {this.state.question}</button>
+                    <button onClick={()=>this.handleInteractionChange()}>Interaction: {this.state.interaction}</button>
                 </div>
                 <br></br>
                 <input type="text" onChange={event => this.handleInitTimeChange(event)} value={this.state.inital_time} />
                 <input type="text" onChange={event => this.handleAgentTimeChange(event)} value={this.state.agent_time} />
                 <input type="text" onChange={event => this.handleFinishTimeChange(event)} value={this.state.finish_time} />
+                <br></br>
+                <br></br>
+                <div>
+                    <Technology handleTechnologyChange={this.handleTechnologyChange.bind(this)}/>
+                </div>
                 <br></br>
                 <br></br>
                 <div>
@@ -204,9 +264,27 @@ class DailyDev extends React.Component {
                 <br></br>
                 <br></br>
                 <div>
-                    <button>Submit to sheet</button>
+                    <button onClick={()=>this.submitToSheet()}>Submit to sheet</button>
                 </div>
-                <h5> {this.state.case_id}|{this.state.product}|{this.state.status}|{this.state.escalation}|{this.state.category}| {this.state.sub_category}|
+                <h5> 
+                    {this.state.case_id}|
+                    {this.state.product}|
+                    {this.state.status}|
+                    {this.state.escalation}|
+                    {this.state.internal}|
+                    {this.state.fr}|
+                    {this.state.origin}|
+                    {this.state.language}|
+                    {this.state.question}|
+                    {this.state.technology}|
+                    {this.state.category}| 
+                    {this.state.sub_category}|
+                    {this.state.agent}| 
+                    {this.state.interaction}|
+                    {this.state.inital_time}| 
+                    {this.state.agent_time}|
+                    {this.state.finish_time}| 
+                    {this.state.bug_id}|
                 </h5>
             </div>
         )

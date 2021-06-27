@@ -136,6 +136,42 @@ class Categorys extends React.Component {
                 } 
                 {this.props.data === "ContentAPIforShopping" && 
                     <button onClick={()=>this.props.submitCategory("WrongForum/Support")}>WrongForum/Support</button>
+                } 
+                {this.props.data === "ParallelTracking" && 
+                    <button onClick={()=>this.props.submitCategory("General Inquiry")}>General Inquiry</button>
+                } 
+                {this.props.data === "ParallelTracking" && 
+                    <button onClick={()=>this.props.submitCategory("Documentation")}>Documentation</button>
+                } 
+                {this.props.data === "ParallelTracking" && 
+                    <button onClick={()=>this.props.submitCategory("Implementation")}>Implementation</button>
+                } 
+                {this.props.data === "ParallelTracking" && 
+                    <button onClick={()=>this.props.submitCategory("ProductRelatedTroubleshooting")}>ProductRelatedTroubleshooting</button>
+                } 
+                {this.props.data === "ParallelTracking" && 
+                    <button onClick={()=>this.props.submitCategory("Troubleshoot")}>Troubleshoot</button>
+                } 
+                {this.props.data === "AdWordsAPI" && 
+                    <button onClick={()=>this.props.submitCategory("Account access (basic and standard)")}>Account access (basic and standard)</button>
+                } 
+                {this.props.data === "AdWordsAPI" && 
+                    <button onClick={()=>this.props.submitCategory("Account Level Sitelinks")}>Account Level Sitelinks</button>
+                } 
+                {this.props.data === "AdWordsAPI" && 
+                    <button onClick={()=>this.props.submitCategory("Ad Management")}>Ad Management</button>
+                }
+                {this.props.data === "AdWordsAPI" && 
+                    <button onClick={()=>this.props.submitCategory("AdWords API Documentation")}>AdWords API Documentation</button>
+                }
+                {this.props.data === "AdWordsAPI" && 
+                    <button onClick={()=>this.props.submitCategory("AdWordsAPIReports")}>AdWordsAPIReports</button>
+                } 
+                {this.props.data === "GoogleAdsAPI" && 
+                    <button onClick={()=>this.props.submitCategory("AccountAccess")}>AdWordsAPIReports</button>
+                } 
+                {this.props.data === "GoogleAdsAPI" && 
+                    <button onClick={()=>this.props.submitCategory("AllowlistRequest")}>AdWordsAPIReports</button>
                 }               
             </div>
         )

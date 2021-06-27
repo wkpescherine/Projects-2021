@@ -9,7 +9,7 @@ class Products extends React.Component {
                 <button onClick={()=>this.props.submitProduct("IMA")}>IMA</button>
                 <button onClick={()=>this.props.submitProduct("GoogleAds")}>Google Ads API</button>
                 <button onClick={()=>this.props.submitProduct("AdSense")}>AdSense</button>
-                <button onClick={()=>this.props.submitProduct("AdWords API")}>AdWords API</button>
+                <button onClick={()=>this.props.submitProduct("AdWordsAPI")}>AdWords API</button>
                 <button onClick={()=>this.props.submitProduct("GoogleAdsAPI")}>Google Ads API</button>
                 <br></br>
                 <button onClick={()=>this.props.submitProduct("ParallelTracking")}>Parallel Tracking</button>

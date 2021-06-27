@@ -240,8 +240,44 @@ class SubCategorys extends React.Component {
                 {this.props.data === "Troubleshoot" && 
                     <button onClick={()=>this.props.submitSubCategory("Video")}>Video</button>
                 }
-                 
-            
+                {/*Adwords API*/}
+                {this.props.data === "AdWordsAPIReports" && 
+                    <button onClick={()=>this.props.submitSubCategory("Select")}>Select</button>
+                }
+                {this.props.data === "AdWordsAPIReports" && 
+                    <button onClick={()=>this.props.submitSubCategory("Account Performance")}>Account Performance</button>
+                }
+                {this.props.data === "AdWordsAPIReports" && 
+                    <button onClick={()=>this.props.submitSubCategory("Ad Customizers Feed Item")}>Ad Customizers Feed Item</button>
+                }
+                {this.props.data === "AdWordsAPIReports" && 
+                    <button onClick={()=>this.props.submitSubCategory("Ad Group Performance")}>Ad Group Performance</button>
+                }
+                {/*GoogleAdsAPI*/}
+                {this.props.data === "AccountAccess" && 
+                    <button onClick={()=>this.props.submitSubCategory("Basic")}>Basic</button>
+                }
+                {this.props.data === "AccountAccess" && 
+                    <button onClick={()=>this.props.submitSubCategory("Google Ads API Migration")}>Google Ads API Migration</button>
+                }
+                {this.props.data === "AccountAccess" && 
+                    <button onClick={()=>this.props.submitSubCategory("Standard")}>Standard</button>
+                }
+                {this.props.data === "AllowlistRequest" && 
+                    <button onClick={()=>this.props.submitSubCategory("App Campaign")}>App Campaign</button>
+                }
+                {this.props.data === "AllowlistRequest" && 
+                    <button onClick={()=>this.props.submitSubCategory("Google Ads API Migration")}>Google Ads API Migration</button>
+                }
+                {this.props.data === "AllowlistRequest" && 
+                    <button onClick={()=>this.props.submitSubCategory("Comparison Listing Ads")}>Comparison Listing Ads</button>
+                }
+                {this.props.data === "AllowlistRequest" && 
+                    <button onClick={()=>this.props.submitSubCategory("Hotel Ads")}>Hotel Ads</button>
+                }
+                {this.props.data === "AllowlistRequest" && 
+                    <button onClick={()=>this.props.submitSubCategory("MutateJobService")}>MutateJobService</button>
+                }
             </div>
         )
     }
