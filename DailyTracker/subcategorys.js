@@ -278,6 +278,165 @@ class SubCategorys extends React.Component {
                 {this.props.data === "AllowlistRequest" && 
                     <button onClick={()=>this.props.submitSubCategory("MutateJobService")}>MutateJobService</button>
                 }
+                {/*DBMAPI*/}
+                {this.props.data === "APIversions" && 
+                    <button onClick={()=>this.props.submitSubCategory("v1.0")}>v1.0</button>
+                }
+                {this.props.data === "APIversions" && 
+                    <button onClick={()=>this.props.submitSubCategory("v1.1")}>v1.1</button>
+                }
+                {this.props.data === "Authentication" && 
+                    <button onClick={()=>this.props.submitSubCategory("OAuth2.0")}>OAuth2.0</button>
+                }
+                {this.props.data === "LineItems" && 
+                    <button onClick={()=>this.props.submitSubCategory("Downloadlineitems")}>Downloadlineitems</button>
+                }
+                {this.props.data === "LineItems" && 
+                    <button onClick={()=>this.props.submitSubCategory("Error Codes")}>Error Codes</button>
+                }
+                {this.props.data === "Others" && 
+                    <button onClick={()=>this.props.submitSubCategory("Uploadlineitems")}>Uploadlineitems</button>
+                }
+                {this.props.data === "ProductRelated" && 
+                    <button onClick={()=>this.props.submitSubCategory("Product related concern")}>Product related concern</button>
+                }
+                {this.props.data === "Queries" && 
+                    <button onClick={()=>this.props.submitSubCategory("Createquery")}>Createquery</button>
+                }
+                {this.props.data === "Queries" && 
+                    <button onClick={()=>this.props.submitSubCategory("Deletequery")}>Deletequery</button>
+                }
+                {this.props.data === "Queries" && 
+                    <button onClick={()=>this.props.submitSubCategory("Getquery")}>Getquery</button>
+                }
+                {this.props.data === "Queries" && 
+                    <button onClick={()=>this.props.submitSubCategory("Llistqueries")}>Llistqueries</button>
+                }
+                {this.props.data === "Queries" && 
+                    <button onClick={()=>this.props.submitSubCategory("Runquery")}>Runquery</button>
+                }
+                {this.props.data === "Reports" && 
+                    <button onClick={()=>this.props.submitSubCategory("Listreports")}>Listreports</button>
+                }
+                {this.props.data === "SDF" && 
+                    <button onClick={()=>this.props.submitSubCategory("Download")}>Download</button>
+                }
+                {/*AudiencePartnerAPI*/}
+                {this.props.data === "AudiencePartnerAPIAnnouncementsgroupaccess" && 
+                    <button onClick={()=>this.props.submitSubCategory("General")}>General</button>
+                }
+                {this.props.data === "AudiencePartnerProductrelated" && 
+                    <button onClick={()=>this.props.submitSubCategory("General")}>General</button>
+                }
+                {this.props.data === "Authentication" && 
+                    <button onClick={()=>this.props.submitSubCategory("General")}>General</button>
+                }
+                {this.props.data === "CustomerMatchUploaderService" && 
+                    <button onClick={()=>this.props.submitSubCategory("Service Inquiry")}>Service Inquiry</button>
+                }
+                {this.props.data === "CustomerMatchUploaderService" && 
+                    <button onClick={()=>this.props.submitSubCategory("Service Errors")}>Service Errors</button>
+                }
+                {this.props.data === "CustomerMatchUploaderService" && 
+                    <button onClick={()=>this.props.submitSubCategory("Allowlisting verification")}>Allowlisting verification</button>
+                }
+                {this.props.data === "DMPUserListService" && 
+                    <button onClick={()=>this.props.submitSubCategory("Service Inquiry")}>Service Inquiry</button>
+                }
+                {this.props.data === "DMPUserListService" && 
+                    <button onClick={()=>this.props.submitSubCategory("Service Errors")}>Service Errors</button>
+                }
+                {this.props.data === "DMPUserListService" && 
+                    <button onClick={()=>this.props.submitSubCategory("Allowlisting verification")}>Allowlisting verification</button>
+                }
+                {this.props.data === "GettingStarted" && 
+                    <button onClick={()=>this.props.submitSubCategory("General")}>General</button>
+                }
+                {this.props.data === "Notclearyet" && 
+                    <button onClick={()=>this.props.submitSubCategory("General")}>General</button>
+                }
+                {this.props.data === "Others" && 
+                    <button onClick={()=>this.props.submitSubCategory("General")}>General</button>
+                }
+                {this.props.data === "UserListClientService" && 
+                    <button onClick={()=>this.props.submitSubCategory("General")}>General</button>
+                }
+                {this.props.data === "UserListService" && 
+                    <button onClick={()=>this.props.submitSubCategory("General")}>General</button>
+                }
+                {this.props.data === "WrongForum/Support" && 
+                    <button onClick={()=>this.props.submitSubCategory("General")}>General</button>
+                }
+                {/* DCMAPI */}
+                {this.props.data === "4xxErrors" && 
+                    <button onClick={()=>this.props.submitSubCategory("General")}>General</button>
+                }
+                {this.props.data === "5xxErrors" && 
+                    <button onClick={()=>this.props.submitSubCategory("General")}>General</button>
+                }
+                {this.props.data === "Ads" && 
+                    <button onClick={()=>this.props.submitSubCategory("General")}>General</button>
+                }
+                {this.props.data === "APIClarification" && 
+                    <button onClick={()=>this.props.submitSubCategory("JSON request/response")}>JSON request/response</button>
+                }
+                {this.props.data === "APIClarification" && 
+                    <button onClick={()=>this.props.submitSubCategory("General")}>General</button>
+                }
+                {this.props.data === "Campaigns" && 
+                    <button onClick={()=>this.props.submitSubCategory("General")}>General</button>
+                }
+                {this.props.data === "Conversions" && 
+                    <button onClick={()=>this.props.submitSubCategory("Conversion upload issue")}>Conversion upload issue</button>
+                }
+                {this.props.data === "Conversions" && 
+                    <button onClick={()=>this.props.submitSubCategory("Upload Errors")}>Upload Errors</button>
+                }
+                {this.props.data === "Creatives" && 
+                    <button onClick={()=>this.props.submitSubCategory("General")}>General</button>
+                }
+                {this.props.data === "Floodlightactivities" && 
+                    <button onClick={()=>this.props.submitSubCategory("General")}>General</button>
+                }
+                {this.props.data === "Integration" && 
+                    <button onClick={()=>this.props.submitSubCategory("API Integration")}>API Integration</button>
+                }
+                {this.props.data === "Others" && 
+                    <button onClick={()=>this.props.submitSubCategory("General Developer issue")}>General Developer issue</button>
+                }
+                {this.props.data === "Others" && 
+                    <button onClick={()=>this.props.submitSubCategory("Remarkable list")}>Remarkable list</button>
+                }
+                {this.props.data === "Others" && 
+                    <button onClick={()=>this.props.submitSubCategory("Cookies")}>Cookies</button>
+                }
+                {this.props.data === "OutofScope" && 
+                    <button onClick={()=>this.props.submitSubCategory("Product Related")}>Product Related</button>
+                }
+                {this.props.data === "OutofScope" && 
+                    <button onClick={()=>this.props.submitSubCategory("BigQuery")}>BigQuery</button>
+                }
+                {this.props.data === "PermissionsandFilters" && 
+                    <button onClick={()=>this.props.submitSubCategory("General")}>General</button>
+                }
+                {this.props.data === "Placements" && 
+                    <button onClick={()=>this.props.submitSubCategory("General")}>General</button>
+                }
+                {this.props.data === "Reports" && 
+                    <button onClick={()=>this.props.submitSubCategory("Clarrification")}>Clarrification</button>
+                }
+                {this.props.data === "Reports" && 
+                    <button onClick={()=>this.props.submitSubCategory("Discrepancy Issues")}>Discrepancy Issues</button>
+                }
+                {this.props.data === "Reports" && 
+                    <button onClick={()=>this.props.submitSubCategory("Dimensions and Metrics")}>Dimensions and Metrics</button>
+                }
+                {this.props.data === "WrongForum/Support" && 
+                    <button onClick={()=>this.props.submitSubCategory("Product Related")}>Product Related</button>
+                }
+                {this.props.data === "WrongForum/Support" && 
+                    <button onClick={()=>this.props.submitSubCategory("BigQuery")}>BigQuery</button>
+                }
             </div>
         )
     }
