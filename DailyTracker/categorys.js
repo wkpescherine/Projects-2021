@@ -280,7 +280,148 @@ class Categorys extends React.Component {
                 }
                 {this.props.data === "DCMAPI" && 
                     <button onClick={()=>this.props.submitCategory("Placements")}>Placements</button>
-                }              
+                } 
+                {this.props.data === "GoogleAdsScript" && 
+                    <button onClick={()=>this.props.submitCategory("AdvancedAPIs")}>AdvancedAPIs</button>
+                } 
+                {this.props.data === "GoogleAdsScript" && 
+                    <button onClick={()=>this.props.submitCategory("AdWords Entities")}>AdWords Entities</button>
+                } 
+                {this.props.data === "GoogleAdsScript" && 
+                    <button onClick={()=>this.props.submitCategory("Beta")}>Beta</button>
+                } 
+                {this.props.data === "GoogleAdsScript" && 
+                    <button onClick={()=>this.props.submitCategory("Dedicated Client Support")}>Dedicated Client Support</button>
+                } 
+                {this.props.data === "GoogleAdsScript" && 
+                    <button onClick={()=>this.props.submitCategory("Expanded Text Ads/Text Ads Migration")}>Expanded Text Ads/Text Ads Migration</button>
+                } 
+                {this.props.data === "GoogleAdsScript" && 
+                    <button onClick={()=>this.props.submitCategory("Features Availability")}>Features Availability</button>
+                } 
+                {this.props.data === "GoogleAdsScript" && 
+                    <button onClick={()=>this.props.submitCategory("Firebase")}>Firebase</button>
+                } 
+                {this.props.data === "GoogleAdsScript" && 
+                    <button onClick={()=>this.props.submitCategory("ForPilotImplementation")}>ForPilotImplementation</button>
+                } 
+                {this.props.data === "GoogleAdsScript" && 
+                    <button onClick={()=>this.props.submitCategory("Others")}>Others</button>
+                } 
+                {this.props.data === "GoogleAdsScript" && 
+                    <button onClick={()=>this.props.submitCategory("Reports")}>Reports</button>
+                } 
+                {this.props.data === "GoogleAdsScript" && 
+                    <button onClick={()=>this.props.submitCategory("Scripts Interface")}>Scripts Interface</button>
+                } 
+                {this.props.data === "GoogleAdsScript" && 
+                    <button onClick={()=>this.props.submitCategory("ScriptsServices")}>ScriptsServices</button>
+                } 
+                {this.props.data === "GoogleAdsScript" && 
+                    <button onClick={()=>this.props.submitCategory("Solutions")}>Solutions</button>
+                } 
+                {this.props.data === "GoogleAdsScript" && 
+                    <button onClick={()=>this.props.submitCategory("Third party scripts")}>Third party scripts</button>
+                } 
+                {this.props.data === "GoogleAdsScript" && 
+                    <button onClick={()=>this.props.submitCategory("Wrong Forum/Support")}>Wrong Forum/Support</button>
+                }
+                {this.props.data === "GoogleAdManagerAPI" && 
+                    <button onClick={()=>this.props.submitCategory("AudienceSegmentService")}>AudienceSegmentService</button>
+                } 
+                {this.props.data === "GoogleAdManagerAPI" && 
+                    <button onClick={()=>this.props.submitCategory("Authentication")}>Authentication</button>
+                } 
+                {this.props.data === "GoogleAdManagerAPI" && 
+                    <button onClick={()=>this.props.submitCategory("CompanyService")}>CompanyService</button>
+                } 
+                {this.props.data === "GoogleAdManagerAPI" && 
+                    <button onClick={()=>this.props.submitCategory("Creatives/CreativePlacements")}>Creatives/CreativePlacements</button>
+                } 
+                {this.props.data === "GoogleAdManagerAPI" && 
+                    <button onClick={()=>this.props.submitCategory("CustomFields")}>CustomFields</button>
+                } 
+                {this.props.data === "GoogleAdManagerAPI" && 
+                    <button onClick={()=>this.props.submitCategory("CustomTargeting")}>CustomTargeting</button>
+                } 
+                {this.props.data === "GoogleAdManagerAPI" && 
+                    <button onClick={()=>this.props.submitCategory("Forecasting/checking inventory issues")}>Forecasting/checking inventory issues</button>
+                } 
+                {this.props.data === "GoogleAdManagerAPI" && 
+                    <button onClick={()=>this.props.submitCategory("GeneralGoogleAdManagerAPIClarifications")}>GeneralGoogleAdManagerAPIClarifications</button>
+                } 
+                {this.props.data === "GoogleAdManagerAPI" && 
+                    <button onClick={()=>this.props.submitCategory("GoogleAdManagerAPIReports")}>GoogleAdManagerAPIReports</button>
+                }
+                {this.props.data === "GoogleAdManagerAPI" && 
+                    <button onClick={()=>this.props.submitCategory("InventoryService")}>InventoryService</button>
+                }
+                {this.props.data === "GoogleAdManagerAPI" && 
+                    <button onClick={()=>this.props.submitCategory("LICAService")}>LICAService</button>
+                }
+                {this.props.data === "GoogleAdManagerAPI" && 
+                    <button onClick={()=>this.props.submitCategory("LineItemService")}>LineItemService</button>
+                }
+                {this.props.data === "GoogleAdManagerAPI" && 
+                    <button onClick={()=>this.props.submitCategory("LiveStreamEvent")}>LiveStreamEvent</button>
+                }
+                {this.props.data === "GoogleAdManagerAPI" && 
+                    <button onClick={()=>this.props.submitCategory("MatchTables")}>MatchTables</button>
+                } 
+                {this.props.data === "GoogleAdManagerAPI" && 
+                    <button onClick={()=>this.props.submitCategory("OrderService")}>OrderService</button>
+                } 
+                {this.props.data === "GoogleAdManagerAPI" && 
+                    <button onClick={()=>this.props.submitCategory("Others")}>Others</button>
+                } 
+                {this.props.data === "GoogleAdManagerAPI" && 
+                    <button onClick={()=>this.props.submitCategory("Performanceissues")}>Performanceissues</button>
+                } 
+                {this.props.data === "GoogleAdManagerAPI" && 
+                    <button onClick={()=>this.props.submitCategory("PQL")}>PQL</button>
+                } 
+                {this.props.data === "GoogleAdManagerAPI" && 
+                    <button onClick={()=>this.props.submitCategory("ProductRelated")}>ProductRelated</button>
+                } 
+                {this.props.data === "GoogleAdManagerAPI" && 
+                    <button onClick={()=>this.props.submitCategory("ProposalService")}>ProposalService</button>
+                } 
+                {this.props.data === "GoogleAdManagerAPI" && 
+                    <button onClick={()=>this.props.submitCategory("Spam")}>Spam</button>
+                } 
+                {this.props.data === "GoogleAdManagerAPI" && 
+                    <button onClick={()=>this.props.submitCategory("User/TeamPermissions")}>User/TeamPermissions</button>
+                } 
+                {this.props.data === "GoogleAdManagerAPI" && 
+                    <button onClick={()=>this.props.submitCategory("VersionSpecificIssues")}>VersionSpecificIssues</button>
+                } 
+                {this.props.data === "GoogleAdManagerAPI" && 
+                    <button onClick={()=>this.props.submitCategory("Wrong Forum/Support")}>Wrong Forum/Support</button>
+                } 
+                {this.props.data === "IMA" && 
+                    <button onClick={()=>this.props.submitCategory("Additionalplatformanddevicesintegrationconcerns")}>Additionalplatformanddevicesintegrationconcerns</button>
+                } 
+                {this.props.data === "IMA" && 
+                    <button onClick={()=>this.props.submitCategory("DocumentationInquiries")}>DocumentationInquiries</button>
+                } 
+                {this.props.data === "IMA" && 
+                    <button onClick={()=>this.props.submitCategory("ImplementationsIssues")}>ImplementationsIssues</button>
+                } 
+                {this.props.data === "IMA" && 
+                    <button onClick={()=>this.props.submitCategory("NotsupportedIssues")}>NotsupportedIssues</button>
+                } 
+                {this.props.data === "IMA" && 
+                    <button onClick={()=>this.props.submitCategory("Others")}>Others</button>
+                } 
+                {this.props.data === "IMA" && 
+                    <button onClick={()=>this.props.submitCategory("SDKIssues")}>SDKIssues</button>
+                } 
+                {this.props.data === "IMA" && 
+                    <button onClick={()=>this.props.submitCategory("Wrong Forum/Support")}>Wrong Forum/Support</button>
+                } 
+                {this.props.data === "test" && 
+                    <button onClick={()=>this.props.submitCategory("test")}>test</button>
+                }               
             </div>
         )
     }

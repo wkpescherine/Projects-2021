@@ -265,6 +265,8 @@ class DailyDev extends React.Component {
                 <br></br>
                 <div>
                     <button onClick={()=>this.submitToSheet()}>Submit to sheet</button>
+                    <button >View Daily Report</button>
+                    <button >View Inflow Analysis</button>
                 </div>
                 <h5> 
                     {this.state.case_id}|

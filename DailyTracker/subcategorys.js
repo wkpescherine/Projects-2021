@@ -437,6 +437,318 @@ class SubCategorys extends React.Component {
                 {this.props.data === "WrongForum/Support" && 
                     <button onClick={()=>this.props.submitSubCategory("BigQuery")}>BigQuery</button>
                 }
+                {/* GoogleAdsScripts */}
+                {this.props.data === "AdvancedAPIs" && 
+                    <button onClick={()=>this.props.submitSubCategory("Analytics")}>Analytics</button>
+                }
+                {this.props.data === "AdvancedAPIs" && 
+                    <button onClick={()=>this.props.submitSubCategory("Big Query")}>Big Query</button>
+                }
+                {this.props.data === "AdvancedAPIs" && 
+                    <button onClick={()=>this.props.submitSubCategory("YouTube")}>YouTube</button>
+                }
+                {this.props.data === "AdvancedAPIs" && 
+                    <button onClick={()=>this.props.submitSubCategory("Calendar")}>Calendar</button>
+                }
+                {this.props.data === "AdvancedAPIs" && 
+                    <button onClick={()=>this.props.submitSubCategory("Shopping Content")}>Shopping Content</button>
+                }
+                {this.props.data === "AdvancedAPIs" && 
+                    <button onClick={()=>this.props.submitSubCategory("Tasks")}>Tasks</button>
+                }
+                {this.props.data === "AdvancedAPIs" && 
+                    <button onClick={()=>this.props.submitSubCategory("Slides")}>Slides</button>
+                }
+                {this.props.data === "Beta" && 
+                    <button onClick={()=>this.props.submitSubCategory("Search")}>Search</button>
+                }
+                {this.props.data === "Beta" && 
+                    <button onClick={()=>this.props.submitSubCategory("Others")}>Others</button>
+                }
+                {this.props.data === "ForPilotImplementation" && 
+                    <button onClick={()=>this.props.submitSubCategory("General (specify if applicable)")}>General (specify if applicable)</button>
+                }
+                {this.props.data === "ScriptsServices" && 
+                    <button onClick={()=>this.props.submitSubCategory("Charts")}>Charts</button>
+                }
+                {this.props.data === "ScriptsServices" && 
+                    <button onClick={()=>this.props.submitSubCategory("DriveApp")}>DriveApp</button>
+                }
+                {this.props.data === "ScriptsServices" && 
+                    <button onClick={()=>this.props.submitSubCategory("JDBC")}>JDBC</button>
+                }
+                {this.props.data === "ScriptsServices" && 
+                    <button onClick={()=>this.props.submitSubCategory("Mail")}>Mail</button>
+                }
+                {this.props.data === "ScriptsServices" && 
+                    <button onClick={()=>this.props.submitSubCategory("SpreadSheet")}>SpreadSheet</button>
+                }
+                {this.props.data === "ScriptsServices" && 
+                    <button onClick={()=>this.props.submitSubCategory("UrlFetch")}>UrlFetch</button>
+                }
+                {this.props.data === "ScriptsServices" && 
+                    <button onClick={()=>this.props.submitSubCategory("XmlService")}>XmlService</button>
+                }
+                {/* GoogleAdManagerAPI */}
+                {this.props.data === "AudienceSegmentService" && 
+                    <button onClick={()=>this.props.submitSubCategory("General Clarification")}>General Clarification</button>
+                }
+                {this.props.data === "Authentication" && 
+                    <button onClick={()=>this.props.submitSubCategory("Service Account")}>Service Account</button>
+                }
+                {this.props.data === "Authentication" && 
+                    <button onClick={()=>this.props.submitSubCategory("API Access")}>API Access</button>
+                }
+                {this.props.data === "CompanyService" && 
+                    <button onClick={()=>this.props.submitSubCategory("General Clarification")}>General Clarification</button>
+                }
+                {this.props.data === "Creatives/CreativePlacements" && 
+                    <button onClick={()=>this.props.submitSubCategory("General Clarification")}>General Clarification</button>
+                }
+                {this.props.data === "CustomFields" && 
+                    <button onClick={()=>this.props.submitSubCategory("General Clarification")}>General Clarification</button>
+                }
+                {this.props.data === "CustomTargeting" && 
+                    <button onClick={()=>this.props.submitSubCategory("General Clarification")}>General Clarification</button>
+                }
+                {this.props.data === "Documentationrelated" && 
+                    <button onClick={()=>this.props.submitSubCategory("General Clarification")}>General Clarification</button>
+                }
+                {this.props.data === "Forecasting/checking inventory issues" && 
+                    <button onClick={()=>this.props.submitSubCategory("General Clarification")}>General Clarification</button>
+                }
+                {this.props.data === "GeneralGoogleAdManagerAPIClarifications" && 
+                    <button onClick={()=>this.props.submitSubCategory("General Clarification")}>General Clarification</button>
+                }
+                {this.props.data === "GoogleAdManagerAPIReports" && 
+                    <button onClick={()=>this.props.submitSubCategory("Feature Request")}>Feature Request</button>
+                }
+                {this.props.data === "GoogleAdManagerAPIReports" && 
+                    <button onClick={()=>this.props.submitSubCategory("Key Values")}>Key Values</button>
+                }
+                {this.props.data === "GoogleAdManagerAPIReports" && 
+                    <button onClick={()=>this.props.submitSubCategory("Report Bug")}>Report Bug</button>
+                }
+                {this.props.data === "GoogleAdManagerAPIReports" && 
+                    <button onClick={()=>this.props.submitSubCategory("Report Clarification")}>Report Clarification</button>
+                }
+                {this.props.data === "GoogleAdManagerAPIReports" && 
+                    <button onClick={()=>this.props.submitSubCategory("Report Data Mismatch")}>Report Data Mismatch</button>
+                }
+                {this.props.data === "GoogleAdManagerAPIReports" && 
+                    <button onClick={()=>this.props.submitSubCategory("Report Failure")}>Report Failure</button>
+                }
+                {this.props.data === "GoogleAdManagerAPIReports" && 
+                    <button onClick={()=>this.props.submitSubCategory("Report Latency")}>Report Latency</button>
+                }
+                {this.props.data === "GoogleAdManagerAPIReports" && 
+                    <button onClick={()=>this.props.submitSubCategory("Reporting Backend Error")}>Reporting Backend Error</button>
+                }
+                {this.props.data === "GoogleAdManagerAPIReports" && 
+                    <button onClick={()=>this.props.submitSubCategory("Unsupported column/dimension or missing feature")}>Unsupported column/dimension or missing feature</button>
+                }
+                {this.props.data === "InventoryService" && 
+                    <button onClick={()=>this.props.submitSubCategory("General Clarification")}>General Clarification</button>
+                }
+                {this.props.data === "LICAService" && 
+                    <button onClick={()=>this.props.submitSubCategory("General Clarification")}>General Clarification</button>
+                }
+                {this.props.data === "LineItemService" && 
+                    <button onClick={()=>this.props.submitSubCategory("Create Line Item")}>Create Line Item</button>
+                }
+                {this.props.data === "LineItemService" && 
+                    <button onClick={()=>this.props.submitSubCategory("General Clarification")}>General Clarification</button>
+                }
+                {this.props.data === "LineItemService" && 
+                    <button onClick={()=>this.props.submitSubCategory("Others")}>Others</button>
+                }
+                {this.props.data === "LineItemService" && 
+                    <button onClick={()=>this.props.submitSubCategory("Perform Actions")}>Perform Actions</button>
+                }
+                {this.props.data === "LineItemService" && 
+                    <button onClick={()=>this.props.submitSubCategory("Retrieve Line Items")}>Retrieve Line Items</button>
+                }
+                {this.props.data === "LineItemService" && 
+                    <button onClick={()=>this.props.submitSubCategory("Update Line Item")}>Update Line Item</button>
+                }
+                {this.props.data === "LiveStreamEvent" && 
+                    <button onClick={()=>this.props.submitSubCategory("General Clarification")}>General Clarification</button>
+                }
+                {this.props.data === "MatchTables" && 
+                    <button onClick={()=>this.props.submitSubCategory("General Clarification")}>General Clarification</button>
+                }
+                {this.props.data === "OrderService" && 
+                    <button onClick={()=>this.props.submitSubCategory("General Clarification")}>General Clarification</button>
+                }
+                {this.props.data === "Others" && 
+                    <button onClick={()=>this.props.submitSubCategory("General Clarification")}>General Clarification</button>
+                }
+                {this.props.data === "Others" && 
+                    <button onClick={()=>this.props.submitSubCategory("New Feature Requests")}>New Feature Requests</button>
+                }
+                {this.props.data === "Performanceissues" && 
+                    <button onClick={()=>this.props.submitSubCategory("General Clarification")}>General Clarification</button>
+                }
+                {this.props.data === "PQL" && 
+                    <button onClick={()=>this.props.submitSubCategory("General Clarification")}>General Clarification</button>
+                }
+                {this.props.data === "ProductRelated" && 
+                    <button onClick={()=>this.props.submitSubCategory("Data Related Concern")}>Data Related Concern</button>
+                }
+                {this.props.data === "ProductRelated" && 
+                    <button onClick={()=>this.props.submitSubCategory("Product Level")}>Product Level</button>
+                }
+                {this.props.data === "ProductRelated" && 
+                    <button onClick={()=>this.props.submitSubCategory("SDK")}>SDK</button>
+                }
+                {this.props.data === "ProposalService" && 
+                    <button onClick={()=>this.props.submitSubCategory("General Clarification")}>General Clarification</button>
+                }
+                {this.props.data === "Spam" && 
+                    <button onClick={()=>this.props.submitSubCategory("General Clarification")}>General Clarification</button>
+                }
+                {this.props.data === "User/TeamPermissions" && 
+                    <button onClick={()=>this.props.submitSubCategory("General Clarification")}>General Clarification</button>
+                }
+                {this.props.data === "VersionSpecificIssues" && 
+                    <button onClick={()=>this.props.submitSubCategory("General Clarification")}>General Clarification</button>
+                }
+                {this.props.data === "Wrong Forum/Support" && 
+                    <button onClick={()=>this.props.submitSubCategory("General Clarification")}>General Clarification</button>
+                }
+                {/* IMA */}
+                {this.props.data === "Additionalplatformanddevicesintegrationconcerns" && 
+                    <button onClick={()=>this.props.submitSubCategory("Amazon Fire TV")}>Amazon Fire TV</button>
+                }
+                {this.props.data === "Additionalplatformanddevicesintegrationconcerns" && 
+                    <button onClick={()=>this.props.submitSubCategory("Samsung Smart TV (Tizen)")}>Samsung Smart TV (Tizen)</button>
+                }
+                {this.props.data === "Additionalplatformanddevicesintegrationconcerns" && 
+                    <button onClick={()=>this.props.submitSubCategory("LG TV (select models)")}>LG TV (select models)</button>
+                }
+                {this.props.data === "Additionalplatformanddevicesintegrationconcerns" && 
+                    <button onClick={()=>this.props.submitSubCategory("HbbTV")}>HbbTV</button>
+                }
+                {this.props.data === "Additionalplatformanddevicesintegrationconcerns" && 
+                    <button onClick={()=>this.props.submitSubCategory("Xbox (JavaScript apps)")}>Xbox (JavaScript apps)</button>
+                }
+                {this.props.data === "Additionalplatformanddevicesintegrationconcerns" && 
+                    <button onClick={()=>this.props.submitSubCategory("KaiOS")}>KaiOS</button>
+                }
+                {this.props.data === "Additionalplatformanddevicesintegrationconcerns" && 
+                    <button onClick={()=>this.props.submitSubCategory("General (specify if applicable)")}>General (specify if applicable)</button>
+                }
+                {this.props.data === "DocumentationInquiries" && 
+                    <button onClick={()=>this.props.submitSubCategory("SDK API inquiries")}>SDK API inquiries</button>
+                }
+                {this.props.data === "DocumentationInquiries" && 
+                    <button onClick={()=>this.props.submitSubCategory("New Features/Feature Improvements")}>New Features/Feature Improvements</button>
+                }
+                {this.props.data === "DocumentationInquiries" && 
+                    <button onClick={()=>this.props.submitSubCategory("Documentation issues")}>Documentation issues</button>
+                }
+                {this.props.data === "DocumentationInquiries" && 
+                    <button onClick={()=>this.props.submitSubCategory("General (specify if applicable)")}>General (specify if applicable)</button>
+                }
+                {this.props.data === "ImplementationsIssues" && 
+                    <button onClick={()=>this.props.submitSubCategory("Client-side HTML5 SDK")}>Client-side HTML5 SDK</button>
+                }
+                {this.props.data === "ImplementationsIssues" && 
+                    <button onClick={()=>this.props.submitSubCategory("Client-side Android SDK")}>Client-side Android SDK</button>
+                }
+                {this.props.data === "ImplementationsIssues" && 
+                    <button onClick={()=>this.props.submitSubCategory("Client-side iOS SDK")}>Client-side iOS SDK</button>
+                }
+                {this.props.data === "ImplementationsIssues" && 
+                    <button onClick={()=>this.props.submitSubCategory("Client-side Google Cast SDK")}>Client-side Google Cast SDK</button>
+                }
+                {this.props.data === "ImplementationsIssues" && 
+                    <button onClick={()=>this.props.submitSubCategory("Client-side tvOS SDK")}>Client-side tvOS SDK</button>
+                }
+                {this.props.data === "ImplementationsIssues" && 
+                    <button onClick={()=>this.props.submitSubCategory("DAI HTML5 SDK")}>DAI HTML5 SDK</button>
+                }
+                {this.props.data === "ImplementationsIssues" && 
+                    <button onClick={()=>this.props.submitSubCategory("DAI Android SDK")}>DAI Android SDK</button>
+                }
+                {this.props.data === "ImplementationsIssues" && 
+                    <button onClick={()=>this.props.submitSubCategory("DAI iOS SDK")}>DAI iOS SDK</button>
+                }
+                {this.props.data === "ImplementationsIssues" && 
+                    <button onClick={()=>this.props.submitSubCategory("DAI Google Cast SDK")}>DAI Google Cast SDK</button>
+                }
+                {this.props.data === "ImplementationsIssues" && 
+                    <button onClick={()=>this.props.submitSubCategory("DAI tvOS SDK")}>DAI tvOS SDK</button>
+                }
+                {this.props.data === "ImplementationsIssues" && 
+                    <button onClick={()=>this.props.submitSubCategory("DAI Roku SDK")}>DAI Roku SDK</button>
+                }
+                {this.props.data === "ImplementationsIssues" && 
+                    <button onClick={()=>this.props.submitSubCategory("teGeneral (specify if applicable)st")}>General (specify if applicable)</button>
+                }
+                {this.props.data === "NotsupportedIssues" && 
+                    <button onClick={()=>this.props.submitSubCategory("VAST related concern")}>VAST related concern</button>
+                }
+                {this.props.data === "NotsupportedIssues" && 
+                    <button onClick={()=>this.props.submitSubCategory("Google Ad Manager / Ad provider related concern")}>Google Ad Manager / Ad provider related concern</button>
+                }
+                {this.props.data === "NotsupportedIssues" && 
+                    <button onClick={()=>this.props.submitSubCategory("Ad serving issue")}>Ad serving issue</button>
+                }
+                {this.props.data === "NotsupportedIssues" && 
+                    <button onClick={()=>this.props.submitSubCategory("General (specify if applicable)")}>General (specify if applicable)</button>
+                }
+                {this.props.data === "Others" && 
+                    <button onClick={()=>this.props.submitSubCategory("PAL SDK concern")}>PAL SDK concern</button>
+                }
+                {this.props.data === "Others" && 
+                    <button onClick={()=>this.props.submitSubCategory("Open Measurement SDK concern")}>Open Measurement SDK concern</button>
+                }
+                {this.props.data === "Others" && 
+                    <button onClick={()=>this.props.submitSubCategory("Video JS concern")}>Video JS concern</button>
+                }
+                {this.props.data === "Others" && 
+                    <button onClick={()=>this.props.submitSubCategory("General (specify if applicable)")}>General (specify if applicable)</button>
+                }
+                {this.props.data === "SDKIssues" && 
+                    <button onClick={()=>this.props.submitSubCategory("Client-side HTML5 SDK")}>Client-side HTML5 SDK</button>
+                }
+                {this.props.data === "SDKIssues" && 
+                    <button onClick={()=>this.props.submitSubCategory("Client-side Android SDK")}>Client-side Android SDK</button>
+                }
+                {this.props.data === "SDKIssues" && 
+                    <button onClick={()=>this.props.submitSubCategory("Client-side iOS SDK")}>Client-side iOS SDK</button>
+                }
+                {this.props.data === "SDKIssues" && 
+                    <button onClick={()=>this.props.submitSubCategory("Client-side Google Cast SDK")}>Client-side Google Cast SDK</button>
+                }
+                {this.props.data === "SDKIssues" && 
+                    <button onClick={()=>this.props.submitSubCategory("Client-side tvOS SDK")}>Client-side tvOS SDK</button>
+                }
+                {this.props.data === "SDKIssues" && 
+                    <button onClick={()=>this.props.submitSubCategory("DAI HTML5 SDK")}>DAI HTML5 SDK</button>
+                }
+                {this.props.data === "SDKIssues" && 
+                    <button onClick={()=>this.props.submitSubCategory("DAI Android SDK")}>DAI Android SDK</button>
+                }
+                {this.props.data === "SDKIssues" && 
+                    <button onClick={()=>this.props.submitSubCategory("DAI iOS SDK")}>DAI iOS SDK</button>
+                }
+                {this.props.data === "SDKIssues" && 
+                    <button onClick={()=>this.props.submitSubCategory("DAI Google Cast SDK")}>DAI Google Cast SDK</button>
+                }
+                {this.props.data === "SDKIssues" && 
+                    <button onClick={()=>this.props.submitSubCategory("DAI tvOS SDK")}>DAI tvOS SDK</button>
+                }
+                {this.props.data === "SDKIssues" && 
+                    <button onClick={()=>this.props.submitSubCategory("DAI Roku SDK")}>DAI Roku SDK</button>
+                }
+                {this.props.data === "SDKIssues" && 
+                    <button onClick={()=>this.props.submitSubCategory("teGeneral (specify if applicable)st")}>General (specify if applicable)</button>
+                }
+                {this.props.data === "Test" && 
+                    <button onClick={()=>this.props.submitSubCategory("test")}>tes</button>
+                }
             </div>
         )
     }
