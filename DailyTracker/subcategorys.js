@@ -253,6 +253,39 @@ class SubCategorys extends React.Component {
                 {this.props.data === "AdWordsAPIReports" && 
                     <button onClick={()=>this.props.submitSubCategory("Ad Group Performance")}>Ad Group Performance</button>
                 }
+                {this.props.data === "AdWordsAPIReports" && 
+                    <button onClick={()=>this.props.submitSubCategory("Ad Performance")}>Ad Performance</button>
+                }
+                {this.props.data === "AdWordsAPIReports" && 
+                    <button onClick={()=>this.props.submitSubCategory("Age Range Performance")}>Age Range Performance</button>
+                }
+                {this.props.data === "AdWordsAPIReports" && 
+                    <button onClick={()=>this.props.submitSubCategory("Audience Performance")}>Audience Performance</button>
+                }
+                {this.props.data === "AdWordsAPIReports" && 
+                    <button onClick={()=>this.props.submitSubCategory("Automatic Placements Performance")}>Automatic Placements Performance</button>
+                }
+                {this.props.data === "AdWordsAPIReports" && 
+                    <button onClick={()=>this.props.submitSubCategory("Bid Goal Performance")}>Bid Goal Performance</button>
+                }
+                {this.props.data === "AdWordsAPIReports" && 
+                    <button onClick={()=>this.props.submitSubCategory("Budget Performance")}>Budget Performance</button>
+                }
+                {this.props.data === "AdWordsAPIReports" && 
+                    <button onClick={()=>this.props.submitSubCategory("Call Metrics Call Details")}>Call Metrics Call Details</button>
+                }
+                {this.props.data === "AdWordsAPIReports" && 
+                    <button onClick={()=>this.props.submitSubCategory("Campaign Ad Schedule Target")}>Campaign Ad Schedule Target</button>
+                }
+                {this.props.data === "AdWordsAPIReports" && 
+                    <button onClick={()=>this.props.submitSubCategory("Campaign Location Target")}>Campaign Location Target</button>
+                }
+                {this.props.data === "AdWordsAPIReports" && 
+                    <button onClick={()=>this.props.submitSubCategory("Campaign Negative Keywords Performance")}>Campaign Negative Keywords Performance</button>
+                }
+                {this.props.data === "Test" && 
+                    <button onClick={()=>this.props.submitSubCategory("test")}>tes</button>
+                }
                 {/*GoogleAdsAPI*/}
                 {this.props.data === "AccountAccess" && 
                     <button onClick={()=>this.props.submitSubCategory("Basic")}>Basic</button>
@@ -277,6 +310,159 @@ class SubCategorys extends React.Component {
                 }
                 {this.props.data === "AllowlistRequest" && 
                     <button onClick={()=>this.props.submitSubCategory("MutateJobService")}>MutateJobService</button>
+                }
+                {this.props.data === "APIDocumentation" && 
+                    <button onClick={()=>this.props.submitSubCategory("Select")}>Select</button>
+                }
+                {this.props.data === "APIDocumentation" && 
+                    <button onClick={()=>this.props.submitSubCategory("Google Ads API Migration")}>Google Ads API Migration</button>
+                }
+                {this.props.data === "APIDocumentation" && 
+                    <button onClick={()=>this.props.submitSubCategory("General inquiry")}>General inquiry</button>
+                }
+                {this.props.data === "APIDocumentation" && 
+                    <button onClick={()=>this.props.submitSubCategory("OAuthAuthentication")}>OAuthAuthentication</button>
+                }
+                {this.props.data === "APIDocumentation" && 
+                    <button onClick={()=>this.props.submitSubCategory("Reporting fields")}>Reporting fields</button>
+                }
+                {this.props.data === "APIDocumentation" && 
+                    <button onClick={()=>this.props.submitSubCategory("Unsupported features")}>Unsupported features</button>
+                }
+                {this.props.data === "APIServices" && 
+                    <button onClick={()=>this.props.submitSubCategory("Select")}>Select</button>
+                }
+                {this.props.data === "APIServices" && 
+                    <button onClick={()=>this.props.submitSubCategory("AccountBudgetProposalService")}>AccountBudgetProposalService</button>
+                }
+                {this.props.data === "APIServices" && 
+                    <button onClick={()=>this.props.submitSubCategory("AccountBudgetService")}>AccountBudgetService</button>
+                }
+                {this.props.data === "APIServices" && 
+                    <button onClick={()=>this.props.submitSubCategory("AdGroupAdLabelService")}>AdGroupAdLabelService</button>
+                }
+                {this.props.data === "APIServices" && 
+                    <button onClick={()=>this.props.submitSubCategory("AdGroupAdService")}>AdGroupAdService</button>
+                }
+                {this.props.data === "APIServices" && 
+                    <button onClick={()=>this.props.submitSubCategory("AdGroupAudienceViewService")}>AdGroupAudienceViewService</button>
+                }
+                {this.props.data === "APIServices" && 
+                    <button onClick={()=>this.props.submitSubCategory("AdGroupBidModifierService")}>AdGroupBidModifierService</button>
+                }
+                {this.props.data === "APIServices" && 
+                    <button onClick={()=>this.props.submitSubCategory("AdGroupCriterionLabelService")}>AdGroupCriterionLabelService</button>
+                }
+                {this.props.data === "APIServices" && 
+                    <button onClick={()=>this.props.submitSubCategory("AdGroupCriterionService")}>AdGroupCriterionService</button>
+                }
+                {this.props.data === "APIServices" && 
+                    <button onClick={()=>this.props.submitSubCategory("AdGroupCriterionSimulationService")}>AdGroupCriterionSimulationService</button>
+                }
+                {this.props.data === "APIServices" && 
+                    <button onClick={()=>this.props.submitSubCategory("AdGroupExtensionSettingService")}>AdGroupExtensionSettingService</button>
+                }
+                {this.props.data === "APIServices" && 
+                    <button onClick={()=>this.props.submitSubCategory("AdGroupFeedService")}>AdGroupFeedService</button>
+                }
+                {this.props.data === "APIServices" && 
+                    <button onClick={()=>this.props.submitSubCategory("AdGroupLabelService")}>AdGroupLabelService</button>
+                }
+                {this.props.data === "APIServices" && 
+                    <button onClick={()=>this.props.submitSubCategory("AdGroupService")}>AdGroupService</button>
+                }
+                {this.props.data === "APIServices" && 
+                    <button onClick={()=>this.props.submitSubCategory("AdGroupSimulationService")}>AdGroupSimulationService</button>
+                }
+                {this.props.data === "APIServices" && 
+                    <button onClick={()=>this.props.submitSubCategory("AdParameterService")}>AdParameterService</button>
+                }
+                {this.props.data === "APIServices" && 
+                    <button onClick={()=>this.props.submitSubCategory("AdScheduleViewService")}>AdScheduleViewService</button>
+                }
+                {this.props.data === "APIServices" && 
+                    <button onClick={()=>this.props.submitSubCategory("AgeRangeViewService")}>AgeRangeViewService</button>
+                }
+                {this.props.data === "APIServices" && 
+                    <button onClick={()=>this.props.submitSubCategory("AssetService")}>AssetService</button>
+                }
+                {this.props.data === "APIServices" && 
+                    <button onClick={()=>this.props.submitSubCategory("BatchJobService")}>BatchJobService</button>
+                }
+                {this.props.data === "APIServices" && 
+                    <button onClick={()=>this.props.submitSubCategory("BiddingStrategyService")}>BiddingStrategyService</button>
+                }
+                {this.props.data === "APIServices" && 
+                    <button onClick={()=>this.props.submitSubCategory("BillingSetupService")}>BillingSetupService</button>
+                }
+                {this.props.data === "APIServices" && 
+                    <button onClick={()=>this.props.submitSubCategory("CampaignAudienceViewService")}>CampaignAudienceViewService</button>
+                }
+                {this.props.data === "APIServices" && 
+                    <button onClick={()=>this.props.submitSubCategory("CampaignBidModifierService")}>CampaignBidModifierService</button>
+                }
+                {this.props.data === "APIServices" && 
+                    <button onClick={()=>this.props.submitSubCategory("CampaignBudgetService")}>CampaignBudgetService</button>
+                }
+                {this.props.data === "APIServices" && 
+                    <button onClick={()=>this.props.submitSubCategory("CampaignCriterionService")}>CampaignCriterionService</button>
+                }
+                {this.props.data === "APIServices" && 
+                    <button onClick={()=>this.props.submitSubCategory("CampaignCriterionSimulationService")}>CampaignCriterionSimulationService</button>
+                }
+                {this.props.data === "APIServices" && 
+                    <button onClick={()=>this.props.submitSubCategory("CampaignDraftService")}>CampaignDraftService</button>
+                }
+                {this.props.data === "APIServices" && 
+                    <button onClick={()=>this.props.submitSubCategory("CampaignExperimentService")}>CampaignExperimentService</button>
+                }
+                {this.props.data === "APIServices" && 
+                    <button onClick={()=>this.props.submitSubCategory("CampaignExtensionSettingService")}>CampaignExtensionSettingService</button>
+                }
+                {this.props.data === "APIServices" && 
+                    <button onClick={()=>this.props.submitSubCategory("CampaignFeedService")}>CampaignFeedService</button>
+                }
+                {this.props.data === "APIServices" && 
+                    <button onClick={()=>this.props.submitSubCategory("CampaignLabelService")}>CampaignLabelService</button>
+                }
+                {this.props.data === "APIServices" && 
+                    <button onClick={()=>this.props.submitSubCategory("CampaignService")}>CampaignService</button>
+                }
+                {this.props.data === "APIServices" && 
+                    <button onClick={()=>this.props.submitSubCategory("CampaignSharedSetService")}>CampaignSharedSetService</button>
+                }
+                {this.props.data === "APIServices" && 
+                    <button onClick={()=>this.props.submitSubCategory("CarrierConstantService")}>CarrierConstantService</button>
+                }
+                {this.props.data === "APIServices" && 
+                    <button onClick={()=>this.props.submitSubCategory("ChangeStatusService")}>ChangeStatusService</button>
+                }
+                {this.props.data === "APIServices" && 
+                    <button onClick={()=>this.props.submitSubCategory("ClickViewService")}>ClickViewService</button>
+                }
+                {this.props.data === "APIServices" && 
+                    <button onClick={()=>this.props.submitSubCategory("ConversionActionService")}>ConversionActionService</button>
+                }
+                {this.props.data === "APIServices" && 
+                    <button onClick={()=>this.props.submitSubCategory("ConversionAdjustmentUploadService")}>ConversionAdjustmentUploadService</button>
+                }
+                {this.props.data === "APIServices" && 
+                    <button onClick={()=>this.props.submitSubCategory("ConversionUploadService")}>ConversionUploadService</button>
+                }
+                {this.props.data === "APIServices" && 
+                    <button onClick={()=>this.props.submitSubCategory("CustomAudienceService")}>CustomAudienceService</button>
+                }
+                {this.props.data === "APIServices" && 
+                    <button onClick={()=>this.props.submitSubCategory("CustomerClientLinkService")}>CustomerClientLinkService</button>
+                }
+                {this.props.data === "APIServices" && 
+                    <button onClick={()=>this.props.submitSubCategory("CustomerClientService")}>CustomerClientService</button>
+                }
+                {this.props.data === "APIServices" && 
+                    <button onClick={()=>this.props.submitSubCategory("CustomerExtensionSettingService")}>CustomerExtensionSettingService</button>
+                }
+                {this.props.data === "Test" && 
+                    <button onClick={()=>this.props.submitSubCategory("test")}>tes</button>
                 }
                 {/*DBMAPI*/}
                 {this.props.data === "APIversions" && 
@@ -755,3 +941,5 @@ class SubCategorys extends React.Component {
 
 }
 export default SubCategorys;
+{/*Adwords API 288*/}
+{/*Google Ads API 466*/}

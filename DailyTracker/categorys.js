@@ -173,6 +173,18 @@ class Categorys extends React.Component {
                 {this.props.data === "GoogleAdsAPI" && 
                     <button onClick={()=>this.props.submitCategory("AllowlistRequest")}>AdWordsAPIReports</button>
                 }
+                {this.props.data === "GoogleAdsAPI" && 
+                    <button onClick={()=>this.props.submitCategory("APIDocumentation")}>APIDocumentation</button>
+                }
+                {this.props.data === "GoogleAdsAPI" && 
+                    <button onClick={()=>this.props.submitCategory("APIServices")}>APIServices</button>
+                }
+                {this.props.data === "test" && 
+                    <button onClick={()=>this.props.submitCategory("test")}>test</button>
+                }
+                {this.props.data === "test" && 
+                    <button onClick={()=>this.props.submitCategory("test")}>test</button>
+                }
                 {this.props.data === "DBMAPI" && 
                     <button onClick={()=>this.props.submitCategory("APIversions")}>APIversions</button>
                 }
@@ -428,3 +440,4 @@ class Categorys extends React.Component {
 
 }
 export default Categorys;
+{/*Google Ads API 187*/}
