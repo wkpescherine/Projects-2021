@@ -70,6 +70,30 @@ class Dashboard extends React.Component {
               <button >View Inflow Analysis</button>
               <button >Update Queues</button>
             </div>
+            <div>
+            <AgentTracker/>
+            </div>
+            <div>
+            <AgentTracker/>
+            </div>
+            <div>
+            <AgentTracker/>
+            </div>
+            <div>
+            <AgentTracker/>
+            </div>
+            <div>
+            <AgentTracker/>
+            </div>
+            <div>
+            <AgentTracker/>
+            </div>
+            <div>
+            <AgentTracker/>
+            </div>
+            <div>
+            <AgentTracker/>
+            </div>
           </div>
         </div>
       );
