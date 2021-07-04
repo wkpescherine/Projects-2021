@@ -1,6 +1,8 @@
 import React from 'react';
 import './App.css';
 
+import {Link} from 'react-router-dom'
+
 import Products from "./products"
 import Categorys from "./categorys"
 import Status from "./status"
@@ -288,8 +290,9 @@ class DailyDev extends React.Component {
                     <br></br>
                     <div>
                         <button onClick={()=>this.submitToSheet()}>Submit to sheet</button>
-                        <button >View Daily Report</button>
-                        <button >View Inflow Analysis</button>
+                        <Link to="/dashboard">
+                            <button >Dashboard</button>
+                        </Link>
                     </div>
                 </div>
                 <div style={{width:100, margin: 5}}>

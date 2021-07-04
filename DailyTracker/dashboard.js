@@ -8,7 +8,7 @@ import AgentTracker from "./agenttracker"
 
 class Dashboard extends React.Component {
     state= {
-      admobQ: 0,
+      admobQ: "",
       imaQ: 0,
       googleadsapiQ: 0,
       adsenseQ: 0,
@@ -21,18 +21,28 @@ class Dashboard extends React.Component {
       admanagerQ: 0,
       googlescriptQ: 0,
       googleanalyticsQ:0,
-      modal: false,
-      modal_product: "",
+      modQueue: false,
+      queue_product: "",
     }
 
-    showModal(){
-      if(this.state.modal === false){
+    changeQueue = event => {
+      if(this.state.queue_product ==="AdMob"){
         this.setState({
-          modal: true
+          admobQ: event.target.value
+        })  
+      }
+    }
+
+    showModQueue(modQueChanged){
+      if(this.state.modQueue === false){
+        this.setState({
+          modQueue: true,
+          queue_product: modQueChanged
         })
       } else {
         this.setState({
-          modal: false
+          modQueue: false,
+          queue_product: modQueChanged
         })
       }
     }
@@ -44,7 +54,7 @@ class Dashboard extends React.Component {
           justifyContent: "center"
           }}>
           <div style={{width:750, border:"2px solid white"}}>
-            <button style={{width:100, height: 100}} onClick={()=>this.showModal("AdMob")}>AdMob<br></br>{this.state.admobQ}</button>
+            <button style={{width:100, height: 100}} onClick={()=>this.showModQueue("AdMob")}>AdMob<br></br>{this.state.admobQ}</button>
             <button style={{width:100, height: 100, color: "white", background: "black"}}>IMA<br></br>{this.state.imaQ}</button>
             <button style={{width:100, height: 100, color: "white", background: "black"}}>AdSense<br></br>{this.state.adsenseQ}</button>
             <button style={{width:100, height: 100, color: "white", background: "black"}}>AdWord API<br></br>{this.state.adwordQ}</button>
@@ -58,8 +68,8 @@ class Dashboard extends React.Component {
             <button style={{width:100, height: 100, color: "white", background: "black"}}>Google Script<br></br>{this.state.googlescriptQ}</button>
             <button style={{width:100, height: 100, color: "white", background: "black"}}>Google Analytic<br></br>{this.state.googleanalyticsQ}</button>
             <div>
-              {this.state.modal === true && 
-                <UpdateQueue/>
+              {this.state.modQueue === true && 
+                <UpdateQueue showModQueue={this.showModQueue.bind(this)} changeQueue={this.changeQueue.bind(this)} data={this.state.queue_product} data={this.state.admobQ}/>
               }
             </div>
             <div>
