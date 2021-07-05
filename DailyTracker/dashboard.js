@@ -23,7 +23,20 @@ class Dashboard extends React.Component {
       googleanalyticsQ:0,
       modQueue: false,
       queue_product: "",
+      agentsections: "",
       tempvalue:""
+    }
+
+    displayAgentSubSections (choice){
+      if(this.state.agentsections === choice){
+        this.setState({
+          agentsections: ""
+        })  
+      }else {
+        this.setState({
+          agentsections: choice
+        })
+      }
     }
 
     changeQueue = event => {
@@ -141,36 +154,24 @@ class Dashboard extends React.Component {
               <Link to="/dailydev">
                 <button>DailyDev</button>
               </Link>
+              <button onClick={()=>this.displayAgentSubSections("dailyintake")}> Daily Agent Intake</button>
+              <Link to="/monthlyagent">
+                <button >Monthly Agent Intake</button>
+              </Link>
               <button> Update Queue</button>
-              <button >Monthly Agent Intake</button>
-              <button> Daily Agent Intake</button>
               <button> View Inflow Analysis</button>
               <button> Bug Tracker</button>
             </div>
             <div>
-            <AgentTracker/>
+              {this.state.modQueue === true && 
+                <UpdateQueue showModQueue={this.showModQueue.bind(this)} changeQueue={this.changeQueue.bind(this)} data={this.state.tempvalue}/>
+              }
             </div>
             <div>
-            <AgentTracker/>
-            </div>
-            <div>
-            <AgentTracker/>
-            </div>
-            <div>
-            <AgentTracker/>
-            </div>
-            <div>
-            <AgentTracker/>
-            </div>
-            <div>
-            <AgentTracker/>
-            </div>
-            <div>
-            <AgentTracker/>
-            </div>
-            <div>
-            <AgentTracker/>
-            </div>
+              {this.state.agentsections === "dailyintake" &&
+                <AgentTracker/>
+              }
+            </div>  
           </div>
         </div>
       );
