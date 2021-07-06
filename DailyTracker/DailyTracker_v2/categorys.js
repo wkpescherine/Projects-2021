@@ -204,6 +204,12 @@ class Categorys extends React.Component {
                     {this.props.data === "GoogleAdsAPI" && 
                         <button onClick={()=>this.props.submitCategory("OAuthSetup")}>OAuthSetup</button>
                     }
+                    {this.props.data === "GoogleAdsAPI" && 
+                        <button onClick={()=>this.props.submitCategory("Others")}>Others</button>
+                    }
+                    {this.props.data === "GoogleAdsAPI" && 
+                        <button onClick={()=>this.props.submitCategory("Reports")}>Reports</button>
+                    }
                     {this.props.data === "test" && 
                         <button onClick={()=>this.props.submitCategory("test")}>test</button>
                     }

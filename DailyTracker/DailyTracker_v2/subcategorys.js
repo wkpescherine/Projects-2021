@@ -695,6 +695,93 @@ class SubCategorys extends React.Component {
                 {this.props.data === "OAuthSetup" && 
                     <button onClick={()=>this.props.submitSubCategory("Others")}>Others</button>
                 }
+                {this.props.data === "Reports" && 
+                    <button onClick={()=>this.props.submitSubCategory("Select")}>Select</button>
+                }
+                {this.props.data === "Reports" && 
+                    <button onClick={()=>this.props.submitSubCategory("account_budget")}>account_budget</button>
+                }
+                {this.props.data === "Reports" && 
+                    <button onClick={()=>this.props.submitSubCategory("account_budget_proposal")}>account_budget_proposal</button>
+                }
+                {this.props.data === "Reports" && 
+                    <button onClick={()=>this.props.submitSubCategory("account_link")}>account_link</button>
+                }
+                {this.props.data === "Reports" && 
+                    <button onClick={()=>this.props.submitSubCategory("ad_group")}>ad_group</button>
+                }
+                {this.props.data === "Reports" && 
+                    <button onClick={()=>this.props.submitSubCategory("ad_group_ad")}>ad_group_ad</button>
+                }
+                {this.props.data === "Reports" && 
+                    <button onClick={()=>this.props.submitSubCategory("ad_group_ad_asset_view")}>ad_group_ad_asset_view</button>
+                }
+                {this.props.data === "Reports" && 
+                    <button onClick={()=>this.props.submitSubCategory("ad_group_ad_label")}>ad_group_ad_label</button>
+                }
+                {this.props.data === "Reports" && 
+                    <button onClick={()=>this.props.submitSubCategory("ad_group_audience_view")}>ad_group_audience_view</button>
+                }
+                {this.props.data === "Reports" && 
+                    <button onClick={()=>this.props.submitSubCategory("ad_group_bid_modifier")}>ad_group_bid_modifier</button>
+                }
+                {this.props.data === "Reports" && 
+                    <button onClick={()=>this.props.submitSubCategory("ad_group_criterion")}>ad_group_criterion</button>
+                }
+                {this.props.data === "Reports" && 
+                    <button onClick={()=>this.props.submitSubCategory("ad_group_criterion_label")}>ad_group_criterion_label</button>
+                }
+                {this.props.data === "Reports" && 
+                    <button onClick={()=>this.props.submitSubCategory("ad_group_criterion_simulation")}>ad_group_criterion_simulation</button>
+                }
+                {this.props.data === "Reports" && 
+                    <button onClick={()=>this.props.submitSubCategory("ad_group_extension_setting")}>ad_group_extension_setting</button>
+                }
+                {this.props.data === "Reports" && 
+                    <button onClick={()=>this.props.submitSubCategory("ad_group_feed")}>ad_group_feed</button>
+                }
+                {this.props.data === "Reports" && 
+                    <button onClick={()=>this.props.submitSubCategory("ad_group_label")}>ad_group_label</button>
+                }
+                {this.props.data === "Reports" && 
+                    <button onClick={()=>this.props.submitSubCategory("ad_group_simulation")}>ad_group_simulation</button>
+                }
+                {this.props.data === "Reports" && 
+                    <button onClick={()=>this.props.submitSubCategory("ad_parameter")}>ad_parameter</button>
+                }
+                {this.props.data === "Reports" && 
+                    <button onClick={()=>this.props.submitSubCategory("ad_schedule_view")}>ad_schedule_view</button>
+                }
+                {this.props.data === "Reports" && 
+                    <button onClick={()=>this.props.submitSubCategory("age_range_view")}>age_range_view</button>
+                }
+                {this.props.data === "Reports" && 
+                    <button onClick={()=>this.props.submitSubCategory("asset")}>asset</button>
+                }
+                {this.props.data === "Reports" && 
+                    <button onClick={()=>this.props.submitSubCategory("bidding_strategy")}>bidding_strategy</button>
+                }
+                {this.props.data === "Reports" && 
+                    <button onClick={()=>this.props.submitSubCategory("billing_setup")}>billing_setup</button>
+                }
+                {this.props.data === "Reports" && 
+                    <button onClick={()=>this.props.submitSubCategory("call_view")}>call_view</button>
+                }
+                {this.props.data === "Reports" && 
+                    <button onClick={()=>this.props.submitSubCategory("campaign")}>campaign</button>
+                }
+                {this.props.data === "Reports" && 
+                    <button onClick={()=>this.props.submitSubCategory("campaign_audience_view")}>campaign_audience_view</button>
+                }
+                {this.props.data === "Reports" && 
+                    <button onClick={()=>this.props.submitSubCategory("campaign_bid_modifier")}>campaign_bid_modifier</button>
+                }
+                {this.props.data === "Reports" && 
+                    <button onClick={()=>this.props.submitSubCategory("campaign_budget")}>campaign_budget</button>
+                }
+                {this.props.data === "Reports" && 
+                    <button onClick={()=>this.props.submitSubCategory("campaign_criterion")}>campaign_criterion</button>
+                }
                 {this.props.data === "Test" && 
                     <button onClick={()=>this.props.submitSubCategory("test")}>tes</button>
                 }
