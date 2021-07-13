@@ -254,13 +254,13 @@
                 android:textSize="32dp"
                 android:textColor="#fff"/>
             <TextView
-                android:id="@+id/Radius"
+                android:id="@+id/R"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="r"
                 android:textSize="32dp"
                 android:textColor="#fff"
-                android:onClick="focusRadius"/>
+                android:onClick="setFocus"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -480,7 +480,7 @@
             android:orientation="horizontal"
             android:visibility="invisible"
             android:layout_centerInParent="true"
-            android:id="@+id/SphereFormula">
+            android:id="@+id/sphereFormula">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -500,7 +500,7 @@
                 android:text="r"
                 android:textSize="32dp"
                 android:textColor="#fff"
-                android:onClick="focusRadius"/>
+                android:onClick="getArgFocus"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -536,19 +536,27 @@
                 android:textSize="32dp"
                 android:textColor="#fff"/>
             <TextView
-                android:id="@+id/RadiusC1"
+                android:id="@+id/ConeR1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="r"
                 android:textSize="32dp"
                 android:textColor="#fff"
-                android:onClick="focusRadius"/>
+                android:onClick="getArgFocus"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="\u03C0"
+                android:text="("
                 android:textSize="32dp"
                 android:textColor="#fff"/>
+            <TextView
+                android:id="@+id/ConeR2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="r"
+                android:textSize="32dp"
+                android:textColor="#fff"
+                android:onClick="getArgFocus"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -556,10 +564,16 @@
                 android:textSize="32dp"
                 android:textColor="#fff"/>
             <TextView
-                android:id="@+id/RadiusC2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="r"
+                android:text="\u221a"
+                android:textSize="32dp"
+                android:textColor="#fff"/>
+            <TextView
+                android:id="@+id/ConeH"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="h"
                 android:textSize="32dp"
                 android:textColor="#fff"
                 android:onClick="focusRadius"/>
@@ -572,11 +586,37 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:text="+"
+                android:textSize="32dp"
+                android:textColor="#fff"/>
+            <TextView
+                android:id="@+id/ConeR3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="r"
+                android:textSize="32dp"
+                android:textColor="#fff"
+                android:onClick="getArgFocus"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="\u00B2"
+                android:textSize="32dp"
+                android:textColor="#fff"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=")"
+                android:textSize="32dp"
+                android:textColor="#fff"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:text="="
                 android:textSize="32dp"
                 android:textColor="#fff"/>
             <TextView
-                android:id="@+id/SphereTot"
+                android:id="@+id/ConeTotal"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Total"
@@ -670,6 +710,47 @@
                     android:textColor="#fff"/>
             </LinearLayout>
         </LinearLayout>
-
+        <!-- Circumference  -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:visibility="invisible"
+            android:layout_centerInParent="true"
+            android:id="@+id/circumferenceFormula">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2"
+                android:textSize="32dp"
+                android:textColor="#fff"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="\u03C0"
+                android:textSize="32dp"
+                android:textColor="#fff"/>
+            <TextView
+                android:id="@+id/RadiusCir"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="r"
+                android:textSize="32dp"
+                android:textColor="#fff"
+                android:onClick="getArgFocus"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="="
+                android:textSize="32dp"
+                android:textColor="#fff"/>
+            <TextView
+                android:id="@+id/circumferenceTotal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Total"
+                android:textSize="32dp"
+                android:textColor="#fff"/>
+        </LinearLayout>
     </RelativeLayout>
-</LinearLayout><!--  675 -->
+</LinearLayout><!--  756 -->
