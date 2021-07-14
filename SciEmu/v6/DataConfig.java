@@ -56,5 +56,6 @@ public class DataConfig {
         n1String = "";
         n2String = "";
         polySign = "+";
+        radiusString = "";
     }
-}//60
+}//61
