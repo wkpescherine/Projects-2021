@@ -1,8 +1,0 @@
-This was the initial app that was written and has since been removed as future updates to this have made it obsolete.
-As we move forqrd and build out more functions and features we will be adding to the repos and also removing back repos.
-At the beginnging the repos were used as a source of tracking daily work as well as storage in case of errors.
-
-Main Items created:
-  1) Main UI activity
-  2) Emulator Activity nad corresponding keypad
-  3) Start with basic formulas
