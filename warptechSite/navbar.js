@@ -10,17 +10,17 @@ class Navbar extends React.Component {
                 }}>
                 <div style={{width: 100, background: "green"}}>
                     <div style={{display:"inline", color: "white"}}>
-                        <h5>Home</h5>
+                        <h5 onClick={()=>this.props.changeSection("home")}>Home</h5>
                     </div>
                 </div>
                 <div style={{width: 100, background: "red"}}>
                     <div style={{display:"inline", color: "white"}}>
-                        <h5>Web Projects</h5>
+                        <h5 onClick={()=>this.props.changeSection("web")}>Web Projects</h5>
                     </div>
                 </div>
                 <div style={{width: 150, background: "blue", border: "2px solid white"}}>
                     <div style={{display:"inline", color: "white"}}>
-                        <h5>Android Projects</h5>
+                    <h5 onClick={()=>this.props.changeSection("android")}>Android Projects</h5>
                     </div>
                 </div>
                 <div style={{width: 100, background: "#aaa", border: "2px solid white"}}>

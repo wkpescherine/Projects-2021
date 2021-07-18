@@ -1,8 +1,6 @@
 import React from 'react';
 import './App.css';
 
-import Navbar from "./navbar"
-
 class Article extends React.Component {
     render(){
         return (
