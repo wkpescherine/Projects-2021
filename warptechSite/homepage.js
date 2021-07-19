@@ -2,8 +2,9 @@ import React from 'react';
 import './App.css';
 
 import Navbar from "./navbar"
-import Subnavbar from "./subnavbar"
 import Article from "./article"
+import WebSub from "./websub"
+import AndroidSub from "./androidsub"
 
 class Homepage extends React.Component {
     state = {
@@ -26,13 +27,17 @@ class Homepage extends React.Component {
                 < Navbar changeSection={this.changeSection.bind(this)}/>
                 <div>
                     { this.state.section === "web" &&
-                        < Subnavbar data={this.state.section}/>
+                        < WebSub/>
                     }
                     { this.state.section === "android" &&
-                        < Subnavbar data={this.state.section}/>
+                        < AndroidSub/>
                     }
                 </div>
-                < Article />
+                <div>
+                    { this.state.section === "home" &&
+                        < Article />
+                    }
+                </div>
             </div>
         );
     }
