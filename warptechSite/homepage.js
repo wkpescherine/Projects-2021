@@ -5,6 +5,8 @@ import Navbar from "./navbar"
 import Article from "./article"
 import WebSub from "./websub"
 import AndroidSub from "./androidsub"
+import HomeArticle from './home_article'
+import SFArticle from "./sf_article"
 
 class Homepage extends React.Component {
     state = {
@@ -42,7 +44,14 @@ class Homepage extends React.Component {
                     }
                 </div>
                 <div>
-                    < Article  data1={this.state.project}/>
+                    {this.state.project === "home" &&
+                        <HomeArticle/>
+                    }
+                </div>
+                <div>
+                    {this.state.project === "sportforge" &&
+                        <SFArticle/>
+                    }
                 </div>
             </div>
         );

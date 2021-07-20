@@ -1,21 +1,21 @@
 import React from 'react';
 import './App.css';
 
-class WebSub extends React.Component {
+class SFArticle extends React.Component {
     render(){
         return(
             <div style={{
                 display: "flex",
                 justifyContent: "center"
                 }}>
-                <div style={{width: 100} }>
+                <div style={{width: 500} }>
                     <div style={{display:"inline", color: "white"}}>
-                        <h5 onClick={()=>this.props.changeProject("sportforge")}>SportsForge</h5>
-                    </div>
+                        <p>Sport based fantasy torunamnet that uses an IronMan type of approach to see who wins</p> 
+                   </div>
                 </div>
             </div>
         );
     }
 }
 
-export default WebSub;
+export default SFArticle;
