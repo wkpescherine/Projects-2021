@@ -8,24 +8,31 @@ class Navbar extends React.Component {
                 display: "flex",
                 justifyContent: "center"
                 }}>
-                <div style={{width: 100, background: "green"}}>
+                <div style={{width: 100, background: "green"}}
+                    onClick={()=>this.props.changeSection("home")}>
                     <div style={{display:"inline", color: "white"}}>
-                        <h5 onClick={()=>this.props.changeSection("home")}>Home</h5>
+                        <h5>Home</h5>
                     </div>
                 </div>
-                <div style={{width: 100, background: "red"}}>
+                <div style={{width: 100, background: "red"}} 
+                    onClick={()=>this.props.changeSection("web")}>
                     <div style={{display:"inline", color: "white"}}>
-                        <h5 onClick={()=>this.props.changeSection("web")}>Web Projects</h5>
+                        <h5>Web</h5>
                     </div>
                 </div>
-                <div style={{width: 150, background: "blue", border: "2px solid white"}}>
+                <div style={{width: 100, background: "blue", border: "2px solid white"}}>
                     <div style={{display:"inline", color: "white"}}>
-                    <h5 onClick={()=>this.props.changeSection("android")}>Android Projects</h5>
+                    <h5 onClick={()=>this.props.changeSection("android")}>Android</h5>
+                    </div>
+                </div>
+                <div style={{width: 100, background: "#0b0", border: "2px solid white"}}>
+                    <div style={{display:"inline", color: "white"}}>
+                        <h5 onClick={()=>this.props.changeSection("games")}>Games</h5>
                     </div>
                 </div>
                 <div style={{width: 100, background: "#aaa", border: "2px solid white"}}>
                     <div style={{display:"inline", color: "white"}}>
-                        <h5>WARP Tech</h5>
+                        <h5 onClick={()=>this.props.changeSection("warp")}>WARP Tech</h5>
                     </div>
                 </div>
             </div>

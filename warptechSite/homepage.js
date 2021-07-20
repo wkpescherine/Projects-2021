@@ -8,12 +8,20 @@ import AndroidSub from "./androidsub"
 
 class Homepage extends React.Component {
     state = {
-        section: "home"
+        section: "home",
+        project: "home"
     }
 
     changeSection(selectedSection){
         this.setState({
-            section: selectedSection
+            section: selectedSection,
+            project: selectedSection
+        })
+    }
+
+    changeProject(selectedProject){
+        this.setState({
+            project: selectedProject
         })
     }
 
@@ -27,16 +35,14 @@ class Homepage extends React.Component {
                 < Navbar changeSection={this.changeSection.bind(this)}/>
                 <div>
                     { this.state.section === "web" &&
-                        < WebSub/>
+                        < WebSub changeProject={this.changeProject.bind(this)}/>
                     }
                     { this.state.section === "android" &&
                         < AndroidSub/>
                     }
                 </div>
                 <div>
-                    { this.state.section === "home" &&
-                        < Article />
-                    }
+                    < Article  data1={this.state.project}/>
                 </div>
             </div>
         );
