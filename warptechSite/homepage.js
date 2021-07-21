@@ -2,7 +2,6 @@ import React from 'react';
 import './App.css';
 
 import Navbar from "./navbar"
-import Article from "./article"
 import WebSub from "./websub"
 import AndroidSub from "./androidsub"
 import HomeArticle from './home_article'

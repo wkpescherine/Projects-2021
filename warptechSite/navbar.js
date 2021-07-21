@@ -20,19 +20,22 @@ class Navbar extends React.Component {
                         <h5>Web</h5>
                     </div>
                 </div>
-                <div style={{width: 100, background: "blue", border: "2px solid white"}}>
+                <div style={{width: 100, background: "blue", border: "2px solid white"}}
+                    onClick={()=>this.props.changeSection("android")}>
                     <div style={{display:"inline", color: "white"}}>
-                    <h5 onClick={()=>this.props.changeSection("android")}>Android</h5>
+                        <h5>Android</h5>
                     </div>
                 </div>
-                <div style={{width: 100, background: "#0b0", border: "2px solid white"}}>
+                <div style={{width: 100, background: "#0b0", border: "2px solid white"}}
+                    onClick={()=>this.props.changeSection("games")}>
                     <div style={{display:"inline", color: "white"}}>
-                        <h5 onClick={()=>this.props.changeSection("games")}>Games</h5>
+                        <h5>Games</h5>
                     </div>
                 </div>
-                <div style={{width: 100, background: "#aaa", border: "2px solid white"}}>
+                <div style={{width: 100, background: "#aaa", border: "2px solid white"}}
+                    onClick={()=>this.props.changeSection("warp")}>
                     <div style={{display:"inline", color: "white"}}>
-                        <h5 onClick={()=>this.props.changeSection("warp")}>WARP Tech</h5>
+                        <h5>WARP Tech</h5>
                     </div>
                 </div>
             </div>
