@@ -52,7 +52,7 @@ public class Formula {
         if(value1.equals("")){
             if(area.equals("square")){
                 t1 = ((Double.valueOf(value4))/ (Double.valueOf(value2))) + "";
-            } else if(area.equals("cube")){
+            } else if(area.equals("cube") || area.equals("box")){
                 t1 = (Double.valueOf(value4)/(Double.valueOf(value2)*Double.valueOf(value3)))+ "";
             } else if(area.equals("triangle")){
                 t1 = ((Double.valueOf(value4)/Double.valueOf(value2))*2)+"";
@@ -61,26 +61,30 @@ public class Formula {
         if(value2.equals("")){
             if(area.equals("square")){
                 t1 = ((Double.valueOf(value4))/ (Double.valueOf(value1))) + "";
-            } else if(area.equals("cube")){
+            } else if(area.equals("cube") || area.equals("box")){
                 t1 = (Double.valueOf(value4)/(Double.valueOf(value1)*Double.valueOf(value3)))+ "";
             } else if(area.equals("triangle")) {
-                t1 = ((Double.valueOf(value4) / (Double.valueOf(value2) / 2))) + "";
+                t1 = ((Double.valueOf(value4) / (Double.valueOf(value1) / 2))) + "";
             } else if(area.equals("circle")){
                 t1 = (3.16*(Double.valueOf(value1)*Double.valueOf(value1)))+"";
             }
         }
         if(value3.equals("")){
-            if(area.equals("cube")){
+            if(area.equals("cube") || area.equals("box")){
                 t1 = (Double.valueOf(value4)/(Double.valueOf(value1)*Double.valueOf(value2)))+"";
             }
         }
         if(value4.equals("")) {
             if (area.equals("square")) {
                 t1 = ((Double.valueOf(value1)) * (Double.valueOf(value2))) + "";
-            } else if (area.equals("cube")) {
+            } else if (area.equals("cube") || area.equals("box")) {
                 t1 = (Double.valueOf(value1)) * (Double.valueOf(value2)) * (Double.valueOf(value3)) + "";
             } else if (area.equals("triangle")) {
                 t1 = ((Double.valueOf(value2) * (Double.valueOf(value1) / 2))) + "";
+            } else if(area.equals("circle")){
+                t1 = ((Double.valueOf(value1) * Double.valueOf(value1))*3.16) + "";
+            } else if(area.equals("sphere")){
+                t1 = (4*(3.16* (Double.valueOf(value1)*Double.valueOf(value1))))+"";
             }
         }
         checkDecimal(t1);
@@ -155,6 +159,11 @@ public class Formula {
         return t1;
     }
 
+    static String Circumference(String value1){
+        t1 = (2*(3.16*Double.valueOf(value1)))+"";
+        return t1;
+    }
+
     public static void checkDecimal(String valueCheck){
         double doubleCheck = Double.valueOf(valueCheck);
         int intCheck = (int)Math.round(doubleCheck);
@@ -162,4 +171,4 @@ public class Formula {
             t1 = intCheck+"";
         }
     }
-}//165
+}//174
