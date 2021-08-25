@@ -5,11 +5,12 @@
 **  them to the server.                                        **
 **                                                             **
 *****************************************************************
-1.0.081921 - Initial oushing of the siet to the live cloud server.
+1.0.000000 - Initial oushing of the siet to the live cloud server.
              Can be found at : warptechno.com
-             !!!   DEPLOYED   !!!
+1.0.081921 - !!!   DEPLOYED   !!!
 1.0.082321 - Updated the website with additional categories.
              Adding also sub sections for each category.
              Added products for the Android sub area.
+             Added products for the Web sub area
              Created the handling of the article area.
-             Updating graphics
+             Updating layout
