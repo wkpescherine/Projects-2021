@@ -5,5 +5,7 @@
 ** pushed out on  aweekly basis, every monday. Verison update patches are on a   **
 ** monthly basis                                                                 **
 ***********************************************************************************
-7.0.8.2.2021 Moving now into production version with expected release end of month
-             Deleting older versions from repos and will start tracking here now.
+7.08022021 Moving now into production version with expected release end of month
+           Deleting older versions from repos and will start tracking here now.
+7.08302021 Have started to update BUGS sheet for better tracking of issues.
+           Preparing for September beta release
