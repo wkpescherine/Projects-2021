@@ -3,7 +3,6 @@
 2.2.0.0 Convert Formula picking to a single function
 2.3.0.0 Convert all key actions down to 1 method
 2.4.0.0 Pull out repetetive xml calls to a single location
-2.5.0.0 Need to center the start button on the main XML
 2.6.0.0 Fix decimal point results to be within 0.000 or so
 5.5.1.1 Need to create solve
 5.5.1.2 Need to create the setValues
