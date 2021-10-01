@@ -8,6 +8,6 @@
 
 8.09012021 Fixed issues with Cone Area formula
 8.09272021 Bug Fixed - 2.5.0.0 Need to center the start button on the main XML
-8.09292021 Bug Fixed - 2.6.0.0 (WIP)Fix decimal point results to be within 0.000
+8.09302021 Bug Fixed - 2.6.0.0 (WIP)Fix decimal point results to be within 0.000
            bug Fixed - 2.7.0.0 (WIP)Optimize the decimal key
            Bug Fixed - 2.9.0.0 (WIP)Changing logic on the Delete key
