@@ -6,5 +6,5 @@
 ** monthly basis                                                                 **
 ***********************************************************************************
 9.10012021 Bug Fixed - 2.6.0.0 Fix decimal point results to be within 0.000
-           bug Fixed - 2.7.0.0 (WIP)Optimize the decimal key
+9.10042021 Bug Fixed - 2.7.0.0 (WIP)Optimize the decimal key
            Bug Fixed - 2.9.0.0 (WIP)Changing logic on the Delete key
