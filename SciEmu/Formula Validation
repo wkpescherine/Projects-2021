@@ -6,8 +6,14 @@
 ** handle the delete and decimal for the piece of the formula                     **
 **                                                                                **
 ************************************************************************************
-BASIC -     Add    - x+y=z   - FAIL, FAIL
-BASIC -  Subtract  - x-y=z   - FAIL, FAIL
-BASIC -    Multi   - x*y=z   - FAIL, FAIL
-BASIC -   Divide   - x/y=z   - FAIL, FAIL
-BASIC - Exponentcc - x^power - FAIL, FAIL
+BASIC   -   Add      -    x+y=z    - FAIL, FAIL
+BASIC   - Subtract   -    x-y=z    - FAIL, FAIL
+BASIC   -   Multi    -    x*y=z    - FAIL, FAIL
+BASIC   -  Divide    -    x/y=z    - FAIL, FAIL
+BASIC   - Exponentcc -   x^power   - FAIL, FAIL
+ALGEBRA -  Square    -  h*w=total  - FAIL, FAIL
+ALGEBRA -	  Cube     - h*w*d=total - FAIL, FAIL
+ALGEBRA -	   x^2     -     x^2     - FAIL, FAIL
+ALGEBRA -	   x^3     -     x^3     - FAIL, FAIL
+ALGEBRA -	Polynomal  - (n1x+n2y)^2 - FAIL, FAIL
+ALGEBRA -	Polynomal  - (n1x-n2y)^2 - FAIL, FAIL
