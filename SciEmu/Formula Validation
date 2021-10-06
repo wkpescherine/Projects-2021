@@ -2,18 +2,19 @@
 **                                                                                **
 ** This section will be used to show what sections have had the formulas tested   **
 ** and validated. General readability will be, category, formula and if it passed **
-** first with intergar, second with decimal. Also fro it to pass, it must be able **
-** handle the delete and decimal for the piece of the formula                     **
+** first with intergar, second with decimal, third is delete. Also for it to pass **
+** , it must be able handle the delete and decimal for the piece of the formula   **
 **                                                                                **
 ************************************************************************************
-BASIC   -   Add      -    x+y=z    - FAIL, FAIL
-BASIC   - Subtract   -    x-y=z    - FAIL, FAIL
-BASIC   -   Multi    -    x*y=z    - FAIL, FAIL
-BASIC   -  Divide    -    x/y=z    - FAIL, FAIL
-BASIC   - Exponentcc -   x^power   - FAIL, FAIL
-ALGEBRA -  Square    -  h*w=total  - FAIL, FAIL
-ALGEBRA -   Cube     - h*w*d=total - FAIL, FAIL
-ALGEBRA -    x^2     -     x^2     - FAIL, FAIL
-ALGEBRA -    x^3     -     x^3     - FAIL, FAIL
-ALGEBRA - Polynomal  - (n1x+n2y)^2 - FAIL, FAIL
-ALGEBRA - Polynomal  - (n1x-n2y)^2 - FAIL, FAIL
+subject -   type     -   formula   - int , doub, err
+BASIC   -   Add      -    x+y=z    - PASS, PASS, PASS
+BASIC   - Subtract   -    x-y=z    - FAIL, FAIL, FAIL
+BASIC   -   Multi    -    x*y=z    - FAIL, FAIL, FAIL
+BASIC   -  Divide    -    x/y=z    - FAIL, FAIL, FAIL
+BASIC   - Exponentcc -   x^power   - FAIL, FAIL, FAIL
+ALGEBRA -  Square    -  h*w=total  - FAIL, FAIL, FAIL
+ALGEBRA -   Cube     - h*w*d=total - FAIL, FAIL, FAIL
+ALGEBRA -    x^2     -     x^2     - FAIL, FAIL, FAIL
+ALGEBRA -    x^3     -     x^3     - FAIL, FAIL, FAIL
+ALGEBRA - Polynomal  - (n1x+n2y)^2 - FAIL, FAIL, FAIL
+ALGEBRA - Polynomal  - (n1x-n2y)^2 - FAIL, FAIL, FAIL
