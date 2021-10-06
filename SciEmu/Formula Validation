@@ -15,5 +15,5 @@ ALGEBRA -  Square    -  h*w=total  - FAIL, FAIL
 ALGEBRA -	  Cube     - h*w*d=total - FAIL, FAIL
 ALGEBRA -	   x^2     -     x^2     - FAIL, FAIL
 ALGEBRA -	   x^3     -     x^3     - FAIL, FAIL
-ALGEBRA -	Polynomal  - (n1x+n2y)^2 - FAIL, FAIL
+ALGEBRA - Polynomal  - (n1x+n2y)^2 - FAIL, FAIL
 ALGEBRA -	Polynomal  - (n1x-n2y)^2 - FAIL, FAIL
