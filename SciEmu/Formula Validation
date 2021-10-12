@@ -18,3 +18,12 @@ ALGEBRA -    x^2     -     x^2     - FAIL, FAIL, FAIL
 ALGEBRA -    x^3     -     x^3     - FAIL, FAIL, FAIL
 ALGEBRA - Polynomal  - (n1x+n2y)^2 - FAIL, FAIL, FAIL
 ALGEBRA - Polynomal  - (n1x-n2y)^2 - FAIL, FAIL, FAIL
+GEOMETRY- Area\90Tri - h/2*w=total - FAIL, FAIL, FAIL
+GEOMETRY- AreaCircle -    nr^2     - FAIL, FAIL, FAIL
+GEOMETRY-  Area/Box  -	  h*w*d    - FAIL, FAIL, FAIL
+	d. Area/Sphere
+		I. 4nr^2=total(n is pi)
+	e. Area/Cone
+		I. nrl+nr^2=total(n is pi)
+	f. Circumference
+		I. 2nr (n is pi)
