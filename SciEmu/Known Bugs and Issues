@@ -1,10 +1,8 @@
 ***********************   BUGS   ***********************
 2.1.0.0 Convert all focus actions down to 1 method
 2.2.0.0 Convert Formula picking to a single function
-2.3.0.0 Convert all key actions down to 1 method
 2.4.0.0 Pull out repetetive xml calls to a single location
 2.6.0.0 Fix decimal point results to be within 0.0000
-2.7.0.0 Optimize the decimal key
 2.8.0.0 Review all functions with decimal and error check
 2.9.0.0 Changing logic on the Delete key
 5.5.1.1 Need to create solve
