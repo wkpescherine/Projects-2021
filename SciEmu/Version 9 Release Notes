@@ -10,3 +10,4 @@
            Bug Fixed - 2.8.0.0 (WIP)Changing logic on the Delete key
 9.10182021 Bug Fixed - 2.3.0.0 Convert all keypad actions down to 1 method
 9.10202021 Feature   - 0000000 Convert subject selection to a single method
+           Feature   - 0000001 Convert formula selection to a single method
