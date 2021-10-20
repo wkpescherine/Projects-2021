@@ -9,3 +9,4 @@
 9.10052021 Bug Fixed - 2.7.0.0 (WIP)Optimize the decimal key
            Bug Fixed - 2.8.0.0 (WIP)Changing logic on the Delete key
 9.10182021 Bug Fixed - 2.3.0.0 Convert all keypad actions down to 1 method
+9.10192021 Feature   - 2.3.0.0 Convert subject selection to a single method
