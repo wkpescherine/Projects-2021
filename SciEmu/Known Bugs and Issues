@@ -38,3 +38,6 @@
 10.1.1.4 Level 3 = Basic(up to 3 signs), Algebra*(squares and cubes)
 10.2.0.0 Add division to the basic starting level
 10.3.0.0 Add a "-" minus sign to the keypad so we can go to negative 
+0000000 Updating Known Bugs and Issues numbering system
+0000001 Convert subject selection to a single method
+0000002 Convert formula selection to a single method
