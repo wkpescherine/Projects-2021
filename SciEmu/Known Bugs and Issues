@@ -39,3 +39,5 @@
 0000001 - Convert subject selection to a single method(WIP)
 0000002 - Convert formula selection to a single method(WIP)
 0000003 - Convert variable selection to a single method
+0000004 - x^2 solution needs to be fixed to account for new naming
+0000005 - x^3 solution needs to be fixed to account for new naming
