@@ -1,10 +1,7 @@
-***********************   BUGS   ***********************
-2.1.0.0 Convert all focus actions down to 1 method
-2.2.0.0 Convert Formula picking to a single function
+***********************   BUGS and Features  ***********************
 2.4.0.0 Pull out repetetive xml calls to a single location
-2.6.0.0 Fix decimal point results to be within 0.0000
-2.8.0.0 Review all functions with decimal and error check
-2.9.0.0 Changing logic on the Delete key
+2.8.0.0 Review all functions with decimal and error check(WIP)
+2.9.0.0 Changing logic on the Delete key(WIP)
 5.5.1.1 Need to create solve
 5.5.1.2 Need to create the setValues
 5.5.1.3 Need to create the setUI
@@ -38,6 +35,7 @@
 10.1.1.4 Level 3 = Basic(up to 3 signs), Algebra*(squares and cubes)
 10.2.0.0 Add division to the basic starting level
 10.3.0.0 Add a "-" minus sign to the keypad so we can go to negative 
-0000000 Updating Known Bugs and Issues numbering system
-0000001 Convert subject selection to a single method
-0000002 Convert formula selection to a single method
+0000000 - Updating Known Bugs and Issues numbering system
+0000001 - Convert subject selection to a single method(WIP)
+0000002 - Convert formula selection to a single method(WIP)
+0000003 - Convert variable selection to a single method
