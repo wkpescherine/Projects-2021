@@ -16,3 +16,4 @@
 9.1.10232021 Update  - Due to signifcant changes in several aspects
              Update  - Keeping previous adjustments and rebuilding codebase
 9.2.10252021 Update  - Continue to streamline but had to rethink how.
+             Feature - 0000004 Convert variable selection to a single method
