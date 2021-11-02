@@ -7,7 +7,7 @@
 **                                                                                **
 ************************************************************************************
 subject -   type     -   formula   - int , doub, err
-BASIC   -   Add      -    x+y=z    - PASS, PASS, PASS
+BASIC   -   Add      -    x+y=z    - FAIL, FAIL, FAIL
 BASIC   - Subtract   -    x-y=z    - FAIL, FAIL, FAIL
 BASIC   -   Multi    -    x*y=z    - FAIL, FAIL, FAIL
 BASIC   -  Divide    -    x/y=z    - FAIL, FAIL, FAIL
