@@ -5,10 +5,11 @@
 ** pushed out on  aweekly basis, every monday. Verison update patches are on a   **
 ** monthly basis                                                                 **
 ***********************************************************************************
-10.10032021 Feature - Continued to keep refactoring code and cleaning it up
-            Feature - Continue to keep testing of all functions, math and usage
-            Feature - Have updated all the  formulas for basic subject logic to 
+10.10032021 Update - Continued to keep refactoring code and cleaning it up
+            Update - Continue to keep testing of all functions, math and usage
+            Update - Have updated all the  formulas for basic subject logic to 
                       the newer workflow.
-            Feature - Have updated all the  formulas for Algebra subject logic to 
+            Update - Have updated all the  formulas for Algebra subject logic to 
                       the newer workflow.
-10.10052021 Feature - Have updated the custom formula handling.
+10.10052021 Update - Have updated the custom formula handling.
+10.10072021 update - Conituing to refractorcode and reduce redundency.
