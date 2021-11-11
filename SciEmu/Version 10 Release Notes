@@ -13,3 +13,6 @@
                       the newer workflow.
 10.10052021 Update - Have updated the custom formula handling.
 10.10072021 update - Conituing to refractorcode and reduce redundency.
+10.10102021 update - Testing and validating forumlas 
+            update - Fixed the handleArgFouc to recognize id not string value
+            update - Fixed the handleDeleteValue to properly respondto value and click
