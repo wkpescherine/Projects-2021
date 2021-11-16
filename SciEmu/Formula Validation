@@ -7,10 +7,10 @@
 **                                                                                **
 ************************************************************************************
 subject -   type     -   formula   - int , doub, err
-BASIC   -   Add      -    x+y=z    - FAIL, FAIL, FAIL
-BASIC   - Subtract   -    x-y=z    - FAIL, FAIL, FAIL
-BASIC   -   Multi    -    x*y=z    - FAIL, FAIL, FAIL
-BASIC   -  Divide    -    x/y=z    - FAIL, FAIL, FAIL
+BASIC   -   Add      -    x+y=z    - PASS, PASS, PASS
+BASIC   - Subtract   -    x-y=z    - PASS, PASS, PASS
+BASIC   -   Multi    -    x*y=z    - PASS, PASS, PASS
+BASIC   -  Divide    -    x/y=z    - PASS, PASS, PASS
 BASIC   - Exponentcc -   x^power   - FAIL, FAIL, FAIL
 ALGEBRA -  Square    -  h*w=total  - FAIL, FAIL, FAIL
 ALGEBRA -   Cube     - h*w*d=total - FAIL, FAIL, FAIL
