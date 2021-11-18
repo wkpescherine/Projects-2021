@@ -11,7 +11,7 @@ BASIC   -   Add      -    x+y=z    - PASS, PASS, PASS
 BASIC   - Subtract   -    x-y=z    - PASS, PASS, PASS
 BASIC   -   Multi    -    x*y=z    - PASS, PASS, PASS
 BASIC   -  Divide    -    x/y=z    - PASS, PASS, PASS
-BASIC   - Exponentcc -   x^power   - FAIL, FAIL, FAIL
+BASIC   - Exponentcc -   x^power   - PASS, PASS, PASS
 ALGEBRA -  Square    -  h*w=total  - FAIL, FAIL, FAIL
 ALGEBRA -   Cube     - h*w*d=total - FAIL, FAIL, FAIL
 ALGEBRA -    x^2     -     x^2     - FAIL, FAIL, FAIL
