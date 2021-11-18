@@ -40,3 +40,4 @@
 0000040 - Practice Level 3 = Basic(up to 3 signs), Algebra*(squares and cubes)
 0000041 - Practice Add division to the basic starting level
 0000042 - Practice Add a "-" minus sign to the keypad so we can go to negative 
+0000043 - Text message if the test first fails but then passes, right now stays as failed
