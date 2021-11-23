@@ -2,8 +2,6 @@
 0000002 - Convert formula selection to a single method(WIP)
 0000003 - Convert formulaSub selection to a single method
 0000004 - Convert variable selection to a single method
-0000005 - x^2 solution needs to be fixed to account for new naming
-0000006 - x^3 solution needs to be fixed to account for new naming
 0000007 - Pull out repetetive xml calls to a single location
 0000008 - Review all functions with decimal and error check(WIP)
 0000009 - Changing logic on the Delete key(WIP)
@@ -41,3 +39,4 @@
 0000041 - Practice Add division to the basic starting level
 0000042 - Practice Add a "-" minus sign to the keypad so we can go to negative 
 0000043 - Text message if the test first fails but then passes, right now stays as failed
+0000044 - Need to look into adding multiple elements for the power of 2/3/power 
