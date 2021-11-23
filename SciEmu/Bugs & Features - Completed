@@ -5,3 +5,5 @@
 ******************************************************************
 0000000 Updating Known Bugs and Issues numbering system(WIP) 
 0000001 Convert subject selection to a single method
+0000005 - x^2 solution needs to be fixed to account for new naming
+0000006 - x^3 solution needs to be fixed to account for new naming
