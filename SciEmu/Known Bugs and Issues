@@ -9,9 +9,6 @@
 0000011 - Area/Cone need to create the setValues
 0000012 - Area/Cone need to create the setUI
 0000013 - Area/Cone need to figure out how to handle l/s/sqrrt(r^2+h^2)
-0000014 - Sin clicking does not work sin
-0000015 - Cos clicking does not work cos
-0000016 - Tan clicking does not work tan
 0000017 - Pythagorean none of the focus work
 0000018 - Pythagorean have to redo the UI as none of the ^2 are correct
 0000019 - Linear Veloctiy needs to change to Motion
