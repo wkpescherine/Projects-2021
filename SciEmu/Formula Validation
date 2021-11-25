@@ -25,5 +25,8 @@ GEOMETRY-  Area/Box  -	  h*w*d    - FAIL, FAIL, FAIL
 GEOMETRY- AreaSphere - 4nr^2=total - FAIL, FAIL, FAIL
 GEOMETRY-  Area/Cone -  nrl+nr^2   - FAIL, FAIL, FAIL
 GEOMETRY-  Circumfer -     2nr     - FAIL, FAIL, FAIL
+TRIG    -     sin    -     sin     - PASS, PASS, PASS
+TRIG    -     cos    -     cos     - PASS, PASS, PASS
+TRIG    -     tan    -     tan     - PASS, PASS, PASS
 ************************************************************************************
-                               7 of 19 formulas validated
+                               10 of 22 formulas validated
