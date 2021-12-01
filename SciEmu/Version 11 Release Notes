@@ -5,4 +5,8 @@
 ** pushed out on aweekly basis, every monday. Verison update patches are on a     **
 ** monthly basis                                                                  **
 ************************************************************************************
-11.113021 Update - Fixed Practice Section
+11.113021 Update - Fixed Practice Section and cleaned up
+          Update - Adapted keypad to the newer look and logic
+          Update - Solutions now handle negative numbers
+          Update - corrected the back to emulator spelling
+          Update - Adjusted the score and added level
