@@ -10,3 +10,9 @@
           Update - Solutions now handle negative numbers
           Update - corrected the back to emulator spelling
           Update - Adjusted the score and added level
+          Update = Added logic for scoring and levels, level increases
+          Update - level 1 0  - 9  score, upperBound 10 , operations 1
+                   level 2 10 - 19 score, upperBound 25 , operations 1
+                   level 3 21 - 39 score, upperbound 65 , operations 1
+                   level 4 40 - 79 score, upperBound 150, operations 1
+                   level 5 80 - 159 score, upperBound 30, operations 2
