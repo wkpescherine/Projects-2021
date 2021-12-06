@@ -1,0 +1,19 @@
+import java.io.*;
+
+public class DAILY0001{
+    long a = 123;
+    long b = 89;
+    long c = a;
+    DAILY0001(){
+        for(int x = 1; x <= b; x++){
+            c = a*c;
+        }
+        String valueLine = c+"";
+        char end = valueLine.charAt(valueLine.length()-1);
+        System.out.println(end);
+    }
+
+    public static void main(String args[]){
+        DAILY0001 daily = new DAILY0001();
+    }
+}
