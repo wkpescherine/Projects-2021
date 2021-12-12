@@ -22,3 +22,7 @@
             Update - Now everything is custom inoutted
             Update - Start handling reading the input
 11.1.120821 Update - Able to read and parse basic functionality
+11.1.121121 Update - Added conditional functionality
+11.1.121221 Update - Added logic in for having a conditional
+            Update - Able to create and add values to both sections
+            Update - Able to handle deletion for both sections
