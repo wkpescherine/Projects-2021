@@ -26,3 +26,6 @@
 11.1.121221 Update - Added logic in for having a conditional
             Update - Able to create and add values to both sections
             Update - Able to handle deletion for both sections
+            Update - Deleted the older Formula class
+            Update - Added a UI reset button and logic
+            Update - Start to handle some of the logic for solving formulas
