@@ -29,4 +29,5 @@
             Update - Deleted the older Formula class
             Update - Added a UI reset button and logic
             Update - Start to handle some of the logic for solving formulas
-11.1.121321 Update - Solable for simple equations
+11.1.121321 Update - Solvable for simple equations
+            Update - Have to resolve issue for out of range array
