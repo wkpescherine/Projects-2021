@@ -32,3 +32,5 @@
 11.1.121321 Update - Solvable for simple equations
             Update - Have to resolve issue for out of range array(resolved)
 11.1.121421 Update - Able to start handling conditional values
+11.1.121421 Update - Handle solve for x or y
+            Update - Disable some functionality as we build up logic
