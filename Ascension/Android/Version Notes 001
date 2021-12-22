@@ -1,8 +1,8 @@
-*****************************************************************
-**                                                             **
-**                    Ascension - Android                      **
-**                                                             **
-*****************************************************************
+*********************************************************************************
+**                                                                             **
+**                            Ascension - Android                              **
+**                                                                             **
+*********************************************************************************
 1.0.0 Restarting application building of this ganme
 1.1.1 Files updating under Ascension Beta - Rebuildingfor android
       Added in character create and load screens
@@ -11,4 +11,6 @@
 1.1.3 Continue to add in moire logic for creeating new char UI and logic built up
       Added the ability to go back to main menu ro skills creen
 1.1.4 Continue to add in moire logic for creeating new char UI and logic built up
-
+1.1.5 Update create screen UI
+      Beginning of adding logic for choices made
+      Before moving to skills now need to make name and choices
