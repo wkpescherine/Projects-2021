@@ -16,3 +16,6 @@
       Before moving to skills now need to make name and choices
       Started to add stats to choice
       Also have added a mini display at bottom to show results.
+1.1.6 Created 3 base SRC with stats and also char sheet stats handling
+      Create Char Screen now has full ability to create a char with 3 base SRC
+      Create Char Screen also able to show results of choices as they are being made
