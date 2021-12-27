@@ -34,3 +34,6 @@
       Added basic logic for handling skill picking
       Modified some of the logic to switch choices
 1.2.2 Fixed logic issues for choices of skills
+      Skills Screen update
+      Added Town Screen
+      Added version to main screem to help with tracking
