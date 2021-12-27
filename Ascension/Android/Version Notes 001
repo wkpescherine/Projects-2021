@@ -33,3 +33,4 @@
 1.2.1 Added 2 skills to Skills UI
       Added basic logic for handling skill picking
       Modified some of the logic to switch choices
+1.2.2 Fixed logic issues for choices of skills
