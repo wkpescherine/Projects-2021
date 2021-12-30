@@ -41,3 +41,4 @@
       Updated some logic on picking the skills and points
       Added 3 SRC to Create Screen
 1.2.3 Updated Load Screen to handling variance in saved chars
+      Added logic for saving games(WIP)
