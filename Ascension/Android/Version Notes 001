@@ -40,5 +40,9 @@
 1.2.3 Updated Skill screen with profession choices 
       Updated some logic on picking the skills and points
       Added 3 SRC to Create Screen
-1.2.3 Updated Load Screen to handling variance in saved chars
+1.2.4 Updated Load Screen to handling variance in saved chars
       Added logic for saving games(WIP)
+1.2.5 Update UI for Town screen
+      Updated UI for Town screen to include few other locations
+      Added the Dungeon Screen
+      Added some basic movement to dungeon screen
